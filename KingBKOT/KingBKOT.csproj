@@ -52,8 +52,260 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCoupon.Designer.cs">
+      <DependentUpon>AddCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddMenuProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMenuProducts.Designer.cs">
+      <DependentUpon>AddMenuProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeMaster.Designer.cs">
+      <DependentUpon>EmployeeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeSalary.Designer.cs">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpensesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpensesReport.Designer.cs">
+      <DependentUpon>ExpensesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Dashboard.Designer.cs">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSalesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSalesMaster.Designer.cs">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Hold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hold.Designer.cs">
+      <DependentUpon>Hold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KOT.Designer.cs">
+      <DependentUpon>KOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListofEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ListofEmployee.Designer.cs">
+      <DependentUpon>ListofEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListOfMenuProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ListOfMenuProducts.Designer.cs">
+      <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListofPurchaseProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ListofPurchaseProducts.Designer.cs">
+      <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuProducts.Designer.cs">
+      <DependentUpon>MenuProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductCategory.Designer.cs">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductMaster.Designer.cs">
+      <DependentUpon>ProductMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseOrderMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseOrderMaster.Designer.cs">
+      <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddPurchaseProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPurchaseProduct.Designer.cs">
+      <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseProducts.Designer.cs">
+      <DependentUpon>PurchaseProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseReport.Designer.cs">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalaryReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SalaryReport.Designer.cs">
+      <DependentUpon>SalaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesReturn.Designer.cs">
+      <DependentUpon>SalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesReturnUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesReturnUserControl.Designer.cs">
+      <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Unhold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Unhold.Designer.cs">
+      <DependentUpon>Unhold.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCoupon.resx">
+      <DependentUpon>AddCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddMenuProducts.resx">
+      <DependentUpon>AddMenuProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeMaster.resx">
+      <DependentUpon>EmployeeMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeSalary.resx">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpensesReport.resx">
+      <DependentUpon>ExpensesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Dashboard.resx">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSalesMaster.resx">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hold.resx">
+      <DependentUpon>Hold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KOT.resx">
+      <DependentUpon>KOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListofEmployee.resx">
+      <DependentUpon>ListofEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListOfMenuProducts.resx">
+      <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListofPurchaseProducts.resx">
+      <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuProducts.resx">
+      <DependentUpon>MenuProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductCategory.resx">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductMaster.resx">
+      <DependentUpon>ProductMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseOrderMaster.resx">
+      <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddPurchaseProduct.resx">
+      <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseProducts.resx">
+      <DependentUpon>PurchaseProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseReport.resx">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalaryReport.resx">
+      <DependentUpon>SalaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesReturn.resx">
+      <DependentUpon>SalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesReturnUserControl.resx">
+      <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Unhold.resx">
+      <DependentUpon>Unhold.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +314,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +328,96 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5a6b27559c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hold %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hold %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dining-room-cutlery-set-of-three-pieces-in-silhouettes %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smartphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store-new-badges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to-do-list %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\domain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\domain %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coupon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
