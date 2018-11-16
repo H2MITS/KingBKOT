@@ -172,11 +172,17 @@
   <data name="hold (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hold (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="faviicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\faviicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coupon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coupon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +208,10 @@
   <data name="domain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\domain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Team01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo-Banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-Banner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

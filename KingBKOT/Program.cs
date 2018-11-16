@@ -1,4 +1,5 @@
-﻿using KingBarbeque;
+﻿using Cindy_Restaurant.Forms;
+using KingBarbeque;
 using KingBarbeque.Forms;
 using KingBKOT.Forms;
 using System;
@@ -20,7 +21,7 @@ namespace KingBKOT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Dashboard());
+            Application.Run(new frmSettlement());
         }
     }
 }

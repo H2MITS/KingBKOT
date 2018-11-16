@@ -46,265 +46,666 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\clsdelete.cs" />
+    <Compile Include="Classes\clsInsert.cs" />
+    <Compile Include="Classes\clsSelect.cs" />
+    <Compile Include="Classes\clsUpdate.cs" />
+    <Compile Include="Classes\clsView.cs" />
+    <Compile Include="Folder_Updates\frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\frmChangePass.designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpdateTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpdateTax.designer.cs">
+      <DependentUpon>frmUpdateTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpElectronicCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpElectronicCurrency.designer.cs">
+      <DependentUpon>frmUpElectronicCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\frmUpProducts.designer.cs">
+      <DependentUpon>frmUpProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Updates\ufrmCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\ufrmCurrency.designer.cs">
+      <DependentUpon>ufrmCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Updates\ufrmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_Updates\ufrmEmployee.designer.cs">
+      <DependentUpon>ufrmEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddCategory.cs">
+    <Compile Include="BBQForms\AddCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\AddCategory.Designer.cs">
+    <Compile Include="BBQForms\AddCategory.Designer.cs">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddCoupon.cs">
+    <Compile Include="BBQForms\AddCoupon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddCoupon.Designer.cs">
+    <Compile Include="BBQForms\AddCoupon.Designer.cs">
       <DependentUpon>AddCoupon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddEmployee.cs">
+    <Compile Include="BBQForms\AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\AddEmployee.Designer.cs">
+    <Compile Include="BBQForms\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddMenuProducts.cs">
+    <Compile Include="BBQForms\AddMenuProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddMenuProducts.Designer.cs">
+    <Compile Include="BBQForms\AddMenuProducts.Designer.cs">
       <DependentUpon>AddMenuProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeMaster.cs">
+    <Compile Include="BBQForms\EmployeeMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeMaster.Designer.cs">
+    <Compile Include="BBQForms\EmployeeMaster.Designer.cs">
       <DependentUpon>EmployeeMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeSalary.cs">
+    <Compile Include="BBQForms\EmployeeSalary.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeSalary.Designer.cs">
+    <Compile Include="BBQForms\EmployeeSalary.Designer.cs">
       <DependentUpon>EmployeeSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ExpensesReport.cs">
+    <Compile Include="BBQForms\ExpensesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExpensesReport.Designer.cs">
+    <Compile Include="BBQForms\ExpensesReport.Designer.cs">
       <DependentUpon>ExpensesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Dashboard.cs">
+    <Compile Include="BBQForms\Form_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Dashboard.Designer.cs">
+    <Compile Include="BBQForms\Form_Dashboard.Designer.cs">
       <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSalesMaster.cs">
+    <Compile Include="BBQForms\frmSalesMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSalesMaster.Designer.cs">
+    <Compile Include="BBQForms\frmSalesMaster.Designer.cs">
       <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Hold.cs">
+    <Compile Include="BBQForms\GeneralSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BBQForms\GeneralSettings.Designer.cs">
+      <DependentUpon>GeneralSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBQForms\Hold.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Hold.Designer.cs">
+    <Compile Include="BBQForms\Hold.Designer.cs">
       <DependentUpon>Hold.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\KOT.cs">
+    <Compile Include="BBQForms\KOT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\KOT.Designer.cs">
+    <Compile Include="BBQForms\KOT.Designer.cs">
       <DependentUpon>KOT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListofEmployee.cs">
+    <Compile Include="BBQForms\ListofEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ListofEmployee.Designer.cs">
+    <Compile Include="BBQForms\ListofEmployee.Designer.cs">
       <DependentUpon>ListofEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListOfMenuProducts.cs">
+    <Compile Include="BBQForms\ListOfMenuProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ListOfMenuProducts.Designer.cs">
+    <Compile Include="BBQForms\ListOfMenuProducts.Designer.cs">
       <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListofPurchaseProducts.cs">
+    <Compile Include="BBQForms\ListofPurchaseProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ListofPurchaseProducts.Designer.cs">
+    <Compile Include="BBQForms\ListofPurchaseProducts.Designer.cs">
       <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuProducts.cs">
+    <Compile Include="BBQForms\MenuProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\MenuProducts.Designer.cs">
+    <Compile Include="BBQForms\MenuProducts.Designer.cs">
       <DependentUpon>MenuProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductCategory.cs">
+    <Compile Include="BBQForms\ProductCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductCategory.Designer.cs">
+    <Compile Include="BBQForms\ProductCategory.Designer.cs">
       <DependentUpon>ProductCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductMaster.cs">
+    <Compile Include="BBQForms\ProductMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductMaster.Designer.cs">
+    <Compile Include="BBQForms\ProductMaster.Designer.cs">
       <DependentUpon>ProductMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PurchaseOrderMaster.cs">
+    <Compile Include="BBQForms\PurchaseOrderMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PurchaseOrderMaster.Designer.cs">
+    <Compile Include="BBQForms\PurchaseOrderMaster.Designer.cs">
       <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddPurchaseProduct.cs">
+    <Compile Include="BBQForms\AddPurchaseProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddPurchaseProduct.Designer.cs">
+    <Compile Include="BBQForms\AddPurchaseProduct.Designer.cs">
       <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PurchaseProducts.cs">
+    <Compile Include="BBQForms\PurchaseProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\PurchaseProducts.Designer.cs">
+    <Compile Include="BBQForms\PurchaseProducts.Designer.cs">
       <DependentUpon>PurchaseProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PurchaseReport.cs">
+    <Compile Include="BBQForms\PurchaseReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PurchaseReport.Designer.cs">
+    <Compile Include="BBQForms\PurchaseReport.Designer.cs">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Registration.cs">
+    <Compile Include="BBQForms\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Registration.Designer.cs">
+    <Compile Include="BBQForms\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalaryReport.cs">
+    <Compile Include="BBQForms\SalaryReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\SalaryReport.Designer.cs">
+    <Compile Include="BBQForms\SalaryReport.Designer.cs">
       <DependentUpon>SalaryReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesReport.cs">
+    <Compile Include="BBQForms\SalesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesReport.Designer.cs">
+    <Compile Include="BBQForms\SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesReturn.cs">
+    <Compile Include="BBQForms\SalesReturn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesReturn.Designer.cs">
+    <Compile Include="BBQForms\SalesReturn.Designer.cs">
       <DependentUpon>SalesReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesReturnUserControl.cs">
+    <Compile Include="BBQForms\SalesReturnUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\SalesReturnUserControl.Designer.cs">
+    <Compile Include="BBQForms\SalesReturnUserControl.Designer.cs">
       <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SignIn.cs">
+    <Compile Include="BBQForms\SettingMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SignIn.Designer.cs">
+    <Compile Include="BBQForms\SettingMaster.Designer.cs">
+      <DependentUpon>SettingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBQForms\ShortcutKeys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BBQForms\ShortcutKeys.Designer.cs">
+      <DependentUpon>ShortcutKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBQForms\SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BBQForms\SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Unhold.cs">
+    <Compile Include="BBQForms\Unhold.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Unhold.Designer.cs">
+    <Compile Include="BBQForms\Unhold.Designer.cs">
       <DependentUpon>Unhold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddElectronicCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddElectronicCurrency.designer.cs">
+      <DependentUpon>frmAddElectronicCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddUsers.designer.cs">
+      <DependentUpon>frmAddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCurrency.designer.cs">
+      <DependentUpon>frmCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeveloper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeveloper.Designer.cs">
+      <DependentUpon>frmDeveloper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmModification.designer.cs">
+      <DependentUpon>frmModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOrder.designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmParent.designer.cs">
+      <DependentUpon>frmParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPopupChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPopupChange.designer.cs">
+      <DependentUpon>frmPopupChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProdType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProdType.designer.cs">
+      <DependentUpon>frmProdType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProductReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProductReg.designer.cs">
+      <DependentUpon>frmProductReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReceiptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReceiptPreview.designer.cs">
+      <DependentUpon>frmReceiptPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegEmp.designer.cs">
+      <DependentUpon>frmRegEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSettlement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettlement.designer.cs">
+      <DependentUpon>frmSettlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplash.designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTheTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTheTables.designer.cs">
+      <DependentUpon>frmTheTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orderInfo.designer.cs">
+      <DependentUpon>orderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmFreezeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmFreezeItem.designer.cs">
+      <DependentUpon>frmFreezeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmRecall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmRecall.designer.cs">
+      <DependentUpon>frmRecall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmUnFreezeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmUnFreezeItem.designer.cs">
+      <DependentUpon>frmUnFreezeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmVCashierReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmVCashierReport.designer.cs">
+      <DependentUpon>frmVCashierReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmVDetailsSettlement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmVDetailsSettlement.designer.cs">
+      <DependentUpon>frmVDetailsSettlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmVFreezeItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmVFreezeItems.designer.cs">
+      <DependentUpon>frmVFreezeItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewCurrency.designer.cs">
+      <DependentUpon>frmViewCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewElectronicCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewElectronicCurrency.designer.cs">
+      <DependentUpon>frmViewElectronicCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewEmployees.designer.cs">
+      <DependentUpon>frmViewEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewLogHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewLogHistory.designer.cs">
+      <DependentUpon>frmViewLogHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewOrderInfo.designer.cs">
+      <DependentUpon>frmViewOrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewOrderSettlement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewOrderSettlement.designer.cs">
+      <DependentUpon>frmViewOrderSettlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewProducts.designer.cs">
+      <DependentUpon>frmViewProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewProductTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewProductTypes.designer.cs">
+      <DependentUpon>frmViewProductTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewTax.designer.cs">
+      <DependentUpon>frmViewTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmViewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmViewUsers.designer.cs">
+      <DependentUpon>frmViewUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmVNetSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmVNetSales.designer.cs">
+      <DependentUpon>frmVNetSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmVTaxSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmVTaxSales.designer.cs">
+      <DependentUpon>frmVTaxSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddCategory.resx">
+    <EmbeddedResource Include="BBQForms\AddCategory.resx">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddCoupon.resx">
+    <EmbeddedResource Include="BBQForms\AddCoupon.resx">
       <DependentUpon>AddCoupon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddEmployee.resx">
+    <EmbeddedResource Include="BBQForms\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddMenuProducts.resx">
+    <EmbeddedResource Include="BBQForms\AddMenuProducts.resx">
       <DependentUpon>AddMenuProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeMaster.resx">
+    <EmbeddedResource Include="BBQForms\EmployeeMaster.resx">
       <DependentUpon>EmployeeMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeSalary.resx">
+    <EmbeddedResource Include="BBQForms\EmployeeSalary.resx">
       <DependentUpon>EmployeeSalary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExpensesReport.resx">
+    <EmbeddedResource Include="BBQForms\ExpensesReport.resx">
       <DependentUpon>ExpensesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Dashboard.resx">
+    <EmbeddedResource Include="BBQForms\Form_Dashboard.resx">
       <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSalesMaster.resx">
+    <EmbeddedResource Include="BBQForms\frmSalesMaster.resx">
       <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Hold.resx">
+    <EmbeddedResource Include="BBQForms\GeneralSettings.resx">
+      <DependentUpon>GeneralSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBQForms\Hold.resx">
       <DependentUpon>Hold.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KOT.resx">
+    <EmbeddedResource Include="BBQForms\KOT.resx">
       <DependentUpon>KOT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListofEmployee.resx">
+    <EmbeddedResource Include="BBQForms\ListofEmployee.resx">
       <DependentUpon>ListofEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListOfMenuProducts.resx">
+    <EmbeddedResource Include="BBQForms\ListOfMenuProducts.resx">
       <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListofPurchaseProducts.resx">
+    <EmbeddedResource Include="BBQForms\ListofPurchaseProducts.resx">
       <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MenuProducts.resx">
+    <EmbeddedResource Include="BBQForms\MenuProducts.resx">
       <DependentUpon>MenuProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductCategory.resx">
+    <EmbeddedResource Include="BBQForms\ProductCategory.resx">
       <DependentUpon>ProductCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductMaster.resx">
+    <EmbeddedResource Include="BBQForms\ProductMaster.resx">
       <DependentUpon>ProductMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PurchaseOrderMaster.resx">
+    <EmbeddedResource Include="BBQForms\PurchaseOrderMaster.resx">
       <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddPurchaseProduct.resx">
+    <EmbeddedResource Include="BBQForms\AddPurchaseProduct.resx">
       <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PurchaseProducts.resx">
+    <EmbeddedResource Include="BBQForms\PurchaseProducts.resx">
       <DependentUpon>PurchaseProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PurchaseReport.resx">
+    <EmbeddedResource Include="BBQForms\PurchaseReport.resx">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Registration.resx">
+    <EmbeddedResource Include="BBQForms\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalaryReport.resx">
+    <EmbeddedResource Include="BBQForms\SalaryReport.resx">
       <DependentUpon>SalaryReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesReport.resx">
+    <EmbeddedResource Include="BBQForms\SalesReport.resx">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesReturn.resx">
+    <EmbeddedResource Include="BBQForms\SalesReturn.resx">
       <DependentUpon>SalesReturn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesReturnUserControl.resx">
+    <EmbeddedResource Include="BBQForms\SalesReturnUserControl.resx">
       <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SignIn.resx">
+    <EmbeddedResource Include="BBQForms\SettingMaster.resx">
+      <DependentUpon>SettingMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBQForms\ShortcutKeys.resx">
+      <DependentUpon>ShortcutKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBQForms\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Unhold.resx">
+    <EmbeddedResource Include="BBQForms\Unhold.resx">
       <DependentUpon>Unhold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\frmChangePass.resx">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\frmUpdateTax.resx">
+      <DependentUpon>frmUpdateTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\frmUpElectronicCurrency.resx">
+      <DependentUpon>frmUpElectronicCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\frmUpProducts.resx">
+      <DependentUpon>frmUpProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\ufrmCurrency.resx">
+      <DependentUpon>ufrmCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folder_Updates\ufrmEmployee.resx">
+      <DependentUpon>ufrmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddElectronicCurrency.resx">
+      <DependentUpon>frmAddElectronicCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddUsers.resx">
+      <DependentUpon>frmAddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCurrency.resx">
+      <DependentUpon>frmCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeveloper.resx">
+      <DependentUpon>frmDeveloper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmModification.resx">
+      <DependentUpon>frmModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmParent.resx">
+      <DependentUpon>frmParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPopupChange.resx">
+      <DependentUpon>frmPopupChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProdType.resx">
+      <DependentUpon>frmProdType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProductReg.resx">
+      <DependentUpon>frmProductReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReceiptPreview.resx">
+      <DependentUpon>frmReceiptPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegEmp.resx">
+      <DependentUpon>frmRegEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSettlement.resx">
+      <DependentUpon>frmSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTheTables.resx">
+      <DependentUpon>frmTheTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orderInfo.resx">
+      <DependentUpon>orderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmFreezeItem.resx">
+      <DependentUpon>frmFreezeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmRecall.resx">
+      <DependentUpon>frmRecall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmUnFreezeItem.resx">
+      <DependentUpon>frmUnFreezeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmVCashierReport.resx">
+      <DependentUpon>frmVCashierReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmVDetailsSettlement.resx">
+      <DependentUpon>frmVDetailsSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmVFreezeItems.resx">
+      <DependentUpon>frmVFreezeItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewCurrency.resx">
+      <DependentUpon>frmViewCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewElectronicCurrency.resx">
+      <DependentUpon>frmViewElectronicCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewEmployees.resx">
+      <DependentUpon>frmViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewLogHistory.resx">
+      <DependentUpon>frmViewLogHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewOrderInfo.resx">
+      <DependentUpon>frmViewOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewOrderSettlement.resx">
+      <DependentUpon>frmViewOrderSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewProducts.resx">
+      <DependentUpon>frmViewProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewProductTypes.resx">
+      <DependentUpon>frmViewProductTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewTax.resx">
+      <DependentUpon>frmViewTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmViewUsers.resx">
+      <DependentUpon>frmViewUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmVNetSales.resx">
+      <DependentUpon>frmVNetSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmVTaxSales.resx">
+      <DependentUpon>frmVTaxSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -352,6 +753,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BBQFolder_Updates\" />
+    <Folder Include="BBQForm_View\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon1.png" />
@@ -418,6 +821,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Actions-edit-clear-history-icon1.png" />
+    <Content Include="Images\ayatollah-ali-khamenei-icon.png" />
+    <Content Include="Images\Button-Ok-icon.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\CCRQInvoice.png" />
+    <Content Include="Images\checked.png" />
+    <Content Include="Images\Coffee-icon2.png" />
+    <Content Include="Images\contacts-icon.png" />
+    <Content Include="Images\conversion-of-currency-icon.png" />
+    <Content Include="Images\data-management-icon %282%29.png" />
+    <Content Include="Images\data-management-icon1.png" />
+    <Content Include="Images\delete-file-icon.png" />
+    <Content Include="Images\delete-file.png" />
+    <Content Include="Images\Fruits-Strawberries-icon.png" />
+    <Content Include="Images\Fruits-Strawberries-icon2.png" />
+    <Content Include="Images\gift-icon.png" />
+    <Content Include="Images\Groups-Meeting-Dark-icon.png" />
+    <Content Include="Images\Groups-Meeting-Light-icon.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\man-icon.png" />
+    <Content Include="Images\Notepad-Bloc-notes-2-icon1.png" />
+    <Content Include="Images\Notepad1.png" />
+    <Content Include="Images\Office-Customer-Male-Light-icon.png" />
+    <Content Include="Images\payment-icon.png" />
+    <Content Include="Images\payment-icon1.png" />
+    <Content Include="Images\print-icon.png" />
+    <Content Include="Images\RegistrationIcon.png" />
+    <Content Include="Images\rest background.jpg" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\Security-icon.png" />
+    <Content Include="Images\Settings-icon.png" />
+    <Content Include="Images\Start-Menu-Search.png" />
+    <Content Include="Images\Status-dialog-error-icon.png" />
+    <Content Include="Images\supplierIcon2.png" />
+    <Content Include="Images\unlock.jpg" />
+    <Content Include="Images\User-Group-icon.png" />
+    <Content Include="Images\Usergroup.png" />
+    <Content Include="Images\Webalys-Kameleon.pics-Food-Dome.ico" />
+    <None Include="Resources\Logo-Banner1.png" />
+    <None Include="Resources\faviicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
