@@ -616,6 +616,11 @@ namespace Cindy_Restaurant.Form_View
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         void printDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
             int i, j;
@@ -629,7 +634,7 @@ namespace Cindy_Restaurant.Form_View
             int StartY = 10;
             int offSet = 40;
 
-            grafic.DrawString("\t KING BAR BEQUE RESTAURANT", new Font("Courier New", 14,FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("\tKING BAR BEQUE RESTAURANT", new Font("Courier New", 14,FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
             grafic.DrawString("======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
@@ -727,7 +732,7 @@ namespace Cindy_Restaurant.Form_View
             int StartY = 10;
             int offSet = 40;
 
-            grafic.DrawString("\t KING BAR BEQUE RESTAURANT", new Font("Courier New", 14, FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("\tKING BAR BEQUE RESTAURANT", new Font("Courier New", 14, FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
             grafic.DrawString("======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);

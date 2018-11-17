@@ -108,7 +108,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(287, 25);
-            this.txtTotal.TabIndex = 1;
+            this.txtTotal.TabIndex = 8;
             // 
             // txtTax3
             // 
@@ -117,7 +117,7 @@
             this.txtTax3.Name = "txtTax3";
             this.txtTax3.ReadOnly = true;
             this.txtTax3.Size = new System.Drawing.Size(287, 25);
-            this.txtTax3.TabIndex = 1;
+            this.txtTax3.TabIndex = 7;
             // 
             // txtTourLevy
             // 
@@ -126,7 +126,7 @@
             this.txtTourLevy.Name = "txtTourLevy";
             this.txtTourLevy.ReadOnly = true;
             this.txtTourLevy.Size = new System.Drawing.Size(287, 25);
-            this.txtTourLevy.TabIndex = 1;
+            this.txtTourLevy.TabIndex = 6;
             // 
             // txtVat
             // 
@@ -135,7 +135,7 @@
             this.txtVat.Name = "txtVat";
             this.txtVat.ReadOnly = true;
             this.txtVat.Size = new System.Drawing.Size(287, 25);
-            this.txtVat.TabIndex = 1;
+            this.txtVat.TabIndex = 5;
             // 
             // txtSubTotal
             // 
@@ -144,7 +144,7 @@
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(287, 25);
-            this.txtSubTotal.TabIndex = 1;
+            this.txtSubTotal.TabIndex = 4;
             // 
             // label7
             // 
@@ -166,7 +166,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Tax_3";
+            this.label6.Text = "Cess ";
             // 
             // label5
             // 
@@ -175,9 +175,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(10, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.Size = new System.Drawing.Size(87, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Tour. Levy";
+            this.label5.Text = "SGST (2.5%)";
             // 
             // label4
             // 
@@ -186,9 +186,10 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(10, 73);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "VAT";
+            this.label4.Text = "CGST (2.5%)";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -231,7 +232,7 @@
             this.txtApplyRate.Location = new System.Drawing.Point(158, 253);
             this.txtApplyRate.Name = "txtApplyRate";
             this.txtApplyRate.Size = new System.Drawing.Size(247, 25);
-            this.txtApplyRate.TabIndex = 3;
+            this.txtApplyRate.TabIndex = 0;
             this.txtApplyRate.TextChanged += new System.EventHandler(this.txtApplyRate_TextChanged);
             this.txtApplyRate.Leave += new System.EventHandler(this.txtApplyRate_Leave);
             // 
@@ -241,7 +242,7 @@
             this.txtApplyName.Location = new System.Drawing.Point(158, 377);
             this.txtApplyName.Name = "txtApplyName";
             this.txtApplyName.Size = new System.Drawing.Size(247, 25);
-            this.txtApplyName.TabIndex = 3;
+            this.txtApplyName.TabIndex = 2;
             this.txtApplyName.TextChanged += new System.EventHandler(this.txtApplyName_TextChanged);
             this.txtApplyName.Leave += new System.EventHandler(this.txtApplyName_Leave);
             // 
@@ -254,7 +255,7 @@
             this.btnApplyRate.Location = new System.Drawing.Point(259, 287);
             this.btnApplyRate.Name = "btnApplyRate";
             this.btnApplyRate.Size = new System.Drawing.Size(146, 32);
-            this.btnApplyRate.TabIndex = 4;
+            this.btnApplyRate.TabIndex = 1;
             this.btnApplyRate.Text = "Apply Rate";
             this.btnApplyRate.UseVisualStyleBackColor = false;
             this.btnApplyRate.Click += new System.EventHandler(this.btnApplyRate_Click);
@@ -268,7 +269,7 @@
             this.btnApplyName.Location = new System.Drawing.Point(259, 411);
             this.btnApplyName.Name = "btnApplyName";
             this.btnApplyName.Size = new System.Drawing.Size(146, 32);
-            this.btnApplyName.TabIndex = 4;
+            this.btnApplyName.TabIndex = 3;
             this.btnApplyName.Text = "Apply Name";
             this.btnApplyName.UseVisualStyleBackColor = false;
             this.btnApplyName.Click += new System.EventHandler(this.btnApplyName_Click);
@@ -283,7 +284,7 @@
             this.btnCancel.Location = new System.Drawing.Point(672, 25);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 49);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -310,7 +311,7 @@
             this.btnOK.Location = new System.Drawing.Point(13, 25);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(126, 49);
-            this.btnOK.TabIndex = 4;
+            this.btnOK.TabIndex = 9;
             this.btnOK.Text = "Submit";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -325,10 +326,10 @@
             this.btnClear.Location = new System.Drawing.Point(327, 25);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(126, 49);
-            this.btnClear.TabIndex = 4;
+            this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel2
             // 
@@ -377,7 +378,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmModification";

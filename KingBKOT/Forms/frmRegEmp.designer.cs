@@ -57,7 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,10 +86,10 @@
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(10, 185);
+            this.btnBrowse.Location = new System.Drawing.Point(6, 185);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(140, 37);
-            this.btnBrowse.TabIndex = 1;
+            this.btnBrowse.Size = new System.Drawing.Size(153, 37);
+            this.btnBrowse.TabIndex = 12;
             this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -99,7 +99,7 @@
             this.PicEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PicEmp.Location = new System.Drawing.Point(6, 22);
             this.PicEmp.Name = "PicEmp";
-            this.PicEmp.Size = new System.Drawing.Size(145, 155);
+            this.PicEmp.Size = new System.Drawing.Size(153, 155);
             this.PicEmp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicEmp.TabIndex = 0;
             this.PicEmp.TabStop = false;
@@ -126,7 +126,7 @@
             this.btnSave.Location = new System.Drawing.Point(343, 589);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 46);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -141,7 +141,7 @@
             this.btnCancel.Location = new System.Drawing.Point(619, 589);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 46);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -191,7 +191,7 @@
             this.cboGender.Location = new System.Drawing.Point(481, 91);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(159, 27);
-            this.cboGender.TabIndex = 15;
+            this.cboGender.TabIndex = 4;
             this.cboGender.SelectedIndexChanged += new System.EventHandler(this.cboGender_SelectedIndexChanged);
             this.cboGender.Leave += new System.EventHandler(this.cboGender_Leave);
             // 
@@ -202,7 +202,7 @@
             this.txtRPhone.MaxLength = 10;
             this.txtRPhone.Name = "txtRPhone";
             this.txtRPhone.Size = new System.Drawing.Size(203, 25);
-            this.txtRPhone.TabIndex = 14;
+            this.txtRPhone.TabIndex = 11;
             this.txtRPhone.TextChanged += new System.EventHandler(this.txtRPhone_TextChanged);
             this.txtRPhone.Leave += new System.EventHandler(this.txtRPhone_Leave);
             // 
@@ -212,7 +212,7 @@
             this.txtRLname.Location = new System.Drawing.Point(481, 369);
             this.txtRLname.Name = "txtRLname";
             this.txtRLname.Size = new System.Drawing.Size(159, 25);
-            this.txtRLname.TabIndex = 13;
+            this.txtRLname.TabIndex = 10;
             this.txtRLname.TextChanged += new System.EventHandler(this.txtRLname_TextChanged);
             this.txtRLname.Leave += new System.EventHandler(this.txtRLname_Leave);
             // 
@@ -222,7 +222,7 @@
             this.txtRFname.Location = new System.Drawing.Point(130, 369);
             this.txtRFname.Name = "txtRFname";
             this.txtRFname.Size = new System.Drawing.Size(203, 25);
-            this.txtRFname.TabIndex = 13;
+            this.txtRFname.TabIndex = 9;
             this.txtRFname.TextChanged += new System.EventHandler(this.txtRFname_TextChanged);
             this.txtRFname.Leave += new System.EventHandler(this.txtRFname_Leave);
             // 
@@ -233,7 +233,7 @@
             this.dptBDay.Location = new System.Drawing.Point(481, 142);
             this.dptBDay.Name = "dptBDay";
             this.dptBDay.Size = new System.Drawing.Size(159, 25);
-            this.dptBDay.TabIndex = 12;
+            this.dptBDay.TabIndex = 6;
             this.dptBDay.ValueChanged += new System.EventHandler(this.dptBDay_ValueChanged);
             this.dptBDay.Leave += new System.EventHandler(this.dptBDay_Leave);
             // 
@@ -243,7 +243,7 @@
             this.txtEmail.Location = new System.Drawing.Point(130, 323);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(510, 25);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 8;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
@@ -254,7 +254,7 @@
             this.txtOname.MaxLength = 30;
             this.txtOname.Name = "txtOname";
             this.txtOname.Size = new System.Drawing.Size(203, 25);
-            this.txtOname.TabIndex = 11;
+            this.txtOname.TabIndex = 3;
             this.txtOname.TextChanged += new System.EventHandler(this.txtOname_TextChanged);
             // 
             // txtResAddress
@@ -264,7 +264,7 @@
             this.txtResAddress.Multiline = true;
             this.txtResAddress.Name = "txtResAddress";
             this.txtResAddress.Size = new System.Drawing.Size(510, 95);
-            this.txtResAddress.TabIndex = 11;
+            this.txtResAddress.TabIndex = 7;
             this.txtResAddress.TextChanged += new System.EventHandler(this.txtResAddress_TextChanged);
             this.txtResAddress.Leave += new System.EventHandler(this.txtResAddress_Leave);
             // 
@@ -275,7 +275,7 @@
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(203, 25);
-            this.txtPhone.TabIndex = 11;
+            this.txtPhone.TabIndex = 5;
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
@@ -286,7 +286,7 @@
             this.txtLname.MaxLength = 30;
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(159, 25);
-            this.txtLname.TabIndex = 11;
+            this.txtLname.TabIndex = 2;
             this.txtLname.TextChanged += new System.EventHandler(this.txtLname_TextChanged);
             this.txtLname.Leave += new System.EventHandler(this.txtLname_Leave);
             // 
@@ -297,7 +297,7 @@
             this.txtFname.MaxLength = 30;
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(203, 25);
-            this.txtFname.TabIndex = 11;
+            this.txtFname.TabIndex = 0;
             this.txtFname.TextChanged += new System.EventHandler(this.txtFname_TextChanged);
             this.txtFname.Leave += new System.EventHandler(this.txtFname_Leave);
             // 
@@ -420,20 +420,20 @@
             this.label2.Text = "First Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(477, 589);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 46);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClear.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(477, 589);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 46);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label5
             // 
@@ -472,13 +472,13 @@
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(932, 657);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegEmp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -524,7 +524,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRPhone;
         private System.Windows.Forms.ComboBox cboGender;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

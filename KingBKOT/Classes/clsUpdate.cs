@@ -336,11 +336,11 @@ namespace Cindy_Restaurant.Classes
                 {
                     Directory.CreateDirectory(@"C:\dbKingBarbequeRestaurantFolder");
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE KingBBQDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KingBBQDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\CindyDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\CindyDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -348,10 +348,10 @@ namespace Cindy_Restaurant.Classes
                 else
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE KingBBQDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KingBBQDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbCindyRestaurantFolder\\CindyDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQDBDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbCindyRestaurantFolder\KBBQDBDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }

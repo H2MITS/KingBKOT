@@ -163,5 +163,13 @@ namespace Cindy_Restaurant.Form_View
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            
+
+        }
     }
 }

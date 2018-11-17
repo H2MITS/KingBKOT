@@ -178,6 +178,18 @@ namespace Cindy_Restaurant.Forms
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAdultNo.Text = string.Empty;
+            txtChild.Text = string.Empty;
+            txtFirst.Text = string.Empty;
+            txtLast.Text = string.Empty;
+            txtReceiptType.Text = string.Empty;
+            txtTableNo.Text = string.Empty;
+            txtWaiterName.Text = string.Empty;
+            dateTimePicker1.Value = DateTimePicker.MinimumDateTime;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
        {
            this.Close();

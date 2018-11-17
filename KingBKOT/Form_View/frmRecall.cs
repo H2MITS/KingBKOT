@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 namespace Cindy_Restaurant.Form_View
 {
-    public partial class btnCancel : Form
+    public partial class receiptList : Form
     {
         public Label lblGetId = new Label();
-        public btnCancel()
+        public receiptList()
         {
             InitializeComponent();
         }
@@ -139,7 +139,20 @@ namespace Cindy_Restaurant.Form_View
              selectClass.selectBillAndSettlement(dataGridView1);
          }
 
-         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void brnClear_Click(object sender, EventArgs e)
+        {
+            txtGetBill.Text = string.Empty;
+            txtSearcsh.Text = string.Empty;
+            dateTimePicker1.Value = DateTimePicker.MinimumDateTime;
+            chkDineIn.Checked = false;
+            chkNoCharge.Checked = false;
+            chkTakeAway.Checked = false;
+            cboSearcshMode.SelectedItem = string.Empty;
+            
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
          {
              if (e.RowIndex >= 0)
              {

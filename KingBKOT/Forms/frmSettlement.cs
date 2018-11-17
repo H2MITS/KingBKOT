@@ -309,6 +309,27 @@ namespace Cindy_Restaurant.Forms
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAcctName.Text = string.Empty;
+            txtAcctNum.Text = string.Empty;
+            txtAmtPAid.Text = string.Empty;
+            txtAmtToPay.Text = string.Empty;
+            txtPosPaid.Text = string.Empty;
+            txtCustOwes.Text = string.Empty;
+            txtBill.Text = string.Empty;
+            txtRateTimesAmtPaid.Text = string.Empty;
+            txtReceiptNo.Text = string.Empty;
+            txtReceiptNum.Text = string.Empty;
+            cboPaymentType.SelectedItem = string.Empty;
+            cboPOSCurrency.SelectedItem = string.Empty;
+            posCurChoice.Text = string.Empty;
+            posEelectronicType.SelectedItem = string.Empty;
+            cboSelectCurrency.SelectedItem = string.Empty;
+            dateTimePicker1.Value = DateTimePicker.MinimumDateTime;
+
+        }
+
 
         //UPDATE THE BILL AND SETTLEMENT TABLE
 

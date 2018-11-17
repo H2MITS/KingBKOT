@@ -205,6 +205,22 @@ namespace Cindy_Restaurant.Forms
 
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtApplyName.Text = string.Empty;
+            txtApplyRate.Text = string.Empty;
+            txtSubTotal.Text = string.Empty;
+            txtTax3.Text = string.Empty;
+            txtTourLevy.Text = string.Empty;
+            txtVat.Text = string.Empty;
+            txtTotal.Text = string.Empty;
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

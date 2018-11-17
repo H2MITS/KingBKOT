@@ -864,6 +864,7 @@
     <Content Include="Images\User-Group-icon.png" />
     <Content Include="Images\Usergroup.png" />
     <Content Include="Images\Webalys-Kameleon.pics-Food-Dome.ico" />
+    <None Include="Resources\live-kitchen.jpg" />
     <None Include="Resources\Logo-Banner1.png" />
     <None Include="Resources\faviicon.png" />
   </ItemGroup>
