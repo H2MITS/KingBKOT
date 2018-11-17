@@ -76,7 +76,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(256, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 3);
+            this.panel2.Size = new System.Drawing.Size(200, 3);
             this.panel2.TabIndex = 35;
             // 
             // panel1
@@ -95,9 +95,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Location = new System.Drawing.Point(250, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(311, 34);
+            this.label3.Size = new System.Drawing.Size(212, 34);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Freeze Selected Items";
+            this.label3.Text = "View Tax Sales";
             // 
             // frmVTaxSales
             // 
@@ -109,7 +109,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmVTaxSales";

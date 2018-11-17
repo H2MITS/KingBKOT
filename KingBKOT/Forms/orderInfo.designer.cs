@@ -72,7 +72,7 @@
             this.txtWaiterName.Name = "txtWaiterName";
             this.txtWaiterName.ReadOnly = true;
             this.txtWaiterName.Size = new System.Drawing.Size(325, 25);
-            this.txtWaiterName.TabIndex = 1;
+            this.txtWaiterName.TabIndex = 3;
             // 
             // label2
             // 
@@ -155,7 +155,7 @@
             this.txtLast.MaxLength = 25;
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(325, 25);
-            this.txtLast.TabIndex = 4;
+            this.txtLast.TabIndex = 5;
             // 
             // txtAdultNo
             // 
@@ -164,7 +164,7 @@
             this.txtAdultNo.MaxLength = 7;
             this.txtAdultNo.Name = "txtAdultNo";
             this.txtAdultNo.Size = new System.Drawing.Size(325, 25);
-            this.txtAdultNo.TabIndex = 4;
+            this.txtAdultNo.TabIndex = 6;
             this.txtAdultNo.TextChanged += new System.EventHandler(this.txtAdultNo_TextChanged);
             this.txtAdultNo.Leave += new System.EventHandler(this.txtAdultNo_Leave);
             // 
@@ -175,7 +175,7 @@
             this.txtChild.MaxLength = 7;
             this.txtChild.Name = "txtChild";
             this.txtChild.Size = new System.Drawing.Size(325, 25);
-            this.txtChild.TabIndex = 4;
+            this.txtChild.TabIndex = 7;
             this.txtChild.TextChanged += new System.EventHandler(this.txtChild_TextChanged);
             this.txtChild.Leave += new System.EventHandler(this.txtChild_Leave);
             // 
@@ -189,7 +189,7 @@
             this.btnFinish.Location = new System.Drawing.Point(184, 445);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(104, 45);
-            this.btnFinish.TabIndex = 5;
+            this.btnFinish.TabIndex = 9;
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = false;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
@@ -204,7 +204,7 @@
             this.btnCancel.Location = new System.Drawing.Point(404, 445);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 45);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -217,7 +217,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(183, 390);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(325, 25);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.TabIndex = 8;
             // 
             // label7
             // 
@@ -248,7 +248,7 @@
             this.txtReceiptType.Name = "txtReceiptType";
             this.txtReceiptType.ReadOnly = true;
             this.txtReceiptType.Size = new System.Drawing.Size(325, 25);
-            this.txtReceiptType.TabIndex = 8;
+            this.txtReceiptType.TabIndex = 1;
             // 
             // btnClear
             // 
@@ -260,9 +260,10 @@
             this.btnClear.Location = new System.Drawing.Point(294, 445);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 45);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel2
             // 
@@ -321,7 +322,7 @@
             this.Controls.Add(this.txtWaiterName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "orderInfo";

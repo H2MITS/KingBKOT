@@ -98,5 +98,16 @@ namespace Cindy_Restaurant.Form_View
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = string.Empty;
+            txtFullname.Text = string.Empty;
+            txtResidence.Text = string.Empty;
+            txtSearcshFname.Text = string.Empty;
+            textBox1.Text = string.Empty;
+            pictureBox1.Image = null;
+
+        }
     }
 }

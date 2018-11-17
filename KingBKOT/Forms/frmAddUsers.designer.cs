@@ -51,6 +51,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -59,17 +60,17 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Yellow;
+            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(41, 392);
+            this.btnSave.Location = new System.Drawing.Point(35, 392);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 46);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -82,10 +83,10 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(257, 393);
+            this.button2.Location = new System.Drawing.Point(261, 393);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 46);
-            this.button2.TabIndex = 0;
+            this.button2.TabIndex = 9;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -132,7 +133,7 @@
             this.cboSelectEmp.Location = new System.Drawing.Point(10, 23);
             this.cboSelectEmp.Name = "cboSelectEmp";
             this.cboSelectEmp.Size = new System.Drawing.Size(308, 27);
-            this.cboSelectEmp.TabIndex = 2;
+            this.cboSelectEmp.TabIndex = 1;
             this.cboSelectEmp.SelectedIndexChanged += new System.EventHandler(this.cboSelectEmp_SelectedIndexChanged);
             // 
             // txtUname
@@ -142,7 +143,7 @@
             this.txtUname.Name = "txtUname";
             this.txtUname.ReadOnly = true;
             this.txtUname.Size = new System.Drawing.Size(219, 25);
-            this.txtUname.TabIndex = 3;
+            this.txtUname.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -202,7 +203,7 @@
             this.txtEmpPhone.Name = "txtEmpPhone";
             this.txtEmpPhone.ReadOnly = true;
             this.txtEmpPhone.Size = new System.Drawing.Size(174, 25);
-            this.txtEmpPhone.TabIndex = 1;
+            this.txtEmpPhone.TabIndex = 7;
             // 
             // txtEmpName
             // 
@@ -210,7 +211,7 @@
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.ReadOnly = true;
             this.txtEmpName.Size = new System.Drawing.Size(174, 25);
-            this.txtEmpName.TabIndex = 1;
+            this.txtEmpName.TabIndex = 6;
             this.txtEmpName.TextChanged += new System.EventHandler(this.txtEmpName_TextChanged);
             // 
             // pictureBox1
@@ -231,7 +232,7 @@
             this.txtConfPass.Name = "txtConfPass";
             this.txtConfPass.PasswordChar = '•';
             this.txtConfPass.Size = new System.Drawing.Size(172, 25);
-            this.txtConfPass.TabIndex = 3;
+            this.txtConfPass.TabIndex = 4;
             this.txtConfPass.TextChanged += new System.EventHandler(this.txtConfPass_TextChanged);
             this.txtConfPass.Leave += new System.EventHandler(this.txtConfPass_Leave);
             // 
@@ -270,7 +271,7 @@
             this.cboPrivilege.Location = new System.Drawing.Point(177, 327);
             this.cboPrivilege.Name = "cboPrivilege";
             this.cboPrivilege.Size = new System.Drawing.Size(172, 27);
-            this.cboPrivilege.TabIndex = 7;
+            this.cboPrivilege.TabIndex = 5;
             // 
             // panel2
             // 
@@ -311,6 +312,22 @@
             this.panel3.Size = new System.Drawing.Size(320, 3);
             this.panel3.TabIndex = 30;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Yellow;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(150, 393);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(92, 46);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmAddUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,9 +347,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSave);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAddUsers";
@@ -373,5 +391,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnClear;
     }
 }

@@ -74,7 +74,7 @@ namespace Cindy_Restaurant
 
         private void btnRecall_Click(object sender, EventArgs e)
         {
-            btnCancel recallForm = new btnCancel();
+            receiptList recallForm = new receiptList();
             selectClass.getEmployeeByID(this.statGetUser.Text);
             recallForm.lblGetId.Text = selectClass.getEmployeeID;
             recallForm.ShowDialog();

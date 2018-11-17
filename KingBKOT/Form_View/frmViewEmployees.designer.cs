@@ -82,7 +82,7 @@
             this.txtResidence.Name = "txtResidence";
             this.txtResidence.ReadOnly = true;
             this.txtResidence.Size = new System.Drawing.Size(427, 59);
-            this.txtResidence.TabIndex = 1;
+            this.txtResidence.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -91,7 +91,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(425, 25);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtFullname
             // 
@@ -100,7 +100,7 @@
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.ReadOnly = true;
             this.txtFullname.Size = new System.Drawing.Size(425, 25);
-            this.txtFullname.TabIndex = 1;
+            this.txtFullname.TabIndex = 2;
             // 
             // label4
             // 
@@ -160,7 +160,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(166, 25);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 5;
             // 
             // label1
             // 
@@ -184,7 +184,7 @@
             this.btnClose.Location = new System.Drawing.Point(762, 604);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 41);
-            this.btnClose.TabIndex = 4;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -200,7 +200,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(444, 603);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(97, 41);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -213,7 +213,7 @@
             this.groupBox2.Location = new System.Drawing.Point(683, 104);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(177, 198);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Image";
             // 
@@ -249,7 +249,7 @@
             this.button1.Location = new System.Drawing.Point(460, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 30);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -261,7 +261,7 @@
             this.txtSearcshFname.MaxLength = 40;
             this.txtSearcshFname.Name = "txtSearcshFname";
             this.txtSearcshFname.Size = new System.Drawing.Size(259, 25);
-            this.txtSearcshFname.TabIndex = 1;
+            this.txtSearcshFname.TabIndex = 0;
             // 
             // label5
             // 
@@ -301,10 +301,10 @@
             this.btnClear.Location = new System.Drawing.Point(656, 604);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 41);
-            this.btnClear.TabIndex = 4;
+            this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel2
             // 
@@ -354,7 +354,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmViewEmployees";

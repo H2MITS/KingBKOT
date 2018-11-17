@@ -106,11 +106,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 33);
+            this.label4.Location = new System.Drawing.Point(13, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "VAT";
+            this.label4.Text = "CGST (  2.5% )";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
@@ -120,20 +120,20 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(95, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Tourism Levy";
+            this.label5.Text = "SGST ( 2.5% )";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 112);
+            this.label6.Location = new System.Drawing.Point(12, 110);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Tax_3";
+            this.label6.Text = "Cess";
             // 
             // label7
             // 
@@ -151,9 +151,9 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label8.Location = new System.Drawing.Point(11, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 20);
+            this.label8.Size = new System.Drawing.Size(104, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Vat Amount";
+            this.label8.Text = "CGST (  2.5% )";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cboProductType
@@ -188,7 +188,7 @@
             this.txtProdDecs.Multiline = true;
             this.txtProdDecs.Name = "txtProdDecs";
             this.txtProdDecs.Size = new System.Drawing.Size(219, 107);
-            this.txtProdDecs.TabIndex = 3;
+            this.txtProdDecs.TabIndex = 4;
             // 
             // txtTax1percsentage
             // 
@@ -196,7 +196,7 @@
             this.txtTax1percsentage.Name = "txtTax1percsentage";
             this.txtTax1percsentage.ReadOnly = true;
             this.txtTax1percsentage.Size = new System.Drawing.Size(222, 25);
-            this.txtTax1percsentage.TabIndex = 4;
+            this.txtTax1percsentage.TabIndex = 10;
             // 
             // txtTax2percsentage
             // 
@@ -204,7 +204,7 @@
             this.txtTax2percsentage.Name = "txtTax2percsentage";
             this.txtTax2percsentage.ReadOnly = true;
             this.txtTax2percsentage.Size = new System.Drawing.Size(221, 25);
-            this.txtTax2percsentage.TabIndex = 4;
+            this.txtTax2percsentage.TabIndex = 11;
             // 
             // txtTax3percsentage
             // 
@@ -212,7 +212,7 @@
             this.txtTax3percsentage.Name = "txtTax3percsentage";
             this.txtTax3percsentage.ReadOnly = true;
             this.txtTax3percsentage.Size = new System.Drawing.Size(221, 25);
-            this.txtTax3percsentage.TabIndex = 4;
+            this.txtTax3percsentage.TabIndex = 12;
             // 
             // groupBox1
             // 
@@ -238,42 +238,42 @@
             // 
             // txtNetAmt
             // 
-            this.txtNetAmt.Location = new System.Drawing.Point(145, 178);
+            this.txtNetAmt.Location = new System.Drawing.Point(146, 178);
             this.txtNetAmt.Name = "txtNetAmt";
             this.txtNetAmt.ReadOnly = true;
             this.txtNetAmt.Size = new System.Drawing.Size(161, 25);
-            this.txtNetAmt.TabIndex = 1;
+            this.txtNetAmt.TabIndex = 9;
             // 
             // txtTax3Amt
             // 
-            this.txtTax3Amt.Location = new System.Drawing.Point(145, 144);
+            this.txtTax3Amt.Location = new System.Drawing.Point(146, 144);
             this.txtTax3Amt.Name = "txtTax3Amt";
             this.txtTax3Amt.ReadOnly = true;
             this.txtTax3Amt.Size = new System.Drawing.Size(161, 25);
-            this.txtTax3Amt.TabIndex = 1;
+            this.txtTax3Amt.TabIndex = 8;
             // 
             // txtTax1Amt
             // 
-            this.txtTax1Amt.Location = new System.Drawing.Point(145, 75);
+            this.txtTax1Amt.Location = new System.Drawing.Point(146, 75);
             this.txtTax1Amt.Name = "txtTax1Amt";
             this.txtTax1Amt.ReadOnly = true;
             this.txtTax1Amt.Size = new System.Drawing.Size(161, 25);
-            this.txtTax1Amt.TabIndex = 1;
+            this.txtTax1Amt.TabIndex = 6;
             // 
             // txtTax2Amt
             // 
-            this.txtTax2Amt.Location = new System.Drawing.Point(145, 109);
+            this.txtTax2Amt.Location = new System.Drawing.Point(146, 109);
             this.txtTax2Amt.Name = "txtTax2Amt";
             this.txtTax2Amt.ReadOnly = true;
             this.txtTax2Amt.Size = new System.Drawing.Size(161, 25);
-            this.txtTax2Amt.TabIndex = 1;
+            this.txtTax2Amt.TabIndex = 7;
             // 
             // txtProdPrice
             // 
-            this.txtProdPrice.Location = new System.Drawing.Point(145, 41);
+            this.txtProdPrice.Location = new System.Drawing.Point(146, 41);
             this.txtProdPrice.Name = "txtProdPrice";
             this.txtProdPrice.Size = new System.Drawing.Size(161, 25);
-            this.txtProdPrice.TabIndex = 1;
+            this.txtProdPrice.TabIndex = 5;
             this.txtProdPrice.TextChanged += new System.EventHandler(this.txtProdPrice_TextChanged);
             this.txtProdPrice.Leave += new System.EventHandler(this.txtProdPrice_Leave);
             // 
@@ -283,9 +283,9 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label10.Location = new System.Drawing.Point(11, 109);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
+            this.label10.Size = new System.Drawing.Size(95, 20);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Tour. Amount";
+            this.label10.Text = "SGST ( 2.5% )";
             // 
             // label11
             // 
@@ -301,11 +301,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.label9.Location = new System.Drawing.Point(11, 148);
+            this.label9.Location = new System.Drawing.Point(11, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 20);
+            this.label9.Size = new System.Drawing.Size(43, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Tax_3 Amount";
+            this.label9.Text = "Cess";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label12
             // 
@@ -324,7 +325,7 @@
             this.txtProdName.Location = new System.Drawing.Point(161, 188);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(219, 25);
-            this.txtProdName.TabIndex = 7;
+            this.txtProdName.TabIndex = 3;
             this.txtProdName.TextChanged += new System.EventHandler(this.txtProdName_TextChanged);
             this.txtProdName.Leave += new System.EventHandler(this.txtProdName_Leave);
             // 
@@ -338,9 +339,9 @@
             this.groupBox2.Controls.Add(this.txtTax1percsentage);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(32, 350);
+            this.groupBox2.Location = new System.Drawing.Point(27, 350);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 146);
+            this.groupBox2.Size = new System.Drawing.Size(367, 146);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tax Percentages";
@@ -353,10 +354,10 @@
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(404, 446);
+            this.btnSave.Location = new System.Drawing.Point(405, 446);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 50);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -369,10 +370,10 @@
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(624, 446);
+            this.btnCancel.Location = new System.Drawing.Point(626, 446);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 50);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -420,12 +421,13 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(515, 446);
+            this.btnClear.Location = new System.Drawing.Point(516, 446);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 50);
-            this.btnClear.TabIndex = 32;
+            this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmProductReg
             // 
@@ -448,6 +450,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmProductReg";

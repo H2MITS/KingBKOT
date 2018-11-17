@@ -58,10 +58,10 @@ namespace Cindy_Restaurant.Forms
             clsInsert.err.SetError(txtPhone, string.Empty);
             clsInsert.err.SetError(dptBDay, string.Empty);
             clsInsert.err.SetError(txtResAddress, string.Empty);
-            clsInsert.err.SetError(txtEmail, string.Empty);
-            clsInsert.err.SetError(txtRFname, string.Empty);
-            clsInsert.err.SetError(txtRLname, string.Empty);
-            clsInsert.err.SetError(txtRPhone, string.Empty);
+            // clsInsert.err.SetError(txtEmail, string.Empty);
+           //  clsInsert.err.SetError(txtRFname, string.Empty);
+           //  clsInsert.err.SetError(txtRLname, string.Empty);
+            // clsInsert.err.SetError(txtRPhone, string.Empty);
 
         }
 
@@ -178,91 +178,91 @@ namespace Cindy_Restaurant.Forms
         }
 
         //EMAIL
-        void valEmail(Control ctrl)
-        {
-            //EMAIL CONTAINS TEXT
-            if (txtEmail.Text.Trim().Length > 0)
-            {
+        //void valEmail(Control ctrl)
+        //{
+        //    //EMAIL CONTAINS TEXT
+        //    if (txtEmail.Text.Trim().Length > 0)
+        //    {
 
-                //CHECK FOR @ AND .
-                if (txtEmail.Text.Contains("@") && txtEmail.Text.Contains("."))
-                {
+        //        //CHECK FOR @ AND .
+        //        if (txtEmail.Text.Contains("@") && txtEmail.Text.Contains("."))
+        //        {
 
-                    clsInsert.err.SetError(txtEmail, string.Empty);
+        //            clsInsert.err.SetError(txtEmail, string.Empty);
 
-                }
-                //IF NOT THEN THROW THIS WARNING
-                else
-                {
-                    clsInsert.err.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleLeft);
-                    clsInsert.err.SetError(txtEmail, "Invalid email, must contain @ and .");
-                    return;
+        //        }
+        //        //IF NOT THEN THROW THIS WARNING
+        //        else
+        //        {
+        //            clsInsert.err.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleLeft);
+        //            clsInsert.err.SetError(txtEmail, "Invalid email, must contain @ and .");
+        //            return;
 
-                }
+        //        }
 
 
-            }
+        //    }
 
-                //EMAIL IS EMPTY
-            else
-            {
-                clsInsert.err.SetError(txtEmail, string.Empty);
+        //        //EMAIL IS EMPTY
+        //    else
+        //    {
+        //        clsInsert.err.SetError(txtEmail, string.Empty);
 
-            }
-        }
+        //    }
+        //}
 
         //REFERENCE FIRST NAME
-        void valRef_fname(Control ctrl)
-        {
-            if (txtRFname.Text.Trim().Length > 0)
-            {
-                clsInsert.err.SetError(txtRFname, string.Empty);
+        //void valRef_fname(Control ctrl)
+        //{
+        //    if (txtRFname.Text.Trim().Length > 0)
+        //    {
+        //        clsInsert.err.SetError(txtRFname, string.Empty);
 
-            }
-            else
-            {
-                clsInsert.err.SetIconAlignment(txtRFname, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRFname, "Field can\'t be empty");
-                return;
-            }
+        //    }
+        //    else
+        //    {
+        //        clsInsert.err.SetIconAlignment(txtRFname, ErrorIconAlignment.MiddleLeft);
+        //        clsInsert.err.SetError(txtRFname, "Field can\'t be empty");
+        //        return;
+        //    }
 
-        }
+        //}
 
         //REFERENCE LAST NAME
-        void valRef_Lname(Control ctrl)
-        {
-            if (txtRLname.Text.Trim().Length > 0)
-            {
-                clsInsert.err.SetError(txtRLname, string.Empty);
+        //void valRef_Lname(Control ctrl)
+        //{
+        //    if (txtRLname.Text.Trim().Length > 0)
+        //    {
+        //        clsInsert.err.SetError(txtRLname, string.Empty);
 
-            }
-            else
-            {
-                clsInsert.err.SetIconAlignment(txtRLname, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRLname, "Field can\'t be empty");
-                return;
-            }
+        //    }
+        //    else
+        //    {
+        //        clsInsert.err.SetIconAlignment(txtRLname, ErrorIconAlignment.MiddleLeft);
+        //        clsInsert.err.SetError(txtRLname, "Field can\'t be empty");
+        //        return;
+        //    }
 
-        }
+        //}
 
         //REFERENCE PHONE
-        void valRef_Phone(Control ctrl)
-        {
-            double isNumber;
-            if ((txtRPhone.Text.Trim().Length > 9) && (double.TryParse(txtRPhone.Text, out isNumber)))
-            {
+        //void valRef_Phone(Control ctrl)
+        //{
+        //    double isNumber;
+        //    if ((txtRPhone.Text.Trim().Length > 9) && (double.TryParse(txtRPhone.Text, out isNumber)))
+        //    {
 
-                clsInsert.err.SetError(txtRPhone, string.Empty);
+        //        clsInsert.err.SetError(txtRPhone, string.Empty);
 
-            }
-            else
-            {
-                clsInsert.err.SetIconAlignment(txtRPhone, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRPhone, "Please enter numberic value");
-                return;
+        //    }
+        //    else
+        //    {
+        //        clsInsert.err.SetIconAlignment(txtRPhone, ErrorIconAlignment.MiddleLeft);
+        //        clsInsert.err.SetError(txtRPhone, "Please enter numberic value");
+        //        return;
 
-            }
-        }
+        //    }
+        //}
 
 
 
@@ -274,10 +274,10 @@ namespace Cindy_Restaurant.Forms
             valPhone(txtPhone);
             valDob(dptBDay);
             valResidence(txtResAddress);
-            valEmail(txtEmail);
-            valRef_fname(txtRFname);
-            valRef_Lname(txtRLname);
-            valRef_Phone(txtRPhone);
+            //valEmail(txtEmail);
+            //valRef_fname(txtRFname);
+            //valRef_Lname(txtRLname);
+            //valRef_Phone(txtRPhone);
 
             if (clsInsert.err.GetError(txtFname).Length != 0)
             {
@@ -330,27 +330,27 @@ namespace Cindy_Restaurant.Forms
                 return;
             }
 
-            else if (clsInsert.err.GetError(txtRFname).Length != 0)
-            {
-                clsInsert.err.SetIconAlignment(txtRFname, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRFname, "Field can\'t be empty");
-                return;
+            //else if (clsInsert.err.GetError(txtRFname).Length != 0)
+            //{
+            //    clsInsert.err.SetIconAlignment(txtRFname, ErrorIconAlignment.MiddleLeft);
+            //    clsInsert.err.SetError(txtRFname, "Field can\'t be empty");
+            //    return;
 
-            }
-            else if (clsInsert.err.GetError(txtRLname).Length != 0)
-            {
+            //}
+            //else if (clsInsert.err.GetError(txtRLname).Length != 0)
+            //{
 
-                clsInsert.err.SetIconAlignment(txtRLname, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRLname, "Field can\'t be empty");
-                return;
-            }
-            else if (clsInsert.err.GetError(txtRPhone).Length != 0)
-            {
+            //    clsInsert.err.SetIconAlignment(txtRLname, ErrorIconAlignment.MiddleLeft);
+            //    clsInsert.err.SetError(txtRLname, "Field can\'t be empty");
+            //    return;
+            //}
+            //else if (clsInsert.err.GetError(txtRPhone).Length != 0)
+            //{
 
-                clsInsert.err.SetIconAlignment(txtRPhone, ErrorIconAlignment.MiddleLeft);
-                clsInsert.err.SetError(txtRPhone, "Please enter numberic value");
-                return;
-            }
+            //    clsInsert.err.SetIconAlignment(txtRPhone, ErrorIconAlignment.MiddleLeft);
+            //    clsInsert.err.SetError(txtRPhone, "Please enter numberic value");
+            //    return;
+            //}
 
                 //WHEN ALL REQUIREMENTS ARE SATISFIED PERFORM THE INSERTIONS
             else
@@ -423,42 +423,42 @@ namespace Cindy_Restaurant.Forms
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            valEmail((Control)sender);
+            //valEmail((Control)sender);
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            valEmail((Control)sender);
+            //valEmail((Control)sender);
         }
 
         private void txtRFname_TextChanged(object sender, EventArgs e)
         {
-            valRef_fname((Control)sender);
+            //valRef_fname((Control)sender);
         }
 
         private void txtRFname_Leave(object sender, EventArgs e)
         {
-            valRef_fname((Control)sender);
+            //valRef_fname((Control)sender);
         }
 
         private void txtRLname_TextChanged(object sender, EventArgs e)
         {
-            valRef_Lname((Control)sender);
+            //valRef_Lname((Control)sender);
         }
 
         private void txtRLname_Leave(object sender, EventArgs e)
         {
-         valRef_Lname   ((Control)sender);
+         //valRef_Lname   ((Control)sender);
         }
 
         private void txtRPhone_TextChanged(object sender, EventArgs e)
         {
-            valRef_Phone((Control)sender);
+            //valRef_Phone((Control)sender);
         }
 
         private void txtRPhone_Leave(object sender, EventArgs e)
         {
-            valRef_Phone((Control)sender);
+            //valRef_Phone((Control)sender);
         }
 
         private void dptBDay_ValueChanged(object sender, EventArgs e)
@@ -526,8 +526,20 @@ namespace Cindy_Restaurant.Forms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
+            txtEmail.Text = string.Empty;
+            txtFname.Text = string.Empty;
+            txtLname.Text = string.Empty;
+            txtOname.Text = string.Empty;
+            txtResAddress.Text = string.Empty;
+            txtRPhone.Text = string.Empty;
+            txtRLname.Text = string.Empty;
+            txtRFname.Text = string.Empty;
+            cboGender.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            PicEmp.Image = null;
+            dptBDay.Value = DateTimePicker.MinimumDateTime;
 
         }
     }

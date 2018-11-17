@@ -429,7 +429,7 @@
             this.button1.Location = new System.Drawing.Point(12, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 40);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Remove select Item";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -488,7 +488,7 @@
             this.btnExtra.Location = new System.Drawing.Point(238, 16);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(89, 44);
-            this.btnExtra.TabIndex = 0;
+            this.btnExtra.TabIndex = 3;
             this.btnExtra.Text = "Extra";
             this.btnExtra.UseVisualStyleBackColor = true;
             // 
@@ -497,7 +497,7 @@
             this.btnDrink.Location = new System.Drawing.Point(122, 16);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(89, 44);
-            this.btnDrink.TabIndex = 0;
+            this.btnDrink.TabIndex = 2;
             this.btnDrink.Text = "Drink";
             this.btnDrink.UseVisualStyleBackColor = true;
             this.btnDrink.Click += new System.EventHandler(this.btnDrink_Click);
@@ -507,7 +507,7 @@
             this.btnFood.Location = new System.Drawing.Point(12, 16);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(89, 44);
-            this.btnFood.TabIndex = 0;
+            this.btnFood.TabIndex = 1;
             this.btnFood.Text = "Food";
             this.btnFood.UseVisualStyleBackColor = true;
             this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
@@ -1071,7 +1071,7 @@
             this.textBox1.Location = new System.Drawing.Point(5, 11);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(905, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
@@ -1107,10 +1107,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(935, 667);
+            this.btnCancel.Location = new System.Drawing.Point(930, 655);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 53);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -1122,10 +1122,10 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.Location = new System.Drawing.Point(831, 666);
+            this.btnOrder.Location = new System.Drawing.Point(826, 654);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(95, 53);
-            this.btnOrder.TabIndex = 4;
+            this.btnOrder.TabIndex = 7;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
@@ -1138,10 +1138,10 @@
             this.btnSettlement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlement.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnSettlement.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSettlement.Location = new System.Drawing.Point(727, 666);
+            this.btnSettlement.Location = new System.Drawing.Point(722, 654);
             this.btnSettlement.Name = "btnSettlement";
             this.btnSettlement.Size = new System.Drawing.Size(95, 53);
-            this.btnSettlement.TabIndex = 4;
+            this.btnSettlement.TabIndex = 6;
             this.btnSettlement.Text = "Settlement";
             this.btnSettlement.UseVisualStyleBackColor = false;
             this.btnSettlement.Click += new System.EventHandler(this.btnSettlement_Click);
@@ -1154,10 +1154,10 @@
             this.btnCashout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCashout.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCashout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashout.Location = new System.Drawing.Point(621, 666);
+            this.btnCashout.Location = new System.Drawing.Point(616, 654);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(95, 53);
-            this.btnCashout.TabIndex = 4;
+            this.btnCashout.TabIndex = 5;
             this.btnCashout.Text = "Cash";
             this.btnCashout.UseVisualStyleBackColor = false;
             this.btnCashout.Click += new System.EventHandler(this.btnCashout_Click);
@@ -1174,7 +1174,7 @@
             this.groupBox7.Controls.Add(this.label11);
             this.groupBox7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(1036, 562);
+            this.groupBox7.Location = new System.Drawing.Point(1036, 542);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(260, 174);
             this.groupBox7.TabIndex = 5;
@@ -1186,7 +1186,7 @@
             this.lblVat.AutoSize = true;
             this.lblVat.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.lblVat.ForeColor = System.Drawing.Color.White;
-            this.lblVat.Location = new System.Drawing.Point(190, 100);
+            this.lblVat.Location = new System.Drawing.Point(182, 100);
             this.lblVat.Name = "lblVat";
             this.lblVat.Size = new System.Drawing.Size(37, 20);
             this.lblVat.TabIndex = 0;
@@ -1200,16 +1200,16 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(11, 63);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 20);
+            this.label14.Size = new System.Drawing.Size(92, 20);
             this.label14.TabIndex = 0;
-            this.label14.Text = "VAT";
+            this.label14.Text = "CGST (2.5%)";
             // 
             // lblSubTotal
             // 
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.lblSubTotal.ForeColor = System.Drawing.Color.White;
-            this.lblSubTotal.Location = new System.Drawing.Point(190, 28);
+            this.lblSubTotal.Location = new System.Drawing.Point(182, 28);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(37, 20);
             this.lblSubTotal.TabIndex = 0;
@@ -1232,7 +1232,7 @@
             this.lblTaxAmt.AutoSize = true;
             this.lblTaxAmt.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.lblTaxAmt.ForeColor = System.Drawing.Color.White;
-            this.lblTaxAmt.Location = new System.Drawing.Point(190, 64);
+            this.lblTaxAmt.Location = new System.Drawing.Point(182, 64);
             this.lblTaxAmt.Name = "lblTaxAmt";
             this.lblTaxAmt.Size = new System.Drawing.Size(37, 20);
             this.lblTaxAmt.TabIndex = 0;
@@ -1246,16 +1246,16 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(6, 99);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 20);
+            this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Tourism Levy";
+            this.label12.Text = "SGST (2.5%)";
             // 
             // lblTotalAmt
             // 
             this.lblTotalAmt.AutoSize = true;
             this.lblTotalAmt.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.lblTotalAmt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalAmt.Location = new System.Drawing.Point(190, 137);
+            this.lblTotalAmt.Location = new System.Drawing.Point(182, 137);
             this.lblTotalAmt.Name = "lblTotalAmt";
             this.lblTotalAmt.Size = new System.Drawing.Size(37, 20);
             this.lblTotalAmt.TabIndex = 0;
@@ -1291,7 +1291,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

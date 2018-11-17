@@ -213,5 +213,16 @@ namespace Cindy_Restaurant.Forms
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUname.Text = string.Empty;
+            txtEmpPhone.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtEmpName.Text = string.Empty;
+           cboPrivilege.Text = string.Empty;
+            txtEmpPhone.Text = string.Empty;
+            
+        }
     }
 }

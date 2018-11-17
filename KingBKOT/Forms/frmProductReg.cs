@@ -209,5 +209,31 @@ namespace Cindy_Restaurant.Forms
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cboProductType.Text = string.Empty;
+            cboProSubCate.Text = string.Empty;
+            txtNetAmt.Text = string.Empty;
+            txtProdDecs.Text = string.Empty;
+            txtProdName.Text = string.Empty;
+            txtProdPrice.Text = string.Empty;
+            txtTax1Amt.Text = string.Empty;
+            txtTax1percsentage.Text = string.Empty;
+            txtTax2Amt.Text = string.Empty;
+            txtTax2percsentage.Text = string.Empty;
+            txtTax3Amt.Text = string.Empty;
+            txtTax3percsentage.Text = string.Empty;
+
+
+
+
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

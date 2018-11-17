@@ -264,6 +264,16 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap live_kitchen {
+            get {
+                object obj = ResourceManager.GetObject("live-kitchen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Banner1 {
             get {
                 object obj = ResourceManager.GetObject("Logo-Banner1", resourceCulture);
