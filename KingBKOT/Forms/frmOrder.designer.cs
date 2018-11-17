@@ -50,6 +50,10 @@
             this.lblgetDateTime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnComplimentary = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -130,14 +134,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalAmt = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnComplimentary = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -145,7 +146,6 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -367,6 +367,58 @@
             this.groupBox3.Size = new System.Drawing.Size(338, 384);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtTotal);
+            this.groupBox9.Controls.Add(this.btnComplimentary);
+            this.groupBox9.Controls.Add(this.btnModify);
+            this.groupBox9.Location = new System.Drawing.Point(250, 239);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(82, 138);
+            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabStop = false;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(3, 110);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(74, 20);
+            this.txtTotal.TabIndex = 1;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
+            // 
+            // btnComplimentary
+            // 
+            this.btnComplimentary.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnComplimentary.Enabled = false;
+            this.btnComplimentary.FlatAppearance.BorderSize = 0;
+            this.btnComplimentary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComplimentary.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnComplimentary.Location = new System.Drawing.Point(2, 58);
+            this.btnComplimentary.Name = "btnComplimentary";
+            this.btnComplimentary.Size = new System.Drawing.Size(75, 44);
+            this.btnComplimentary.TabIndex = 0;
+            this.btnComplimentary.Text = "Complimentary";
+            this.toolTip1.SetToolTip(this.btnComplimentary, "Click on an item from the list of orders to set as complimentary\r\nthis italizes t" +
+        "he selected item and set price to 0\r\n");
+            this.btnComplimentary.UseVisualStyleBackColor = false;
+            this.btnComplimentary.Click += new System.EventHandler(this.btnComplimentary_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.BackColor = System.Drawing.Color.Gold;
+            this.btnModify.Enabled = false;
+            this.btnModify.FlatAppearance.BorderSize = 0;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnModify.Location = new System.Drawing.Point(2, 12);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 37);
+            this.btnModify.TabIndex = 0;
+            this.btnModify.Text = "Modify";
+            this.toolTip1.SetToolTip(this.btnModify, "Click on an item from the list of orders to modify");
+            this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // button1
             // 
@@ -1222,58 +1274,6 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Total";
             // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.txtTotal);
-            this.groupBox9.Controls.Add(this.btnComplimentary);
-            this.groupBox9.Controls.Add(this.btnModify);
-            this.groupBox9.Location = new System.Drawing.Point(250, 239);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(82, 138);
-            this.groupBox9.TabIndex = 6;
-            this.groupBox9.TabStop = false;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(3, 110);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(74, 20);
-            this.txtTotal.TabIndex = 1;
-            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
-            // 
-            // btnComplimentary
-            // 
-            this.btnComplimentary.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnComplimentary.Enabled = false;
-            this.btnComplimentary.FlatAppearance.BorderSize = 0;
-            this.btnComplimentary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComplimentary.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.btnComplimentary.Location = new System.Drawing.Point(2, 58);
-            this.btnComplimentary.Name = "btnComplimentary";
-            this.btnComplimentary.Size = new System.Drawing.Size(75, 44);
-            this.btnComplimentary.TabIndex = 0;
-            this.btnComplimentary.Text = "Complimentary";
-            this.toolTip1.SetToolTip(this.btnComplimentary, "Click on an item from the list of orders to set as complimentary\r\nthis italizes t" +
-        "he selected item and set price to 0\r\n");
-            this.btnComplimentary.UseVisualStyleBackColor = false;
-            this.btnComplimentary.Click += new System.EventHandler(this.btnComplimentary_Click);
-            // 
-            // btnModify
-            // 
-            this.btnModify.BackColor = System.Drawing.Color.Gold;
-            this.btnModify.Enabled = false;
-            this.btnModify.FlatAppearance.BorderSize = 0;
-            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModify.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.btnModify.Location = new System.Drawing.Point(2, 12);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 37);
-            this.btnModify.TabIndex = 0;
-            this.btnModify.Text = "Modify";
-            this.toolTip1.SetToolTip(this.btnModify, "Click on an item from the list of orders to modify");
-            this.btnModify.UseVisualStyleBackColor = false;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
-            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1291,17 +1291,20 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -1312,8 +1315,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }

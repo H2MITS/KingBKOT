@@ -60,10 +60,11 @@
             this.btnAddMenus = new System.Windows.Forms.Button();
             this.btnAddMenuGroup = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCuurency = new System.Windows.Forms.Button();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.btnRegEmployee = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAddUsers = new System.Windows.Forms.Button();
+            this.btnCuurency = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -241,16 +242,13 @@
             this.groupBox2.Controls.Add(this.btnVLogins);
             this.groupBox2.Controls.Add(this.btnVsalesRports);
             this.groupBox2.Controls.Add(this.btnVEmployee);
-            this.groupBox2.Controls.Add(this.btnAddPOSCurrency);
-            this.groupBox2.Controls.Add(this.btnVPOS);
-            this.groupBox2.Controls.Add(this.btnVCurrency);
             this.groupBox2.Controls.Add(this.btnAddMenus);
             this.groupBox2.Controls.Add(this.btnAddMenuGroup);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btnCuurency);
             this.groupBox2.Controls.Add(this.btnRecall);
             this.groupBox2.Controls.Add(this.btnChangePass);
             this.groupBox2.Controls.Add(this.btnRegEmployee);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnAddUsers);
             this.groupBox2.Location = new System.Drawing.Point(111, 189);
             this.groupBox2.Name = "groupBox2";
@@ -350,34 +348,37 @@
             // btnAddPOSCurrency
             // 
             this.btnAddPOSCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnAddPOSCurrency.Location = new System.Drawing.Point(406, 46);
+            this.btnAddPOSCurrency.Location = new System.Drawing.Point(16, 93);
             this.btnAddPOSCurrency.Name = "btnAddPOSCurrency";
-            this.btnAddPOSCurrency.Size = new System.Drawing.Size(126, 77);
+            this.btnAddPOSCurrency.Size = new System.Drawing.Size(84, 77);
             this.btnAddPOSCurrency.TabIndex = 2;
             this.btnAddPOSCurrency.Text = "Create POS Currency";
             this.btnAddPOSCurrency.UseVisualStyleBackColor = true;
+            this.btnAddPOSCurrency.Visible = false;
             this.btnAddPOSCurrency.Click += new System.EventHandler(this.btnAddPOSCurrency_Click);
             // 
             // btnVPOS
             // 
             this.btnVPOS.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnVPOS.Location = new System.Drawing.Point(406, 126);
+            this.btnVPOS.Location = new System.Drawing.Point(12, 342);
             this.btnVPOS.Name = "btnVPOS";
-            this.btnVPOS.Size = new System.Drawing.Size(126, 77);
+            this.btnVPOS.Size = new System.Drawing.Size(88, 77);
             this.btnVPOS.TabIndex = 2;
             this.btnVPOS.Text = "View POS ";
             this.btnVPOS.UseVisualStyleBackColor = true;
+            this.btnVPOS.Visible = false;
             this.btnVPOS.Click += new System.EventHandler(this.btnVPOS_Click);
             // 
             // btnVCurrency
             // 
             this.btnVCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnVCurrency.Location = new System.Drawing.Point(278, 126);
+            this.btnVCurrency.Location = new System.Drawing.Point(12, 259);
             this.btnVCurrency.Name = "btnVCurrency";
-            this.btnVCurrency.Size = new System.Drawing.Size(126, 77);
+            this.btnVCurrency.Size = new System.Drawing.Size(88, 77);
             this.btnVCurrency.TabIndex = 2;
             this.btnVCurrency.Text = "View Currency";
             this.btnVCurrency.UseVisualStyleBackColor = true;
+            this.btnVCurrency.Visible = false;
             this.btnVCurrency.Click += new System.EventHandler(this.btnVCurrency_Click);
             // 
             // btnAddMenus
@@ -414,18 +415,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Operational Section";
             // 
-            // btnCuurency
-            // 
-            this.btnCuurency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnCuurency.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCuurency.Location = new System.Drawing.Point(278, 46);
-            this.btnCuurency.Name = "btnCuurency";
-            this.btnCuurency.Size = new System.Drawing.Size(126, 77);
-            this.btnCuurency.TabIndex = 0;
-            this.btnCuurency.Text = "Add Currency";
-            this.btnCuurency.UseVisualStyleBackColor = true;
-            this.btnCuurency.Click += new System.EventHandler(this.btnCuurency_Click);
-            // 
             // btnChangePass
             // 
             this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 10.75F);
@@ -450,6 +439,18 @@
             this.btnRegEmployee.UseVisualStyleBackColor = true;
             this.btnRegEmployee.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(278, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 77);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Purchase";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btnAddUsers
             // 
             this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 10.75F);
@@ -461,6 +462,19 @@
             this.btnAddUsers.Text = "Add Users";
             this.btnAddUsers.UseVisualStyleBackColor = true;
             this.btnAddUsers.Click += new System.EventHandler(this.btnAddUsers_Click);
+            // 
+            // btnCuurency
+            // 
+            this.btnCuurency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnCuurency.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCuurency.Location = new System.Drawing.Point(12, 176);
+            this.btnCuurency.Name = "btnCuurency";
+            this.btnCuurency.Size = new System.Drawing.Size(88, 77);
+            this.btnCuurency.TabIndex = 0;
+            this.btnCuurency.Text = "Add Currency";
+            this.btnCuurency.UseVisualStyleBackColor = true;
+            this.btnCuurency.Visible = false;
+            this.btnCuurency.Click += new System.EventHandler(this.btnCuurency_Click);
             // 
             // groupBox3
             // 
@@ -593,6 +607,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.btnCuurency);
+            this.Controls.Add(this.btnVCurrency);
+            this.Controls.Add(this.btnAddPOSCurrency);
+            this.Controls.Add(this.btnVPOS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmParent";
@@ -660,5 +678,6 @@
         public System.Windows.Forms.Button btnVLogins;
         public System.Windows.Forms.Button button10;
         public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Button button1;
     }
 }

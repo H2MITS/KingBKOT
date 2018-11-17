@@ -15,25 +15,23 @@ namespace KingBKOT.Forms
         public ProductMaster()
         {
             InitializeComponent();
-            panel2.Height = button1.Height;
-            panel2.Top = button1.Top;
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panel2.Height = button1.Height;
-            panel2.Top = button1.Top;
-            menuProducts1.BringToFront();
             
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        { 
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Height = button2.Height;
-            panel2.Top = button2.Top;
-            purchaseProducts1.BringToFront();
+            MainWindow.Controls.Clear();
+            lblHeaderDesc.Text = "Add Purchase Product(Raw Material)";
+
+            PurchaseProducts db = new PurchaseProducts();
+            MainWindow.Controls.Add(db);
+            db.Dock = DockStyle.Fill;
+            db.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,23 +46,32 @@ namespace KingBKOT.Forms
 
         private void button5_Click(object sender, EventArgs e)
         {
-            panel2.Height = button5.Height;
-            panel2.Top = button5.Top;
-            addCategory1.BringToFront();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
-            panel2.Height = button4.Height;
-            panel2.Top = button4.Top;
-            listOfMenuProducts1.BringToFront();
+        { 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panel2.Height = button3.Height;
-            panel2.Top = button3.Top;
-            listofPurchaseProducts1.BringToFront();
+           
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ProductMaster_Load(object sender, EventArgs e)
+        {
+            MainWindow.Controls.Clear();
+            lblHeaderDesc.Text = "Add Purchase Product(Raw Material)";
+
+            PurchaseProducts db = new PurchaseProducts();
+            MainWindow.Controls.Add(db);
+            db.Dock = DockStyle.Fill;
+            db.Show();
         }
     }
 }

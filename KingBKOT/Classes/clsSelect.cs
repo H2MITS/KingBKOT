@@ -1533,5 +1533,49 @@ namespace Cindy_Restaurant.Classes
 
         }
 
+        //public string occupiedTable;
+        //public string selectOccupiedTableFromOrder(string id)
+        //{
+
+        //    try
+        //    {
+
+        //        SqlConnection con = new SqlConnection(dbPath);
+        //        con.Open();
+
+        //        string sql = "select Uname as [persons]  from Users where empID = '" + id.Trim() + "'";
+
+
+        //        SqlCommand cmd = new SqlCommand(sql, con);
+
+        //        reader = cmd.ExecuteReader();
+
+        //        if (reader.Read())
+        //        {
+
+        //            salesPerson = reader["persons"].ToString();
+
+        //        }
+        //        else
+        //        {
+        //            salesPerson = "";
+
+        //        }
+
+        //        reader.Close();
+        //        con.Close();
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+
+        //    }
+
+
+        //    return salesPerson;
+
+        //}
+
     }
 }

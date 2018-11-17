@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +57,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BBQForm_View\Demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BBQForm_View\Demo.Designer.cs">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AmtFomatting.cs" />
     <Compile Include="Classes\clsdelete.cs" />
     <Compile Include="Classes\clsInsert.cs" />
     <Compile Include="Classes\clsSelect.cs" />
     <Compile Include="Classes\clsUpdate.cs" />
     <Compile Include="Classes\clsView.cs" />
+    <Compile Include="Classes\ConvertNoToWord.cs" />
+    <Compile Include="Classes\TextBoxValidation.cs" />
+    <Compile Include="Data\billAndSettlement.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DailySale.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\detailsSettlement.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ElectronicCurrency.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GenEmpID.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\genNochargeID.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KBBQModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KBBQModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KBBQModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KBBQModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KBBQModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\kotGenerator.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LogHistory.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\purchaseProduct.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblCurrency.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblEmployee.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblOrderInfo.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblProduct.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblProType.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblPurchaseOrder.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblTax.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_PurchaseDetails.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbl_PurchaseMaster.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\User.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Folder_Updates\frmChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,10 +311,28 @@
     <Compile Include="BBQForms\PurchaseProducts.Designer.cs">
       <DependentUpon>PurchaseProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="BBQForms\PurchaseReport.cs">
+    <Compile Include="Forms\frmAddPurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BBQForms\PurchaseReport.Designer.cs">
+    <Compile Include="Forms\frmAddPurchaseOrder.Designer.cs">
+      <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddPurchaseProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddPurchaseProduct.Designer.cs">
+      <DependentUpon>frmAddPurchaseProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPurchaseMasterMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPurchaseMasterMain.Designer.cs">
+      <DependentUpon>frmPurchaseMasterMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\PurchaseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\PurchaseReport.Designer.cs">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </Compile>
     <Compile Include="BBQForms\Registration.cs">
@@ -387,6 +497,18 @@
     <Compile Include="Form_View\frmFreezeItem.designer.cs">
       <DependentUpon>frmFreezeItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_View\frmPurchaseOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmPurchaseOrderView.Designer.cs">
+      <DependentUpon>frmPurchaseOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_View\frmPurchaseProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmPurchaseProductView.Designer.cs">
+      <DependentUpon>frmPurchaseProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_View\frmRecall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -489,8 +611,18 @@
     <Compile Include="Form_View\frmVTaxSales.designer.cs">
       <DependentUpon>frmVTaxSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_View\frmPurchaseType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_View\frmPurchaseType.Designer.cs">
+      <DependentUpon>frmPurchaseType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\PurchaseDetailsVM.cs" />
+    <Compile Include="ViewModel\PurchaseMasterVM.cs" />
+    <Compile Include="ViewModel\PurchaseOrderVM.cs" />
+    <Compile Include="ViewModel\PurchaseProductVM.cs" />
     <EmbeddedResource Include="BBQForms\AddCategory.resx">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,7 +686,19 @@
     <EmbeddedResource Include="BBQForms\PurchaseProducts.resx">
       <DependentUpon>PurchaseProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\PurchaseReport.resx">
+    <EmbeddedResource Include="Forms\frmAddPurchaseOrder.resx">
+      <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddPurchaseProduct.resx">
+      <DependentUpon>frmAddPurchaseProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPurchaseMasterMain.resx">
+      <DependentUpon>frmPurchaseMasterMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmPurchaseProductView.resx">
+      <DependentUpon>frmPurchaseProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\PurchaseReport.resx">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BBQForms\Registration.resx">
@@ -583,6 +727,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BBQForms\Unhold.resx">
       <DependentUpon>Unhold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBQForm_View\Demo.resx">
+      <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folder_Updates\frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
@@ -707,6 +854,9 @@
     <EmbeddedResource Include="Form_View\frmVTaxSales.resx">
       <DependentUpon>frmVTaxSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_View\frmPurchaseType.resx">
+      <DependentUpon>frmPurchaseType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -717,6 +867,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Data\KBBQModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KBBQModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\KBBQModel.edmx.diagram">
+      <DependentUpon>KBBQModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -754,7 +912,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="BBQFolder_Updates\" />
-    <Folder Include="BBQForm_View\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon1.png" />
@@ -826,6 +983,16 @@
     <None Include="Resources\Team01.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\KBBQModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KBBQModel.edmx</DependentUpon>
+      <LastGenOutput>KBBQModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\KBBQModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KBBQModel.edmx</DependentUpon>
+      <LastGenOutput>KBBQModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Images\Actions-edit-clear-history-icon1.png" />
     <Content Include="Images\ayatollah-ali-khamenei-icon.png" />
     <Content Include="Images\Button-Ok-icon.png" />
@@ -864,8 +1031,12 @@
     <Content Include="Images\User-Group-icon.png" />
     <Content Include="Images\Usergroup.png" />
     <Content Include="Images\Webalys-Kameleon.pics-Food-Dome.ico" />
+    <None Include="Resources\delete1.png" />
     <None Include="Resources\Logo-Banner1.png" />
     <None Include="Resources\faviicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KBBQModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="billAndSettlement">
+          <Key>
+            <PropertyRef Name="kot" />
+          </Key>
+          <Property Name="kot" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderDecrip" Type="text" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="35" />
+          <Property Name="lname" Type="nvarchar" MaxLength="35" />
+          <Property Name="ordDate" Type="date" Nullable="false" />
+          <Property Name="ordTime" Type="text" Nullable="false" />
+          <Property Name="totalDue" Type="money" Nullable="false" />
+          <Property Name="tax1_Amt" Type="money" Nullable="false" />
+          <Property Name="tax2_Amt" Type="money" Nullable="false" />
+          <Property Name="subTotal" Type="money" Nullable="false" />
+          <Property Name="mode" Type="nvarchar" MaxLength="50" />
+          <Property Name="empID" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cindyDB.dbo.DailySales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DailySales">
+          <Key>
+            <PropertyRef Name="ServiceType" />
+            <PropertyRef Name="ItemName" />
+            <PropertyRef Name="ItemPrice" />
+            <PropertyRef Name="empID" />
+            <PropertyRef Name="OrderTime" />
+            <PropertyRef Name="statues" />
+            <PropertyRef Name="KOT" />
+          </Key>
+          <Property Name="TableNum" Type="int" />
+          <Property Name="ServiceType" Type="text" Nullable="false" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="ItemName" Type="text" Nullable="false" />
+          <Property Name="ItemPrice" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="empID" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="OrderDate" Type="nvarchar" MaxLength="30" />
+          <Property Name="OrderTime" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="statues" Type="text" Nullable="false" />
+          <Property Name="KOT" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="detailsSettlement">
+          <Key>
+            <PropertyRef Name="KOT" />
+            <PropertyRef Name="paidDate" />
+            <PropertyRef Name="paidTime" />
+            <PropertyRef Name="bill" />
+            <PropertyRef Name="AmountPaid" />
+          </Key>
+          <Property Name="KOT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="paidDate" Type="date" Nullable="false" />
+          <Property Name="paidTime" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="currencyInUsed" Type="nvarchar" MaxLength="25" />
+          <Property Name="bill" Type="money" Nullable="false" />
+          <Property Name="custCurrencyChosen" Type="nvarchar" MaxLength="25" />
+          <Property Name="AmountPaid" Type="money" Nullable="false" />
+          <Property Name="changeDue" Type="money" />
+          <Property Name="paymentType" Type="nvarchar" MaxLength="30" />
+          <Property Name="acctName" Type="nvarchar" MaxLength="125" />
+          <Property Name="acctNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="electronicType" Type="nvarchar" MaxLength="40" />
+          <Property Name="empID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ElectronicCurrency">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenEmpID">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nums" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="genNochargeIDs">
+          <Key>
+            <PropertyRef Name="genID" />
+          </Key>
+          <Property Name="genID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="done" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kotGenerator">
+          <Key>
+            <PropertyRef Name="genKOT" />
+          </Key>
+          <Property Name="genKOT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="done" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="logDate" Type="date" Nullable="false" />
+          <Property Name="logTime" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="endShiftDate" Type="date" Nullable="false" />
+          <Property Name="endShiftTime" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="statues" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="purchaseProducts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pName" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="nchar" MaxLength="10" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalAmt" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="cdate" Type="datetime" />
+          <Property Name="udate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_PurchaseDetails">
+          <Key>
+            <PropertyRef Name="pdetailsId" />
+          </Key>
+          <Property Name="pdetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="purchaseID" Type="bigint" />
+          <Property Name="productID" Type="bigint" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="varchar" MaxLength="50" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="updatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_PurchaseMaster">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="refNo" Type="varchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="totalWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="char" MaxLength="10" />
+          <Property Name="totalAmt" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="remarks" Type="varchar" MaxLength="150" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="updateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCurrency">
+          <Key>
+            <PropertyRef Name="curSymbol" />
+          </Key>
+          <Property Name="curID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="curSymbol" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Statues" Type="nvarchar" MaxLength="25" />
+          <Property Name="convertAmt" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empID" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="oname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dob" Type="date" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="resAddress" Type="text" Nullable="false" />
+          <Property Name="emailAdd" Type="text" />
+          <Property Name="ref_fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ref_lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ref_phone" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="photo" Type="image" />
+        </EntityType>
+        <EntityType Name="tblOrderInfo">
+          <Key>
+            <PropertyRef Name="KOT" />
+          </Key>
+          <Property Name="orderType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tableNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KOT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ordDate" Type="date" Nullable="false" />
+          <Property Name="ordTime" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="adultNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="childrenNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="empID" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblProducts">
+          <Key>
+            <PropertyRef Name="prodID" />
+          </Key>
+          <Property Name="prodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="proName" Type="nvarchar" MaxLength="125" Nullable="false" />
+          <Property Name="prodTypeName" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="proType" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="proDescrip" Type="text" Nullable="false" />
+          <Property Name="tax_1" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="tax_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="tax_3" Type="nvarchar" MaxLength="20" />
+          <Property Name="proPrice" Type="nvarchar" MaxLength="20" />
+          <Property Name="tax_1Amt" Type="nvarchar" MaxLength="20" />
+          <Property Name="tax_2Amt" Type="nvarchar" MaxLength="20" />
+          <Property Name="tax_3Amt" Type="nvarchar" MaxLength="20" />
+          <Property Name="proNetPrice" Type="nvarchar" MaxLength="20" />
+          <Property Name="qty" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Statues" Type="bit" />
+          <Property Name="Reason" Type="text" />
+        </EntityType>
+        <EntityType Name="tblProType">
+          <Key>
+            <PropertyRef Name="proTypeID" />
+          </Key>
+          <Property Name="proTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prodTypeName" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="proSubCate" Type="nvarchar" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPurchaseOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="bigint" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="nchar" MaxLength="10" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="cdate" Type="datetime" />
+          <Property Name="udate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblTax">
+          <Key>
+            <PropertyRef Name="taxID" />
+          </Key>
+          <Property Name="taxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tax_1" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="tax_2" Type="decimal" Precision="5" Scale="3" />
+          <Property Name="tax_3" Type="decimal" Precision="5" Scale="3" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Uname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="privileges" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbl_PurchaseDetails_purchaseProducts">
+          <End Role="purchaseProducts" Type="Self.purchaseProducts" Multiplicity="0..1" />
+          <End Role="tbl_PurchaseDetails" Type="Self.tbl_PurchaseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseProducts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_PurchaseDetails">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
+          <End Role="tbl_PurchaseMaster" Type="Self.tbl_PurchaseMaster" Multiplicity="0..1" />
+          <End Role="tbl_PurchaseDetails" Type="Self.tbl_PurchaseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PurchaseMaster">
+              <PropertyRef Name="pId" />
+            </Principal>
+            <Dependent Role="tbl_PurchaseDetails">
+              <PropertyRef Name="purchaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPurchaseOrder_purchaseProducts">
+          <End Role="purchaseProducts" Type="Self.purchaseProducts" Multiplicity="0..1" />
+          <End Role="tblPurchaseOrder" Type="Self.tblPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseProducts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPurchaseOrder">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KBBQModelStoreContainer">
+          <EntitySet Name="billAndSettlement" EntityType="Self.billAndSettlement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElectronicCurrency" EntityType="Self.ElectronicCurrency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenEmpID" EntityType="Self.GenEmpID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="genNochargeIDs" EntityType="Self.genNochargeIDs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kotGenerator" EntityType="Self.kotGenerator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogHistory" EntityType="Self.LogHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchaseProducts" EntityType="Self.purchaseProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PurchaseDetails" EntityType="Self.tbl_PurchaseDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PurchaseMaster" EntityType="Self.tbl_PurchaseMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCurrency" EntityType="Self.tblCurrency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrderInfo" EntityType="Self.tblOrderInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProducts" EntityType="Self.tblProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProType" EntityType="Self.tblProType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPurchaseOrder" EntityType="Self.tblPurchaseOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTax" EntityType="Self.tblTax" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailySales" EntityType="Self.DailySales" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DailySales].[TableNum] AS [TableNum], 
+    [DailySales].[ServiceType] AS [ServiceType], 
+    [DailySales].[Qty] AS [Qty], 
+    [DailySales].[ItemName] AS [ItemName], 
+    [DailySales].[ItemPrice] AS [ItemPrice], 
+    [DailySales].[empID] AS [empID], 
+    [DailySales].[OrderDate] AS [OrderDate], 
+    [DailySales].[OrderTime] AS [OrderTime], 
+    [DailySales].[statues] AS [statues], 
+    [DailySales].[KOT] AS [KOT]
+    FROM [dbo].[DailySales] AS [DailySales]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="detailsSettlement" EntityType="Self.detailsSettlement" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [detailsSettlement].[KOT] AS [KOT], 
+    [detailsSettlement].[paidDate] AS [paidDate], 
+    [detailsSettlement].[paidTime] AS [paidTime], 
+    [detailsSettlement].[currencyInUsed] AS [currencyInUsed], 
+    [detailsSettlement].[bill] AS [bill], 
+    [detailsSettlement].[custCurrencyChosen] AS [custCurrencyChosen], 
+    [detailsSettlement].[AmountPaid] AS [AmountPaid], 
+    [detailsSettlement].[changeDue] AS [changeDue], 
+    [detailsSettlement].[paymentType] AS [paymentType], 
+    [detailsSettlement].[acctName] AS [acctName], 
+    [detailsSettlement].[acctNum] AS [acctNum], 
+    [detailsSettlement].[electronicType] AS [electronicType], 
+    [detailsSettlement].[empID] AS [empID]
+    FROM [dbo].[detailsSettlement] AS [detailsSettlement]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tbl_PurchaseDetails_purchaseProducts" Association="Self.FK_tbl_PurchaseDetails_purchaseProducts">
+            <End Role="purchaseProducts" EntitySet="purchaseProducts" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster" Association="Self.FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
+            <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPurchaseOrder_purchaseProducts" Association="Self.FK_tblPurchaseOrder_purchaseProducts">
+            <End Role="purchaseProducts" EntitySet="purchaseProducts" />
+            <End Role="tblPurchaseOrder" EntitySet="tblPurchaseOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KBBQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="billAndSettlement">
+          <Key>
+            <PropertyRef Name="kot" />
+          </Key>
+          <Property Name="kot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="orderDecrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalDue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="tax1_Amt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="tax2_Amt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="subTotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectronicCurrency">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenEmpID">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nums" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="genNochargeID">
+          <Key>
+            <PropertyRef Name="genID" />
+          </Key>
+          <Property Name="genID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="done" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kotGenerator">
+          <Key>
+            <PropertyRef Name="genKOT" />
+          </Key>
+          <Property Name="genKOT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="done" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="logDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="logTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="endShiftDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endShiftTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="statues" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCurrency">
+          <Key>
+            <PropertyRef Name="curSymbol" />
+          </Key>
+          <Property Name="curID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="curSymbol" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Statues" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="convertAmt" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="oname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="resAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emailAdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ref_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ref_phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblOrderInfo">
+          <Key>
+            <PropertyRef Name="KOT" />
+          </Key>
+          <Property Name="orderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tableNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="adultNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="childrenNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empID" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="prodID" />
+          </Key>
+          <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proName" Type="String" MaxLength="125" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="prodTypeName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="proType" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="proDescrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tax_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_1Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_2Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proNetPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="qty" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Statues" Type="Boolean" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProType">
+          <Key>
+            <PropertyRef Name="proTypeID" />
+          </Key>
+          <Property Name="proTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prodTypeName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="proSubCate" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTax">
+          <Key>
+            <PropertyRef Name="taxID" />
+          </Key>
+          <Property Name="taxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tax_1" Type="Decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="tax_2" Type="Decimal" Precision="5" Scale="3" />
+          <Property Name="tax_3" Type="Decimal" Precision="5" Scale="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Uname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="privileges" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailySale">
+          <Key>
+            <PropertyRef Name="ServiceType" />
+            <PropertyRef Name="ItemName" />
+            <PropertyRef Name="ItemPrice" />
+            <PropertyRef Name="empID" />
+            <PropertyRef Name="OrderTime" />
+            <PropertyRef Name="statues" />
+            <PropertyRef Name="KOT" />
+          </Key>
+          <Property Name="TableNum" Type="Int32" />
+          <Property Name="ServiceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemPrice" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OrderTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="statues" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detailsSettlement">
+          <Key>
+            <PropertyRef Name="KOT" />
+            <PropertyRef Name="paidDate" />
+            <PropertyRef Name="paidTime" />
+            <PropertyRef Name="bill" />
+            <PropertyRef Name="AmountPaid" />
+          </Key>
+          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="paidDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="paidTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="currencyInUsed" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="bill" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="custCurrencyChosen" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="changeDue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="paymentType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="acctName" Type="String" MaxLength="125" FixedLength="false" Unicode="true" />
+          <Property Name="acctNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="electronicType" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="KBBQEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="billAndSettlements" EntityType="Self.billAndSettlement" />
+          <EntitySet Name="ElectronicCurrencies" EntityType="Self.ElectronicCurrency" />
+          <EntitySet Name="GenEmpIDs" EntityType="Self.GenEmpID" />
+          <EntitySet Name="genNochargeIDs" EntityType="Self.genNochargeID" />
+          <EntitySet Name="kotGenerators" EntityType="Self.kotGenerator" />
+          <EntitySet Name="LogHistories" EntityType="Self.LogHistory" />
+          <EntitySet Name="tblCurrencies" EntityType="Self.tblCurrency" />
+          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+          <EntitySet Name="tblOrderInfoes" EntityType="Self.tblOrderInfo" />
+          <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
+          <EntitySet Name="tblProTypes" EntityType="Self.tblProType" />
+          <EntitySet Name="tblTaxes" EntityType="Self.tblTax" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="DailySales" EntityType="Self.DailySale" />
+          <EntitySet Name="detailsSettlements" EntityType="Self.detailsSettlement" />
+          <EntitySet Name="purchaseProducts" EntityType="KBBQModel.purchaseProduct" />
+          <EntitySet Name="tblPurchaseOrders" EntityType="KBBQModel.tblPurchaseOrder" />
+          <AssociationSet Name="FK_tblPurchaseOrder_purchaseProducts" Association="KBBQModel.FK_tblPurchaseOrder_purchaseProducts">
+            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
+            <End Role="tblPurchaseOrder" EntitySet="tblPurchaseOrders" />
+          </AssociationSet>
+          <EntitySet Name="tbl_PurchaseDetails" EntityType="KBBQModel.tbl_PurchaseDetails" />
+          <EntitySet Name="tbl_PurchaseMaster" EntityType="KBBQModel.tbl_PurchaseMaster" />
+          <AssociationSet Name="FK_tbl_PurchaseDetails_purchaseProducts" Association="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts">
+            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster" Association="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
+            <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="purchaseProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalAmt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblPurchaseOrders" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="purchaseProduct" ToRole="tblPurchaseOrder" />
+          <NavigationProperty Name="tbl_PurchaseDetails" Relationship="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts" FromRole="purchaseProduct" ToRole="tbl_PurchaseDetails" />
+        </EntityType>
+        <EntityType Name="tblPurchaseOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int64" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="purchaseProduct" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="tblPurchaseOrder" ToRole="purchaseProduct" />
+        </EntityType>
+        <Association Name="FK_tblPurchaseOrder_purchaseProducts">
+          <End Type="KBBQModel.purchaseProduct" Role="purchaseProduct" Multiplicity="0..1" />
+          <End Type="KBBQModel.tblPurchaseOrder" Role="tblPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseProduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPurchaseOrder">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_PurchaseDetails">
+          <Key>
+            <PropertyRef Name="pdetailsId" />
+          </Key>
+          <Property Name="pdetailsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="purchaseID" Type="Int64" />
+          <Property Name="productID" Type="Int64" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="purchaseProduct" Relationship="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts" FromRole="tbl_PurchaseDetails" ToRole="purchaseProduct" />
+          <NavigationProperty Name="tbl_PurchaseMaster" Relationship="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" FromRole="tbl_PurchaseDetails" ToRole="tbl_PurchaseMaster" />
+        </EntityType>
+        <EntityType Name="tbl_PurchaseMaster">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="refNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="totalWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="totalAmt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_PurchaseDetails" Relationship="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" FromRole="tbl_PurchaseMaster" ToRole="tbl_PurchaseDetails" />
+        </EntityType>
+        <Association Name="FK_tbl_PurchaseDetails_purchaseProducts">
+          <End Type="KBBQModel.purchaseProduct" Role="purchaseProduct" Multiplicity="0..1" />
+          <End Type="KBBQModel.tbl_PurchaseDetails" Role="tbl_PurchaseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseProduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_PurchaseDetails">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
+          <End Type="KBBQModel.tbl_PurchaseMaster" Role="tbl_PurchaseMaster" Multiplicity="0..1" />
+          <End Type="KBBQModel.tbl_PurchaseDetails" Role="tbl_PurchaseDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PurchaseMaster">
+              <PropertyRef Name="pId" />
+            </Principal>
+            <Dependent Role="tbl_PurchaseDetails">
+              <PropertyRef Name="purchaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KBBQModelStoreContainer" CdmEntityContainer="KBBQEntities">
+          <EntitySetMapping Name="billAndSettlements">
+            <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
+              <MappingFragment StoreEntitySet="billAndSettlement">
+                <ScalarProperty Name="kot" ColumnName="kot" />
+                <ScalarProperty Name="orderDecrip" ColumnName="orderDecrip" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
+                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
+                <ScalarProperty Name="tax1_Amt" ColumnName="tax1_Amt" />
+                <ScalarProperty Name="tax2_Amt" ColumnName="tax2_Amt" />
+                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+                <ScalarProperty Name="mode" ColumnName="mode" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectronicCurrencies">
+            <EntityTypeMapping TypeName="KBBQModel.ElectronicCurrency">
+              <MappingFragment StoreEntitySet="ElectronicCurrency">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenEmpIDs">
+            <EntityTypeMapping TypeName="KBBQModel.GenEmpID">
+              <MappingFragment StoreEntitySet="GenEmpID">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nums" ColumnName="nums" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genNochargeIDs">
+            <EntityTypeMapping TypeName="KBBQModel.genNochargeID">
+              <MappingFragment StoreEntitySet="genNochargeIDs">
+                <ScalarProperty Name="genID" ColumnName="genID" />
+                <ScalarProperty Name="done" ColumnName="done" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kotGenerators">
+            <EntityTypeMapping TypeName="KBBQModel.kotGenerator">
+              <MappingFragment StoreEntitySet="kotGenerator">
+                <ScalarProperty Name="genKOT" ColumnName="genKOT" />
+                <ScalarProperty Name="done" ColumnName="done" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogHistories">
+            <EntityTypeMapping TypeName="KBBQModel.LogHistory">
+              <MappingFragment StoreEntitySet="LogHistory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="logDate" ColumnName="logDate" />
+                <ScalarProperty Name="logTime" ColumnName="logTime" />
+                <ScalarProperty Name="endShiftDate" ColumnName="endShiftDate" />
+                <ScalarProperty Name="endShiftTime" ColumnName="endShiftTime" />
+                <ScalarProperty Name="statues" ColumnName="statues" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCurrencies">
+            <EntityTypeMapping TypeName="KBBQModel.tblCurrency">
+              <MappingFragment StoreEntitySet="tblCurrency">
+                <ScalarProperty Name="curID" ColumnName="curID" />
+                <ScalarProperty Name="CurName" ColumnName="CurName" />
+                <ScalarProperty Name="curSymbol" ColumnName="curSymbol" />
+                <ScalarProperty Name="Statues" ColumnName="Statues" />
+                <ScalarProperty Name="convertAmt" ColumnName="convertAmt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmployees">
+            <EntityTypeMapping TypeName="KBBQModel.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="oname" ColumnName="oname" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="resAddress" ColumnName="resAddress" />
+                <ScalarProperty Name="emailAdd" ColumnName="emailAdd" />
+                <ScalarProperty Name="ref_fname" ColumnName="ref_fname" />
+                <ScalarProperty Name="ref_lname" ColumnName="ref_lname" />
+                <ScalarProperty Name="ref_phone" ColumnName="ref_phone" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderInfoes">
+            <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
+              <MappingFragment StoreEntitySet="tblOrderInfo">
+                <ScalarProperty Name="orderType" ColumnName="orderType" />
+                <ScalarProperty Name="tableNo" ColumnName="tableNo" />
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="adultNo" ColumnName="adultNo" />
+                <ScalarProperty Name="childrenNo" ColumnName="childrenNo" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="KBBQModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProducts">
+                <ScalarProperty Name="prodID" ColumnName="prodID" />
+                <ScalarProperty Name="proName" ColumnName="proName" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="proDescrip" ColumnName="proDescrip" />
+                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
+                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
+                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
+                <ScalarProperty Name="proPrice" ColumnName="proPrice" />
+                <ScalarProperty Name="tax_1Amt" ColumnName="tax_1Amt" />
+                <ScalarProperty Name="tax_2Amt" ColumnName="tax_2Amt" />
+                <ScalarProperty Name="tax_3Amt" ColumnName="tax_3Amt" />
+                <ScalarProperty Name="proNetPrice" ColumnName="proNetPrice" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="Statues" ColumnName="Statues" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProTypes">
+            <EntityTypeMapping TypeName="KBBQModel.tblProType">
+              <MappingFragment StoreEntitySet="tblProType">
+                <ScalarProperty Name="proTypeID" ColumnName="proTypeID" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proSubCate" ColumnName="proSubCate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTaxes">
+            <EntityTypeMapping TypeName="KBBQModel.tblTax">
+              <MappingFragment StoreEntitySet="tblTax">
+                <ScalarProperty Name="taxID" ColumnName="taxID" />
+                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
+                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
+                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="KBBQModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="privileges" ColumnName="privileges" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailySales">
+            <EntityTypeMapping TypeName="KBBQModel.DailySale">
+              <MappingFragment StoreEntitySet="DailySales">
+                <ScalarProperty Name="TableNum" ColumnName="TableNum" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="statues" ColumnName="statues" />
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detailsSettlements">
+            <EntityTypeMapping TypeName="KBBQModel.detailsSettlement">
+              <MappingFragment StoreEntitySet="detailsSettlement">
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
+                <ScalarProperty Name="paidDate" ColumnName="paidDate" />
+                <ScalarProperty Name="paidTime" ColumnName="paidTime" />
+                <ScalarProperty Name="currencyInUsed" ColumnName="currencyInUsed" />
+                <ScalarProperty Name="bill" ColumnName="bill" />
+                <ScalarProperty Name="custCurrencyChosen" ColumnName="custCurrencyChosen" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="changeDue" ColumnName="changeDue" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="acctName" ColumnName="acctName" />
+                <ScalarProperty Name="acctNum" ColumnName="acctNum" />
+                <ScalarProperty Name="electronicType" ColumnName="electronicType" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchaseProducts">
+            <EntityTypeMapping TypeName="KBBQModel.purchaseProduct">
+              <MappingFragment StoreEntitySet="purchaseProducts">
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
+                <ScalarProperty Name="totalAmt" ColumnName="totalAmt" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPurchaseOrders">
+            <EntityTypeMapping TypeName="KBBQModel.tblPurchaseOrder">
+              <MappingFragment StoreEntitySet="tblPurchaseOrder">
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PurchaseDetails">
+            <EntityTypeMapping TypeName="KBBQModel.tbl_PurchaseDetails">
+              <MappingFragment StoreEntitySet="tbl_PurchaseDetails">
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="purchaseID" ColumnName="purchaseID" />
+                <ScalarProperty Name="pdetailsId" ColumnName="pdetailsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PurchaseMaster">
+            <EntityTypeMapping TypeName="KBBQModel.tbl_PurchaseMaster">
+              <MappingFragment StoreEntitySet="tbl_PurchaseMaster">
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="totalAmt" ColumnName="totalAmt" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="totalWeight" ColumnName="totalWeight" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="refNo" ColumnName="refNo" />
+                <ScalarProperty Name="pId" ColumnName="pId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

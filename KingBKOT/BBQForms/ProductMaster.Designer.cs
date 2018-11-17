@@ -29,21 +29,14 @@
         private void InitializeComponent()
         {
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.MainWindow = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.addCategory1 = new KingBKOT.Forms.AddCategory();
-            this.menuProducts1 = new KingBKOT.Forms.MenuProducts();
-            this.listOfMenuProducts1 = new KingBKOT.Forms.ListOfMenuProducts();
-            this.listofPurchaseProducts1 = new KingBKOT.Forms.ListofPurchaseProducts();
-            this.purchaseProducts1 = new KingBKOT.Forms.PurchaseProducts();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.lblHeaderDesc = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,28 +47,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 370);
+            this.button3.Location = new System.Drawing.Point(-1, 237);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 55);
+            this.button3.Size = new System.Drawing.Size(249, 55);
             this.button3.TabIndex = 5;
             this.button3.Text = "List of Purchase Products";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 306);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(247, 55);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "List of Menu Products";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -92,33 +70,17 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 55);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add Menu Products";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(248, 536);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button5
             // 
@@ -135,24 +97,28 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // panel1
+            // MainWindow
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.purchaseProducts1);
-            this.panel1.Controls.Add(this.addCategory1);
-            this.panel1.Controls.Add(this.menuProducts1);
-            this.panel1.Controls.Add(this.listOfMenuProducts1);
-            this.panel1.Controls.Add(this.listofPurchaseProducts1);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(247, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(895, 536);
-            this.panel1.TabIndex = 6;
+            this.MainWindow.Location = new System.Drawing.Point(247, 46);
+            this.MainWindow.Name = "MainWindow";
+            this.MainWindow.Size = new System.Drawing.Size(895, 490);
+            this.MainWindow.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(254, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 34);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Product Master";
             // 
             // btnClose
             // 
             this.btnClose.Image = global::KingBKOT.Properties.Resources.error;
-            this.btnClose.Location = new System.Drawing.Point(850, 23);
+            this.btnClose.Location = new System.Drawing.Point(1098, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(34, 32);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,56 +126,16 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label1
+            // lblHeaderDesc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.75F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 34);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Product Master";
-            // 
-            // addCategory1
-            // 
-            this.addCategory1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.addCategory1.Location = new System.Drawing.Point(44, 80);
-            this.addCategory1.Name = "addCategory1";
-            this.addCategory1.Size = new System.Drawing.Size(726, 418);
-            this.addCategory1.TabIndex = 46;
-            // 
-            // menuProducts1
-            // 
-            this.menuProducts1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.menuProducts1.Location = new System.Drawing.Point(20, 93);
-            this.menuProducts1.Name = "menuProducts1";
-            this.menuProducts1.Size = new System.Drawing.Size(769, 412);
-            this.menuProducts1.TabIndex = 45;
-            // 
-            // listOfMenuProducts1
-            // 
-            this.listOfMenuProducts1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.listOfMenuProducts1.Location = new System.Drawing.Point(17, 93);
-            this.listOfMenuProducts1.Name = "listOfMenuProducts1";
-            this.listOfMenuProducts1.Size = new System.Drawing.Size(726, 414);
-            this.listOfMenuProducts1.TabIndex = 44;
-            // 
-            // listofPurchaseProducts1
-            // 
-            this.listofPurchaseProducts1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.listofPurchaseProducts1.Location = new System.Drawing.Point(20, 80);
-            this.listofPurchaseProducts1.Name = "listofPurchaseProducts1";
-            this.listofPurchaseProducts1.Size = new System.Drawing.Size(723, 418);
-            this.listofPurchaseProducts1.TabIndex = 43;
-            // 
-            // purchaseProducts1
-            // 
-            this.purchaseProducts1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.purchaseProducts1.Location = new System.Drawing.Point(12, 80);
-            this.purchaseProducts1.Name = "purchaseProducts1";
-            this.purchaseProducts1.Size = new System.Drawing.Size(741, 434);
-            this.purchaseProducts1.TabIndex = 47;
+            this.lblHeaderDesc.AutoSize = true;
+            this.lblHeaderDesc.Font = new System.Drawing.Font("Century Gothic", 12.25F);
+            this.lblHeaderDesc.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderDesc.Location = new System.Drawing.Point(481, 19);
+            this.lblHeaderDesc.Name = "lblHeaderDesc";
+            this.lblHeaderDesc.Size = new System.Drawing.Size(140, 21);
+            this.lblHeaderDesc.TabIndex = 48;
+            this.lblHeaderDesc.Text = "Product Master";
             // 
             // ProductMaster
             // 
@@ -217,35 +143,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1144, 536);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.lblHeaderDesc);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.MainWindow);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductMaster";
+            this.Load += new System.EventHandler(this.ProductMaster_Load);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel MainWindow;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox btnClose;
-        private AddCategory addCategory1;
-        private MenuProducts menuProducts1;
-        private ListOfMenuProducts listOfMenuProducts1;
-        private ListofPurchaseProducts listofPurchaseProducts1;
         private System.Windows.Forms.Label label1;
-        private PurchaseProducts purchaseProducts1;
+        private System.Windows.Forms.Label lblHeaderDesc;
     }
 }

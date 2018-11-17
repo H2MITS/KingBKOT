@@ -1,6 +1,8 @@
-﻿using Cindy_Restaurant.Forms;
+﻿using Cindy_Restaurant;
+using Cindy_Restaurant.Forms;
 using KingBarbeque;
 using KingBarbeque.Forms;
+using KingBKOT.Form_View;
 using KingBKOT.Forms;
 using System;
 using System.Collections.Generic;

@@ -11,6 +11,8 @@ using Cindy_Restaurant.Classes;
 using Cindy_Restaurant.Forms;
 using Cindy_Restaurant.Form_View;
 using Cindy_Restaurant.Folder_Updates;
+using KingBKOT.Form_View;
+
 namespace Cindy_Restaurant
 {
     public partial class frmParent : Form
@@ -273,6 +275,12 @@ namespace Cindy_Restaurant
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmPurchaseType frm = new frmPurchaseType();
+            frm.ShowDialog(); 
         }
     }
 }

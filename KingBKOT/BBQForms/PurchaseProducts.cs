@@ -31,5 +31,16 @@ namespace KingBKOT.Forms
 
             this.keyboardProc = Process.Start(keyboardPath);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PurchaseProducts_Load(object sender, EventArgs e)
+        {
+            dateToday.Format = DateTimePickerFormat.Custom;
+            dateToday.CustomFormat = "dd-MM-yyyy";
+        }
     }
 }
