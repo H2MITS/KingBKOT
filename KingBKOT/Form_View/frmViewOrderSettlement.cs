@@ -385,8 +385,8 @@ namespace Cindy_Restaurant.Form_View
         private void frmViewOrderSettlement_Load(object sender, EventArgs e)
         {
            // button3.Enabled = false;
-            button4.Enabled = true;
-           // button49.Enabled = false;
+            //button4.Enabled = true;
+            //button49.Enabled = false;
             btnFood_Click(sender, e);//activate the food button when form load
             dataGridView1.Enabled = true;
             selectClass.selectProduct(dataGridView1);
@@ -422,7 +422,7 @@ namespace Cindy_Restaurant.Form_View
 
            // //wait a bit
             string askme = "Do you wanna print receipt ?";
-            DialogResult result = MessageBox.Show(askme, "Print Receipt - Cindy Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result.Equals(DialogResult.Yes))
             {
             PreviewReceipt();
@@ -439,7 +439,7 @@ namespace Cindy_Restaurant.Form_View
 
             //get sales id
 
-            rcs.textBox1.AppendText("\t\t" + "Cindy Restaurant" + Environment.NewLine);
+            rcs.textBox1.AppendText("\t\t" + "King Bar Beque Restaurant" + Environment.NewLine);
             rcs.textBox1.AppendText("\t\t=================================================" + Environment.NewLine);
 
             rcs.textBox1.AppendText("Receipt No #: " + lblGetReceipt.Text + "\t\t\tDate: " + daty + Environment.NewLine);
@@ -629,7 +629,7 @@ namespace Cindy_Restaurant.Form_View
             int StartY = 10;
             int offSet = 40;
 
-            grafic.DrawString("\tCINDY RESTAURANT", new Font("Courier New", 14,FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("\t KING BAR BEQUE RESTAURANT", new Font("Courier New", 14,FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
             grafic.DrawString("======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
@@ -727,7 +727,7 @@ namespace Cindy_Restaurant.Form_View
             int StartY = 10;
             int offSet = 40;
 
-            grafic.DrawString("\tCINDY RESTAURANT", new Font("Courier New", 14, FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("\t KING BAR BEQUE RESTAURANT", new Font("Courier New", 14, FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
             grafic.DrawString("======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);

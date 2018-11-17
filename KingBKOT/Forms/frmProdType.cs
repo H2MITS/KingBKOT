@@ -140,7 +140,7 @@ namespace Cindy_Restaurant.Forms
                 //meaning user already exist
                 if (count == 1)
                 {
-                    MessageBox.Show("Menu Subgroup Already Exist", "Help - Cindy", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Menu Subgroup Already Exist", "Help - King Bar Beque", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 else

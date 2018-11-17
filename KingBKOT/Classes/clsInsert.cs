@@ -312,7 +312,7 @@ namespace Cindy_Restaurant.Classes
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally
@@ -353,7 +353,7 @@ namespace Cindy_Restaurant.Classes
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally
@@ -376,13 +376,13 @@ namespace Cindy_Restaurant.Classes
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@name", electronicCurrency.Trim());
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("New Electronic Currency" + Environment.NewLine + "Successfully Added", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("New Electronic Currency" + Environment.NewLine + "Successfully Added", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally
@@ -417,13 +417,13 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@electronicType", electronicType.Trim());
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Payment successfully taken", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Payment successfully taken", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exceptionx - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exceptionx - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 
@@ -458,7 +458,7 @@ namespace Cindy_Restaurant.Classes
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally

@@ -136,7 +136,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(416, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "ENTER CREDENTIALS TO GAIN ACCESS - CINDY RESTAURANT\r\n";
+            this.label3.Text = "ENTER CREDENTIALS TO GAIN ACCESS - King Bar Beque Restaurant\r\n";
             // 
             // frmLogin
             // 

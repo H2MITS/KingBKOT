@@ -21,7 +21,7 @@ namespace Cindy_Restaurant.Forms
         private void frmSplash_Load(object sender, EventArgs e)
         {
             label3.Visible = false;
-            label2.Text = "Cindy Restaurant - Wisdom Freelancers";
+            label2.Text = "King Bar Beque Restaurant - H2M IT Solutions";
             label1.Text = "v 1.0.0.1";
             timer1.Start();
         }

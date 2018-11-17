@@ -33,7 +33,7 @@ namespace Cindy_Restaurant.Form_View
             }
             else
             {
-                MessageBox.Show("Please tick 'freeze item' to perform item freezing" + Environment.NewLine + "Also Assign a reason for freezing the product", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please tick 'freeze item' to perform item freezing" + Environment.NewLine + "Also Assign a reason for freezing the product", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
 
             }

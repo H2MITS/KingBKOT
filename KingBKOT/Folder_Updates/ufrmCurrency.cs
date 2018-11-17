@@ -205,7 +205,7 @@ namespace Cindy_Restaurant.Folder_Updates
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     finally
@@ -229,13 +229,13 @@ namespace Cindy_Restaurant.Folder_Updates
                        selectClass.cmd.Parameters.AddWithValue("@curID",txtID.Text);
 
                        selectClass.cmd.ExecuteNonQuery();
-                        MessageBox.Show("Currency successfully updated", "Update - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Currency successfully updated", "Update - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     finally

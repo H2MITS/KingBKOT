@@ -234,7 +234,7 @@ namespace Cindy_Restaurant.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.ToString(), "Error - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
            
@@ -268,7 +268,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@prodID", prodID);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Product has been updated successfully ", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Product has been updated successfully ", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -304,7 +304,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@prodID", prodID);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Product statues has been set", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Product statues has been set", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -332,15 +332,15 @@ namespace Cindy_Restaurant.Classes
                 SqlCommand cmd = new SqlCommand(dbPath, con);
 
                 //CREATE DIRECTORY IF NOT EXIST
-                if (!Directory.Exists(@"C:\dbCindyRestaurantFolder"))
+                if (!Directory.Exists(@"C:\dbKingBarbequeRestaurantFolder"))
                 {
-                    Directory.CreateDirectory(@"C:\dbCindyRestaurantFolder");
+                    Directory.CreateDirectory(@"C:\dbKingBarbequeRestaurantFolder");
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE cindyDB TO DISK = 'C:\\dbCindyRestaurantFolder\\cindyDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE KingBBQDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KingBBQDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbCindyRestaurantFolder\cindyDB", "Backup Database - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -348,16 +348,16 @@ namespace Cindy_Restaurant.Classes
                 else
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE cindyDB TO DISK = 'C:\\dbCindyRestaurantFolder\\cindyDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE KingBBQDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KingBBQDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbCindyRestaurantFolder\cindyDB", "Backup Database - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQDBDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + Environment.NewLine + "Please contact the developer", " Database Backup Error - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message + Environment.NewLine + "Please contact the developer", " Database Backup Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
 

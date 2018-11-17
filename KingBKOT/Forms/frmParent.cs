@@ -49,7 +49,7 @@ namespace Cindy_Restaurant
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult reason = MessageBox.Show("Are sure you wanna close shift", "Close Shift- Cindy Restaurant", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult reason = MessageBox.Show("Are sure you wanna close shift", "Close Shift- King Bar Beque Restaurant", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (reason.Equals(DialogResult.OK)) {
                 getCashierReportText();
                 DateTimePicker endDay = new DateTimePicker();
@@ -265,7 +265,14 @@ namespace Cindy_Restaurant
             vTaxSales.ShowDialog();
         }
 
-
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

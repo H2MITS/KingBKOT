@@ -100,7 +100,7 @@ namespace Cindy_Restaurant.Form_View
          {
              if (getRep.Text == "")
              {
-                 MessageBox.Show("Please click to select Receipt", "Help - Cindy...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                 MessageBox.Show("Please click to select Receipt", "Help - KINGBBQ...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                  return;
              }
              selectClass.selectOrderDetailsUsingKOT(getRep.Text, fvos.listView1);

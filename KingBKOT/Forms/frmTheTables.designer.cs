@@ -338,7 +338,7 @@
             this.MaximizeBox = false;
             this.Name = "frmTheTables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CHOOSE A TABLE FOR YOUR ORDERS - Cindy Restaurant";
+            this.Text = "CHOOSE A TABLE FOR YOUR ORDERS - King Bar Beque Restaurant";
             this.Load += new System.EventHandler(this.frmTheTables_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

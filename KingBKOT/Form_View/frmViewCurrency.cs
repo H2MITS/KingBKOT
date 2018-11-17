@@ -65,7 +65,7 @@ namespace Cindy_Restaurant.Form_View
             catch (Exception)
             {
                 
-               MessageBox.Show("Please click to select currency", "Help - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               MessageBox.Show("Please click to select currency", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
         }

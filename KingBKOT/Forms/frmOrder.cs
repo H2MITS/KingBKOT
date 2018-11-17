@@ -443,7 +443,7 @@ namespace Cindy_Restaurant.Forms
             int StartY = 10;
             int offSet = 40;
 
-            grafic.DrawString("\tCindy Restaurant", new Font("Courer New", 14), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("\tKingBarBeque Restaurant", new Font("Courer New", 14), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
             grafic.DrawString("\t\t===============================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
@@ -659,7 +659,7 @@ namespace Cindy_Restaurant.Forms
 
                 if (reason.Trim().Length > 0)
                 {
-                    MessageBox.Show("The selected Item has been freeze" + Environment.NewLine + "Reason: " + reason,"Bring To Notice - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The selected Item has been freeze" + Environment.NewLine + "Reason: " + reason, "Bring To Notice - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
 
@@ -751,13 +751,13 @@ namespace Cindy_Restaurant.Forms
                         }
                         else
                         {
-                            MessageBox.Show("Please click to select item", "Help - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Please click to select item", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
 
                         }
             }
             catch(Exception) {
-                MessageBox.Show("Please click to select item", "Help - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please click to select item", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
         }
@@ -1001,7 +1001,7 @@ namespace Cindy_Restaurant.Forms
             catch (Exception)
             {
 
-                MessageBox.Show("Error: " + "Please click to compliment your order", "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + "Please click to compliment your order", "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return;
             }

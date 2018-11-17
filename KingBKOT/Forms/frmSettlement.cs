@@ -151,7 +151,7 @@ namespace Cindy_Restaurant.Forms
             deleteClass = new clsdelete();
             if (voidID == "")
             {
-                MessageBox.Show("Please click to select a row to void", "Help - Cindy...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please click to select a row to void", "Help - King Bar Beque...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -328,7 +328,7 @@ namespace Cindy_Restaurant.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.ToString(), "Error - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 

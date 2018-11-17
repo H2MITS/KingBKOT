@@ -18,7 +18,7 @@ namespace Cindy_Restaurant.Classes
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Employee removed successfully !", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Employee removed successfully !", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace Cindy_Restaurant.Classes
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("payment voided successfully !", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("payment voided successfully !", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)

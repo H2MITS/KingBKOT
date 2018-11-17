@@ -68,7 +68,7 @@ namespace Cindy_Restaurant.Form_View
                     id = "";
                 }
                 else { 
-                    MessageBox.Show("Please click item to update ", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please click item to update ", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 
                 }
@@ -76,7 +76,7 @@ namespace Cindy_Restaurant.Form_View
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
@@ -108,7 +108,7 @@ namespace Cindy_Restaurant.Form_View
                 }
                 else
                 {
-                    MessageBox.Show("Please click item to update ", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please click item to update ", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                    
                     return;
 
@@ -144,7 +144,7 @@ namespace Cindy_Restaurant.Form_View
                 }
                 else
                 {
-                    MessageBox.Show("Please click item to update ", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please click item to update ", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
 

@@ -10,9 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestProject.Forms;
 using System.Data.SqlClient;
-
-
-
+using Cindy_Restaurant;
 
 namespace KingBarbeque.Forms
 {
@@ -68,7 +66,7 @@ namespace KingBarbeque.Forms
                 if (count == 1)
                 {
                     string privel = getPrivilege();
-                    Form_Dashboard frmdashboard = new Form_Dashboard();
+                    frmParent frmdashboard = new frmParent();
                     //username,login date,login time, logout date, logout time
 
                     insertClass.insertToLogHistory(cboUsername.SelectedItem.ToString(), day, day, day, day);

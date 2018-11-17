@@ -205,7 +205,7 @@ namespace Cindy_Restaurant.Classes
                 dgv.DataSource = dsd;
                 dgv.DataMember = sql;
 
-                MessageBox.Show("Record(s) " + dgv.RowCount.ToString() + " Found", "Search Result - Cindy...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Record(s) " + dgv.RowCount.ToString() + " Found", "Search Result - KINGBBQ...", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 

@@ -94,7 +94,7 @@
             this.MaximizeBox = false;
             this.Name = "frmViewCurrency";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View Currency - Cindy Restaurant";
+            this.Text = "View Currency - King Bar Beque Restaurant";
             this.Load += new System.EventHandler(this.frmViewCurrency_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

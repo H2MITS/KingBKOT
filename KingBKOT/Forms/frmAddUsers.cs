@@ -99,7 +99,7 @@ namespace Cindy_Restaurant.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Password mismatch", "Throwing Exception - Cindy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Password mismatch", "Throwing Exception - King Bar Beque", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 

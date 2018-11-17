@@ -21,7 +21,7 @@ namespace KingBKOT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSettlement());
+            Application.Run(new SignIn());
         }
     }
 }

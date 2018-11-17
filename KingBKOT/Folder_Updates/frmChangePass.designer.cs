@@ -193,7 +193,7 @@
             this.MaximizeBox = false;
             this.Name = "frmChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Change Login Password - Cindy...";
+            this.Text = "Change Login Password - KINGBBQ...";
             this.Load += new System.EventHandler(this.frmChangePass_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -33,7 +33,7 @@ namespace Cindy_Restaurant
         {
             Logins(cboUsername.SelectedItem.ToString(), txtPass.Text);
             notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(5000, "Happy Birth day", "Cindy App wishes you a happy birthday", ToolTipIcon.Info);
+            notifyIcon1.ShowBalloonTip(5000, "Happy Birth day", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
             
         }
 
@@ -102,7 +102,7 @@ namespace Cindy_Restaurant
 
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password", "Error - Cindy Restaurant Logins", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Username or Password", "Error - King Bar Beque Restaurant Logins", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
 

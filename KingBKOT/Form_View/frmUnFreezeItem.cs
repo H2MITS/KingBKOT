@@ -78,7 +78,7 @@ namespace Cindy_Restaurant.Form_View
             }
             else 
             {
-                MessageBox.Show("Please tick 'Unfreeze item' to perform item unfreezing", "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please tick 'Unfreeze item' to perform item unfreezing", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
 
             }

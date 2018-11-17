@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "frmReceiptPreview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Receipt Preview - Cindy...";
+            this.Text = "Receipt Preview - King Bar Beque...";
             this.Load += new System.EventHandler(this.frmReceiptPreview_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

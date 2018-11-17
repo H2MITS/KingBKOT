@@ -82,7 +82,7 @@ namespace Cindy_Restaurant.Forms
                 //meaning user already exist
                 if (count == 1)
                 {
-                    MessageBox.Show("Currency Already Exist", "Save Data - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Currency Already Exist", "Save Data - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 else
@@ -99,7 +99,7 @@ namespace Cindy_Restaurant.Forms
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 

@@ -96,7 +96,7 @@
             this.toolStripStatusLabel7});
             this.statusStrip1.Location = new System.Drawing.Point(0, 619);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(931, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1042, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -106,6 +106,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(80, 17);
             this.toolStripStatusLabel1.Text = "Username";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // statGetUser
             // 
@@ -154,8 +155,8 @@
             // 
             this.toolStripStatusLabel7.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(97, 17);
-            this.toolStripStatusLabel7.Text = "Cindy Restaurant";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(146, 17);
+            this.toolStripStatusLabel7.Text = "King Bar Beque Restaurant";
             // 
             // groupBox1
             // 
@@ -163,7 +164,7 @@
             this.groupBox1.Controls.Add(this.btnNocharge);
             this.groupBox1.Controls.Add(this.btnTakeAway);
             this.groupBox1.Controls.Add(this.btnDineIn);
-            this.groupBox1.Location = new System.Drawing.Point(54, 57);
+            this.groupBox1.Location = new System.Drawing.Point(111, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(811, 134);
             this.groupBox1.TabIndex = 1;
@@ -174,18 +175,18 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Olive;
-            this.label4.Location = new System.Drawing.Point(318, 16);
+            this.label4.Location = new System.Drawing.Point(331, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "Receipt Type";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnNocharge
             // 
-            this.btnNocharge.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnNocharge.Image = global::Cindy_Restaurant.Properties.Resources.Fruits_Strawberries_icon2;
+            this.btnNocharge.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnNocharge.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNocharge.Location = new System.Drawing.Point(620, 47);
+            this.btnNocharge.Location = new System.Drawing.Point(659, 38);
             this.btnNocharge.Name = "btnNocharge";
             this.btnNocharge.Size = new System.Drawing.Size(132, 77);
             this.btnNocharge.TabIndex = 0;
@@ -195,10 +196,9 @@
             // 
             // btnTakeAway
             // 
-            this.btnTakeAway.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // this.btnTakeAway.Image = global::Cindy_Restaurant.Properties.Resources.gift_icon;
+            this.btnTakeAway.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnTakeAway.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTakeAway.Location = new System.Drawing.Point(323, 47);
+            this.btnTakeAway.Location = new System.Drawing.Point(348, 38);
             this.btnTakeAway.Name = "btnTakeAway";
             this.btnTakeAway.Size = new System.Drawing.Size(132, 77);
             this.btnTakeAway.TabIndex = 0;
@@ -208,10 +208,9 @@
             // 
             // btnDineIn
             // 
-            this.btnDineIn.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnDineIn.Image = global::Cindy_Restaurant.Properties.Resources.Coffee_icon2;
+            this.btnDineIn.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnDineIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDineIn.Location = new System.Drawing.Point(47, 47);
+            this.btnDineIn.Location = new System.Drawing.Point(21, 38);
             this.btnDineIn.Name = "btnDineIn";
             this.btnDineIn.Size = new System.Drawing.Size(132, 77);
             this.btnDineIn.TabIndex = 0;
@@ -222,8 +221,7 @@
             // btnRecall
             // 
             this.btnRecall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnRecall.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnRecall.Image = global::Cindy_Restaurant.Properties.Resources.payment_icon1;
+            this.btnRecall.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnRecall.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRecall.Location = new System.Drawing.Point(149, 126);
             this.btnRecall.Name = "btnRecall";
@@ -254,7 +252,7 @@
             this.groupBox2.Controls.Add(this.btnChangePass);
             this.groupBox2.Controls.Add(this.btnRegEmployee);
             this.groupBox2.Controls.Add(this.btnAddUsers);
-            this.groupBox2.Location = new System.Drawing.Point(54, 190);
+            this.groupBox2.Location = new System.Drawing.Point(111, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(811, 296);
             this.groupBox2.TabIndex = 1;
@@ -262,7 +260,7 @@
             // 
             // btnVorder
             // 
-            this.btnVorder.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVorder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVorder.Location = new System.Drawing.Point(150, 209);
             this.btnVorder.Name = "btnVorder";
             this.btnVorder.Size = new System.Drawing.Size(126, 77);
@@ -273,7 +271,7 @@
             // 
             // btnVUsers
             // 
-            this.btnVUsers.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVUsers.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVUsers.Location = new System.Drawing.Point(665, 126);
             this.btnVUsers.Name = "btnVUsers";
             this.btnVUsers.Size = new System.Drawing.Size(126, 77);
@@ -284,7 +282,7 @@
             // 
             // btnVtaxes
             // 
-            this.btnVtaxes.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVtaxes.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVtaxes.Location = new System.Drawing.Point(535, 209);
             this.btnVtaxes.Name = "btnVtaxes";
             this.btnVtaxes.Size = new System.Drawing.Size(126, 77);
@@ -295,7 +293,7 @@
             // 
             // btnVProdTypes
             // 
-            this.btnVProdTypes.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVProdTypes.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVProdTypes.Location = new System.Drawing.Point(406, 209);
             this.btnVProdTypes.Name = "btnVProdTypes";
             this.btnVProdTypes.Size = new System.Drawing.Size(126, 77);
@@ -306,7 +304,7 @@
             // 
             // btnVProducts
             // 
-            this.btnVProducts.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVProducts.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVProducts.Location = new System.Drawing.Point(278, 209);
             this.btnVProducts.Name = "btnVProducts";
             this.btnVProducts.Size = new System.Drawing.Size(126, 77);
@@ -317,7 +315,7 @@
             // 
             // btnVLogins
             // 
-            this.btnVLogins.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVLogins.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVLogins.Location = new System.Drawing.Point(21, 209);
             this.btnVLogins.Name = "btnVLogins";
             this.btnVLogins.Size = new System.Drawing.Size(126, 77);
@@ -328,7 +326,7 @@
             // 
             // btnVsalesRports
             // 
-            this.btnVsalesRports.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVsalesRports.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVsalesRports.Location = new System.Drawing.Point(664, 209);
             this.btnVsalesRports.Name = "btnVsalesRports";
             this.btnVsalesRports.Size = new System.Drawing.Size(126, 77);
@@ -339,8 +337,7 @@
             // 
             // btnVEmployee
             // 
-            this.btnVEmployee.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnVEmployee.Image = global::Cindy_Restaurant.Properties.Resources.Groups_Meeting_Dark_icon;
+            this.btnVEmployee.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVEmployee.Location = new System.Drawing.Point(535, 126);
             this.btnVEmployee.Name = "btnVEmployee";
@@ -352,7 +349,7 @@
             // 
             // btnAddPOSCurrency
             // 
-            this.btnAddPOSCurrency.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPOSCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnAddPOSCurrency.Location = new System.Drawing.Point(406, 46);
             this.btnAddPOSCurrency.Name = "btnAddPOSCurrency";
             this.btnAddPOSCurrency.Size = new System.Drawing.Size(126, 77);
@@ -363,7 +360,7 @@
             // 
             // btnVPOS
             // 
-            this.btnVPOS.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVPOS.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVPOS.Location = new System.Drawing.Point(406, 126);
             this.btnVPOS.Name = "btnVPOS";
             this.btnVPOS.Size = new System.Drawing.Size(126, 77);
@@ -374,7 +371,7 @@
             // 
             // btnVCurrency
             // 
-            this.btnVCurrency.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnVCurrency.Location = new System.Drawing.Point(278, 126);
             this.btnVCurrency.Name = "btnVCurrency";
             this.btnVCurrency.Size = new System.Drawing.Size(126, 77);
@@ -385,8 +382,7 @@
             // 
             // btnAddMenus
             // 
-            this.btnAddMenus.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          //  this.btnAddMenus.Image = global::Cindy_Restaurant.Properties.Resources.contacts_icon;
+            this.btnAddMenus.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnAddMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddMenus.Location = new System.Drawing.Point(535, 47);
             this.btnAddMenus.Name = "btnAddMenus";
@@ -398,7 +394,7 @@
             // 
             // btnAddMenuGroup
             // 
-            this.btnAddMenuGroup.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMenuGroup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnAddMenuGroup.Location = new System.Drawing.Point(664, 46);
             this.btnAddMenuGroup.Name = "btnAddMenuGroup";
             this.btnAddMenuGroup.Size = new System.Drawing.Size(126, 77);
@@ -412,7 +408,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Olive;
-            this.label2.Location = new System.Drawing.Point(257, 16);
+            this.label2.Location = new System.Drawing.Point(264, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 28);
             this.label2.TabIndex = 1;
@@ -420,8 +416,7 @@
             // 
             // btnCuurency
             // 
-            this.btnCuurency.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          //  this.btnCuurency.Image = global::Cindy_Restaurant.Properties.Resources.conversion_of_currency_icon;
+            this.btnCuurency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCuurency.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCuurency.Location = new System.Drawing.Point(278, 46);
             this.btnCuurency.Name = "btnCuurency";
@@ -433,8 +428,7 @@
             // 
             // btnChangePass
             // 
-            this.btnChangePass.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.btnChangePass.Image = global::Cindy_Restaurant.Properties.Resources.Security_icon;
+            this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnChangePass.Location = new System.Drawing.Point(21, 126);
             this.btnChangePass.Name = "btnChangePass";
@@ -446,8 +440,7 @@
             // 
             // btnRegEmployee
             // 
-            this.btnRegEmployee.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnRegEmployee.Image = global::Cindy_Restaurant.Properties.Resources.Office_Customer_Male_Light_icon;
+            this.btnRegEmployee.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnRegEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRegEmployee.Location = new System.Drawing.Point(21, 46);
             this.btnRegEmployee.Name = "btnRegEmployee";
@@ -459,8 +452,7 @@
             // 
             // btnAddUsers
             // 
-            this.btnAddUsers.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.btnAddUsers.Image = global::Cindy_Restaurant.Properties.Resources.Usergroup;
+            this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnAddUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddUsers.Location = new System.Drawing.Point(149, 46);
             this.btnAddUsers.Name = "btnAddUsers";
@@ -479,7 +471,7 @@
             this.groupBox3.Controls.Add(this.button11);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.btnBakup);
-            this.groupBox3.Location = new System.Drawing.Point(54, 485);
+            this.groupBox3.Location = new System.Drawing.Point(111, 484);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(811, 131);
             this.groupBox3.TabIndex = 1;
@@ -487,7 +479,7 @@
             // 
             // button10
             // 
-            this.button10.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button10.Location = new System.Drawing.Point(18, 47);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(126, 77);
@@ -498,8 +490,8 @@
             // 
             // button8
             // 
-            this.button8.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(150, 47);
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button8.Location = new System.Drawing.Point(148, 47);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(126, 77);
             this.button8.TabIndex = 4;
@@ -512,7 +504,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Olive;
-            this.label3.Location = new System.Drawing.Point(257, 16);
+            this.label3.Location = new System.Drawing.Point(275, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(222, 28);
             this.label3.TabIndex = 1;
@@ -520,8 +512,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          //  this.btnCancel.Image = global::Cindy_Restaurant.Properties.Resources.cancel;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancel.Location = new System.Drawing.Point(664, 47);
             this.btnCancel.Name = "btnCancel";
@@ -533,7 +524,7 @@
             // 
             // button11
             // 
-            this.button11.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button11.Location = new System.Drawing.Point(406, 47);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(126, 77);
@@ -544,7 +535,7 @@
             // 
             // button9
             // 
-            this.button9.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button9.Location = new System.Drawing.Point(278, 47);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(126, 77);
@@ -555,8 +546,7 @@
             // 
             // btnBakup
             // 
-            this.btnBakup.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           // this.btnBakup.Image = global::Cindy_Restaurant.Properties.Resources.data_management_icon__2_;
+            this.btnBakup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnBakup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBakup.Location = new System.Drawing.Point(535, 47);
             this.btnBakup.Name = "btnBakup";
@@ -575,18 +565,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Olive;
-            this.label1.Location = new System.Drawing.Point(155, 19);
+            this.label1.Location = new System.Drawing.Point(117, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(625, 37);
+            this.label1.Size = new System.Drawing.Size(777, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CINDY RESTAURANT MAIN OPERATIONS";
+            this.label1.Text = "King Bar Beque Restaurant Main Operation";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -595,8 +585,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(931, 641);
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(1042, 641);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
