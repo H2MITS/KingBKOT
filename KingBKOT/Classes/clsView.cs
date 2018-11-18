@@ -248,6 +248,74 @@ namespace Cindy_Restaurant.Classes
             }
         }
 
+
+        //searcsh by menu type
+        public void SelectSubMenuByTextDisplay(Button ButtonItemDisplay, DataGridView dgv)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+
+            try
+            {
+
+                con = new SqlConnection(dbPath);
+                con.Open();
+
+                string sql = "select proType from tblProducts where prodTypeName ='" + ButtonItemDisplay.Text.Trim() + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                DataSet dsd = new DataSet();
+                DataTable data = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+
+
+                adapter.Fill(dsd, sql);
+                dgv.DataSource = dsd;
+                dgv.DataMember = sql;
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        //searcsh by menu type By string
+        public void SelectMenuByTextDisplay(string ButtonItemDisplay, DataGridView dgv)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+
+            try
+            {
+
+                con = new SqlConnection(dbPath);
+                con.Open();
+
+                string sql = "select proName, proPrice from tblProducts where proType ='" + ButtonItemDisplay.Trim() + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                DataSet dsd = new DataSet();
+                DataTable data = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+
+
+                adapter.Fill(dsd, sql);
+                dgv.DataSource = dsd;
+                dgv.DataMember = sql;
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         //searcsh by menu type
         public void SelectMenuByTextDisplay(Button ButtonItemDisplay, DataGridView dgv)
         {
@@ -266,15 +334,12 @@ namespace Cindy_Restaurant.Classes
                 DataTable data = new DataTable();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-
-
+                 
 
                 adapter.Fill(dsd, sql);
                 dgv.DataSource = dsd;
                 dgv.DataMember = sql;
-
-
-
+                 
 
             }
 
@@ -412,6 +477,37 @@ namespace Cindy_Restaurant.Classes
 
 
         }
+
+        public void viewOrderInfoByDates(DataGridView dgv,string fDate, string tDate)
+        {
+
+            try
+            {
+
+                con = new SqlConnection(dbPath);
+                con.Open();
+
+                string sql = "select KOT as [Receipt No], orderType as [Order Type],tableNo as [Table No],ordDate as [Order Date],ordTime as [Order Time],fname + ' ' + lname as [Guest Name],adultNo as Adult,childrenNo as Children,empID as Servers  from tblOrderInfo where ordDate between '"+ fDate + "' and '"+tDate+"'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                DataSet dsd = new DataSet();
+                DataTable data = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                adapter.Fill(dsd, sql);
+                dgv.DataSource = dsd;
+                dgv.DataMember = sql;
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+
 
         public void viewProductForModification(string prodName, DataGridView dgv)
         {

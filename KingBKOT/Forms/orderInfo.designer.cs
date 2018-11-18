@@ -51,6 +51,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.cmbWaiter = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,18 +63,20 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(42, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Waiter";
+            this.label1.Text = "Waiter / User";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtWaiterName
             // 
             this.txtWaiterName.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtWaiterName.Location = new System.Drawing.Point(183, 182);
+            this.txtWaiterName.Location = new System.Drawing.Point(20, 44);
             this.txtWaiterName.Name = "txtWaiterName";
             this.txtWaiterName.ReadOnly = true;
-            this.txtWaiterName.Size = new System.Drawing.Size(325, 25);
+            this.txtWaiterName.Size = new System.Drawing.Size(146, 25);
             this.txtWaiterName.TabIndex = 3;
+            this.txtWaiterName.Visible = false;
             // 
             // label2
             // 
@@ -99,7 +103,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(44, 226);
+            this.label3.Location = new System.Drawing.Point(44, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 3;
@@ -110,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(44, 268);
+            this.label4.Location = new System.Drawing.Point(44, 294);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 3;
@@ -122,7 +126,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(44, 309);
+            this.label5.Location = new System.Drawing.Point(44, 335);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 20);
             this.label5.TabIndex = 3;
@@ -133,7 +137,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(42, 352);
+            this.label6.Location = new System.Drawing.Point(42, 378);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 3;
@@ -142,7 +146,7 @@
             // txtFirst
             // 
             this.txtFirst.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtFirst.Location = new System.Drawing.Point(183, 226);
+            this.txtFirst.Location = new System.Drawing.Point(183, 252);
             this.txtFirst.MaxLength = 25;
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(325, 25);
@@ -151,7 +155,7 @@
             // txtLast
             // 
             this.txtLast.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtLast.Location = new System.Drawing.Point(183, 268);
+            this.txtLast.Location = new System.Drawing.Point(183, 294);
             this.txtLast.MaxLength = 25;
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(325, 25);
@@ -160,7 +164,7 @@
             // txtAdultNo
             // 
             this.txtAdultNo.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtAdultNo.Location = new System.Drawing.Point(183, 309);
+            this.txtAdultNo.Location = new System.Drawing.Point(183, 335);
             this.txtAdultNo.MaxLength = 7;
             this.txtAdultNo.Name = "txtAdultNo";
             this.txtAdultNo.Size = new System.Drawing.Size(325, 25);
@@ -171,7 +175,7 @@
             // txtChild
             // 
             this.txtChild.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtChild.Location = new System.Drawing.Point(183, 349);
+            this.txtChild.Location = new System.Drawing.Point(183, 375);
             this.txtChild.MaxLength = 7;
             this.txtChild.Name = "txtChild";
             this.txtChild.Size = new System.Drawing.Size(325, 25);
@@ -186,7 +190,7 @@
             this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinish.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinish.Location = new System.Drawing.Point(184, 445);
+            this.btnFinish.Location = new System.Drawing.Point(184, 471);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(104, 45);
             this.btnFinish.TabIndex = 9;
@@ -201,7 +205,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(404, 445);
+            this.btnCancel.Location = new System.Drawing.Point(404, 471);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 45);
             this.btnCancel.TabIndex = 11;
@@ -214,7 +218,7 @@
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 390);
+            this.dateTimePicker1.Location = new System.Drawing.Point(183, 416);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(325, 25);
             this.dateTimePicker1.TabIndex = 8;
@@ -224,7 +228,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(44, 390);
+            this.label7.Location = new System.Drawing.Point(44, 416);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 3;
@@ -257,7 +261,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(294, 445);
+            this.btnClear.Location = new System.Drawing.Point(294, 471);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 45);
             this.btnClear.TabIndex = 10;
@@ -295,12 +299,35 @@
             this.label9.TabIndex = 30;
             this.label9.Text = "Order Information";
             // 
+            // cmbWaiter
+            // 
+            this.cmbWaiter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWaiter.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWaiter.FormattingEnabled = true;
+            this.cmbWaiter.Location = new System.Drawing.Point(183, 183);
+            this.cmbWaiter.Name = "cmbWaiter";
+            this.cmbWaiter.Size = new System.Drawing.Size(325, 25);
+            this.cmbWaiter.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(184, 211);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(335, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Note: Select Logged User for Fast Cash/ Take Away";
+            this.label10.Click += new System.EventHandler(this.label1_Click);
+            // 
             // orderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(556, 526);
+            this.Controls.Add(this.cmbWaiter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnClear);
@@ -321,6 +348,7 @@
             this.Controls.Add(this.txtTableNo);
             this.Controls.Add(this.txtWaiterName);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -359,5 +387,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.ComboBox cmbWaiter;
     }
 }

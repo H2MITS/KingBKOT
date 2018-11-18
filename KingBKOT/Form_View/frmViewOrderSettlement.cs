@@ -11,6 +11,9 @@ using Cindy_Restaurant.Classes;
 using Cindy_Restaurant.Form_View;
 using Cindy_Restaurant.Forms;
 using System.Drawing.Printing;
+using System.Data.SqlClient;
+using KingBKOT.ViewModel;
+
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmViewOrderSettlement : Form
@@ -26,6 +29,8 @@ namespace Cindy_Restaurant.Form_View
         public string paymentType;
         string getEmpID;
         string itemName;
+
+        public List<billAndSettlementVM> recNoToPassList = new List<billAndSettlementVM>();
         //these variable gets the date and time for the select transaction from the recall form
         //date and time will be used in printing
         public string thisDate, thisTime;
@@ -81,83 +86,86 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnFood_Click(object sender, EventArgs e)
         {
-            Change1.Text = "Soup";
-            Change2.Text = "Salad";
-            Change3.Text = "Appetizer";
-            Change4.Text = "Main";
-            Change5.Text = "Pasta";
-            Change6.Text = "Dessert";
+            //Change1.Text = "Soup";
+            //Change2.Text = "Salad";
+            //Change3.Text = "Appetizer";
+            //Change4.Text = "Main";
+            //Change5.Text = "Pasta";
+            //Change6.Text = "Dessert";
 
-            Change7.Text = "Sandwich";
-            Change8.Text = "Hot hors doeuvres";
-            Change9.Text = "Traditional Kitchen";
-            Change0.Visible = false;
+            //Change7.Text = "Sandwich";
+            //Change8.Text = "Hot hors doeuvres";
+            //Change9.Text = "Traditional Kitchen";
+            //Change0.Visible = false;
+            viewClass.SelectSubMenuByTextDisplay(btnFood, dataGridView3);
         }
 
         private void btnDrink_Click(object sender, EventArgs e)
         {
-            Change1.Text = "Winery";
-            Change2.Text = "Soft Drink";
-            Change3.Text = "Beer";
-            Change4.Text = "Water";
-            Change5.Text = "Juice";
-            Change6.Text = "Whisky";
-            Change7.Text = "Brandy";
-            Change8.Text = "Cocktail";
+            //Change1.Text = "Winery";
+            //Change2.Text = "Soft Drink";
+            //Change3.Text = "Beer";
+            //Change4.Text = "Water";
+            //Change5.Text = "Juice";
+            //Change6.Text = "Whisky";
+            //Change7.Text = "Brandy";
+            //Change8.Text = "Cocktail";
 
-            Change9.Text = "Liquer";
-            Change0.Visible = true;
-            Change0.Text = "Cognac";
+            //Change9.Text = "Liquer";
+            //Change0.Visible = true;
+            //Change0.Text = "Cognac";
+
+            viewClass.SelectSubMenuByTextDisplay(btnDrink, dataGridView3);
         }
 
         private void Change1_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
         }
 
         private void Change2_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change2, dataGridView1);
+            //viewClass.SelectMenuByTextDisplay(Change2, dataGridView1);
         }
 
         private void Change3_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
         }
 
         private void Change4_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
         }
 
         private void Change5_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
         }
 
         private void Change6_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
         }
 
         private void Change7_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
         }
 
         private void Change8_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change9_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change0_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
         }
 
         //private void btnA_Click(object sender, EventArgs e)
@@ -377,14 +385,19 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnCashout_Click(object sender, EventArgs e)
         {
-           
-                printBill();
+          
          }
 
         string taxPercsent, vatPercsent;
+
+       
         private void frmViewOrderSettlement_Load(object sender, EventArgs e)
         {
-           // button3.Enabled = false;
+           
+
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView3.RowTemplate.Height = 40;
+            // button3.Enabled = false;
             //button4.Enabled = true;
             //button49.Enabled = false;
             btnFood_Click(sender, e);//activate the food button when form load
@@ -412,23 +425,27 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnSettlement_Click(object sender, EventArgs e)
         {
-            frmSettlement setl = new frmSettlement();
-            setl.getCashierName = this.lblwaiterName.Text;
-            setl.txtReceiptNum.Text = this.lblGetReceipt.Text;
-            setl.KOTnum = this.lblGetReceipt.Text;
-            setl.txtCustOwes.Text = this.fvosBillofOder;
-            // this.Hide();
-            setl.ShowDialog();
+           
+      
+                frmSettlement setl = new frmSettlement();
+                setl.getCashierName = this.lblwaiterName.Text;
+                setl.txtReceiptNum.Text = this.lblGetReceipt.Text;
+                setl.KOTnum = this.lblGetReceipt.Text;
+                setl.txtCustOwes.Text = this.fvosBillofOder;
+                setl.recNoList = this.recNoToPassList;
+                // this.Hide();
+                setl.ShowDialog();
 
-           // //wait a bit
-            string askme = "Do you wanna print receipt ?";
-            DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result.Equals(DialogResult.Yes))
-            {
-            PreviewReceipt();
-            printReceipt();
-            }
-            this.Close();
+                // //wait a bit
+                string askme = "Do you wanna print receipt ?";
+                DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result.Equals(DialogResult.Yes))
+                {
+                    PreviewReceipt();
+                    printReceipt();
+                }
+                this.Close();
+            
         }
 
         //Generate Receipt Preview
@@ -507,10 +524,10 @@ namespace Cindy_Restaurant.Form_View
                 rcs.textBox1.AppendText("Description" + "\t\tTaxable" + "\t\tTax" + Environment.NewLine);
 
                 //set subtotal and VAT
-                rcs.textBox1.AppendText("VAT" + "\t\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("CGST (2.5%)" + "\t\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
 
                 //set subtotal and TAX
-                rcs.textBox1.AppendText("Tourism Levy" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("SGST (2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
 
                 rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
 
@@ -533,7 +550,7 @@ namespace Cindy_Restaurant.Form_View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -617,6 +634,124 @@ namespace Cindy_Restaurant.Form_View
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            listView1.Clear();
+            this.Close();
+        }
+
+        private void btnExtra_Click(object sender, EventArgs e)
+        {
+            viewClass.SelectSubMenuByTextDisplay(btnExtra, dataGridView3);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            selectClass.searcshSubMenu(textBox3.Text.Trim(), dataGridView3);
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
+
+            string proNam = row.Cells[0].Value.ToString();
+
+            viewClass.SelectMenuByTextDisplay(proNam, dataGridView1);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+            string proNam = row.Cells[0].Value.ToString();
+            string reason = "";
+
+            //CEHECKING STATUES
+            try
+            {
+
+                string sql = "select Reason from tblProducts where proName='" + proNam + "'";
+                SqlConnection con = new SqlConnection(selectClass.dbPath);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    reason = reader["Reason"].ToString();
+
+                }
+
+                if (reason.Trim().Length > 0)
+                {
+                    MessageBox.Show("The selected Item has been freeze" + Environment.NewLine + "Reason: " + reason, "Bring To Notice - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+
+                }
+                else
+                {
+                    //foreach (var item in listView1.Items)
+                    //{
+                    //    MessageBox.Show(item)
+                    //}
+
+                    ListViewItem listVItem = new ListViewItem();
+                    listVItem.SubItems.Add("1");
+                    listVItem.SubItems.Add(row.Cells[0].Value.ToString());
+                    listVItem.SubItems.Add(row.Cells[1].Value.ToString());
+
+                    listView1.Items.Add(listVItem);
+
+
+                    for (int col = 0; col <= listView1.Items.Count - 1; col++)
+                    {
+
+                        selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
+                        lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
+                        lblVat.Text = selectClass.tax2_Amt.ToString();
+                        lblSubTotal.Text = selectClass.netPrice.ToString();
+                        fvosBillofOder = lblTotalAmt.Text = subtotal().ToString();
+
+                    }
+
+                }
+             
+            }
+
+            catch (Exception ex)
+            {
+                //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void lblGetReceipt_Click(object sender, EventArgs e)
         {
 
         }

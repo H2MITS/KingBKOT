@@ -12,11 +12,15 @@ using Cindy_Restaurant.Forms;
 using Cindy_Restaurant.Form_View;
 using Cindy_Restaurant.Folder_Updates;
 using KingBKOT.Form_View;
+using KingBKOT.Data;
+
 
 namespace Cindy_Restaurant
 {
     public partial class frmParent : Form
     {
+        KBBQEntities _entities;
+
         public frmParent()
         {
             InitializeComponent();
@@ -202,7 +206,7 @@ namespace Cindy_Restaurant
         }
 
         //cashier information
-
+         
         private void getCashierReportText()
         {
             selectClass.selectShiftNumberAndTimeFromLoginHistory(this.statGetUser.Text);
@@ -221,17 +225,17 @@ namespace Cindy_Restaurant
             repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
             repCashier.textBox1.AppendText("\tTOTAL PAYMENT RECIEVED" + Environment.NewLine);
             repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "CASH : " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + selectClass.cashValue + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "POS : " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + selectClass.POSvalue + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText("\tADDING UP CASH AND POS " + Environment.NewLine);
+            repCashier.textBox1.AppendText(Environment.NewLine + "CASH : " +  selectClass.cashValue + Environment.NewLine);
+             repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
+            repCashier.textBox1.AppendText("\tADDING UP CASH " + Environment.NewLine);
             repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
 
             repCashier.textBox1.AppendText(Environment.NewLine + "TOTAL : " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString())  + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
             repCashier.textBox1.AppendText(Environment.NewLine + "CLOSING DAY SALES AT :  " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
             repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
             repCashier.textBox1.AppendText(Environment.NewLine + "Thank you for a stupendous work");
-           
+            repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
+
             repCashier.ShowDialog();
 
         
@@ -281,6 +285,32 @@ namespace Cindy_Restaurant
         {
             frmPurchaseType frm = new frmPurchaseType();
             frm.ShowDialog(); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _entities = new KBBQEntities();
+
+            orderInfo infoOrder = new orderInfo();
+
+            infoOrder.txtWaiterName.Text = this.statGetUser.Text;
+            infoOrder.txtTableNo.Text = "0";
+            infoOrder.hiddFashCash = 1;
+            //infoOrder.txtAdultNo.Text = "1";
+            //infoOrder.txtChild.Text = "0";
+            infoOrder.txtReceiptType.Text = button2.Text;
+            infoOrder.orderType = button2.Text;
+
+           var empIDD= selectClass.getEmployeeByID(statGetUser.Text.ToString());
+
+            infoOrder.cmbWaiter.SelectedText = this.statGetUser.Text;
+            infoOrder.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmPurchaseSaleReport frm = new frmPurchaseSaleReport();
+            frm.ShowDialog();
         }
     }
 }

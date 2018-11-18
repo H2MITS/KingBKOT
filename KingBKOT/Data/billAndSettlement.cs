@@ -26,5 +26,7 @@ namespace KingBKOT.Data
         public decimal subTotal { get; set; }
         public string mode { get; set; }
         public string empID { get; set; }
+        public string couponCode { get; set; }
+        public Nullable<decimal> discount { get; set; }
     }
 }

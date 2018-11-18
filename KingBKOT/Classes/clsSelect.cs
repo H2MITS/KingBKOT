@@ -12,7 +12,7 @@ using System.Data;
 
 namespace Cindy_Restaurant.Classes
 {
-    class clsSelect :clsInsert
+    class clsSelect : clsInsert
     {
         SqlDataReader reader;
         public int getNum;
@@ -140,7 +140,7 @@ namespace Cindy_Restaurant.Classes
             {
 
 
-              
+
                 string sql = "select Uname from Users";
 
                 SqlConnection con = new SqlConnection(dbPath);
@@ -160,7 +160,7 @@ namespace Cindy_Restaurant.Classes
 
             catch (Exception ex)
             {
-                MessageBox.Show("Reason "+ex.Message);
+                MessageBox.Show("Reason " + ex.Message);
             }
 
 
@@ -301,6 +301,8 @@ namespace Cindy_Restaurant.Classes
 
                 string sql = "select genKOT from kotGenerator where genKOT =(Select max(genKOT)  from kotGenerator)";
 
+                if (sql == null)
+                    kotID = 0;
 
                 con = new SqlConnection(dbPath);
                 con.Open();
@@ -309,8 +311,13 @@ namespace Cindy_Restaurant.Classes
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    kotID = Int16.Parse(reader["genKOT"].ToString());
+                    kotID = Int32.Parse(reader["genKOT"].ToString());
                 }
+
+                if (kotID == 0)
+                    kotID = 1;
+                else
+                    kotID = kotID + 1;
 
                 reader.Close();
                 con.Close();
@@ -365,6 +372,49 @@ namespace Cindy_Restaurant.Classes
             return getEmployeeID;
 
         }
+
+        //Get the Id of waiter for order
+        public string getWaiterByID(string name)
+        {
+
+            try
+            {
+
+                SqlConnection con = new SqlConnection(dbPath);
+                con.Open();
+
+                string sql = "select empID from tblEmployee where fname = '" + name + "'";
+
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    getEmployeeID = reader[0].ToString();
+
+                }
+                else
+                {
+                    getEmployeeID = "";
+
+                }
+
+                //reader.Close();
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            return getEmployeeID;
+
+        }
+
 
         public string CallingProductCategory(ComboBox getProductCategory)
         {
@@ -465,7 +515,7 @@ namespace Cindy_Restaurant.Classes
         {
             try
             {
-               
+
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
 
@@ -537,7 +587,7 @@ namespace Cindy_Restaurant.Classes
 
             try
             {
-                
+
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
                 string sql = "select proName,proPrice from tblProducts";
@@ -562,7 +612,7 @@ namespace Cindy_Restaurant.Classes
 
             try
             {
-               
+
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
                 string sql = " select proDescrip from tblProducts where proName='" + dgv.Trim() + "'";
@@ -595,7 +645,36 @@ namespace Cindy_Restaurant.Classes
 
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
+
                 string sql = "select proName,proPrice from tblProducts where proName like'%" + textEntered.Trim() + "%'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                DataSet dsd = new DataSet();
+                DataTable data = new DataTable();
+                // SqlDataReader reader = cmd.ExecuteReader();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                adapter.Fill(dsd, sql);
+                dgv.DataSource = dsd;
+                dgv.DataMember = sql;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        //SEArcsH FROM DISPLAY DATA MEMBERS
+        //USING TEXT BOX AS USER TYPE INTO IT
+        public void searcshSubMenu(string textEntered, DataGridView dgv)
+        {
+            try
+            {
+
+                SqlConnection con = new SqlConnection(dbPath);
+                con.Open();
+
+                string sql = "select proType from tblProducts where proType like'%" + textEntered.Trim() + "%'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 DataSet dsd = new DataSet();
                 DataTable data = new DataTable();
@@ -670,6 +749,32 @@ namespace Cindy_Restaurant.Classes
 
         }
 
+        //select bills by table
+        public void selectBillAndSettlementTableNo(DataGridView dgv, string kot)
+        {
+            try
+            {
+
+                SqlConnection con = new SqlConnection(dbPath);
+                con.Open();
+                string sql = "select kot as [Reciept Token #], orderDecrip as[order type],fname + ' ' + lname as [Guest name], ordDate as Date, ordTime as Time, totalDue as [Amount] from billAndSettlement where kot ='" + kot + "'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                DataSet dsd = new DataSet();
+                DataTable data = new DataTable();
+                // SqlDataReader reader = cmd.ExecuteReader();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                adapter.Fill(dsd, sql);
+                dgv.DataSource = dsd;
+                dgv.DataMember = sql;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
 
         //view all billing
         public void selectAllBillAndSettlement(DataGridView dgv, DateTimePicker saleDate)
@@ -698,7 +803,7 @@ namespace Cindy_Restaurant.Classes
         }
 
         //view unsettled bill by sales person only
-        public void selectBySalePersonBillAndSettlement(DataGridView dgv, string salesPerson,DateTimePicker saleDate )
+        public void selectBySalePersonBillAndSettlement(DataGridView dgv, string salesPerson, DateTimePicker saleDate)
         {
             try
             {
@@ -1010,12 +1115,13 @@ namespace Cindy_Restaurant.Classes
 
                 if (reader.Read())
                 {
-                    getCurrency =  reader["symbolAndName"].ToString().TrimEnd();
+                    getCurrency = reader["symbolAndName"].ToString().TrimEnd();
 
                 }
-                else {
+                else
+                {
                     getCurrency = "";
-                
+
                 }
 
             }
@@ -1045,7 +1151,7 @@ namespace Cindy_Restaurant.Classes
                 if (reader.Read())
                 {
                     getCurrency.Text = reader["symbolAndName"].ToString();
-                   
+
                 }
 
             }
@@ -1056,7 +1162,7 @@ namespace Cindy_Restaurant.Classes
             }
         }
 
-        
+
         //get currency convertor
         public void selectCurrencyUsedFromLabel(Label currencyFrom, String convertState)
         {
@@ -1152,7 +1258,7 @@ namespace Cindy_Restaurant.Classes
 
 
         //RECALL Orders
-        public void selectOrderDetailsUsingKOT(string KOT, ListView listView1)
+        public void selectOrderDetailsUsingKOT(string KOT, ListView listView1, int val)
         {
             try
             {
@@ -1163,10 +1269,18 @@ namespace Cindy_Restaurant.Classes
                 listView1.View = View.Details;
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader reader = cmd.ExecuteReader();
+
+                if (val != 1)
+                    listView1.Items.Clear();
+
                 while (reader.Read())
                 {
-                    //first item of call
+                    //first item of call 
+
                     ListViewItem Viewitems = new ListViewItem(reader["Qty"].ToString());
+
+
+
                     Viewitems.SubItems.Add(reader["Qty"].ToString());
                     Viewitems.SubItems.Add(reader["ItemName"].ToString());
                     Viewitems.SubItems.Add(reader["ItemPrice"].ToString());
@@ -1306,7 +1420,7 @@ namespace Cindy_Restaurant.Classes
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
 
-                string sql = "select Uname as [persons]  from Users where empID = '" + id.Trim() + "'";
+                string sql = "select fname as [persons]  from tblEmployee where empID = '" + id.Trim() + "'";
 
 
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -1428,17 +1542,18 @@ namespace Cindy_Restaurant.Classes
         }
 
 
-        public string tymer,logDates,shifts;
-        
+        public string tymer, logDates, shifts;
 
-        public void selectShiftNumberAndTimeFromLoginHistory(string usernames) {
+
+        public void selectShiftNumberAndTimeFromLoginHistory(string usernames)
+        {
 
             try
             {
 
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
-               
+
                 string sql = "select id, logDate,logTime from LogHistory where id =(select max(id) from LogHistory) and empID ='" + usernames.Trim() + "'";
 
 
@@ -1455,8 +1570,8 @@ namespace Cindy_Restaurant.Classes
                 else
                 {
                     shifts = "";
-                     tymer = "";
-                     logDates = "";
+                    tymer = "";
+                    logDates = "";
 
                 }
 
@@ -1470,19 +1585,20 @@ namespace Cindy_Restaurant.Classes
 
             }
 
-        
+
         }
 
         //GET ALL MONETARY TRANSACTION
 
-       public double cashValue,POSvalue;
-        public void sumAllCash( string users,DateTime inDate, DateTime outDate) {
+        public double cashValue, POSvalue;
+        public void sumAllCash(string users, DateTime inDate, DateTime outDate)
+        {
 
             cashValue = 0;
             try
             {
 
-                string sql = "select bill from detailsSettlement where empID ='" + users + "'and paymentType ='Cash' and paidDate in('" + inDate.Date + "','" + outDate.Date + "')";
+                string sql = "select bill from detailsSettlement where paymentType ='Cash' and paidDate in('" + inDate.Date + "','" + outDate.Date + "')";
 
                 con = new SqlConnection(dbPath);
                 con.Open();
@@ -1491,7 +1607,8 @@ namespace Cindy_Restaurant.Classes
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    cashValue += double.Parse(reader["bill"].ToString()); 
+                    cashValue += double.Parse(reader["bill"].ToString());
+
                 }
 
             }
@@ -1500,8 +1617,8 @@ namespace Cindy_Restaurant.Classes
             {
                 MessageBox.Show(ex.Message);
             }
-            
-        
+
+
         }
 
         public void sumAllPOS(string users, DateTime inDate, DateTime outDate)

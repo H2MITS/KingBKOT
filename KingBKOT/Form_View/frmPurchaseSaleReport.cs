@@ -1,0 +1,283 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using KingBKOT.Data;
+using KingBKOT.Classes;
+using KingBKOT.ViewModel;
+using KingBKOT.Reports;
+
+namespace KingBKOT.Form_View
+{
+    public partial class frmPurchaseSaleReport : Form
+    {
+        public frmPurchaseSaleReport()
+        {
+            InitializeComponent();
+        }
+        KBBQEntities _entities;
+        AmtFomatting amtFormat = new AmtFomatting();
+        decimal? ttlAmt = 0;
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            datagridBind(cmbType.Text);
+        }
+
+        private void frmPurchaseSaleReport_Load(object sender, EventArgs e)
+        {
+            cmbType.SelectedIndex = 0;
+            datagridBind(cmbType.Text);
+        }
+
+        private void datagridBind(string type)
+        {
+            try
+            {
+                dgPurchaseReport.AutoGenerateColumns = false;
+                dgSalesReport.AutoGenerateColumns = false;
+
+                ttlAmt = 0;
+                int rowNo = 1;
+                _entities = new KBBQEntities();
+
+                List<PurchaseMasterVM> modelList = new List<PurchaseMasterVM>();
+                List<tbl_PurchaseMaster> data = new List<tbl_PurchaseMaster>();
+
+                List<DetailSettlementVM> modelListSales = new List<DetailSettlementVM>();
+                List<detailsSettlement> dataSales = new List<detailsSettlement>();
+
+                if (type == "--All--")
+                {
+                    #region PurchaseData
+                    data = _entities.tbl_PurchaseMaster.ToList();
+
+                    foreach (var item in data)
+                    {
+                        PurchaseMasterVM model = new PurchaseMasterVM();
+
+                        model.rowNo = rowNo;
+                        DateTime dt = Convert.ToDateTime(item.date).Date;
+
+                        model.monthYear = dt.Date.ToString("dd-MM-yyyy");
+                        model.totalAmt = Convert.ToDecimal(amtFormat.comma(item.totalAmt));
+
+                        rowNo++;
+                        modelList.Add(model);
+
+                        ttlAmt += Convert.ToDecimal(item.totalAmt);
+                        lblTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+
+                    dgPurchaseReport.DataSource = modelList;
+
+                    lblTotalRows.Text = modelList.Count.ToString();
+                    #endregion
+
+                    #region Salesregion
+                    ttlAmt = 0;
+                    rowNo = 1;
+                    dataSales = new List<detailsSettlement>();
+                    dataSales = _entities.detailsSettlements.ToList();
+
+                    foreach (var item in dataSales)
+                    {
+                        DetailSettlementVM model = new DetailSettlementVM();
+
+                        model.rowNo = rowNo;
+                        DateTime dt = Convert.ToDateTime(item.paidDate).Date;
+
+                        model.monthYear = dt.Date.ToString("dd-MM-yyyy");
+                        model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.AmountPaid));
+
+                        rowNo++;
+                        modelListSales.Add(model);
+
+                        ttlAmt += Convert.ToDecimal(item.AmountPaid);
+                        lblSalesTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+
+                    dgSalesReport.DataSource = modelListSales;
+
+                    lblSalesRow.Text = modelList.Count.ToString();
+                    #endregion
+                }
+                else if (type == "Month")
+                {
+                    #region Purchase Data
+                    ttlAmt = 0;
+                    rowNo = 1;
+
+                    dgPurchaseReport.DataSource = null;
+                    dgPurchaseReport.Rows.Clear();
+
+                    _entities = new KBBQEntities();
+
+                    data = new List<tbl_PurchaseMaster>();
+                    data = _entities.tbl_PurchaseMaster.ToList();
+
+                    string dates = "";
+                    decimal? amt = 0;
+                    int rowId = -1;
+                    foreach (var item in data)
+                    {
+                        var date = Convert.ToDateTime(item.date).Date;
+                        string dd = date.ToString("MMM");
+
+                        if (dd != dates)
+                        {
+                            dgPurchaseReport.Rows.Add("0", rowNo, dd);
+                            dates = dd;
+                            amt = 0;
+                            rowId++;
+                        }
+                        amt += item.totalAmt;
+                        dgPurchaseReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        rowNo++;
+
+                        ttlAmt += item.totalAmt;
+                        lblTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+                    lblTotalRows.Text = rowNo.ToString();
+                    #endregion
+
+                    #region Sales Data 
+
+                    ttlAmt = 0;
+                    rowNo = 1;
+
+                    dgSalesReport.DataSource = null;
+                    dgSalesReport.Rows.Clear();
+
+                    _entities = new KBBQEntities();
+
+                    dataSales = new List<detailsSettlement>();
+                    dataSales = _entities.detailsSettlements.ToList();
+
+                    dates = "";
+                    amt = 0;
+                    rowId = -1;
+
+                    foreach (var item in dataSales)
+                    {
+                        var date = Convert.ToDateTime(item.paidDate).Date;
+                        string dd = date.ToString("MMM");
+
+                        if (dd != dates)
+                        {
+                            dgSalesReport.Rows.Add("0", rowNo, dd);
+                            dates = dd;
+                            amt = 0;
+                            rowId++;
+                        }
+                        amt += item.AmountPaid;
+                        dgSalesReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        rowNo++;
+
+                        ttlAmt += item.AmountPaid;
+                        lblSalesTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+                    lblSalesRow.Text = rowNo.ToString();
+                    #endregion
+                }
+                else
+                {
+                    #region Purchase Data
+                    ttlAmt = 0;
+                    rowNo = 1;
+                    dgPurchaseReport.DataSource = null;
+                    dgPurchaseReport.Rows.Clear();
+
+                    _entities = new KBBQEntities();
+
+                    data = new List<tbl_PurchaseMaster>();
+                    data = _entities.tbl_PurchaseMaster.ToList();
+
+                    string dates = "";
+                    decimal? amt = 0;
+                    int rowId = -1;
+                    foreach (var item in data)
+                    {
+                        var date = Convert.ToDateTime(item.date).Date;
+                        string dd = date.ToString("yyyy");
+
+                        if (dd != dates)
+                        {
+                            dgPurchaseReport.Rows.Add("0", rowNo, dd);
+                            dates = dd;
+                            amt = 0;
+                            rowId++;
+                        }
+                        amt += item.totalAmt;
+                        dgPurchaseReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        rowNo++;
+
+                        ttlAmt += item.totalAmt;
+                        lblTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+                    lblTotalRows.Text = rowNo.ToString();
+                    #endregion
+
+                    #region Sales Data
+                    ttlAmt = 0;
+                    rowNo = 1;
+                    dgSalesReport.DataSource = null;
+                    dgSalesReport.Rows.Clear();
+
+                    _entities = new KBBQEntities();
+
+                    dataSales = new List<detailsSettlement>();
+                    dataSales = _entities.detailsSettlements.ToList();
+
+                    dates = "";
+                    amt = 0;
+                    rowId = -1;
+                    foreach (var item in dataSales)
+                    {
+                        var date = Convert.ToDateTime(item.paidDate).Date;
+                        string dd = date.ToString("yyyy");
+
+                        if (dd != dates)
+                        {
+                            dgSalesReport.Rows.Add("0", rowNo, dd);
+                            
+                            dates = dd;
+                            amt = 0;
+                            rowId++;
+                        }
+                        amt += item.AmountPaid;
+                        dgSalesReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        rowNo++;
+
+                        ttlAmt += item.AmountPaid;
+                        lblSalesTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+                    }
+                    lblSalesRow.Text = rowNo.ToString();
+                    #endregion
+                }
+            }
+            catch (Exception x)
+            {
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            frmRptSales rpt = new frmRptSales(cmbType.Text);
+            rpt.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            frmRptPurchase rpt = new frmRptPurchase(cmbType.Text);
+            rpt.ShowDialog();
+        }
+    }
+}

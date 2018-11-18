@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,16 +111,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.Change0 = new System.Windows.Forms.Button();
-            this.Change9 = new System.Windows.Forms.Button();
-            this.Change8 = new System.Windows.Forms.Button();
-            this.Change7 = new System.Windows.Forms.Button();
-            this.Change6 = new System.Windows.Forms.Button();
-            this.Change5 = new System.Windows.Forms.Button();
-            this.Change4 = new System.Windows.Forms.Button();
-            this.Change3 = new System.Windows.Forms.Button();
-            this.Change2 = new System.Windows.Forms.Button();
-            this.Change1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -135,6 +128,12 @@
             this.lblTotalAmt = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,6 +145,8 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -442,7 +443,9 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView1.Location = new System.Drawing.Point(12, 19);
             this.listView1.Name = "listView1";
@@ -477,34 +480,35 @@
             this.groupBox4.Controls.Add(this.btnDrink);
             this.groupBox4.Controls.Add(this.btnFood);
             this.groupBox4.Controls.Add(this.groupBox8);
-            this.groupBox4.Location = new System.Drawing.Point(110, 97);
+            this.groupBox4.Location = new System.Drawing.Point(272, 97);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1255, 63);
+            this.groupBox4.Size = new System.Drawing.Size(1093, 63);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
             // btnExtra
             // 
-            this.btnExtra.Location = new System.Drawing.Point(238, 16);
+            this.btnExtra.Location = new System.Drawing.Point(232, 13);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(89, 44);
             this.btnExtra.TabIndex = 3;
             this.btnExtra.Text = "Extra";
             this.btnExtra.UseVisualStyleBackColor = true;
+            this.btnExtra.Click += new System.EventHandler(this.btnExtra_Click);
             // 
             // btnDrink
             // 
-            this.btnDrink.Location = new System.Drawing.Point(122, 16);
+            this.btnDrink.Location = new System.Drawing.Point(116, 13);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(89, 44);
             this.btnDrink.TabIndex = 2;
-            this.btnDrink.Text = "Drink";
+            this.btnDrink.Text = "Beverage";
             this.btnDrink.UseVisualStyleBackColor = true;
             this.btnDrink.Click += new System.EventHandler(this.btnDrink_Click);
             // 
             // btnFood
             // 
-            this.btnFood.Location = new System.Drawing.Point(12, 16);
+            this.btnFood.Location = new System.Drawing.Point(6, 13);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(89, 44);
             this.btnFood.TabIndex = 1;
@@ -939,138 +943,34 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.Change0);
-            this.groupBox5.Controls.Add(this.Change9);
-            this.groupBox5.Controls.Add(this.Change8);
-            this.groupBox5.Controls.Add(this.Change7);
-            this.groupBox5.Controls.Add(this.Change6);
-            this.groupBox5.Controls.Add(this.Change5);
-            this.groupBox5.Controls.Add(this.Change4);
-            this.groupBox5.Controls.Add(this.Change3);
-            this.groupBox5.Controls.Add(this.Change2);
-            this.groupBox5.Controls.Add(this.Change1);
+            this.groupBox5.Controls.Add(this.panel2);
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.dataGridView3);
             this.groupBox5.Location = new System.Drawing.Point(4, 97);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(100, 549);
+            this.groupBox5.Size = new System.Drawing.Size(262, 549);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
-            // 
-            // Change0
-            // 
-            this.Change0.Location = new System.Drawing.Point(3, 465);
-            this.Change0.Name = "Change0";
-            this.Change0.Size = new System.Drawing.Size(89, 44);
-            this.Change0.TabIndex = 0;
-            this.Change0.Text = "button1";
-            this.Change0.UseVisualStyleBackColor = true;
-            this.Change0.Click += new System.EventHandler(this.Change0_Click);
-            // 
-            // Change9
-            // 
-            this.Change9.Location = new System.Drawing.Point(3, 417);
-            this.Change9.Name = "Change9";
-            this.Change9.Size = new System.Drawing.Size(89, 44);
-            this.Change9.TabIndex = 0;
-            this.Change9.Text = "button1";
-            this.Change9.UseVisualStyleBackColor = true;
-            this.Change9.Click += new System.EventHandler(this.Change9_Click);
-            // 
-            // Change8
-            // 
-            this.Change8.Location = new System.Drawing.Point(3, 367);
-            this.Change8.Name = "Change8";
-            this.Change8.Size = new System.Drawing.Size(89, 44);
-            this.Change8.TabIndex = 0;
-            this.Change8.Text = "button1";
-            this.Change8.UseVisualStyleBackColor = true;
-            this.Change8.Click += new System.EventHandler(this.Change8_Click);
-            // 
-            // Change7
-            // 
-            this.Change7.Location = new System.Drawing.Point(4, 316);
-            this.Change7.Name = "Change7";
-            this.Change7.Size = new System.Drawing.Size(89, 44);
-            this.Change7.TabIndex = 0;
-            this.Change7.Text = "button1";
-            this.Change7.UseVisualStyleBackColor = true;
-            this.Change7.Click += new System.EventHandler(this.Change7_Click);
-            // 
-            // Change6
-            // 
-            this.Change6.Location = new System.Drawing.Point(3, 266);
-            this.Change6.Name = "Change6";
-            this.Change6.Size = new System.Drawing.Size(89, 44);
-            this.Change6.TabIndex = 0;
-            this.Change6.Text = "button1";
-            this.Change6.UseVisualStyleBackColor = true;
-            this.Change6.Click += new System.EventHandler(this.Change6_Click);
-            // 
-            // Change5
-            // 
-            this.Change5.Location = new System.Drawing.Point(3, 215);
-            this.Change5.Name = "Change5";
-            this.Change5.Size = new System.Drawing.Size(89, 44);
-            this.Change5.TabIndex = 0;
-            this.Change5.Text = "button1";
-            this.Change5.UseVisualStyleBackColor = true;
-            this.Change5.Click += new System.EventHandler(this.Change5_Click);
-            // 
-            // Change4
-            // 
-            this.Change4.Location = new System.Drawing.Point(3, 165);
-            this.Change4.Name = "Change4";
-            this.Change4.Size = new System.Drawing.Size(89, 44);
-            this.Change4.TabIndex = 0;
-            this.Change4.Text = "button1";
-            this.Change4.UseVisualStyleBackColor = true;
-            this.Change4.Click += new System.EventHandler(this.Change4_Click);
-            // 
-            // Change3
-            // 
-            this.Change3.Location = new System.Drawing.Point(3, 117);
-            this.Change3.Name = "Change3";
-            this.Change3.Size = new System.Drawing.Size(89, 44);
-            this.Change3.TabIndex = 0;
-            this.Change3.Text = "button1";
-            this.Change3.UseVisualStyleBackColor = true;
-            this.Change3.Click += new System.EventHandler(this.Change3_Click);
-            // 
-            // Change2
-            // 
-            this.Change2.Location = new System.Drawing.Point(3, 68);
-            this.Change2.Name = "Change2";
-            this.Change2.Size = new System.Drawing.Size(89, 44);
-            this.Change2.TabIndex = 0;
-            this.Change2.Text = "button1";
-            this.Change2.UseVisualStyleBackColor = true;
-            this.Change2.Click += new System.EventHandler(this.Change2_Click);
-            // 
-            // Change1
-            // 
-            this.Change1.Location = new System.Drawing.Point(3, 19);
-            this.Change1.Name = "Change1";
-            this.Change1.Size = new System.Drawing.Size(89, 44);
-            this.Change1.TabIndex = 0;
-            this.Change1.Text = "Change1";
-            this.Change1.UseVisualStyleBackColor = true;
-            this.Change1.Click += new System.EventHandler(this.Change1_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox1);
             this.groupBox6.Controls.Add(this.dataGridView1);
-            this.groupBox6.Location = new System.Drawing.Point(110, 163);
+            this.groupBox6.Location = new System.Drawing.Point(272, 163);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(916, 482);
+            this.groupBox6.Size = new System.Drawing.Size(754, 482);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(5, 11);
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(905, 20);
+            this.textBox1.Size = new System.Drawing.Size(742, 27);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1085,19 +985,29 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 37);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 44);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(905, 439);
+            this.dataGridView1.Size = new System.Drawing.Size(742, 432);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // btnCancel
@@ -1149,7 +1059,6 @@
             // btnCashout
             // 
             this.btnCashout.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCashout.Enabled = false;
             this.btnCashout.FlatAppearance.BorderSize = 0;
             this.btnCashout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCashout.Font = new System.Drawing.Font("Century Gothic", 10.75F);
@@ -1174,9 +1083,9 @@
             this.groupBox7.Controls.Add(this.label11);
             this.groupBox7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(1036, 542);
+            this.groupBox7.Location = new System.Drawing.Point(1036, 547);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(260, 174);
+            this.groupBox7.Size = new System.Drawing.Size(328, 174);
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Description";
@@ -1274,12 +1183,98 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Total";
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView3.Location = new System.Drawing.Point(8, 110);
+            this.dataGridView3.MultiSelect = false;
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView3.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(248, 432);
+            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
+            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(6, 77);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(248, 27);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(4, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Search Sub Menu";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(6, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(93, 21);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Sub Menu";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(8, 36);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(245, 3);
+            this.panel2.TabIndex = 32;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(509, 3);
+            this.panel1.TabIndex = 30;
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(1377, 748);
+            this.ClientSize = new System.Drawing.Size(1370, 748);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.btnCashout);
             this.Controls.Add(this.btnSettlement);
@@ -1310,11 +1305,14 @@
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1383,16 +1381,6 @@
         private System.Windows.Forms.Button button97;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button Change0;
-        private System.Windows.Forms.Button Change9;
-        private System.Windows.Forms.Button Change8;
-        private System.Windows.Forms.Button Change7;
-        private System.Windows.Forms.Button Change6;
-        private System.Windows.Forms.Button Change5;
-        private System.Windows.Forms.Button Change4;
-        private System.Windows.Forms.Button Change3;
-        private System.Windows.Forms.Button Change2;
-        private System.Windows.Forms.Button Change1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOrder;
@@ -1425,5 +1413,11 @@
         private System.Windows.Forms.Button btnComplimentary;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

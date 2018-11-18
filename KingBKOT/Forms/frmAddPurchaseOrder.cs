@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using KingBKOT.Data;
 using KingBKOT.Forms;
 using KingBKOT.ViewModel;
-
+using KingBKOT.Reports;
 
 namespace KingBKOT.Forms
 {
@@ -42,9 +42,16 @@ namespace KingBKOT.Forms
         {
             dateToday.Format = DateTimePickerFormat.Custom;
             dateToday.CustomFormat = "dd-MM-yyyy";
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+
             comboUnit.SelectedIndex = 0;
             itemAutocomplete();
             dataGridBind();
+
+            errorProvider1.SetError(dateTimePicker1, "Select Date to print.");
+
         }
         private void itemAutocomplete()
         {
@@ -62,7 +69,6 @@ namespace KingBKOT.Forms
         {
             try
             {
-
                 dgPurchaseOrderDetails.AutoGenerateColumns = false;
                 int rowNo = 1;
                 _entities = new KBBQEntities();
@@ -82,7 +88,7 @@ namespace KingBKOT.Forms
                     model.pName = productName;
                     model.qty = item.qty;
                     model.weight = item.weight + " " + item.unit;
-
+                    model.date = item.date.ToString();
                     model.cdate = Convert.ToDateTime(item.cdate).ToString("dd-MM-yyyy  hh:mm tt");
 
                     if (item.udate == null)
@@ -360,7 +366,7 @@ namespace KingBKOT.Forms
                             model.pName = productName;
                             model.qty = item.qty;
                             model.weight = item.weight + " " + item.unit;
-
+                            model.date = item.date.ToString();
                             model.cdate = Convert.ToDateTime(item.cdate).ToString("dd-MM-yyyy  hh:mm tt");
 
                             if (item.udate == null)
@@ -378,6 +384,60 @@ namespace KingBKOT.Forms
 
                     lblTotalRows.Text = modelList.Count.ToString();
                 }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmRptPurchaseOrder rpt = new frmRptPurchaseOrder(dateTimePicker1.Value.Date);
+            rpt.ShowDialog();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgPurchaseOrderDetails.AutoGenerateColumns = false;
+                int rowNo = 1;
+                _entities = new KBBQEntities();
+
+                List<PurchaseOrderVM> modelList = new List<PurchaseOrderVM>();
+
+                var categoryData = _entities.tblPurchaseOrders.Where(x => x.date == dateTimePicker1.Value.Date).ToList();
+
+                foreach (var item in categoryData)
+                {
+                    PurchaseOrderVM model = new PurchaseOrderVM();
+                    model.rowNo = rowNo;
+                    model.id = item.id;
+
+                    var productName = _entities.purchaseProducts.Where(x => x.id == item.productId).FirstOrDefault().pName;
+
+                    model.pName = productName;
+                    model.qty = item.qty;
+                    model.date = item.date.ToString();
+                    model.weight = item.weight + " " + item.unit;
+
+                    model.cdate = Convert.ToDateTime(item.cdate).ToString("dd-MM-yyyy  hh:mm tt");
+
+                    if (item.udate == null)
+                        model.udate = "--";
+                    else
+                        model.udate = Convert.ToDateTime(item.udate).ToString("dd-MM-yyyy  hh:mm tt");
+
+
+                    modelList.Add(model);
+
+                    rowNo++;
+                }
+
+                dgPurchaseOrderDetails.DataSource = modelList;
+
+                lblTotalRows.Text = modelList.Count.ToString();
             }
             catch (Exception x)
             {

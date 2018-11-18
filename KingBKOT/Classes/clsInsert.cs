@@ -271,15 +271,16 @@ namespace Cindy_Restaurant.Classes
 
         //insert back the id we took
         //into the KOT Generator table
-        public void insertToKOTGenerator(string letter)
+        public void insertToKOTGenerator(int Kots,string letter)
         {
 
             try
             {
-                string sql = "INSERT INTO kotGenerator(done)VALUES(@done)";
+                string sql = "INSERT INTO kotGenerator(genKOT,done)VALUES(@Kots,@done)";
                 con = new SqlConnection(dbPath);
                 con.Open();
                 cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@Kots", Kots);
                 cmd.Parameters.AddWithValue("@done", letter);
                 cmd.ExecuteNonQuery();
 
@@ -392,7 +393,7 @@ namespace Cindy_Restaurant.Classes
         }
 
 
-        public void insertTodetailsSettlement(string KOT, DateTimePicker pDate, DateTimePicker pTime, string currencyInUsed, double bill, ComboBox custCurrencyChosen, double AmountPaid, double changeDue, string paymentType, string acctName, string acctNum, string electronicType, string empID)
+        public void insertTodetailsSettlement(string KOT, DateTimePicker pDate, DateTimePicker pTime, string currencyInUsed, double bill, string custCurrencyChosen, double AmountPaid, double changeDue, string paymentType, string acctName, string acctNum, string electronicType, string empID)
         {
 
             try
@@ -408,7 +409,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@paidTime", pTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@currencyInUsed", currencyInUsed.Trim());
                 cmd.Parameters.AddWithValue("@bill", bill);
-                cmd.Parameters.AddWithValue("@custCurrencyChosen", custCurrencyChosen.SelectedItem);
+                cmd.Parameters.AddWithValue("@custCurrencyChosen", custCurrencyChosen.Trim());
                 cmd.Parameters.AddWithValue("@AmountPaid", AmountPaid);
                 cmd.Parameters.AddWithValue("@changeDue", changeDue);
                 cmd.Parameters.AddWithValue("@paymentType", paymentType.Trim());
@@ -417,8 +418,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@electronicType", electronicType.Trim());
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Payment successfully taken", "SAVED - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+           
             }
 
             catch (Exception ex)

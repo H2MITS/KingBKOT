@@ -25,7 +25,6 @@ namespace KingBKOT.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<billAndSettlement> billAndSettlements { get; set; }
         public virtual DbSet<ElectronicCurrency> ElectronicCurrencies { get; set; }
         public virtual DbSet<GenEmpID> GenEmpIDs { get; set; }
         public virtual DbSet<genNochargeID> genNochargeIDs { get; set; }
@@ -44,5 +43,6 @@ namespace KingBKOT.Data
         public virtual DbSet<tblPurchaseOrder> tblPurchaseOrders { get; set; }
         public virtual DbSet<tbl_PurchaseDetails> tbl_PurchaseDetails { get; set; }
         public virtual DbSet<tbl_PurchaseMaster> tbl_PurchaseMaster { get; set; }
+        public virtual DbSet<billAndSettlement> billAndSettlements { get; set; }
     }
 }

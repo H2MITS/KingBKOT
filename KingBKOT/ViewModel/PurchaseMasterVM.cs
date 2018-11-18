@@ -18,5 +18,9 @@ namespace KingBKOT.ViewModel
         public string remarks { get; set; }
         public string createdDate { get; set; }
         public string updateDate { get; set; }
+        public string monthYear { get; set; }
+        public string KOT { get; set; }
+        public decimal totalAmount { get; set; }
+
     }
 }

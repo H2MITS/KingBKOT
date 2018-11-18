@@ -24,5 +24,6 @@ namespace KingBKOT.Data
         public string adultNo { get; set; }
         public string childrenNo { get; set; }
         public string empID { get; set; }
+        public string waiterId { get; set; }
     }
 }

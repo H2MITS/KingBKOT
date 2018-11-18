@@ -217,18 +217,20 @@ namespace Cindy_Restaurant.Classes
 
         }
 
-        public void updateBillAndSettlement(string KOT, string mode)
+        public void updateBillAndSettlement(string KOT, string mode,string code,decimal disc)
         {
 
             try
             {
                 con = new SqlConnection(dbPath);
                 con.Open();
-                string updateString = "update billAndSettlement set mode=@mode where kot='" + KOT.Trim() + "'";
+                string updateString = "update billAndSettlement set mode=@mode,couponCode=@code,discount=@disc where kot='" + KOT.Trim() + "'";
 
                 cmd = new SqlCommand(updateString, con);
                
                 cmd.Parameters.AddWithValue("@mode", mode.Trim());
+                cmd.Parameters.AddWithValue("@code", code);
+                cmd.Parameters.AddWithValue("@disc", disc);
 
                 cmd.ExecuteNonQuery();
             }
@@ -240,8 +242,35 @@ namespace Cindy_Restaurant.Classes
            
 
         }
+         
+        //Update Detail Bill Settlement
+        public void updateDetailsBillAndSettlement(string KOT, double Amount,double changeDue)
+        {
 
-        
+            try
+            {
+                con = new SqlConnection(dbPath);
+                con.Open();
+                string updateString = "update detailsSettlement set AmountPaid=@amt,changeDue=@chgDue where kot='" + KOT.Trim() + "'";
+
+                cmd = new SqlCommand(updateString, con);
+
+                cmd.Parameters.AddWithValue("@amt", Amount);
+                cmd.Parameters.AddWithValue("@chgDue", changeDue);
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+
+        }
+
+
         //UPDATE PRODUCT
         public void UpdateProductsTable(string proName, ComboBox prodTypeName, ComboBox proType, string proDescrip, double tax_1, double tax_2, double tax_3, double proPrice, double tax_1Amt, double tax_2Amt, double tax_3Amt, double proNetPrice, int prodID)
         {

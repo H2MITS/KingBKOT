@@ -31,29 +31,32 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettlement));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblGetSymbol = new System.Windows.Forms.Label();
-            this.lblUsedCurrency = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCash = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDisc = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCashout = new System.Windows.Forms.Button();
-            this.cboSelectCurrency = new System.Windows.Forms.ComboBox();
             this.cboPaymentType = new System.Windows.Forms.ComboBox();
-            this.lblCurcsonvertFrom = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtRateTimesAmtPaid = new System.Windows.Forms.TextBox();
-            this.lblUsedCurr = new System.Windows.Forms.Label();
             this.lblcustCurrency = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.lblConverTo = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtReceiptNum = new System.Windows.Forms.TextBox();
             this.txtAmtPAid = new System.Windows.Forms.TextBox();
             this.txtCustOwes = new System.Windows.Forms.TextBox();
+            this.cboSelectCurrency = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -66,29 +69,37 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnView = new System.Windows.Forms.Button();
-            this.btnVoid = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCash.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.lblGetSymbol);
-            this.groupBox1.Controls.Add(this.lblUsedCurrency);
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Controls.Add(this.txtAmtPAid);
             this.groupBox1.Controls.Add(this.txtCustOwes);
@@ -98,6 +109,47 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(235, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(273, 3);
+            this.panel3.TabIndex = 31;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(-1, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(509, 3);
+            this.panel4.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(267, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 24);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "₹";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(267, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 24);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "₹";
             // 
             // groupBox5
             // 
@@ -119,28 +171,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(167, 25);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // lblGetSymbol
-            // 
-            this.lblGetSymbol.AutoSize = true;
-            this.lblGetSymbol.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblGetSymbol.ForeColor = System.Drawing.Color.White;
-            this.lblGetSymbol.Location = new System.Drawing.Point(219, 57);
-            this.lblGetSymbol.Name = "lblGetSymbol";
-            this.lblGetSymbol.Size = new System.Drawing.Size(65, 20);
-            this.lblGetSymbol.TabIndex = 2;
-            this.lblGetSymbol.Text = "curPaid";
-            // 
-            // lblUsedCurrency
-            // 
-            this.lblUsedCurrency.AutoSize = true;
-            this.lblUsedCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblUsedCurrency.ForeColor = System.Drawing.Color.White;
-            this.lblUsedCurrency.Location = new System.Drawing.Point(219, 16);
-            this.lblUsedCurrency.Name = "lblUsedCurrency";
-            this.lblUsedCurrency.Size = new System.Drawing.Size(72, 20);
-            this.lblUsedCurrency.TabIndex = 2;
-            this.lblUsedCurrency.Text = "curInuse";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabCash);
@@ -153,18 +183,12 @@
             // tabCash
             // 
             this.tabCash.BackColor = System.Drawing.Color.MidnightBlue;
+            this.tabCash.Controls.Add(this.groupBox6);
             this.tabCash.Controls.Add(this.btnCashout);
-            this.tabCash.Controls.Add(this.cboSelectCurrency);
             this.tabCash.Controls.Add(this.cboPaymentType);
-            this.tabCash.Controls.Add(this.lblCurcsonvertFrom);
-            this.tabCash.Controls.Add(this.label9);
             this.tabCash.Controls.Add(this.txtRateTimesAmtPaid);
-            this.tabCash.Controls.Add(this.lblUsedCurr);
             this.tabCash.Controls.Add(this.lblcustCurrency);
             this.tabCash.Controls.Add(this.label11);
-            this.tabCash.Controls.Add(this.lblConverTo);
-            this.tabCash.Controls.Add(this.label7);
-            this.tabCash.Controls.Add(this.label6);
             this.tabCash.Controls.Add(this.label5);
             this.tabCash.Controls.Add(this.label4);
             this.tabCash.Controls.Add(this.txtReceiptNum);
@@ -174,6 +198,78 @@
             this.tabCash.Size = new System.Drawing.Size(413, 331);
             this.tabCash.TabIndex = 0;
             this.tabCash.Text = "Cash";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.Orange;
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.txtDisc);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.txtCode);
+            this.groupBox6.Controls.Add(this.label3);
+            this.groupBox6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.groupBox6.ForeColor = System.Drawing.Color.Black;
+            this.groupBox6.Location = new System.Drawing.Point(9, 122);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(396, 100);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Coupon Code";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(271, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 24);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "%";
+            // 
+            // txtDisc
+            // 
+            this.txtDisc.Enabled = false;
+            this.txtDisc.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.txtDisc.Location = new System.Drawing.Point(173, 59);
+            this.txtDisc.MaxLength = 10;
+            this.txtDisc.Name = "txtDisc";
+            this.txtDisc.Size = new System.Drawing.Size(96, 25);
+            this.txtDisc.TabIndex = 12;
+            this.txtDisc.Leave += new System.EventHandler(this.txtDisc_Leave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(46, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Discount %";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Enabled = false;
+            this.txtCode.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.txtCode.Location = new System.Drawing.Point(173, 19);
+            this.txtCode.MaxLength = 10;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(208, 25);
+            this.txtCode.TabIndex = 11;
+            this.txtCode.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(46, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Code";
             // 
             // btnCashout
             // 
@@ -186,53 +282,23 @@
             this.btnCashout.Location = new System.Drawing.Point(274, 280);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(120, 45);
-            this.btnCashout.TabIndex = 13;
+            this.btnCashout.TabIndex = 14;
             this.btnCashout.Text = "Paid";
             this.btnCashout.UseVisualStyleBackColor = false;
             this.btnCashout.Click += new System.EventHandler(this.btnCashout_Click);
-            // 
-            // cboSelectCurrency
-            // 
-            this.cboSelectCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSelectCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.cboSelectCurrency.FormattingEnabled = true;
-            this.cboSelectCurrency.Location = new System.Drawing.Point(185, 134);
-            this.cboSelectCurrency.Name = "cboSelectCurrency";
-            this.cboSelectCurrency.Size = new System.Drawing.Size(209, 27);
-            this.cboSelectCurrency.TabIndex = 11;
-            this.cboSelectCurrency.SelectedIndexChanged += new System.EventHandler(this.cboSelectCurrency_SelectedIndexChanged);
             // 
             // cboPaymentType
             // 
             this.cboPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPaymentType.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.cboPaymentType.FormattingEnabled = true;
+            this.cboPaymentType.Items.AddRange(new object[] {
+            "Cash",
+            "Card"});
             this.cboPaymentType.Location = new System.Drawing.Point(185, 32);
             this.cboPaymentType.Name = "cboPaymentType";
             this.cboPaymentType.Size = new System.Drawing.Size(209, 27);
             this.cboPaymentType.TabIndex = 9;
-            // 
-            // lblCurcsonvertFrom
-            // 
-            this.lblCurcsonvertFrom.AutoSize = true;
-            this.lblCurcsonvertFrom.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblCurcsonvertFrom.ForeColor = System.Drawing.Color.White;
-            this.lblCurcsonvertFrom.Location = new System.Drawing.Point(124, 186);
-            this.lblCurcsonvertFrom.Name = "lblCurcsonvertFrom";
-            this.lblCurcsonvertFrom.Size = new System.Drawing.Size(68, 20);
-            this.lblCurcsonvertFrom.TabIndex = 2;
-            this.lblCurcsonvertFrom.Text = "curFrom";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(93, 186);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "1";
             // 
             // txtRateTimesAmtPaid
             // 
@@ -241,30 +307,19 @@
             this.txtRateTimesAmtPaid.Name = "txtRateTimesAmtPaid";
             this.txtRateTimesAmtPaid.ReadOnly = true;
             this.txtRateTimesAmtPaid.Size = new System.Drawing.Size(208, 25);
-            this.txtRateTimesAmtPaid.TabIndex = 12;
+            this.txtRateTimesAmtPaid.TabIndex = 13;
             this.txtRateTimesAmtPaid.TextChanged += new System.EventHandler(this.txtRateTimesAmtPaid_TextChanged);
-            // 
-            // lblUsedCurr
-            // 
-            this.lblUsedCurr.AutoSize = true;
-            this.lblUsedCurr.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblUsedCurr.ForeColor = System.Drawing.Color.White;
-            this.lblUsedCurr.Location = new System.Drawing.Point(252, 186);
-            this.lblUsedCurr.Name = "lblUsedCurr";
-            this.lblUsedCurr.Size = new System.Drawing.Size(70, 20);
-            this.lblUsedCurr.TabIndex = 2;
-            this.lblUsedCurr.Text = "curUsed";
             // 
             // lblcustCurrency
             // 
             this.lblcustCurrency.AutoSize = true;
-            this.lblcustCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblcustCurrency.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lblcustCurrency.ForeColor = System.Drawing.Color.White;
-            this.lblcustCurrency.Location = new System.Drawing.Point(114, 236);
+            this.lblcustCurrency.Location = new System.Drawing.Point(161, 236);
             this.lblcustCurrency.Name = "lblcustCurrency";
-            this.lblcustCurrency.Size = new System.Drawing.Size(65, 20);
+            this.lblcustCurrency.Size = new System.Drawing.Size(20, 24);
             this.lblcustCurrency.TabIndex = 2;
-            this.lblcustCurrency.Text = "custCur";
+            this.lblcustCurrency.Text = "₹";
             // 
             // label11
             // 
@@ -276,39 +331,6 @@
             this.label11.Size = new System.Drawing.Size(102, 20);
             this.label11.TabIndex = 2;
             this.label11.Text = "Amount Paid";
-            // 
-            // lblConverTo
-            // 
-            this.lblConverTo.AutoSize = true;
-            this.lblConverTo.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblConverTo.ForeColor = System.Drawing.Color.White;
-            this.lblConverTo.Location = new System.Drawing.Point(198, 186);
-            this.lblConverTo.Name = "lblConverTo";
-            this.lblConverTo.Size = new System.Drawing.Size(48, 20);
-            this.lblConverTo.TabIndex = 2;
-            this.lblConverTo.Text = "curTo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(136, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 20);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "=";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Select the Currency";
             // 
             // label5
             // 
@@ -349,12 +371,13 @@
             this.txtAmtPAid.MaxLength = 10;
             this.txtAmtPAid.Name = "txtAmtPAid";
             this.txtAmtPAid.Size = new System.Drawing.Size(124, 25);
-            this.txtAmtPAid.TabIndex = 8;
+            this.txtAmtPAid.TabIndex = 0;
             this.txtAmtPAid.TextChanged += new System.EventHandler(this.txtAmtPAid_TextChanged);
             this.txtAmtPAid.Leave += new System.EventHandler(this.txtAmtPAid_Leave);
             // 
             // txtCustOwes
             // 
+            this.txtCustOwes.Enabled = false;
             this.txtCustOwes.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.txtCustOwes.Location = new System.Drawing.Point(297, 16);
             this.txtCustOwes.Name = "txtCustOwes";
@@ -362,6 +385,30 @@
             this.txtCustOwes.Size = new System.Drawing.Size(124, 25);
             this.txtCustOwes.TabIndex = 7;
             this.txtCustOwes.TextChanged += new System.EventHandler(this.txtCustOwes_TextChanged);
+            // 
+            // cboSelectCurrency
+            // 
+            this.cboSelectCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSelectCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.cboSelectCurrency.FormattingEnabled = true;
+            this.cboSelectCurrency.Location = new System.Drawing.Point(190, 56);
+            this.cboSelectCurrency.Name = "cboSelectCurrency";
+            this.cboSelectCurrency.Size = new System.Drawing.Size(209, 27);
+            this.cboSelectCurrency.TabIndex = 11;
+            this.cboSelectCurrency.Visible = false;
+            this.cboSelectCurrency.SelectedIndexChanged += new System.EventHandler(this.cboSelectCurrency_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(11, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(154, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Select the Currency";
+            this.label6.Visible = false;
             // 
             // groupBox2
             // 
@@ -503,21 +550,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Bill Amount";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnView);
-            this.groupBox4.Controls.Add(this.btnVoid);
-            this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(51, 245);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(394, 281);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cancel Transaction";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -526,7 +558,7 @@
             this.btnView.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnView.ForeColor = System.Drawing.Color.Black;
             this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnView.Location = new System.Drawing.Point(18, 224);
+            this.btnView.Location = new System.Drawing.Point(10, 216);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(120, 47);
             this.btnView.TabIndex = 4;
@@ -534,40 +566,6 @@
             this.toolTip1.SetToolTip(this.btnView, "Helps to view the transaction");
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // btnVoid
-            // 
-            this.btnVoid.BackColor = System.Drawing.Color.Orange;
-            this.btnVoid.FlatAppearance.BorderSize = 0;
-            this.btnVoid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoid.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnVoid.ForeColor = System.Drawing.Color.Black;
-            this.btnVoid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVoid.Location = new System.Drawing.Point(254, 224);
-            this.btnVoid.Name = "btnVoid";
-            this.btnVoid.Size = new System.Drawing.Size(120, 47);
-            this.btnVoid.TabIndex = 5;
-            this.btnVoid.Text = "Void";
-            this.toolTip1.SetToolTip(this.btnVoid, "Helps to void the initial payment type\r\nand set a new one");
-            this.btnVoid.UseVisualStyleBackColor = false;
-            this.btnVoid.Click += new System.EventHandler(this.btnVoid_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(360, 178);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
@@ -588,18 +586,78 @@
             this.panel1.Size = new System.Drawing.Size(509, 3);
             this.panel1.TabIndex = 30;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 22);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(378, 181);
+            this.dataGridView1.TabIndex = 31;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.Controls.Add(this.btnView);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(51, 253);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(394, 273);
+            this.groupBox4.TabIndex = 32;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Total Kot\'s";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "kot";
+            this.Column1.HeaderText = "Kot";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ordDate";
+            this.Column2.HeaderText = "Order Date";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ordTime";
+            this.Column3.HeaderText = "Order Time";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "totalDue";
+            this.Column4.HeaderText = "Amount";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // frmSettlement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(986, 624);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(986, 749);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.cboSelectCurrency);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -609,16 +667,20 @@
             this.Load += new System.EventHandler(this.frmSettlement_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabCash.ResumeLayout(false);
             this.tabCash.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,16 +694,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabCash;
-        private System.Windows.Forms.Label lblGetSymbol;
-        private System.Windows.Forms.Label lblUsedCurrency;
         private System.Windows.Forms.ComboBox cboSelectCurrency;
         private System.Windows.Forms.ComboBox cboPaymentType;
-        private System.Windows.Forms.Label lblCurcsonvertFrom;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtRateTimesAmtPaid;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblConverTo;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -654,20 +710,33 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnVoid;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblUsedCurr;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblcustCurrency;
-        public System.Windows.Forms.TextBox txtCustOwes;
         public System.Windows.Forms.TextBox txtReceiptNum;
         private System.Windows.Forms.Button btnCashout;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.TextBox txtCustOwes;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtDisc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

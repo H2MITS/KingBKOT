@@ -41,9 +41,6 @@
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnNocharge = new System.Windows.Forms.Button();
-            this.btnTakeAway = new System.Windows.Forms.Button();
-            this.btnDineIn = new System.Windows.Forms.Button();
             this.btnRecall = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnVorder = new System.Windows.Forms.Button();
@@ -54,16 +51,11 @@
             this.btnVLogins = new System.Windows.Forms.Button();
             this.btnVsalesRports = new System.Windows.Forms.Button();
             this.btnVEmployee = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.btnAddPOSCurrency = new System.Windows.Forms.Button();
             this.btnVPOS = new System.Windows.Forms.Button();
             this.btnVCurrency = new System.Windows.Forms.Button();
-            this.btnAddMenus = new System.Windows.Forms.Button();
-            this.btnAddMenuGroup = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnChangePass = new System.Windows.Forms.Button();
-            this.btnRegEmployee = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAddUsers = new System.Windows.Forms.Button();
             this.btnCuurency = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -76,6 +68,16 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddMenus = new System.Windows.Forms.Button();
+            this.btnAddMenuGroup = new System.Windows.Forms.Button();
+            this.btnRegEmployee = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddUsers = new System.Windows.Forms.Button();
+            this.btnNocharge = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnTakeAway = new System.Windows.Forms.Button();
+            this.btnDineIn = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,74 +97,80 @@
             this.toolStripStatusLabel5,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel7});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 616);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1042, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1042, 25);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(80, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(83, 20);
             this.toolStripStatusLabel1.Text = "Username";
             this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // statGetUser
             // 
+            this.statGetUser.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.statGetUser.ForeColor = System.Drawing.Color.White;
             this.statGetUser.Name = "statGetUser";
-            this.statGetUser.Size = new System.Drawing.Size(77, 17);
+            this.statGetUser.Size = new System.Drawing.Size(93, 20);
             this.statGetUser.Text = "getUsername";
             // 
             // toolStripStatusLabel2
             // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(116, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(109, 20);
             this.toolStripStatusLabel2.Text = "Working Date";
             // 
             // statGetDate
             // 
+            this.statGetDate.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.statGetDate.ForeColor = System.Drawing.Color.White;
             this.statGetDate.Name = "statGetDate";
-            this.statGetDate.Size = new System.Drawing.Size(48, 17);
+            this.statGetDate.Size = new System.Drawing.Size(62, 20);
             this.statGetDate.Text = "getDate";
             // 
             // toolStripStatusLabel4
             // 
-            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(116, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(114, 20);
             this.toolStripStatusLabel4.Text = "Developed By";
             // 
             // toolStripStatusLabel5
             // 
+            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Century Gothic", 10.25F);
             this.toolStripStatusLabel5.IsLink = true;
+            this.toolStripStatusLabel5.LinkColor = System.Drawing.Color.Silver;
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(105, 17);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(142, 20);
             this.toolStripStatusLabel5.Text = "Contact Developer";
             this.toolStripStatusLabel5.Click += new System.EventHandler(this.toolStripStatusLabel5_Click);
             // 
             // toolStripStatusLabel6
             // 
-            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(62, 17);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(54, 20);
             this.toolStripStatusLabel6.Text = "Outlet";
             // 
             // toolStripStatusLabel7
             // 
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.toolStripStatusLabel7.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(146, 17);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(177, 20);
             this.toolStripStatusLabel7.Text = "King Bar Beque Restaurant";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnNocharge);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnTakeAway);
             this.groupBox1.Controls.Add(this.btnDineIn);
             this.groupBox1.Location = new System.Drawing.Point(111, 56);
@@ -182,42 +190,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Receipt Type";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btnNocharge
-            // 
-            this.btnNocharge.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnNocharge.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNocharge.Location = new System.Drawing.Point(659, 38);
-            this.btnNocharge.Name = "btnNocharge";
-            this.btnNocharge.Size = new System.Drawing.Size(132, 77);
-            this.btnNocharge.TabIndex = 0;
-            this.btnNocharge.Text = "No Charge";
-            this.btnNocharge.UseVisualStyleBackColor = true;
-            this.btnNocharge.Click += new System.EventHandler(this.btnNocharge_Click);
-            // 
-            // btnTakeAway
-            // 
-            this.btnTakeAway.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnTakeAway.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTakeAway.Location = new System.Drawing.Point(348, 38);
-            this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(132, 77);
-            this.btnTakeAway.TabIndex = 0;
-            this.btnTakeAway.Text = "Take Away";
-            this.btnTakeAway.UseVisualStyleBackColor = true;
-            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
-            // 
-            // btnDineIn
-            // 
-            this.btnDineIn.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnDineIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDineIn.Location = new System.Drawing.Point(21, 38);
-            this.btnDineIn.Name = "btnDineIn";
-            this.btnDineIn.Size = new System.Drawing.Size(132, 77);
-            this.btnDineIn.TabIndex = 0;
-            this.btnDineIn.Text = "Dine In";
-            this.btnDineIn.UseVisualStyleBackColor = true;
-            this.btnDineIn.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnRecall
             // 
@@ -248,6 +220,7 @@
             this.groupBox2.Controls.Add(this.btnRecall);
             this.groupBox2.Controls.Add(this.btnChangePass);
             this.groupBox2.Controls.Add(this.btnRegEmployee);
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnAddUsers);
             this.groupBox2.Location = new System.Drawing.Point(111, 189);
@@ -281,6 +254,7 @@
             // btnVtaxes
             // 
             this.btnVtaxes.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnVtaxes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVtaxes.Location = new System.Drawing.Point(535, 209);
             this.btnVtaxes.Name = "btnVtaxes";
             this.btnVtaxes.Size = new System.Drawing.Size(126, 77);
@@ -345,6 +319,29 @@
             this.btnVEmployee.UseVisualStyleBackColor = true;
             this.btnVEmployee.Click += new System.EventHandler(this.btnVEmployee_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Olive;
+            this.label2.Location = new System.Drawing.Point(264, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(278, 28);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Operational Section";
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnChangePass.Location = new System.Drawing.Point(21, 126);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(126, 77);
+            this.btnChangePass.TabIndex = 0;
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
             // btnAddPOSCurrency
             // 
             this.btnAddPOSCurrency.Font = new System.Drawing.Font("Century Gothic", 10.75F);
@@ -380,88 +377,6 @@
             this.btnVCurrency.UseVisualStyleBackColor = true;
             this.btnVCurrency.Visible = false;
             this.btnVCurrency.Click += new System.EventHandler(this.btnVCurrency_Click);
-            // 
-            // btnAddMenus
-            // 
-            this.btnAddMenus.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnAddMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddMenus.Location = new System.Drawing.Point(535, 47);
-            this.btnAddMenus.Name = "btnAddMenus";
-            this.btnAddMenus.Size = new System.Drawing.Size(126, 77);
-            this.btnAddMenus.TabIndex = 2;
-            this.btnAddMenus.Text = "Add Menu";
-            this.btnAddMenus.UseVisualStyleBackColor = true;
-            this.btnAddMenus.Click += new System.EventHandler(this.btnAddMenus_Click);
-            // 
-            // btnAddMenuGroup
-            // 
-            this.btnAddMenuGroup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnAddMenuGroup.Location = new System.Drawing.Point(664, 46);
-            this.btnAddMenuGroup.Name = "btnAddMenuGroup";
-            this.btnAddMenuGroup.Size = new System.Drawing.Size(126, 77);
-            this.btnAddMenuGroup.TabIndex = 2;
-            this.btnAddMenuGroup.Text = "Add Menu Group";
-            this.btnAddMenuGroup.UseVisualStyleBackColor = true;
-            this.btnAddMenuGroup.Click += new System.EventHandler(this.btnAddMenuGroup_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Olive;
-            this.label2.Location = new System.Drawing.Point(264, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(278, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Operational Section";
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnChangePass.Location = new System.Drawing.Point(21, 126);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(126, 77);
-            this.btnChangePass.TabIndex = 0;
-            this.btnChangePass.Text = "Change Password";
-            this.btnChangePass.UseVisualStyleBackColor = true;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-            // 
-            // btnRegEmployee
-            // 
-            this.btnRegEmployee.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnRegEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRegEmployee.Location = new System.Drawing.Point(21, 46);
-            this.btnRegEmployee.Name = "btnRegEmployee";
-            this.btnRegEmployee.Size = new System.Drawing.Size(126, 77);
-            this.btnRegEmployee.TabIndex = 0;
-            this.btnRegEmployee.Text = "Employee Registration";
-            this.btnRegEmployee.UseVisualStyleBackColor = true;
-            this.btnRegEmployee.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(278, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 77);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Purchase";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnAddUsers
-            // 
-            this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnAddUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddUsers.Location = new System.Drawing.Point(149, 46);
-            this.btnAddUsers.Name = "btnAddUsers";
-            this.btnAddUsers.Size = new System.Drawing.Size(126, 77);
-            this.btnAddUsers.TabIndex = 0;
-            this.btnAddUsers.Text = "Add Users";
-            this.btnAddUsers.UseVisualStyleBackColor = true;
-            this.btnAddUsers.Click += new System.EventHandler(this.btnAddUsers_Click);
             // 
             // btnCuurency
             // 
@@ -595,6 +510,143 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAddMenus
+            // 
+            this.btnAddMenus.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnAddMenus.Image = global::KingBKOT.Properties.Resources.menu1;
+            this.btnAddMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddMenus.Location = new System.Drawing.Point(535, 47);
+            this.btnAddMenus.Name = "btnAddMenus";
+            this.btnAddMenus.Size = new System.Drawing.Size(126, 77);
+            this.btnAddMenus.TabIndex = 2;
+            this.btnAddMenus.Text = "\r\nAdd Menu";
+            this.btnAddMenus.UseVisualStyleBackColor = true;
+            this.btnAddMenus.Click += new System.EventHandler(this.btnAddMenus_Click);
+            // 
+            // btnAddMenuGroup
+            // 
+            this.btnAddMenuGroup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnAddMenuGroup.Image = global::KingBKOT.Properties.Resources.menu_1_;
+            this.btnAddMenuGroup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddMenuGroup.Location = new System.Drawing.Point(664, 46);
+            this.btnAddMenuGroup.Name = "btnAddMenuGroup";
+            this.btnAddMenuGroup.Size = new System.Drawing.Size(126, 77);
+            this.btnAddMenuGroup.TabIndex = 2;
+            this.btnAddMenuGroup.Text = "Add Menu Group";
+            this.btnAddMenuGroup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddMenuGroup.UseVisualStyleBackColor = true;
+            this.btnAddMenuGroup.Click += new System.EventHandler(this.btnAddMenuGroup_Click);
+            // 
+            // btnRegEmployee
+            // 
+            this.btnRegEmployee.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnRegEmployee.Image = global::KingBKOT.Properties.Resources.management;
+            this.btnRegEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRegEmployee.Location = new System.Drawing.Point(21, 46);
+            this.btnRegEmployee.Name = "btnRegEmployee";
+            this.btnRegEmployee.Size = new System.Drawing.Size(126, 77);
+            this.btnRegEmployee.TabIndex = 0;
+            this.btnRegEmployee.Text = "     Employee     Register";
+            this.btnRegEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRegEmployee.UseVisualStyleBackColor = true;
+            this.btnRegEmployee.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button3.Image = global::KingBKOT.Properties.Resources.analysis;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(407, 47);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(126, 77);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Purchase/Sale Report";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button1.Image = global::KingBKOT.Properties.Resources.product;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(278, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 77);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "\r\nPurchase";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnAddUsers
+            // 
+            this.btnAddUsers.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnAddUsers.Image = global::KingBKOT.Properties.Resources.add_friend;
+            this.btnAddUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddUsers.Location = new System.Drawing.Point(149, 46);
+            this.btnAddUsers.Name = "btnAddUsers";
+            this.btnAddUsers.Size = new System.Drawing.Size(126, 77);
+            this.btnAddUsers.TabIndex = 0;
+            this.btnAddUsers.Text = "\r\nAdd Users";
+            this.btnAddUsers.UseVisualStyleBackColor = true;
+            this.btnAddUsers.Click += new System.EventHandler(this.btnAddUsers_Click);
+            // 
+            // btnNocharge
+            // 
+            this.btnNocharge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNocharge.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnNocharge.Image = global::KingBKOT.Properties.Resources.free_delivery_truck;
+            this.btnNocharge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNocharge.Location = new System.Drawing.Point(659, 43);
+            this.btnNocharge.Name = "btnNocharge";
+            this.btnNocharge.Size = new System.Drawing.Size(132, 77);
+            this.btnNocharge.TabIndex = 0;
+            this.btnNocharge.Text = "No Charge";
+            this.btnNocharge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNocharge.UseVisualStyleBackColor = true;
+            this.btnNocharge.Click += new System.EventHandler(this.btnNocharge_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button2.Image = global::KingBKOT.Properties.Resources.money_1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(449, 42);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 77);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Fash Cash";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnTakeAway
+            // 
+            this.btnTakeAway.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnTakeAway.Image = global::KingBKOT.Properties.Resources.take_away;
+            this.btnTakeAway.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTakeAway.Location = new System.Drawing.Point(222, 42);
+            this.btnTakeAway.Name = "btnTakeAway";
+            this.btnTakeAway.Size = new System.Drawing.Size(132, 77);
+            this.btnTakeAway.TabIndex = 0;
+            this.btnTakeAway.Text = "Take Away";
+            this.btnTakeAway.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTakeAway.UseVisualStyleBackColor = true;
+            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
+            // 
+            // btnDineIn
+            // 
+            this.btnDineIn.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnDineIn.Image = global::KingBKOT.Properties.Resources.table;
+            this.btnDineIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDineIn.Location = new System.Drawing.Point(21, 43);
+            this.btnDineIn.Name = "btnDineIn";
+            this.btnDineIn.Size = new System.Drawing.Size(132, 77);
+            this.btnDineIn.TabIndex = 0;
+            this.btnDineIn.Text = "     Dine In";
+            this.btnDineIn.UseVisualStyleBackColor = true;
+            this.btnDineIn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,10 +726,12 @@
         public System.Windows.Forms.Button btnVtaxes;
         public System.Windows.Forms.Button btnVProdTypes;
         public System.Windows.Forms.Button btnVProducts;
-        public System.Windows.Forms.Button btnVsalesRports;
         public System.Windows.Forms.Button btnVLogins;
         public System.Windows.Forms.Button button10;
         public System.Windows.Forms.Button button8;
         public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button btnVsalesRports;
     }
 }

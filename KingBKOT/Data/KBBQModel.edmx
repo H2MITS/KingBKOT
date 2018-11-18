@@ -10,7 +10,7 @@
             <PropertyRef Name="kot" />
           </Key>
           <Property Name="kot" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="orderDecrip" Type="text" Nullable="false" />
+          <Property Name="orderDecrip" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fname" Type="nvarchar" MaxLength="35" />
           <Property Name="lname" Type="nvarchar" MaxLength="35" />
           <Property Name="ordDate" Type="date" Nullable="false" />
@@ -21,6 +21,8 @@
           <Property Name="subTotal" Type="money" Nullable="false" />
           <Property Name="mode" Type="nvarchar" MaxLength="50" />
           <Property Name="empID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="couponCode" Type="nchar" MaxLength="20" />
+          <Property Name="discount" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cindyDB.dbo.DailySales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -94,7 +96,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Key>
             <PropertyRef Name="genKOT" />
           </Key>
-          <Property Name="genKOT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="genKOT" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="done" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="LogHistory">
@@ -195,6 +197,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="adultNo" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="childrenNo" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="empID" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="waiterId" Type="nvarchar" MaxLength="70" />
         </EntityType>
         <EntityType Name="tblProducts">
           <Key>
@@ -358,23 +361,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KBBQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="billAndSettlement">
-          <Key>
-            <PropertyRef Name="kot" />
-          </Key>
-          <Property Name="kot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="orderDecrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="lname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ordTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="totalDue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="tax1_Amt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="tax2_Amt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="subTotal" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="ElectronicCurrency">
           <Key>
             <PropertyRef Name="name" />
@@ -458,6 +444,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="adultNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="childrenNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="empID" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="waiterId" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblProduct">
           <Key>
@@ -550,7 +537,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="KBBQEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="billAndSettlements" EntityType="Self.billAndSettlement" />
           <EntitySet Name="ElectronicCurrencies" EntityType="Self.ElectronicCurrency" />
           <EntitySet Name="GenEmpIDs" EntityType="Self.GenEmpID" />
           <EntitySet Name="genNochargeIDs" EntityType="Self.genNochargeID" />
@@ -581,6 +567,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
             <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
           </AssociationSet>
+          <EntitySet Name="billAndSettlements" EntityType="KBBQModel.billAndSettlement" />
         </EntityContainer>
         <EntityType Name="purchaseProduct">
           <Key>
@@ -680,30 +667,31 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="billAndSettlement">
+          <Key>
+            <PropertyRef Name="kot" />
+          </Key>
+          <Property Name="kot" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="orderDecrip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="totalDue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="tax1_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="tax2_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="subTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="couponCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KBBQModelStoreContainer" CdmEntityContainer="KBBQEntities">
-          <EntitySetMapping Name="billAndSettlements">
-            <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
-              <MappingFragment StoreEntitySet="billAndSettlement">
-                <ScalarProperty Name="kot" ColumnName="kot" />
-                <ScalarProperty Name="orderDecrip" ColumnName="orderDecrip" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
-                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
-                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
-                <ScalarProperty Name="tax1_Amt" ColumnName="tax1_Amt" />
-                <ScalarProperty Name="tax2_Amt" ColumnName="tax2_Amt" />
-                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
-                <ScalarProperty Name="mode" ColumnName="mode" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ElectronicCurrencies">
             <EntityTypeMapping TypeName="KBBQModel.ElectronicCurrency">
               <MappingFragment StoreEntitySet="ElectronicCurrency">
@@ -783,6 +771,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySetMapping Name="tblOrderInfoes">
             <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
               <MappingFragment StoreEntitySet="tblOrderInfo">
+                <ScalarProperty Name="waiterId" ColumnName="waiterId" />
                 <ScalarProperty Name="orderType" ColumnName="orderType" />
                 <ScalarProperty Name="tableNo" ColumnName="tableNo" />
                 <ScalarProperty Name="KOT" ColumnName="KOT" />
@@ -939,6 +928,26 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="refNo" ColumnName="refNo" />
                 <ScalarProperty Name="pId" ColumnName="pId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="billAndSettlements">
+            <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
+              <MappingFragment StoreEntitySet="billAndSettlement">
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="couponCode" ColumnName="couponCode" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="mode" ColumnName="mode" />
+                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+                <ScalarProperty Name="tax2_Amt" ColumnName="tax2_Amt" />
+                <ScalarProperty Name="tax1_Amt" ColumnName="tax1_Amt" />
+                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
+                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="orderDecrip" ColumnName="orderDecrip" />
+                <ScalarProperty Name="kot" ColumnName="kot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -10,10 +10,15 @@ using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
+
+using KingBKOT.Data;
+
 namespace Cindy_Restaurant.Forms
 {
     public partial class frmOrder : Form
     {
+        KBBQEntities _entities;
+
         public frmOrder()
         {
             InitializeComponent();
@@ -25,9 +30,9 @@ namespace Cindy_Restaurant.Forms
         string getEmpID;
         string taxPercsent, vatPercsent;
         string kot = null;//is the id for each ordering
-       
+        public int hiddFashCash = 0;
         public string fname, lname;
-
+        public string fvosBillofOder;
         //1
         private void button45_Click(object sender, EventArgs e)
         {
@@ -251,54 +256,94 @@ namespace Cindy_Restaurant.Forms
 
         private void btnFood_Click(object sender, EventArgs e)
         {
+            //_entities = new KBBQEntities();
 
-            Change1.Text = "Soup";
-            Change2.Text = "Salad";
-            Change3.Text = "Appetizer";
-            Change4.Text = "Main";
-            Change5.Text = "Pasta";
-            Change6.Text = "Dessert";
+            //var data = _entities.tblProducts.Where(x => x.prodTypeName == "Food").OrderBy(x=>x.prodTypeName).ToList();
 
-            Change7.Text = "Sandwich";
-            Change8.Text = "Hot hors doeuvres";
-            Change9.Text = "Traditional Kitchen";
-            Change0.Visible = false;
+            //foreach (var item in data)
+            //{
+            //    ListViewItem listVItem = new ListViewItem();
+            //    listVItem.SubItems.Add(item.proType);
+
+            //    subCategoryListView.Items.Add(listVItem);
+            //}
+
+            viewClass.SelectSubMenuByTextDisplay(btnFood, dataGridView3);
+
+
+            //Change1.Text = "Soup";
+            //Change2.Text = "Salad";
+            //Change3.Text = "Appetizer";
+            //Change4.Text = "Main";
+            //Change5.Text = "Pasta";
+            //Change6.Text = "Dessert";
+
+            //Change7.Text = "Sandwich";
+            //Change8.Text = "Hot hors doeuvres";
+            //Change9.Text = "Traditional Kitchen";
+            //Change0.Visible = false;
         }
 
         private void btnDrink_Click(object sender, EventArgs e)
         {
-            Change1.Text = "Winery";
-            Change2.Text = "Soft Drink";
-            Change3.Text = "Beer";
-            Change4.Text = "Water";
-            Change5.Text = "Juice";
-            Change6.Text = "Whisky";
-            Change7.Text = "Brandy";
-            Change8.Text = "Cocktail";
+            viewClass.SelectSubMenuByTextDisplay(btnDrink, dataGridView3);
 
-            Change9.Text = "Liquer";
-            Change0.Visible = true;
-            Change0.Text = "Cognac";
+            //Change1.Text = "Winery";
+            //Change2.Text = "Soft Drink";
+            //Change3.Text = "Beer";
+            //Change4.Text = "Water";
+            //Change5.Text = "Juice";
+            //Change6.Text = "Whisky";
+            //Change7.Text = "Brandy";
+            //Change8.Text = "Cocktail";
+
+            //Change9.Text = "Liquer";
+            //Change0.Visible = true;
+            //Change0.Text = "Cognac";
         }
 
         private void frmOrder_Load(object sender, EventArgs e)
         {
-            if (lblOrderDescription.Text.Equals("Dine In"))
+           // var dgv = new DataGridView();
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView3.RowTemplate.Height = 40;
+
+            if (hiddFashCash == 1)
             {
-                btnCashout.Enabled = false;
+                // For FashCash
+                btnSettlement.Visible = false;
+                btnOrder.Visible = false;
+                btnCashout.Visible = true;
+                btnCashout.Enabled = true;
+
+                label10.Visible = false;
+                label2.Visible = false;
             }
             else
             {
-                btnCashout.Enabled = false;
+                btnSettlement.Visible = true;
+                btnOrder.Visible = true;
+                btnCashout.Visible = false;
+                label10.Visible = true;
+                label2.Visible = true;
             }
-          
+
+            //if (lblOrderDescription.Text.Equals("Dine In"))
+            //{
+            //    btnCashout.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnCashout.Enabled = false;
+            //}
+
             selectClass.selectProduct(dataGridView1);
             selectClass.getTaxables();
 
             taxPercsent = string.Format("{0:n2}", selectClass.tax1.ToString());
             vatPercsent = string.Format("{0:n2}", selectClass.tax2.ToString());
 
-            btnFood_Click(sender,e); //activate the food button when form load
+            btnFood_Click(sender, e); //activate the food button when form load
             selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
             lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
             lblVat.Text = selectClass.tax2_Amt.ToString();
@@ -308,52 +353,52 @@ namespace Cindy_Restaurant.Forms
 
         private void Change1_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
         }
 
         private void Change2_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change2, dataGridView1);
+            //viewClass.SelectMenuByTextDisplay(Change2, dataGridView1);
         }
 
         private void Change3_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
         }
 
         private void Change4_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
+            //viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
         }
 
         private void Change5_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
         }
 
         private void Change6_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
         }
 
         private void Change7_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
+           // viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
         }
 
         private void Change8_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change8, dataGridView1);
+            //viewClass.SelectMenuByTextDisplay(Change8, dataGridView1);
         }
 
         private void Change9_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+          //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change0_Click(object sender, EventArgs e)
         {
-            viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
+            //viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
         }
         string itemName;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -374,13 +419,16 @@ namespace Cindy_Restaurant.Forms
 
             }
 
-            if (listView1.Items.Count >= 0) {
+            if (listView1.Items.Count >= 0)
+            {
                 btnModify.Enabled = true;
                 btnComplimentary.Enabled = true;
-               }else{
-                   btnModify.Enabled = false;
-                   btnComplimentary.Enabled = false;
-               }
+            }
+            else
+            {
+                btnModify.Enabled = false;
+                btnComplimentary.Enabled = false;
+            }
         }
 
         //Calculate SubTotal
@@ -543,7 +591,8 @@ namespace Cindy_Restaurant.Forms
 
 
                 //just to tell kot generator that the id is used
-                insertClass.insertToKOTGenerator("done");
+                //insertClass.insertToKOTGenerator("done");
+                insertClass.insertToKOTGenerator(Convert.ToInt32(kot), "done");
 
                 //call the below method
                 //  PreviewReceipt();
@@ -581,11 +630,11 @@ namespace Cindy_Restaurant.Forms
 
             try
             {
-                if (listView1.Items.Count >0)
+                if (listView1.Items.Count > 0)
                 {
                     //remove the item selected
                     listView1.FocusedItem.Remove();
-                 
+
                     //Reinitialize prices breakdown
                     for (int col = 0; col <= listView1.Items.Count - 1; col++)
                     {
@@ -607,16 +656,16 @@ namespace Cindy_Restaurant.Forms
                     lblSubTotal.Text = "0.00";
                     lblTotalAmt.Text = "0.00";
                     lblTotalAmt.Text = "0.00";
-                
+
                 }
 
-                
-               
+
+
 
 
             }
 
-                //do nothing
+            //do nothing
             catch (Exception ex)
             {
 
@@ -629,10 +678,10 @@ namespace Cindy_Restaurant.Forms
             selectClass.searcshProduct(textBox1.Text.Trim(), dataGridView1);
         }
 
-       
 
-        
-        
+
+
+
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -666,6 +715,10 @@ namespace Cindy_Restaurant.Forms
                 }
                 else
                 {
+                    //foreach (var item in listView1.Items)
+                    //{
+                    //    MessageBox.Show(item)
+                    //}
 
                     ListViewItem listVItem = new ListViewItem();
                     listVItem.SubItems.Add("1");
@@ -682,7 +735,7 @@ namespace Cindy_Restaurant.Forms
                         lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
                         lblVat.Text = selectClass.tax2_Amt.ToString();
                         lblSubTotal.Text = selectClass.netPrice.ToString();
-                        lblTotalAmt.Text = subtotal().ToString();
+                        fvosBillofOder = lblTotalAmt.Text = subtotal().ToString();
 
                     }
 
@@ -694,7 +747,7 @@ namespace Cindy_Restaurant.Forms
                 //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-                       
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -704,59 +757,62 @@ namespace Cindy_Restaurant.Forms
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            if (lblOrderDescription.Text == "Dine In".Trim() || lblOrderDescription.Text == "Take Away".Trim()) { 
-                   placeOrder();
-               
-            }
-            else if (lblOrderDescription.Text == "No Charge".Trim()) {
+            if (lblOrderDescription.Text == "Dine In".Trim() || lblOrderDescription.Text == "Take Away".Trim())
+            {
+                placeOrder();
 
-               PlaceNoChargeOrder();
-             }
-           
+            }
+            else if (lblOrderDescription.Text == "No Charge".Trim())
+            {
+
+                PlaceNoChargeOrder();
+            }
+
         }
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-                       //get the name of the selected item
-                       itemName = listView1.FocusedItem.SubItems[2].Text;
-                        if (itemName.Trim() != "")
-                        {
-                            frmModification modifyForm = new frmModification();
-                            viewClass.viewProductForModification(itemName, modifyForm.dataGridView1);
-                            modifyForm.txtApplyName.Text = listView1.FocusedItem.SubItems[2].Text;
-                            modifyForm.txtApplyRate.Text = listView1.FocusedItem.SubItems[3].Text;
-                            modifyForm.ShowDialog();
-                           listView1.FocusedItem.SubItems[3].Text =modifyForm.getModApplyRate;
-                            listView1.FocusedItem.SubItems[2].Text = modifyForm.getModApplyName;
+                //get the name of the selected item
+                itemName = listView1.FocusedItem.SubItems[2].Text;
+                if (itemName.Trim() != "")
+                {
+                    frmModification modifyForm = new frmModification();
+                    viewClass.viewProductForModification(itemName, modifyForm.dataGridView1);
+                    modifyForm.txtApplyName.Text = listView1.FocusedItem.SubItems[2].Text;
+                    modifyForm.txtApplyRate.Text = listView1.FocusedItem.SubItems[3].Text;
+                    modifyForm.ShowDialog();
+                    listView1.FocusedItem.SubItems[3].Text = modifyForm.getModApplyRate;
+                    listView1.FocusedItem.SubItems[2].Text = modifyForm.getModApplyName;
 
 
-                            //Clear Item
-                            itemName = "";
+                    //Clear Item
+                    itemName = "";
 
-                            //Reinitialize price breakdown
-                            for (int col = 0; col <= listView1.Items.Count - 1; col++)
-                            {
+                    //Reinitialize price breakdown
+                    for (int col = 0; col <= listView1.Items.Count - 1; col++)
+                    {
 
-                                selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
-                                lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
-                                lblVat.Text = selectClass.tax2_Amt.ToString();
-                                lblSubTotal.Text = selectClass.netPrice.ToString();
-                                lblTotalAmt.Text = subtotal().ToString();
+                        selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
+                        lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
+                        lblVat.Text = selectClass.tax2_Amt.ToString();
+                        lblSubTotal.Text = selectClass.netPrice.ToString();
+                        lblTotalAmt.Text = subtotal().ToString();
 
-                            }
+                    }
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please click to select item", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
+                }
+                else
+                {
+                    MessageBox.Show("Please click to select item", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
 
-                        }
+                }
             }
-            catch(Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("Please click to select item", "Help - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
@@ -764,7 +820,7 @@ namespace Cindy_Restaurant.Forms
 
         private void lblTotalAmt_Click(object sender, EventArgs e)
         {
-                           
+
         }
 
         private void lblTotalAmt_TextChanged(object sender, EventArgs e)
@@ -789,7 +845,8 @@ namespace Cindy_Restaurant.Forms
 
 
         //Perform ordering
-        void placeOrder() {
+        void placeOrder()
+        {
 
             //get sales id
             kot = selectClass.getKOTNum().ToString();
@@ -813,7 +870,7 @@ namespace Cindy_Restaurant.Forms
                     proName = listView1.Items[i].SubItems[2].Text;
                     strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
                     proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
-                    getEmpID = selectClass.getEmployeeByID(lblwaiterName.Text);
+                    getEmpID = selectClass.getWaiterByID(lblwaiterName.Text);
 
                     //perform the insertion
                     insertClass.insertToDailySales(int.Parse(lblTableNo.Text), lblOrderDescription.Text, Convert.ToInt32(strTotalQty), proName, decimal.Parse(proPrice), getEmpID, infoOrder.dateTimePicker1, infoOrder.dateTimePicker1, "Ordered", kot);
@@ -830,7 +887,7 @@ namespace Cindy_Restaurant.Forms
 
 
                 //just to tell kot generator that the id is used
-                insertClass.insertToKOTGenerator("done");
+                insertClass.insertToKOTGenerator(Convert.ToInt32(kot), "done");
 
                 //call the below method
                 //  PreviewReceipt();
@@ -857,10 +914,11 @@ namespace Cindy_Restaurant.Forms
             }
 
 
-        
+
         }
 
-        void PlaceNoChargeOrder() {
+        void PlaceNoChargeOrder()
+        {
 
 
             string Nocharge = "NC" + selectClass.genNochargeIDs();
@@ -883,7 +941,7 @@ namespace Cindy_Restaurant.Forms
                     proName = listView1.Items[i].SubItems[2].Text;
                     strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
                     proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
-                    getEmpID = selectClass.getEmployeeByID(lblwaiterName.Text);
+                    getEmpID = selectClass.getWaiterByID(lblwaiterName.Text);
 
                     //perform the insertion
                     insertClass.insertToDailySales(int.Parse(lblTableNo.Text), lblOrderDescription.Text, Convert.ToInt32(strTotalQty), proName, decimal.Parse(proPrice), getEmpID, infoOrder.dateTimePicker1, infoOrder.dateTimePicker1, "Ordered", Nocharge);
@@ -927,8 +985,8 @@ namespace Cindy_Restaurant.Forms
             }
 
 
-        
-        
+
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -1005,14 +1063,218 @@ namespace Cindy_Restaurant.Forms
 
                 return;
             }
-                       
+
+        }
+        string getReceiptNumber = "0";
+
+        private void btnExtra_Click(object sender, EventArgs e)
+        {
+            viewClass.SelectSubMenuByTextDisplay(btnExtra, dataGridView3);
         }
 
-        private void btnCashout_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            selectClass.searcshSubMenu(textBox3.Text.Trim(), dataGridView3);
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
+
+            string proNam = row.Cells[0].Value.ToString();
+
+            viewClass.SelectMenuByTextDisplay(proNam, dataGridView1);
+        }
+
+        private void btnCashout_Click(object sender, EventArgs e)
+        {
+            kot = selectClass.getKOTNum().ToString();
+            getReceiptNumber = kot;
+            if (listView1.Items.Count > 0)
+            {
+                orderInfo infoOrder = new orderInfo();
+
+                int i, j;
+                //let make j the total count of items on listview
+                j = listView1.Items.Count;
+
+                for (i = 0; i <= j - 1; i++)
+                {
+
+                    string strTotalQty, proPrice, proName;
+                    proName = listView1.Items[i].SubItems[2].Text;
+                    strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
+                    proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
+                    getEmpID = selectClass.getWaiterByID(lblwaiterName.Text);
+
+                    //perform the insertion
+                    insertClass.insertToDailySales(int.Parse(lblTableNo.Text), lblOrderDescription.Text, Convert.ToInt32(strTotalQty), proName, decimal.Parse(proPrice), getEmpID, infoOrder.dateTimePicker1, infoOrder.dateTimePicker1, "Ordered", kot);
+
+                }
+
+
+                //populate the bill and settlement table
+                insertClass.insertTobillAndSettlement(kot, lblOrderDescription.Text, fname, lname, infoOrder.dateTimePicker1, infoOrder.dateTimePicker1, double.Parse(lblTotalAmt.Text), double.Parse(lblTaxAmt.Text), double.Parse(lblVat.Text), double.Parse(lblSubTotal.Text), "PAID".ToUpper(), getEmpID);
+
+
+                // insertClass.insertTotblOrderInfo(lblOrderDescription.Text, lblTableNo.Text, kot, infoOrder.dateTimePicker1, infoOrder.dateTimePicker1, fname, lname, lblAdultNo.Text, lblChild.Text, getEmpID);
+
+
+
+                //just to tell kot generator that the id is used
+                insertClass.insertToKOTGenerator(Convert.ToInt32(kot), "done");
+
+                //call the below method
+                //  PreviewReceipt();
+                //printReceipt();
+                //empty listview
+                for (i = 0; i <= j - 1; i++)
+                {
+
+                    listView1.Items.Clear();
+                }
+                lblTotalAmt.Text = "0.000";
+                kot = null;
+
+
+
+            }
+            //Show this message
+
+            else
+            {
+                MessageBox.Show("Error: " + "Please double click to select your " + Environment.NewLine + "choice of menu item(s) to order", "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+
+           
+
+            frmSettlement setl = new frmSettlement();
+            setl.getCashierName = this.lblwaiterName.Text;
+            setl.txtReceiptNum.Text = this.getReceiptNumber; // genrate receipt number
+            setl.KOTnum = "0";
+            setl.txtCustOwes.Text = fvosBillofOder;
+            // this.Hide();
+            setl.ShowDialog();
+
+            // //wait a bit
+            string askme = "Do you wanna print receipt ?";
+            DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result.Equals(DialogResult.Yes))
+            {
+                PreviewReceipt();
+                printReceipt();
+            }
+            this.Close();
+        }
+
+        public void PreviewReceipt()
+        {
+            frmReceiptPreview rcs = new frmReceiptPreview();
+            frmSettlement setl = new frmSettlement();
+
+            //get sales id
+
+            rcs.textBox1.AppendText("\t\t" + "King Bar Beque Restaurant" + Environment.NewLine);
+            rcs.textBox1.AppendText("\t\t=================================================" + Environment.NewLine);
+
+            rcs.textBox1.AppendText("Receipt No #: " + getReceiptNumber + "\t\t\tDate: " + DateTime.Now.ToString("dd-MMM-yyyy") + Environment.NewLine);
+            rcs.textBox1.AppendText("Table No #:" + lblTableNo.Text + "\t\t\tTime : " + DateTime.Now.TimeOfDay.ToString() + Environment.NewLine);
+            rcs.textBox1.AppendText("Server #: " + "\t" + lblwaiterName.Text + Environment.NewLine);
+            rcs.textBox1.AppendText("Guest #: " + "\t" + lblgetGuestName.Text + Environment.NewLine);
+
+            rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+            rcs.textBox1.AppendText(Environment.NewLine + "Item Name" + "\t\tQty" + "\t\tPrice" + Environment.NewLine);
+            rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+
+
+            //the below section will loop the items from the order sheet
+
+            if (listView1.Items.Count > 0)
+            {
+
+
+                int i, j;
+                //let make j the total count of items on listview
+                j = listView1.Items.Count;
+
+                for (i = 0; i <= j - 1; i++)
+                {
+
+                    string strTotalQty, proPrice, proName;
+                    proName = listView1.Items[i].SubItems[2].Text;
+                    strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
+                    proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
+                    getEmpID = selectClass.getEmployeeByID(lblwaiterName.Text);
+
+                    //to align perfect when previewed
+                    //check and cut short the character length
+                    //character is  > 13 cut it short to 13
+                    if (proName.Length >= 13)
+                    {
+                        rcs.textBox1.AppendText(proName.Substring(0, 13) + "\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                    }
+
+                    //character is less than or equal 7
+                    else if ((proName.Length >= 7) && (proName.Length < 13))
+                    {
+                        rcs.textBox1.AppendText(proName + "\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                    }
+
+                    // is greater than 7
+                    else if (proName.Length < 7)
+                    {
+                        rcs.textBox1.AppendText(proName + "\t\t\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                    }
+
+
+                }
+                rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+
+                rcs.textBox1.AppendText(Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tSub Total............" + lblSubTotal.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tTax....................." + (double.Parse(lblTaxAmt.Text) + double.Parse(lblVat.Text)) + Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tPayable..............." + lblTotalAmt.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+
+                rcs.textBox1.AppendText("Description" + "\t\tTaxable" + "\t\tTax" + Environment.NewLine);
+
+                //set subtotal and VAT
+                rcs.textBox1.AppendText("CGST (2.5%)" + "\t\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
+
+                //set subtotal and TAX
+                rcs.textBox1.AppendText("SGST (2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
+
+                rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
+
+
+
+                rcs.textBox1.AppendText(Environment.NewLine + "Transaction: " + "PAID" + Environment.NewLine);
+                rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
+
+                rcs.textBox1.AppendText("Thank you for your visit, Please do visit us again");
+                rcs.ShowDialog();
+            }
+
+
+        }
+
     }
+}
 

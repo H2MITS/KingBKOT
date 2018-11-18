@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="321693dc24b94e809dab58a5859e42a7" Name="Diagram1" ZoomLevel="101">
-        <EntityTypeShape EntityType="KBBQModel.billAndSettlement" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KBBQModel.ElectronicCurrency" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KBBQModel.GenEmpID" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KBBQModel.genNochargeID" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -27,6 +26,7 @@
         <EntityTypeShape EntityType="KBBQModel.tbl_PurchaseMaster" Width="1.5" PointX="5.375" PointY="11.75" />
         <AssociationConnector Association="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts" />
         <AssociationConnector Association="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" />
+        <EntityTypeShape EntityType="KBBQModel.billAndSettlement" Width="1.5" PointX="11.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
