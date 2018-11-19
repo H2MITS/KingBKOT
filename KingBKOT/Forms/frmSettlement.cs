@@ -163,7 +163,7 @@ namespace Cindy_Restaurant.Forms
         {
             
             _entities = new KBBQEntities();
-            if (recNoList == null)
+            if (recNoList == null || recNoList.Count==0)
             {
                 updateClass = new clsUpdate();
                 insertClass = new clsInsert();
@@ -432,28 +432,30 @@ namespace Cindy_Restaurant.Forms
         {
             try
             {
-                _entities = new KBBQEntities();
-                var coupCode = _entities.billAndSettlements.ToList();
-
-                foreach (var item in coupCode)
+                if (txtCode != null)
                 {
+                    _entities = new KBBQEntities();
+                    var coupCode = _entities.billAndSettlements.ToList();
 
-                    if (item.couponCode != null)
+                    foreach (var item in coupCode)
                     {
-                        var avail = item.couponCode.Trim().ToString();
-                        if (avail == txtCode.Text.Trim().ToString())
-                        {
-                            MessageBox.Show("Coupon Code already existed.", "Error - King Bar beque Restaurant Coupon Code", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtCode.Focus();
-                            return;
-                        }
-                        else
-                        {
 
+                        if (item.couponCode != null)
+                        {
+                            var avail = item.couponCode.Trim().ToString();
+                            if (avail == txtCode.Text.Trim().ToString())
+                            {
+                                MessageBox.Show("Coupon Code already existed.", "Error - King Bar beque Restaurant Coupon Code", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtCode.Focus();
+                                return;
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }
                 }
-
             }
             catch (Exception x)
             {
@@ -500,10 +502,14 @@ namespace Cindy_Restaurant.Forms
 
                     txtRateTimesAmtPaid.Text = rateAfterDisc.ToString();
                 }
+                else
+                {
+
+                }
             }
             catch (Exception x)
             {
-                MessageBox.Show("Error: " + x.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("Error: " + x.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }

@@ -12,7 +12,7 @@ namespace Cindy_Restaurant.Classes
     class clsInsert
     {
         //database path usually this is the path called the connection string
-        public string dbPath = @"Data Source=HARRY\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
+        public string dbPath = @"Data Source=DESKTOP-AU8GBJS\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
         public SqlConnection con;
         public SqlCommand cmd;
         public static ErrorProvider err = new ErrorProvider();
@@ -59,6 +59,7 @@ namespace Cindy_Restaurant.Classes
 
                     cmd.Parameters.Add(ppic);
 
+                     
                 }
 
                 cmd.ExecuteNonQuery();
@@ -84,7 +85,7 @@ namespace Cindy_Restaurant.Classes
 
             try
             {
-                string sql = "INSERT INTO Users(empID,Uname, Pass,privileges)VALUES(@empID,@Uname, @Pass,@privileges)";
+                string sql = "INSERT INTO Users(empID,Uname, Pass,privileges,cdate)VALUES(@empID,@Uname, @Pass,@privileges,@cdate)";
                 con = new SqlConnection(dbPath);
                 con.Open();
                 cmd = new SqlCommand(sql, con);
@@ -92,6 +93,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@Uname", Uname.Trim());
                 cmd.Parameters.AddWithValue("@Pass", Pass.Trim());
                 cmd.Parameters.AddWithValue("@privileges", privileges.SelectedItem);
+                cmd.Parameters.AddWithValue("@cdate",DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Account Successfully Created", "SAVED - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -344,6 +346,12 @@ namespace Cindy_Restaurant.Classes
             try
             {
 
+                if (fname == null || fname == "")
+                    fname = "";
+
+                if (lname == null || lname == "")
+                    lname = "";
+
                 string sql = "INSERT INTO billAndSettlement(kot,orderDecrip,fname,lname,ordDate,ordTime,totalDue,tax1_Amt,tax2_Amt,subTotal,mode,empID) VALUES(@kot,@orderDecrip,@fname,@lname,@ordDate,@ordTime,@totalDue,@tax1_Amt,@tax2_Amt,@subTotal,@mode,@empID)";
                 con = new SqlConnection(dbPath);
                 con.Open();
@@ -448,6 +456,12 @@ namespace Cindy_Restaurant.Classes
 
             try
             {
+                if (fname == null || fname == "")
+                    fname = "";
+
+                if (lname == null || lname == "")
+                    lname = "";
+
 
                 string sql = "INSERT INTO tblOrderInfo(orderType,tableNo,KOT,ordDate,ordTime,fname,lname,adultNo,childrenNo,empID)VALUES(@orderType,@tableNo,@KOT,@ordDate,@ordTime,@fname,@lname,@adultNo,@childrenNo,@empID)";
 

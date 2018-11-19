@@ -12,6 +12,7 @@ using KingBKOT.Data;
 using KingBKOT.ViewModel;
 using System.IO;
 using System.Diagnostics;
+using Cindy_Restaurant.Forms;
 
 namespace Cindy_Restaurant.Form_View
 {
@@ -40,6 +41,7 @@ namespace Cindy_Restaurant.Form_View
         // settlement.txtReceiptNum.Text = getRep.Text;
         //clsSelect selectClass = new clsSelect();
         frmViewOrderSettlement fvos = new frmViewOrderSettlement();
+        frmOrder fOrder = new frmOrder();
         private void frmRecall_Load(object sender, EventArgs e)
         {
             try
@@ -124,17 +126,18 @@ namespace Cindy_Restaurant.Form_View
 
                 dataGridView2.ClearSelection();
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
         }
         string tabl = "0";
+        int count=0;
         private void getTableNo()
         {
             _entities = new KBBQEntities();
 
-                var data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").OrderBy(x => x.kot).ToList();
+            var data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").OrderBy(x => x.kot).ToList();
             List<OrderInfoVM> modelList = new List<OrderInfoVM>();
 
             if (data != null)
@@ -146,7 +149,18 @@ namespace Cindy_Restaurant.Form_View
 
                     if (dataTableNo != null)
                     {
-                        if (dataTableNo.tableNo == tabl)
+
+                        var datas = _entities.tblOrderInfoes.ToList();
+
+                        foreach (var itemss in modelList)
+                        {
+                            if (itemss.tableNo == dataTableNo.tableNo)
+                            {
+                                count = 1;
+                            }
+                        }
+
+                        if (count==1)
                         {
 
                         }
@@ -159,7 +173,9 @@ namespace Cindy_Restaurant.Form_View
                             modelList.Add(model);
 
                             tabl = model.tableNo;
+                            count = 0;
 
+                            //cmbTableNo.Items.Add(tabl);
                         }
 
                     }
@@ -244,7 +260,7 @@ namespace Cindy_Restaurant.Form_View
                     dataGridView2.ClearSelection();
                 }
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -280,7 +296,7 @@ namespace Cindy_Restaurant.Form_View
                 dataGridView2.DataSource = modelList;
                 dataGridView2.ClearSelection();
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -371,7 +387,7 @@ namespace Cindy_Restaurant.Form_View
                     dataGridView2.ClearSelection();
                 }
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -409,7 +425,7 @@ namespace Cindy_Restaurant.Form_View
                     dataGridView2.ClearSelection();
                 }
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -447,7 +463,7 @@ namespace Cindy_Restaurant.Form_View
                     dataGridView2.ClearSelection();
                 }
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -455,7 +471,7 @@ namespace Cindy_Restaurant.Form_View
         string selectedTable = "";
         private void btnRecall_Click(object sender, EventArgs e)
         {
-             
+
             _entities = new KBBQEntities();
 
             if (getRep.Text == "")
@@ -583,8 +599,9 @@ namespace Cindy_Restaurant.Form_View
                 }
 
                 dataGridView2.DataSource = modelList;
+                dataGridView2.ClearSelection();
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }
@@ -715,7 +732,7 @@ namespace Cindy_Restaurant.Form_View
                     var data = _entities.DailySales.Where(x => x.KOT == cellId.ToString()).ToList();
 
                     foreach (var item in data)
-                    { 
+                    {
                         _entities.DailySales.Remove(item);
                         _entities.SaveChanges();
 
@@ -726,7 +743,7 @@ namespace Cindy_Restaurant.Form_View
 
                 }
             }
-             
+
 
         }
 
@@ -791,6 +808,75 @@ namespace Cindy_Restaurant.Form_View
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _entities = new KBBQEntities();
+
+                if (getRep.Text == "")
+                {
+                    MessageBox.Show("Please click to select Receipt", "Help - KINGBBQ...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                selectClass.selectOrderDetailsUsingKOT(getRep.Text, fOrder.listView1, 0);
+
+                selectClass.selectOrderFieldsUsingKOT(getRep.Text);
+
+                fOrder.lblKOT.Text = getRep.Text;
+                fOrder.lblTableNo.Text = selectClass.TableNum;
+                fOrder.lblOrderDescription.Text = selectClass.orderDescript;
+                fOrder.lblgetDateTime.Text = selectClass.OrderDate + " ";
+                fOrder.thisDate = selectClass.OrderDate;
+
+                // fOrder.recNoToPassList = null;
+
+                fOrder.lblgetDateTime.Text += selectClass.OrderTime;
+                // fvos.timy = selectClass.OrderTime;
+                //get number of person
+                selectClass.selectAdultAndChildren(getRep.Text);
+                fOrder.lblAdultNo.Text = selectClass.AdultNum;
+                fOrder.lblChild.Text = selectClass.ChildrenNum;
+
+                //pull employee-id where the receipt id is known
+                string salesPersonID = selectClass.getSalePersonID(getRep.Text);
+
+                //After getting the sale person id 
+                //search for the fullname using the the id gotten
+                //when the id is match get the Uname and assigned it to the lable
+                fOrder.lblwaiterName.Text = selectClass.salpersonByID(salesPersonID);
+
+
+                fOrder.fvosBillofOder = txtGetBill.Text;
+                fOrder.btnOrder.Text = "Update Order";
+
+                //var ifSettled = _entities.billAndSettlements.Where(x => x.kot == getRep.Text).FirstOrDefault();
+
+                //if (ifSettled != null)
+                //{
+                //    if (ifSettled.mode == "PAID")
+                //    {
+                //        fvos.btnSettlement.Visible = false;
+                //    }
+                //}
+
+                //fvos.btnSettlement.Visible = false;
+                fOrder.ShowDialog();
+                //settlement.txtCustOwes.Text = txtGetBill.Text;
+                //settlement.ShowDialog();
+                getRep.Text = "";
+
+                // serve as refresh
+
+                bindGridViewForPageLoad();
+            }
+            catch (Exception x)
+            {
+
+            }
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -814,7 +900,7 @@ namespace Cindy_Restaurant.Form_View
                     txtGetBill.Text = amt.ToString();
                 }
             }
-            catch(Exception x)
+            catch (Exception x)
             {
 
             }

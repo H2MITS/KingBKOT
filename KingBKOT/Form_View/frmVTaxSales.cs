@@ -27,6 +27,14 @@ namespace Cindy_Restaurant.Form_View
             clsView viewClass = new clsView();
             //viewClass.viewTaxSales(dataGridView1);
 
+            _entities = new KBBQEntities();
+
+            var cgstPer = _entities.tblTaxes.FirstOrDefault().tax_1;
+            var sgstPer = _entities.tblTaxes.FirstOrDefault().tax_2;
+
+         //   dataGridView2.Columns[4].HeaderText = "CGST( " + cgstPer.ToString().Substring(0, 4) + " %)";
+           // dataGridView2.Columns[5].HeaderText = "( " + sgstPer.ToString().Substring(0, 4) + " %)";
+
             dataGridBind();
         }
 

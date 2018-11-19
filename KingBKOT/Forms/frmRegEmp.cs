@@ -358,9 +358,7 @@ namespace Cindy_Restaurant.Forms
             //WHEN ALL REQUIREMENTS ARE SATISFIED PERFORM THE INSERTIONS
             else
             {
-                if (PicEmp != null)
-                    insertClass.addEmployee("emp" + selectClass.callGenEmpID().ToString(), txtFname.Text, txtLname.Text, txtOname.Text, cboGender, dptBDay, txtPhone.Text, txtResAddress.Text, txtEmail.Text, txtRFname.Text, txtRLname.Text, txtRPhone.Text, PicEmp);
-                else
+                
                     insertClass.addEmployee("emp" + selectClass.callGenEmpID().ToString(), txtFname.Text, txtLname.Text, txtOname.Text, cboGender, dptBDay, txtPhone.Text, txtResAddress.Text, txtEmail.Text, txtRFname.Text, txtRLname.Text, txtRPhone.Text, PicEmp);
                 insertClass.insertTocallGenEmpID(selectClass.callGenEmpID());
 

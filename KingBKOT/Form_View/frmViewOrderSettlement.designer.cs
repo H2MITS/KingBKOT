@@ -54,14 +54,12 @@
             this.button74 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.lblTaxAmt = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button75 = new System.Windows.Forms.Button();
             this.button76 = new System.Windows.Forms.Button();
             this.button77 = new System.Windows.Forms.Button();
             this.button78 = new System.Windows.Forms.Button();
             this.button79 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.button80 = new System.Windows.Forms.Button();
             this.button81 = new System.Windows.Forms.Button();
             this.button82 = new System.Windows.Forms.Button();
@@ -70,6 +68,10 @@
             this.button85 = new System.Windows.Forms.Button();
             this.lblVat = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblSGSTTaxPer = new System.Windows.Forms.Label();
+            this.lblCGSTTaxPer = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTotalAmt = new System.Windows.Forms.Label();
             this.button86 = new System.Windows.Forms.Button();
@@ -360,19 +362,10 @@
             this.lblTaxAmt.TabIndex = 0;
             this.lblTaxAmt.Text = "0.00";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 101);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "SGST ( 2.5% )";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 129);
+            this.label11.Location = new System.Drawing.Point(14, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 20);
             this.label11.TabIndex = 0;
@@ -422,15 +415,6 @@
             this.button79.TabIndex = 0;
             this.button79.Text = "7";
             this.button79.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(11, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "CGST (2.5%)";
             // 
             // button80
             // 
@@ -497,12 +481,14 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.lblVat);
+            this.groupBox7.Controls.Add(this.lblSGSTTaxPer);
+            this.groupBox7.Controls.Add(this.lblCGSTTaxPer);
             this.groupBox7.Controls.Add(this.label14);
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.Controls.Add(this.lblVat);
             this.groupBox7.Controls.Add(this.lblSubTotal);
             this.groupBox7.Controls.Add(this.label13);
             this.groupBox7.Controls.Add(this.lblTaxAmt);
-            this.groupBox7.Controls.Add(this.label12);
             this.groupBox7.Controls.Add(this.lblTotalAmt);
             this.groupBox7.Controls.Add(this.label11);
             this.groupBox7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
@@ -513,6 +499,50 @@
             this.groupBox7.TabIndex = 16;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Description";
+            // 
+            // lblSGSTTaxPer
+            // 
+            this.lblSGSTTaxPer.AutoSize = true;
+            this.lblSGSTTaxPer.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblSGSTTaxPer.ForeColor = System.Drawing.Color.White;
+            this.lblSGSTTaxPer.Location = new System.Drawing.Point(54, 100);
+            this.lblSGSTTaxPer.Name = "lblSGSTTaxPer";
+            this.lblSGSTTaxPer.Size = new System.Drawing.Size(19, 20);
+            this.lblSGSTTaxPer.TabIndex = 1;
+            this.lblSGSTTaxPer.Text = "--";
+            // 
+            // lblCGSTTaxPer
+            // 
+            this.lblCGSTTaxPer.AutoSize = true;
+            this.lblCGSTTaxPer.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblCGSTTaxPer.ForeColor = System.Drawing.Color.White;
+            this.lblCGSTTaxPer.Location = new System.Drawing.Point(55, 69);
+            this.lblCGSTTaxPer.Name = "lblCGSTTaxPer";
+            this.lblCGSTTaxPer.Size = new System.Drawing.Size(19, 20);
+            this.lblCGSTTaxPer.TabIndex = 2;
+            this.lblCGSTTaxPer.Text = "--";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(14, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 20);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "CGST";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(14, 100);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 20);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "SGST";
             // 
             // lblSubTotal
             // 
@@ -1057,7 +1087,7 @@
             // btnExtra
             // 
             this.btnExtra.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnExtra.Location = new System.Drawing.Point(232, 15);
+            this.btnExtra.Location = new System.Drawing.Point(232, 11);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(89, 44);
             this.btnExtra.TabIndex = 3;
@@ -1068,7 +1098,7 @@
             // btnDrink
             // 
             this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnDrink.Location = new System.Drawing.Point(118, 15);
+            this.btnDrink.Location = new System.Drawing.Point(118, 11);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(98, 44);
             this.btnDrink.TabIndex = 2;
@@ -1079,7 +1109,7 @@
             // btnFood
             // 
             this.btnFood.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnFood.Location = new System.Drawing.Point(14, 15);
+            this.btnFood.Location = new System.Drawing.Point(14, 11);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(89, 44);
             this.btnFood.TabIndex = 1;
@@ -1319,14 +1349,12 @@
         private System.Windows.Forms.Button button74;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label lblTaxAmt;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button75;
         private System.Windows.Forms.Button button76;
         private System.Windows.Forms.Button button77;
         private System.Windows.Forms.Button button78;
         private System.Windows.Forms.Button button79;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button80;
         private System.Windows.Forms.Button button81;
         private System.Windows.Forms.Button button82;
@@ -1397,5 +1425,9 @@
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblSGSTTaxPer;
+        private System.Windows.Forms.Label lblCGSTTaxPer;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
     }
 }

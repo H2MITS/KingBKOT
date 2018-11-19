@@ -15,12 +15,15 @@ using System.Data.SqlClient;
 using KingBKOT.ViewModel;
 using System.IO;
 using System.Diagnostics;
+using KingBKOT.Data;
 
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmViewOrderSettlement : Form
     {
         object keyboardProc;
+        KBBQEntities _entities;
+
         public frmViewOrderSettlement()
         {
             InitializeComponent();
@@ -430,6 +433,14 @@ namespace Cindy_Restaurant.Form_View
 
             }
 
+            _entities = new KBBQEntities();
+
+            var cgstPer = _entities.tblTaxes.FirstOrDefault().tax_1;
+            var sgstPer = _entities.tblTaxes.FirstOrDefault().tax_2;
+
+            lblCGSTTaxPer.Text = "( " + cgstPer.ToString().Substring(0, 4) + " %)";
+            lblSGSTTaxPer.Text = "( " + sgstPer.ToString().Substring(0, 4) + " %)";
+
         }
 
         private void btnSettlement_Click(object sender, EventArgs e)
@@ -456,6 +467,8 @@ namespace Cindy_Restaurant.Form_View
             this.Close();
 
         }
+
+
 
         //Generate Receipt Preview
         public void PreviewReceipt()
@@ -589,6 +602,13 @@ namespace Cindy_Restaurant.Form_View
 
 
                 }
+
+                _entities = new KBBQEntities();
+
+                var cgstPer = _entities.tblTaxes.FirstOrDefault().tax_1;
+                var sgstPer = _entities.tblTaxes.FirstOrDefault().tax_2;
+
+                
                 rcs.textBox1.AppendText("========================================" + Environment.NewLine);
 
                 rcs.textBox1.AppendText(Environment.NewLine);
@@ -600,10 +620,10 @@ namespace Cindy_Restaurant.Form_View
                 rcs.textBox1.AppendText("Description" + "\t\tTaxable" + "\t\tTax" + Environment.NewLine);
 
                 //set subtotal and VAT
-                rcs.textBox1.AppendText("CGST(2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("CGST"+ "( " + cgstPer.ToString().Substring(0, 4) + " %)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
 
                 //set subtotal and TAX
-                rcs.textBox1.AppendText("SGST(2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("SGST"+ "( " + sgstPer.ToString().Substring(0, 4) + " %)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
 
                 rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
 
@@ -1014,8 +1034,20 @@ namespace Cindy_Restaurant.Form_View
             grafic.DrawString("  Payable....." + lblTotalAmt.Text + Environment.NewLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 200));
             grafic.DrawString(LineDraw, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 210));
             grafic.DrawString("Description" + "\tTaxable" + "    Tax", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 230));
-            grafic.DrawString("CGST(2.5%)" + "\t" + lblSubTotal.Text + "    " + lblTaxAmt.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 250));
-            grafic.DrawString("SGST(2.5%)" + "\t" + lblSubTotal.Text + "    " + lblVat.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 280));
+
+            _entities = new KBBQEntities();
+
+            var cgstPer = _entities.tblTaxes.FirstOrDefault().tax_1;
+            var sgstPer = _entities.tblTaxes.FirstOrDefault().tax_2;
+
+            
+
+
+
+
+
+            grafic.DrawString("CGST" + "( " + cgstPer.ToString().Substring(0, 4) + " %)" + "\t" + lblSubTotal.Text + "    " + lblTaxAmt.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 250));
+            grafic.DrawString("SGST" + "( " + sgstPer.ToString().Substring(0, 4) + " %)" + "\t" + lblSubTotal.Text + "    " + lblVat.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 280));
             grafic.DrawString(LineDrawss, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 290));
             grafic.DrawString("Transaction: " + "PAID", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 310));
             grafic.DrawString(LineDrawss, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 330));

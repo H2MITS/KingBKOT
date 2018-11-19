@@ -161,7 +161,7 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "tax1_Amt";
-            this.Column4.HeaderText = "CGST (2.5 %)";
+            this.Column4.HeaderText = "CGST";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 130;
@@ -169,7 +169,7 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "tax2_Amt";
-            this.Column5.HeaderText = "SGST (2.5 %)";
+            this.Column5.HeaderText = "SGST";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Width = 130;

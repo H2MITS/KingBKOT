@@ -61,6 +61,8 @@ namespace Cindy_Restaurant.Form_View
                         model.adultNo = item.adultNo;
                         model.childrenNo = item.childrenNo;
 
+                        model.mode = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault().mode;
+
                         var empName = _entities.tblEmployees.Where(x => x.empID == item.empID).FirstOrDefault();
 
                         if (empName != null)
@@ -123,6 +125,7 @@ namespace Cindy_Restaurant.Form_View
                         model.guests = item.fname + " " + item.lname;
                         model.adultNo = item.adultNo;
                         model.childrenNo = item.childrenNo;
+                        model.mode = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault().mode;
 
                         var empName = _entities.tblEmployees.Where(x => x.empID == item.empID).FirstOrDefault();
 
@@ -170,6 +173,8 @@ namespace Cindy_Restaurant.Form_View
                     model.guests = item.fname + " " + item.lname;
                     model.adultNo = item.adultNo;
                     model.childrenNo = item.childrenNo;
+                    model.mode = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault().mode;
+
 
                     var empName = _entities.tblEmployees.Where(x => x.empID == item.empID).FirstOrDefault();
 

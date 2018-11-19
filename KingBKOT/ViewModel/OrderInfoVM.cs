@@ -20,5 +20,6 @@ namespace KingBKOT.ViewModel
         public string empID { get; set; }
         public string empName { get; set; }
         public string guests { get; set; }
+        public string mode { get; set; }
     }
 }

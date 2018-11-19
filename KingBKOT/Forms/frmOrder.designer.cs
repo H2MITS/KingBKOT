@@ -36,7 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblKOT = new System.Windows.Forms.Label();
             this.lblOrderDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -126,6 +126,8 @@
             this.btnCashout = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblVat = new System.Windows.Forms.Label();
+            this.lblSGSTTaxPer = new System.Windows.Forms.Label();
+            this.lblCGSTTaxPer = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -154,7 +156,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblKOT);
             this.groupBox1.Controls.Add(this.lblOrderDescription);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, -1);
@@ -174,16 +176,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Kot";
             // 
-            // label10
+            // lblKOT
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(169, 60);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "New Kot";
+            this.lblKOT.AutoSize = true;
+            this.lblKOT.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblKOT.ForeColor = System.Drawing.Color.White;
+            this.lblKOT.Location = new System.Drawing.Point(169, 60);
+            this.lblKOT.Name = "lblKOT";
+            this.lblKOT.Size = new System.Drawing.Size(72, 20);
+            this.lblKOT.TabIndex = 0;
+            this.lblKOT.Text = "New Kot";
             // 
             // lblOrderDescription
             // 
@@ -490,6 +492,7 @@
             // 
             // btnExtra
             // 
+            this.btnExtra.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExtra.Location = new System.Drawing.Point(232, 13);
             this.btnExtra.Name = "btnExtra";
             this.btnExtra.Size = new System.Drawing.Size(89, 44);
@@ -500,6 +503,7 @@
             // 
             // btnDrink
             // 
+            this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrink.Location = new System.Drawing.Point(116, 13);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(89, 44);
@@ -510,6 +514,7 @@
             // 
             // btnFood
             // 
+            this.btnFood.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFood.Location = new System.Drawing.Point(6, 13);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(89, 44);
@@ -1162,6 +1167,8 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.lblVat);
+            this.groupBox7.Controls.Add(this.lblSGSTTaxPer);
+            this.groupBox7.Controls.Add(this.lblCGSTTaxPer);
             this.groupBox7.Controls.Add(this.label14);
             this.groupBox7.Controls.Add(this.lblSubTotal);
             this.groupBox7.Controls.Add(this.label13);
@@ -1190,6 +1197,30 @@
             this.lblVat.Text = "0.00";
             this.lblVat.Click += new System.EventHandler(this.lblVat_Click);
             // 
+            // lblSGSTTaxPer
+            // 
+            this.lblSGSTTaxPer.AutoSize = true;
+            this.lblSGSTTaxPer.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblSGSTTaxPer.ForeColor = System.Drawing.Color.White;
+            this.lblSGSTTaxPer.Location = new System.Drawing.Point(51, 100);
+            this.lblSGSTTaxPer.Name = "lblSGSTTaxPer";
+            this.lblSGSTTaxPer.Size = new System.Drawing.Size(19, 20);
+            this.lblSGSTTaxPer.TabIndex = 0;
+            this.lblSGSTTaxPer.Text = "--";
+            this.lblSGSTTaxPer.Click += new System.EventHandler(this.lblCGSTTaxPer_Click);
+            // 
+            // lblCGSTTaxPer
+            // 
+            this.lblCGSTTaxPer.AutoSize = true;
+            this.lblCGSTTaxPer.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblCGSTTaxPer.ForeColor = System.Drawing.Color.White;
+            this.lblCGSTTaxPer.Location = new System.Drawing.Point(52, 63);
+            this.lblCGSTTaxPer.Name = "lblCGSTTaxPer";
+            this.lblCGSTTaxPer.Size = new System.Drawing.Size(19, 20);
+            this.lblCGSTTaxPer.TabIndex = 0;
+            this.lblCGSTTaxPer.Text = "--";
+            this.lblCGSTTaxPer.Click += new System.EventHandler(this.lblCGSTTaxPer_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -1197,9 +1228,9 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(11, 63);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 20);
+            this.label14.Size = new System.Drawing.Size(46, 20);
             this.label14.TabIndex = 0;
-            this.label14.Text = "CGST (2.5%)";
+            this.label14.Text = "CGST";
             // 
             // lblSubTotal
             // 
@@ -1241,11 +1272,11 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(6, 99);
+            this.label12.Location = new System.Drawing.Point(11, 100);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 20);
+            this.label12.Size = new System.Drawing.Size(41, 20);
             this.label12.TabIndex = 0;
-            this.label12.Text = "SGST (2.5%)";
+            this.label12.Text = "SGST";
             // 
             // lblTotalAmt
             // 
@@ -1365,7 +1396,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1418,7 +1448,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnSettlement;
         private System.Windows.Forms.Button btnCashout;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -1433,7 +1462,7 @@
         public System.Windows.Forms.Label lblgetGuestName;
         public System.Windows.Forms.Label lblwaiterName;
         public System.Windows.Forms.Label lblgetDateTime;
-        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label lblKOT;
         public System.Windows.Forms.Label lblOrderDescription;
         public System.Windows.Forms.Label lblVat;
         public System.Windows.Forms.Label lblSubTotal;
@@ -1456,5 +1485,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblCGSTTaxPer;
+        private System.Windows.Forms.Label lblSGSTTaxPer;
+        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.Button btnOrder;
     }
 }

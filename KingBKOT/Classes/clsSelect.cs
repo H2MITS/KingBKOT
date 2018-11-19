@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-
+using KingBKOT.Data;
 
 namespace Cindy_Restaurant.Classes
 {
@@ -1015,17 +1015,18 @@ namespace Cindy_Restaurant.Classes
 
         }
 
+       
         //select tax
         public void selectTAx(DataGridView dgv)
         {
 
 
             try
-            {
+            { 
 
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
-                string sql = "select tax_1 as [VAT], Tax_2 as [Tourism Levy],tax_3 as [None] from tblTax";
+                string sql = "select tax_1 as [CGST], Tax_2 as [SGST],tax_3 as [None] from tblTax";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 DataSet dsd = new DataSet();
                 DataTable data = new DataTable();
@@ -1333,7 +1334,7 @@ namespace Cindy_Restaurant.Classes
             {
                 con = new SqlConnection(dbPath);
                 con.Open();
-                string sql = "select prodID as No, proName as [Menu Item],prodTypeName as [Menu Group],proType as [Sub Group], proDescrip as [Details],tax_1 as [VAT %],tax_2 as [Tourism Levy %],tax_3 as [tax_3 %],proPrice as [Gross Price], tax_1Amt as [VAT Amount], tax_2Amt as [Tourism Levy Amount], tax_3Amt as [Tax_3 Amount], proNetPrice as [Net Price] from tblProducts where proName like '%" + itemSearcsh + "%'";
+                string sql = "select prodID as No, proName as [Menu Item],prodTypeName as [Menu Group],proType as [Sub Group], proDescrip as [Details],tax_1 as [CGST %],tax_2 as [SGST %],tax_3 as [tax_3 %],proPrice as [Gross Price], tax_1Amt as [VAT Amount], tax_2Amt as [Tourism Levy Amount], tax_3Amt as [Tax_3 Amount], proNetPrice as [Net Price] from tblProducts where proName like '%" + itemSearcsh + "%'";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
                 DataSet dsd = new DataSet();

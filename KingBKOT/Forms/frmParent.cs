@@ -209,36 +209,42 @@ namespace Cindy_Restaurant
          
         private void getCashierReportText()
         {
-            selectClass.selectShiftNumberAndTimeFromLoginHistory(this.statGetUser.Text);
-            string cashierID = selectClass.getEmployeeByID(this.statGetUser.Text);
+            try
+            {
+                selectClass.selectShiftNumberAndTimeFromLoginHistory(this.statGetUser.Text);
+                string cashierID = selectClass.getEmployeeByID(this.statGetUser.Text);
 
-          selectClass.sumAllCash(cashierID,Convert.ToDateTime(selectClass.logDates), dayTime.Date);
-          selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
-            //cashier report goes here
-            frmVCashierReport repCashier = new frmVCashierReport();
-            repCashier.textBox1.AppendText("\t\tCASHIER REPORT" + Environment.NewLine);
-            repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText("Shift No. : "+ selectClass.shifts + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine+"User : " + this.statGetUser.Text + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine +"Time In : "+ selectClass.logDates + " " + selectClass.tymer + Environment.NewLine);
-            repCashier.textBox1.AppendText( Environment.NewLine+"Time out : " + statGetDate.Text + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText("\tTOTAL PAYMENT RECIEVED" + Environment.NewLine);
-            repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "CASH : " +  selectClass.cashValue + Environment.NewLine);
-             repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText("\tADDING UP CASH " + Environment.NewLine);
-            repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
+                selectClass.sumAllCash(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
+                selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
+                //cashier report goes here
+                frmVCashierReport repCashier = new frmVCashierReport();
+                repCashier.textBox1.AppendText("\t\tCASHIER REPORT" + Environment.NewLine);
+                repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText("Shift No. : " + selectClass.shifts + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "User : " + this.statGetUser.Text + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "Time In : " + selectClass.logDates + " " + selectClass.tymer + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "Time out : " + statGetDate.Text + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText("\tTOTAL PAYMENT RECIEVED" + Environment.NewLine);
+                repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "CASH : " + selectClass.cashValue + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText("\tADDING UP CASH " + Environment.NewLine);
+                repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
 
-            repCashier.textBox1.AppendText(Environment.NewLine + "TOTAL : " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString())  + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "CLOSING DAY SALES AT :  " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
-            repCashier.textBox1.AppendText(Environment.NewLine + "Thank you for a stupendous work");
-            repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "TOTAL : " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "CLOSING DAY SALES AT :  " + selectClass.selectCurrencyUsedToComboBox(repCashier.textBox1.Text.ToString()) + (selectClass.POSvalue + selectClass.cashValue) + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "*******************************************" + Environment.NewLine);
+                repCashier.textBox1.AppendText(Environment.NewLine + "Thank you for a stupendous work");
+                repCashier.textBox1.AppendText("*******************************************" + Environment.NewLine);
 
-            repCashier.ShowDialog();
+                repCashier.ShowDialog();
 
-        
+            }
+            catch(Exception x)
+            {
+                MessageBox.Show("Something went wrong.");
+            }
         
         }
 

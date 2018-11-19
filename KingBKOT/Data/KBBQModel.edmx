@@ -252,6 +252,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="Uname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="privileges" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="cdate" Type="datetime" />
         </EntityType>
         <Association Name="FK_tbl_PurchaseDetails_purchaseProducts">
           <End Role="purchaseProducts" Type="Self.purchaseProducts" Multiplicity="0..1" />
@@ -604,6 +605,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="Uname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="privileges" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="detailsSettlement">
           <Key>
@@ -904,6 +906,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="KBBQModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
                 <ScalarProperty Name="privileges" ColumnName="privileges" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="Uname" ColumnName="Uname" />

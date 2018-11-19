@@ -18,5 +18,6 @@ namespace KingBKOT.Data
         public string Uname { get; set; }
         public string Pass { get; set; }
         public string privileges { get; set; }
+        public Nullable<System.DateTime> cdate { get; set; }
     }
 }

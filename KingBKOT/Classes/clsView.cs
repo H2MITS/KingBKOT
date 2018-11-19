@@ -358,7 +358,7 @@ namespace Cindy_Restaurant.Classes
 
                 con = new SqlConnection(dbPath);
                 con.Open();
-                string sql = "select prodID as No, proName as [Menu Item],prodTypeName as [Menu Group],proType as [Sub Group], proDescrip as [Details],tax_1 as [VAT %],tax_2 as [Tourism Levy %],tax_3 as [tax_3 %],proPrice as [Gross Price], tax_1Amt as [VAT Amount], tax_2Amt as [Tourism Levy Amount], tax_3Amt as [Tax_3 Amount], proNetPrice as [Net Price],statues from tblProducts";
+                string sql = "select prodID as No, proName as [Menu Item],prodTypeName as [Menu Group],proType as [Sub Group], proDescrip as [Details],tax_1 as [CGST %],tax_2 as [SGST %],tax_3 as [Other Tax %],proPrice as [Gross Price], tax_1Amt as [CGST Amount], tax_2Amt as [SGST Amount], tax_3Amt as [Other Tax Amount], proNetPrice as [Net Price],statues from tblProducts";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 DataSet dsd = new DataSet();
                 DataTable data = new DataTable();

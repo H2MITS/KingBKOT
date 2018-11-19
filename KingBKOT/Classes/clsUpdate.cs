@@ -162,13 +162,28 @@ namespace Cindy_Restaurant.Classes
 
 
 
-                MemoryStream pp = new MemoryStream();
-                photo.Image.Save(pp, photo.Image.RawFormat);
-                Byte[] pdata = pp.GetBuffer();
-                SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
-                ppic.Value = pdata;
+                if (photo.Image != null)
+                {
 
-                cmd.Parameters.Add(ppic);
+                    MemoryStream pp = new MemoryStream();
+                    photo.Image.Save(pp, photo.Image.RawFormat);
+                    Byte[] pdata = pp.GetBuffer();
+                    SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
+                    ppic.Value = pdata;
+                    cmd.Parameters.Add(ppic);
+                }
+                else
+                {
+                    MemoryStream pp = new MemoryStream();
+                    Byte[] pdata = pp.GetBuffer();
+                    SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
+                    ppic.Value = pdata;
+
+                    cmd.Parameters.Add(ppic);
+
+                }
+
+                
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Employee successfully updated", "SAVED - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(receiptList));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,7 +47,6 @@
             this.chkNoCharge = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnDatSearcsh = new System.Windows.Forms.Button();
             this.btnMyOrder = new System.Windows.Forms.Button();
             this.btnRecall = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -64,10 +64,13 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnMergePay = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.btnMergePayFinal = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnDatSearcsh = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -221,7 +224,7 @@
             this.groupBox5.Controls.Add(this.dateTimePicker1);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(46, 550);
+            this.groupBox5.Location = new System.Drawing.Point(12, 550);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(111, 59);
             this.groupBox5.TabIndex = 3;
@@ -236,24 +239,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(95, 25);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // btnDatSearcsh
-            // 
-            this.btnDatSearcsh.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnDatSearcsh.FlatAppearance.BorderSize = 0;
-            this.btnDatSearcsh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatSearcsh.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnDatSearcsh.ForeColor = System.Drawing.Color.White;
-            this.btnDatSearcsh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatSearcsh.Location = new System.Drawing.Point(172, 569);
-            this.btnDatSearcsh.Name = "btnDatSearcsh";
-            this.btnDatSearcsh.Size = new System.Drawing.Size(82, 40);
-            this.btnDatSearcsh.TabIndex = 7;
-            this.btnDatSearcsh.Text = "Search";
-            this.toolTip1.SetToolTip(this.btnDatSearcsh, "Select date from the date option on the left\r\nside of this button and click\r\nsear" +
-        "ch");
-            this.btnDatSearcsh.UseVisualStyleBackColor = false;
-            this.btnDatSearcsh.Click += new System.EventHandler(this.btnDatSearcsh_Click);
-            // 
             // btnMyOrder
             // 
             this.btnMyOrder.BackColor = System.Drawing.Color.Gold;
@@ -261,9 +246,9 @@
             this.btnMyOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMyOrder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnMyOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyOrder.Location = new System.Drawing.Point(265, 569);
+            this.btnMyOrder.Location = new System.Drawing.Point(620, 12);
             this.btnMyOrder.Name = "btnMyOrder";
-            this.btnMyOrder.Size = new System.Drawing.Size(106, 40);
+            this.btnMyOrder.Size = new System.Drawing.Size(180, 40);
             this.btnMyOrder.TabIndex = 8;
             this.btnMyOrder.Text = "My Order";
             this.btnMyOrder.UseVisualStyleBackColor = false;
@@ -271,11 +256,11 @@
             // 
             // btnRecall
             // 
-            this.btnRecall.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnRecall.BackColor = System.Drawing.Color.Chartreuse;
             this.btnRecall.FlatAppearance.BorderSize = 0;
             this.btnRecall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecall.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnRecall.Location = new System.Drawing.Point(478, 568);
+            this.btnRecall.Location = new System.Drawing.Point(478, 566);
             this.btnRecall.Name = "btnRecall";
             this.btnRecall.Size = new System.Drawing.Size(89, 41);
             this.btnRecall.TabIndex = 10;
@@ -292,7 +277,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(686, 567);
+            this.button5.Location = new System.Drawing.Point(686, 565);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(99, 42);
             this.button5.TabIndex = 12;
@@ -336,9 +321,9 @@
             this.brnClear.FlatAppearance.BorderSize = 0;
             this.brnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.brnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.brnClear.ForeColor = System.Drawing.Color.White;
+            this.brnClear.ForeColor = System.Drawing.Color.Black;
             this.brnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brnClear.Location = new System.Drawing.Point(577, 567);
+            this.brnClear.Location = new System.Drawing.Point(577, 565);
             this.brnClear.Name = "brnClear";
             this.brnClear.Size = new System.Drawing.Size(99, 42);
             this.brnClear.TabIndex = 11;
@@ -468,14 +453,6 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Action";
-            this.Delete.Image = global::KingBKOT.Properties.Resources.delete11;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            // 
             // btnMergePay
             // 
             this.btnMergePay.Location = new System.Drawing.Point(0, 0);
@@ -490,9 +467,9 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(46, 615);
+            this.btnKeyboard.Location = new System.Drawing.Point(12, 615);
             this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(323, 42);
+            this.btnKeyboard.Size = new System.Drawing.Size(345, 42);
             this.btnKeyboard.TabIndex = 72;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
@@ -513,6 +490,54 @@
             this.btnMergePayFinal.UseVisualStyleBackColor = false;
             this.btnMergePayFinal.Click += new System.EventHandler(this.btnMergePay_Click);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Action";
+            this.dataGridViewImageColumn1.Image = global::KingBKOT.Properties.Resources.delete11;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 117;
+            // 
+            // btnDatSearcsh
+            // 
+            this.btnDatSearcsh.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDatSearcsh.FlatAppearance.BorderSize = 0;
+            this.btnDatSearcsh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatSearcsh.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnDatSearcsh.ForeColor = System.Drawing.Color.White;
+            this.btnDatSearcsh.Image = ((System.Drawing.Image)(resources.GetObject("btnDatSearcsh.Image")));
+            this.btnDatSearcsh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatSearcsh.Location = new System.Drawing.Point(129, 567);
+            this.btnDatSearcsh.Name = "btnDatSearcsh";
+            this.btnDatSearcsh.Size = new System.Drawing.Size(43, 38);
+            this.btnDatSearcsh.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnDatSearcsh, "Select date from the date option on the left\r\nside of this button and click\r\nsear" +
+        "ch");
+            this.btnDatSearcsh.UseVisualStyleBackColor = false;
+            this.btnDatSearcsh.Click += new System.EventHandler(this.btnDatSearcsh_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Action";
+            this.Delete.Image = global::KingBKOT.Properties.Resources.delete11;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnUpdate.Location = new System.Drawing.Point(187, 566);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(170, 41);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "UnHold / (Update)";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // receiptList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,6 +552,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.brnClear);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRecall);
             this.Controls.Add(this.btnMyOrder);
             this.Controls.Add(this.btnDatSearcsh);
@@ -538,6 +564,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "receiptList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receipt List- King Bar Beque Restaurant";
@@ -597,5 +624,7 @@
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Button btnMergePayFinal;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

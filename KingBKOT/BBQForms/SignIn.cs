@@ -13,6 +13,8 @@ using System.Data.SqlClient;
 using Cindy_Restaurant;
 using System.IO;
 using System.Diagnostics;
+using KingBKOT.Data;
+
 
 namespace KingBarbeque.Forms
 {
@@ -22,6 +24,8 @@ namespace KingBarbeque.Forms
         {
             InitializeComponent();
         }
+        KBBQEntities _entities;
+
         object keyboardProc;
         clsSelect selectClass = new clsSelect();
         clsInsert varinsert = new clsInsert();
@@ -38,12 +42,12 @@ namespace KingBarbeque.Forms
 
         }
 
-       //public void btnLogin_Click(object sender, EventArgs e)
-       // {
-       //     SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
-       //     notifyIcon1.Visible = true;
-       //     notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
-       // }
+        //public void btnLogin_Click(object sender, EventArgs e)
+        // {
+        //     SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
+        //     notifyIcon1.Visible = true;
+        //     notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
+        // }
 
         //LOGIN
         void SignInn(string Usernames, string Password)
@@ -51,6 +55,24 @@ namespace KingBarbeque.Forms
 
             try
             {
+                DateTime currDate = DateTime.Now;
+                DateTime addDat;
+
+                _entities = new KBBQEntities();
+                var data = _entities.Users.Where(x => x.Uname == Usernames && x.Pass == Password).FirstOrDefault();
+
+                if (data != null)
+                {
+                    addDat = data.cdate.Value.AddDays(10);
+
+                    if (currDate.Date == addDat.Date)
+                    {
+                        MessageBox.Show("Your system need to be upgraded as all the test is successfully done. Contact your technical administrator for more information.", "Upgradation Info - King Bar beque Restaurant Logins", MessageBoxButtons.OK, MessageBoxIcon.Information    );
+
+                        return;
+                    }
+                }
+
                 SqlConnection con = new SqlConnection(varinsert.dbPath);
 
                 string sql = "select Uname,Pass,privileges from Users where Uname=@Uname and Pass=@Pass";
@@ -100,7 +122,7 @@ namespace KingBarbeque.Forms
 
                     frmdashboard.statGetUser.Text = cboUsername.SelectedItem.ToString();
                     frmdashboard.getLogNum = lab;
-                    
+
                     this.Hide();
                     frmdashboard.ShowDialog();
                     txtPassword.Clear();
@@ -194,7 +216,7 @@ namespace KingBarbeque.Forms
             selectClass.selectUsers(cboUsername);
             txtPassword.Select();
             txtPassword.Clear();
-            
+
         }
 
         private void btn7_Click(object sender, EventArgs e)
@@ -227,6 +249,8 @@ namespace KingBarbeque.Forms
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+
+
             SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
