@@ -64,6 +64,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -355,7 +356,7 @@
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(413, 443);
+            this.btnSave.Location = new System.Drawing.Point(413, 442);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 52);
             this.btnSave.TabIndex = 13;
@@ -371,7 +372,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(700, 443);
+            this.btnCancel.Location = new System.Drawing.Point(700, 442);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 52);
             this.btnCancel.TabIndex = 15;
@@ -389,7 +390,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(43, 66);
+            this.panel2.Location = new System.Drawing.Point(328, 62);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 3);
             this.panel2.TabIndex = 31;
@@ -408,7 +409,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 20.75F);
             this.label13.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label13.Location = new System.Drawing.Point(37, 28);
+            this.label13.Location = new System.Drawing.Point(322, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(238, 34);
             this.label13.TabIndex = 30;
@@ -422,7 +423,7 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(508, 443);
+            this.btnClear.Location = new System.Drawing.Point(508, 442);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 52);
             this.btnClear.TabIndex = 14;
@@ -437,7 +438,7 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(604, 443);
+            this.btnKeyboard.Location = new System.Drawing.Point(604, 442);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(90, 52);
             this.btnKeyboard.TabIndex = 72;
@@ -445,12 +446,22 @@
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(410, 433);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(381, 3);
+            this.panel3.TabIndex = 73;
+            // 
             // frmProductReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(863, 539);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel2);
@@ -520,5 +531,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -211,9 +211,8 @@ namespace Cindy_Restaurant
         {
             selectClass.selectShiftNumberAndTimeFromLoginHistory(this.statGetUser.Text);
             string cashierID = selectClass.getEmployeeByID(this.statGetUser.Text);
-
-          selectClass.sumAllCash(cashierID,Convert.ToDateTime(selectClass.logDates), dayTime.Date);
-          selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
+            selectClass.sumAllCash(cashierID,Convert.ToDateTime(selectClass.logDates), dayTime.Date);
+            selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
             //cashier report goes here
             frmVCashierReport repCashier = new frmVCashierReport();
             repCashier.textBox1.AppendText("\t\tCASHIER REPORT" + Environment.NewLine);

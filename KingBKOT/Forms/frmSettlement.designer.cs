@@ -69,6 +69,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnView = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -77,7 +78,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnView = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -280,7 +280,7 @@
             this.btnCashout.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCashout.ForeColor = System.Drawing.Color.White;
             this.btnCashout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashout.Location = new System.Drawing.Point(274, 280);
+            this.btnCashout.Location = new System.Drawing.Point(274, 274);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(120, 45);
             this.btnCashout.TabIndex = 14;
@@ -541,6 +541,23 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Bill Amount";
             // 
+            // btnView
+            // 
+            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnView.FlatAppearance.BorderSize = 0;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnView.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnView.ForeColor = System.Drawing.Color.Black;
+            this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnView.Location = new System.Drawing.Point(47, 476);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(120, 47);
+            this.btnView.TabIndex = 32;
+            this.btnView.Text = "View";
+            this.toolTip1.SetToolTip(this.btnView, "Helps to view the transaction");
+            this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -609,31 +626,14 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // btnView
-            // 
-            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnView.FlatAppearance.BorderSize = 0;
-            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnView.ForeColor = System.Drawing.Color.Black;
-            this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnView.Location = new System.Drawing.Point(47, 476);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(120, 47);
-            this.btnView.TabIndex = 32;
-            this.btnView.Text = "View";
-            this.toolTip1.SetToolTip(this.btnView, "Helps to view the transaction");
-            this.btnView.UseVisualStyleBackColor = false;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnKeyboard);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(51, 532);
+            this.groupBox2.Location = new System.Drawing.Point(47, 528);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(887, 63);
+            this.groupBox2.Size = new System.Drawing.Size(891, 63);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             // 

@@ -780,10 +780,17 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnKeyboard_Click(object sender, EventArgs e)
         {
-            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
-            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+            try
+            {
+                string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+                string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
 
-            this.keyboardProc = Process.Start(keyboardPath);
+                this.keyboardProc = Process.Start(keyboardPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

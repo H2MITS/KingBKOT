@@ -11,6 +11,8 @@ using KingBKOT.Data;
 using KingBKOT.Forms;
 using KingBKOT.ViewModel;
 using KingBKOT.Reports;
+using System.IO;
+using System.Diagnostics;
 
 namespace KingBKOT.Forms
 {
@@ -18,6 +20,7 @@ namespace KingBKOT.Forms
     {
         KBBQEntities _entities;
         int passedId = 0;
+        object keyboardProc;
         public frmAddPurchaseOrder(int passedProId)
         {
             InitializeComponent();
@@ -448,6 +451,26 @@ namespace KingBKOT.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+                string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+                this.keyboardProc = Process.Start(keyboardPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

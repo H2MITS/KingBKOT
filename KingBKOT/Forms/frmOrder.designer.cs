@@ -136,6 +136,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -400,7 +401,7 @@
             this.btnComplimentary.Location = new System.Drawing.Point(2, 58);
             this.btnComplimentary.Name = "btnComplimentary";
             this.btnComplimentary.Size = new System.Drawing.Size(75, 44);
-            this.btnComplimentary.TabIndex = 0;
+            this.btnComplimentary.TabIndex = 14;
             this.btnComplimentary.Text = "Complimentary";
             this.toolTip1.SetToolTip(this.btnComplimentary, "Click on an item from the list of orders to set as complimentary\r\nthis italizes t" +
         "he selected item and set price to 0\r\n");
@@ -417,7 +418,7 @@
             this.btnModify.Location = new System.Drawing.Point(2, 12);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(75, 37);
-            this.btnModify.TabIndex = 0;
+            this.btnModify.TabIndex = 13;
             this.btnModify.Text = "Modify";
             this.toolTip1.SetToolTip(this.btnModify, "Click on an item from the list of orders to modify");
             this.btnModify.UseVisualStyleBackColor = false;
@@ -432,7 +433,7 @@
             this.button1.Location = new System.Drawing.Point(12, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 40);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 15;
             this.button1.Text = "Remove select Item";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -1108,7 +1109,7 @@
             this.btnCancel.Location = new System.Drawing.Point(930, 655);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 53);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -1123,7 +1124,7 @@
             this.btnOrder.Location = new System.Drawing.Point(826, 654);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(95, 53);
-            this.btnOrder.TabIndex = 7;
+            this.btnOrder.TabIndex = 8;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
@@ -1139,7 +1140,7 @@
             this.btnSettlement.Location = new System.Drawing.Point(722, 654);
             this.btnSettlement.Name = "btnSettlement";
             this.btnSettlement.Size = new System.Drawing.Size(95, 53);
-            this.btnSettlement.TabIndex = 6;
+            this.btnSettlement.TabIndex = 7;
             this.btnSettlement.Text = "Settlement";
             this.btnSettlement.UseVisualStyleBackColor = false;
             this.btnSettlement.Click += new System.EventHandler(this.btnSettlement_Click);
@@ -1154,7 +1155,7 @@
             this.btnCashout.Location = new System.Drawing.Point(616, 654);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(95, 53);
-            this.btnCashout.TabIndex = 5;
+            this.btnCashout.TabIndex = 6;
             this.btnCashout.Text = "Cash";
             this.btnCashout.UseVisualStyleBackColor = false;
             this.btnCashout.Click += new System.EventHandler(this.btnCashout_Click);
@@ -1281,7 +1282,7 @@
             this.btnKeyboard.Location = new System.Drawing.Point(12, 654);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(95, 53);
-            this.btnKeyboard.TabIndex = 71;
+            this.btnKeyboard.TabIndex = 10;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
@@ -1297,10 +1298,19 @@
             this.btnClear.Location = new System.Drawing.Point(117, 654);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(95, 53);
-            this.btnClear.TabIndex = 72;
+            this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(7, 719);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1028, 3);
+            this.panel3.TabIndex = 73;
             // 
             // frmOrder
             // 
@@ -1308,6 +1318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.groupBox7);
@@ -1456,5 +1467,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel panel3;
     }
 }
