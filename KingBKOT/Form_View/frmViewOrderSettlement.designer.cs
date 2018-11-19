@@ -108,6 +108,7 @@
             this.lblOrderDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblKOT = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -128,7 +129,6 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnCashout = new System.Windows.Forms.Button();
             this.btnSettlement = new System.Windows.Forms.Button();
-            this.lblKOT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -908,6 +908,17 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // lblKOT
+            // 
+            this.lblKOT.AutoSize = true;
+            this.lblKOT.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblKOT.ForeColor = System.Drawing.Color.White;
+            this.lblKOT.Location = new System.Drawing.Point(170, 51);
+            this.lblKOT.Name = "lblKOT";
+            this.lblKOT.Size = new System.Drawing.Size(52, 20);
+            this.lblKOT.TabIndex = 0;
+            this.lblKOT.Text = "lblKOT";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox1);
@@ -1141,11 +1152,13 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnOrder.BackColor = System.Drawing.Color.Silver;
+            this.btnOrder.Cursor = System.Windows.Forms.Cursors.No;
             this.btnOrder.Enabled = false;
             this.btnOrder.FlatAppearance.BorderSize = 0;
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrder.Location = new System.Drawing.Point(808, 642);
             this.btnOrder.Name = "btnOrder";
@@ -1184,17 +1197,6 @@
             this.btnSettlement.Text = "Settlement";
             this.btnSettlement.UseVisualStyleBackColor = false;
             this.btnSettlement.Click += new System.EventHandler(this.btnSettlement_Click);
-            // 
-            // lblKOT
-            // 
-            this.lblKOT.AutoSize = true;
-            this.lblKOT.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblKOT.ForeColor = System.Drawing.Color.White;
-            this.lblKOT.Location = new System.Drawing.Point(170, 51);
-            this.lblKOT.Name = "lblKOT";
-            this.lblKOT.Size = new System.Drawing.Size(52, 20);
-            this.lblKOT.TabIndex = 0;
-            this.lblKOT.Text = "lblKOT";
             // 
             // frmViewOrderSettlement
             // 

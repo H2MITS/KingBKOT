@@ -24,7 +24,7 @@ namespace KingBKOT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPurchaseSaleReport());
+            Application.Run(new frmParent());
         }
     }
 }

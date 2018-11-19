@@ -27,5 +27,6 @@ namespace KingBKOT.Data
         public string acctNum { get; set; }
         public string electronicType { get; set; }
         public string empID { get; set; }
+        public string receiptno { get; set; }
     }
 }

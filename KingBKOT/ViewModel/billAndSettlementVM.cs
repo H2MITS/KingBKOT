@@ -8,6 +8,7 @@ namespace KingBKOT.ViewModel
 {
    public class billAndSettlementVM
     {
+        public int rowNo { get; set; }
         public string kot { get; set; }
         public string guestName{ get; set; }
         public string orderDecrip { get; set; }

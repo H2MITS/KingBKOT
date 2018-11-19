@@ -59,8 +59,8 @@ namespace Cindy_Restaurant.Forms
             clsInsert.err.SetError(dptBDay, string.Empty);
             clsInsert.err.SetError(txtResAddress, string.Empty);
             // clsInsert.err.SetError(txtEmail, string.Empty);
-           //  clsInsert.err.SetError(txtRFname, string.Empty);
-           //  clsInsert.err.SetError(txtRLname, string.Empty);
+            //  clsInsert.err.SetError(txtRFname, string.Empty);
+            //  clsInsert.err.SetError(txtRLname, string.Empty);
             // clsInsert.err.SetError(txtRPhone, string.Empty);
 
         }
@@ -351,19 +351,19 @@ namespace Cindy_Restaurant.Forms
             //    clsInsert.err.SetError(txtRPhone, "Please enter numberic value");
             //    return;
             //}
-
-                //WHEN ALL REQUIREMENTS ARE SATISFIED PERFORM THE INSERTIONS
+            //WHEN ALL REQUIREMENTS ARE SATISFIED PERFORM THE INSERTIONS
             else
             {
-
-                insertClass.addEmployee("emp" + selectClass.callGenEmpID().ToString(), txtFname.Text, txtLname.Text, txtOname.Text, cboGender, dptBDay, txtPhone.Text, txtResAddress.Text, txtEmail.Text, txtRFname.Text, txtRLname.Text, txtRPhone.Text, PicEmp);
-
+                if (PicEmp != null)
+                    insertClass.addEmployee("emp" + selectClass.callGenEmpID().ToString(), txtFname.Text, txtLname.Text, txtOname.Text, cboGender, dptBDay, txtPhone.Text, txtResAddress.Text, txtEmail.Text, txtRFname.Text, txtRLname.Text, txtRPhone.Text, PicEmp);
+                else
+                    insertClass.addEmployee("emp" + selectClass.callGenEmpID().ToString(), txtFname.Text, txtLname.Text, txtOname.Text, cboGender, dptBDay, txtPhone.Text, txtResAddress.Text, txtEmail.Text, txtRFname.Text, txtRLname.Text, txtRPhone.Text, PicEmp);
                 insertClass.insertTocallGenEmpID(selectClass.callGenEmpID());
 
                 setToInitialState();
 
             }
-           
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -408,7 +408,7 @@ namespace Cindy_Restaurant.Forms
 
         private void txtPhone_Leave(object sender, EventArgs e)
         {
-           valPhone ((Control)sender);
+            valPhone((Control)sender);
         }
 
         private void txtResAddress_TextChanged(object sender, EventArgs e)
@@ -418,7 +418,7 @@ namespace Cindy_Restaurant.Forms
 
         private void txtResAddress_Leave(object sender, EventArgs e)
         {
-          valResidence  ((Control)sender);
+            valResidence((Control)sender);
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -448,7 +448,7 @@ namespace Cindy_Restaurant.Forms
 
         private void txtRLname_Leave(object sender, EventArgs e)
         {
-         //valRef_Lname   ((Control)sender);
+            //valRef_Lname   ((Control)sender);
         }
 
         private void txtRPhone_TextChanged(object sender, EventArgs e)

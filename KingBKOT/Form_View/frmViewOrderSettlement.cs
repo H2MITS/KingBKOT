@@ -120,7 +120,7 @@ namespace Cindy_Restaurant.Form_View
 
         private void Change1_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
         }
 
         private void Change2_Click(object sender, EventArgs e)
@@ -130,42 +130,42 @@ namespace Cindy_Restaurant.Form_View
 
         private void Change3_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
         }
 
         private void Change4_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change4, dataGridView1);
         }
 
         private void Change5_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
         }
 
         private void Change6_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
         }
 
         private void Change7_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
         }
 
         private void Change8_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change9_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change0_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change0, dataGridView1);
         }
 
         //private void btnA_Click(object sender, EventArgs e)
@@ -385,15 +385,21 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnCashout_Click(object sender, EventArgs e)
         {
-          
-         }
+            string askme = "Do you wanna print receipt ?";
+            DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result.Equals(DialogResult.Yes))
+            {
+                PreviewReceipt();
+                printReceipt();
+            }
+        }
 
         string taxPercsent, vatPercsent;
 
-       
+
         private void frmViewOrderSettlement_Load(object sender, EventArgs e)
         {
-           
+
 
             dataGridView1.RowTemplate.Height = 40;
             dataGridView3.RowTemplate.Height = 40;
@@ -425,27 +431,27 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnSettlement_Click(object sender, EventArgs e)
         {
-           
-      
-                frmSettlement setl = new frmSettlement();
-                setl.getCashierName = this.lblwaiterName.Text;
-                setl.txtReceiptNum.Text = this.lblGetReceipt.Text;
-                setl.KOTnum = this.lblGetReceipt.Text;
-                setl.txtCustOwes.Text = this.fvosBillofOder;
-                setl.recNoList = this.recNoToPassList;
-                // this.Hide();
-                setl.ShowDialog();
 
-                // //wait a bit
-                string askme = "Do you wanna print receipt ?";
-                DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result.Equals(DialogResult.Yes))
-                {
-                    PreviewReceipt();
-                    printReceipt();
-                }
-                this.Close();
-            
+
+            frmSettlement setl = new frmSettlement();
+            setl.getCashierName = this.lblwaiterName.Text;
+            setl.txtReceiptNum.Text = this.lblGetReceipt.Text;
+            setl.KOTnum = this.lblGetReceipt.Text;
+            setl.txtCustOwes.Text = this.fvosBillofOder;
+            setl.recNoList = this.recNoToPassList;
+            // this.Hide();
+            setl.ShowDialog();
+
+            // //wait a bit
+            string askme = "Do you wanna print receipt ?";
+            DialogResult result = MessageBox.Show(askme, "Print Receipt - King Bar Beque Restaurant", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result.Equals(DialogResult.Yes))
+            {
+                PreviewReceipt();
+                printReceipt();
+            }
+            this.Close();
+
         }
 
         //Generate Receipt Preview
@@ -456,17 +462,17 @@ namespace Cindy_Restaurant.Form_View
 
             //get sales id
 
-            rcs.textBox1.AppendText("\t\t" + "King Bar Beque Restaurant" + Environment.NewLine);
-            rcs.textBox1.AppendText("\t\t=================================================" + Environment.NewLine);
+            rcs.textBox1.AppendText("King Bar Beque Restaurant" + Environment.NewLine);
+            rcs.textBox1.AppendText("========================================" + Environment.NewLine);
 
             rcs.textBox1.AppendText("Receipt No #: " + lblGetReceipt.Text + "\t\t\tDate: " + daty + Environment.NewLine);
             rcs.textBox1.AppendText("Table No #:" + lblTableNo.Text + "\t\t\tTime : " + timy + Environment.NewLine);
             rcs.textBox1.AppendText("Server #: " + "\t" + lblwaiterName.Text + Environment.NewLine);
             rcs.textBox1.AppendText("Guest #: " + "\t" + lblgetGuestName.Text + Environment.NewLine);
 
-            rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+            rcs.textBox1.AppendText("========================================" + Environment.NewLine);
             rcs.textBox1.AppendText(Environment.NewLine + "Item Name" + "\t\tQty" + "\t\tPrice" + Environment.NewLine);
-            rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+            rcs.textBox1.AppendText("========================================" + Environment.NewLine);
 
 
             //the below section will loop the items from the order sheet
@@ -497,46 +503,114 @@ namespace Cindy_Restaurant.Form_View
 
                     }
 
-                        //character is less than or equal 7
-                    else if ((proName.Length >=7) &&  (proName.Length < 13))
+                    //character is less than or equal 7
+                    else if ((proName.Length >= 7) && (proName.Length < 13))
                     {
-                        rcs.textBox1.AppendText(proName + "\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+                        if (proName.Length == 7)
+                        {
+                            // 6 charc
+                            rcs.textBox1.AppendText(proName + "      \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+                        }
+                        if (proName.Length == 8)
+                        {
+                            // 5 charc
+                            rcs.textBox1.AppendText(proName + "     \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 9)
+                        {
+                            // 4 charc
+                            rcs.textBox1.AppendText(proName + "    \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 10)
+                        {
+                            // 3 charc
+                            rcs.textBox1.AppendText(proName + "   \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 11)
+                        {
+                            // 2 charc
+                            rcs.textBox1.AppendText(proName + "  \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 12)
+                        {
+                            // 1 charc
+                            rcs.textBox1.AppendText(proName + " \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 13)
+                        {
+                            rcs.textBox1.AppendText(proName + "\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+                        }
 
                     }
 
-                        // is greater than 7
-                    else if (proName.Length <7)
+                    // is greater than 7
+                    else if (proName.Length < 7)
                     {
-                        rcs.textBox1.AppendText(proName + "\t\t\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+                        if (proName.Length == 1)
+                        {
+                            rcs.textBox1.AppendText(proName + "            \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+                        }
+                        if (proName.Length == 2)
+                        {
+                            rcs.textBox1.AppendText(proName + "           \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 3)
+                        {
+                            rcs.textBox1.AppendText(proName + "          \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 4)
+                        {
+                            rcs.textBox1.AppendText(proName + "         \t\t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 5)
+                        {
+                            rcs.textBox1.AppendText(proName + "        \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+                        if (proName.Length == 6)
+                        {
+                            rcs.textBox1.AppendText(proName + "       \t\t" + strTotalQty + "\t\t" + proPrice + Environment.NewLine);
+
+                        }
+
 
                     }
 
 
                 }
-                rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+                rcs.textBox1.AppendText("========================================" + Environment.NewLine);
 
                 rcs.textBox1.AppendText(Environment.NewLine);
-                rcs.textBox1.AppendText("\t\t\tSub Total............" + lblSubTotal.Text + Environment.NewLine);
-                rcs.textBox1.AppendText("\t\t\tTax....................." + (double.Parse(lblTaxAmt.Text) + double.Parse(lblVat.Text)) + Environment.NewLine);
-                rcs.textBox1.AppendText("\t\t\tPayable..............." + lblTotalAmt.Text + Environment.NewLine);
-                rcs.textBox1.AppendText("=================================================" + Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tSub Total..." + lblSubTotal.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tTax............." + (double.Parse(lblTaxAmt.Text) + double.Parse(lblVat.Text)) + Environment.NewLine);
+                rcs.textBox1.AppendText("\t\t\tPayable....." + lblTotalAmt.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("========================================" + Environment.NewLine);
 
                 rcs.textBox1.AppendText("Description" + "\t\tTaxable" + "\t\tTax" + Environment.NewLine);
 
                 //set subtotal and VAT
-                rcs.textBox1.AppendText("CGST (2.5%)" + "\t\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("CGST(2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text + Environment.NewLine);
 
                 //set subtotal and TAX
-                rcs.textBox1.AppendText("SGST (2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
+                rcs.textBox1.AppendText("SGST(2.5%)" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text + Environment.NewLine);
 
                 rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
 
 
-                
+
                 rcs.textBox1.AppendText(Environment.NewLine + "Transaction: " + "PAID" + Environment.NewLine);
                 rcs.textBox1.AppendText(Environment.NewLine + "---------------------------------------------------------------------------------------------------" + Environment.NewLine);
 
                 rcs.textBox1.AppendText("Thank you for your visit, Please do visit us again");
+                rcs.textBox1.AppendText(Environment.NewLine + "========================================" + Environment.NewLine);
                 rcs.ShowDialog();
             }
 
@@ -550,7 +624,7 @@ namespace Cindy_Restaurant.Form_View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -656,7 +730,7 @@ namespace Cindy_Restaurant.Form_View
 
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -670,85 +744,85 @@ namespace Cindy_Restaurant.Form_View
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
 
-            string proNam = row.Cells[0].Value.ToString();
-            string reason = "";
+            //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
 
-            //CEHECKING STATUES
-            try
-            {
+            //string proNam = row.Cells[0].Value.ToString();
+            //string reason = "";
 
-                string sql = "select Reason from tblProducts where proName='" + proNam + "'";
-                SqlConnection con = new SqlConnection(selectClass.dbPath);
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
+            ////CEHECKING STATUES
+            //try
+            //{
 
-                    reason = reader["Reason"].ToString();
+            //    string sql = "select Reason from tblProducts where proName='" + proNam + "'";
+            //    SqlConnection con = new SqlConnection(selectClass.dbPath);
+            //    con.Open();
+            //    SqlCommand cmd = new SqlCommand(sql, con);
+            //    SqlDataReader reader = cmd.ExecuteReader();
+            //    if (reader.Read())
+            //    {
 
-                }
+            //        reason = reader["Reason"].ToString();
 
-                if (reason.Trim().Length > 0)
-                {
-                    MessageBox.Show("The selected Item has been freeze" + Environment.NewLine + "Reason: " + reason, "Bring To Notice - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
 
-                    return;
+            //    if (reason.Trim().Length > 0)
+            //    {
+            //        MessageBox.Show("The selected Item has been freeze" + Environment.NewLine + "Reason: " + reason, "Bring To Notice - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                }
-                else
-                {
-                    //foreach (var item in listView1.Items)
-                    //{
-                    //    MessageBox.Show(item)
-                    //}
+            //        return;
 
-                    ListViewItem listVItem = new ListViewItem();
-                    listVItem.SubItems.Add("1");
-                    listVItem.SubItems.Add(row.Cells[0].Value.ToString());
-                    listVItem.SubItems.Add(row.Cells[1].Value.ToString());
+            //    }
+            //    else
+            //    {
+            //        //foreach (var item in listView1.Items)
+            //        //{
+            //        //    MessageBox.Show(item)
+            //        //}
 
-                    listView1.Items.Add(listVItem);
+            //        ListViewItem listVItem = new ListViewItem();
+            //        listVItem.SubItems.Add("1");
+            //        listVItem.SubItems.Add(row.Cells[0].Value.ToString());
+            //        listVItem.SubItems.Add(row.Cells[1].Value.ToString());
+
+            //        listView1.Items.Add(listVItem);
 
 
-                    for (int col = 0; col <= listView1.Items.Count - 1; col++)
-                    {
+            //        for (int col = 0; col <= listView1.Items.Count - 1; col++)
+            //        {
 
-                        selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
-                        lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
-                        lblVat.Text = selectClass.tax2_Amt.ToString();
-                        lblSubTotal.Text = selectClass.netPrice.ToString();
-                        fvosBillofOder = lblTotalAmt.Text = subtotal().ToString();
+            //            selectClass.calcTaxAmt(decimal.Parse(taxPercsent), decimal.Parse(vatPercsent), decimal.Parse("0.00"), decimal.Parse(lblTotalAmt.Text));
+            //            lblTaxAmt.Text = selectClass.tax1_Amt.ToString();
+            //            lblVat.Text = selectClass.tax2_Amt.ToString();
+            //            lblSubTotal.Text = selectClass.netPrice.ToString();
+            //            fvosBillofOder = lblTotalAmt.Text = subtotal().ToString();
 
-                    }
+            //        }
 
-                }
-             
-            }
+            //    }
 
-            catch (Exception ex)
-            {
-                //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
 
-            }
+            //catch (Exception ex)
+            //{
+            //    //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            //}
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_MouseHover(object sender, EventArgs e)
         {
-             
+
         }
 
         private void lblGetReceipt_Click(object sender, EventArgs e)
@@ -761,33 +835,33 @@ namespace Cindy_Restaurant.Form_View
             int i, j;
 
             //let make j the total count of items on listview
-            j =  listView1.Items.Count;
+            j = listView1.Items.Count;
             Graphics grafic = e.Graphics;
             Font font = new Font("Courier New", 11);
             float fontHeight = font.GetHeight();
-            int StartX = 10;
-            int StartY = 10;
+            int StartX = 5;
+            int StartY = 5;
             int offSet = 40;
 
-            grafic.DrawString("\tKING BAR BEQUE RESTAURANT", new Font("Courier New", 14,FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("King BarBeque Restaurant", new Font("Courier New", 13, FontStyle.Regular), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
-            grafic.DrawString("======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
+            grafic.DrawString("========================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
 
-            grafic.DrawString("Receipt# ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
+            grafic.DrawString("Receipt#:", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
             grafic.DrawString("\t\t" + lblGetReceipt.Text.PadRight(30), new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
 
-            grafic.DrawString("\t\t\tDate: " + thisDate, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
+            grafic.DrawString("\t\t\tDate:" + thisDate, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
 
 
-            grafic.DrawString("Table #: ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
+            grafic.DrawString("Table #:", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
             grafic.DrawString("\t\t" + lblTableNo.Text.PadRight(30), new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
-            grafic.DrawString("\t\t\tTime: " + thisTime, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
+            grafic.DrawString("\t\t\tTime:" + thisTime, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
 
-            grafic.DrawString("Server #: ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
+            grafic.DrawString("Server #:", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
             grafic.DrawString("\t\t" + lblwaiterName.Text, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
 
-            grafic.DrawString("Guest ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
+            grafic.DrawString("Guest:", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
             grafic.DrawString("\t\t" + lblgetGuestName.Text, new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
 
 
@@ -795,10 +869,10 @@ namespace Cindy_Restaurant.Form_View
             grafic.DrawString(Liners, new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 80));
 
 
-            grafic.DrawString("Item Name ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
+            grafic.DrawString("Item Name", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
             grafic.DrawString("\t\t\tQty", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
 
-            grafic.DrawString("\t\t\t\t\tAmount ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
+            grafic.DrawString("\t\t\t\tAmount ", new Font("Courier New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
 
 
             grafic.DrawString("=======================================================", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 120));
@@ -812,7 +886,89 @@ namespace Cindy_Restaurant.Form_View
                 strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
                 proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
 
-                string productLine = proName + "\t\t\t" + strTotalQty + "\t" + proPrice;
+                string productLine = "";
+
+
+                if (proName.Length >= 13)
+                {
+                    productLine = proName.Substring(0, 13) + "\t" + strTotalQty + "     " + proPrice;
+                }
+
+                //character is less than or equal 7
+                else if ((proName.Length >= 7) && (proName.Length < 13))
+                {
+                    if (proName.Length == 7)
+                    {
+                        // 6 charc
+                    
+                        productLine = proName + "       \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 8)
+                    {
+                        // 5 charc
+                        productLine = proName + "      \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 9)
+                    {
+                        // 4 charc
+                        productLine = proName + "    \t" + strTotalQty + "     " + proPrice;
+
+                    }
+                    if (proName.Length == 10)
+                    {
+                        // 3 charc
+                        productLine = proName + "   \t" + strTotalQty + "     " + proPrice;
+
+                    }
+                    if (proName.Length == 11)
+                    {
+                        // 2 charc
+                        productLine = proName + "  \t" + strTotalQty + "     " + proPrice;
+
+                    }
+                    if (proName.Length == 12)
+                    {
+                        // 1 charc
+                        productLine = proName + " \t" + strTotalQty + "     " + proPrice;
+
+                    }
+                    if (proName.Length == 13)
+                    {
+                        productLine = proName + "\t" + strTotalQty + "     " + proPrice;
+                    }
+
+                }
+
+                // is greater than 7
+                else if (proName.Length < 7)
+                {
+                    if (proName.Length == 1)
+                    {
+                        productLine = proName + "            \t" + strTotalQty + "     " + proPrice;
+                     }
+                    if (proName.Length == 2)
+                    {
+                        productLine = proName + "           \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 3)
+                    {
+                        productLine = proName + "          \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 4)
+                    {
+                        productLine = proName + "         \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 5)
+                    {
+                        productLine = proName + "        \t" + strTotalQty + "     " + proPrice;
+                    }
+                    if (proName.Length == 6)
+                    {
+                        productLine = proName + "       \t" + strTotalQty + "     " + proPrice;
+                    }
+
+
+                }
 
                 grafic.DrawString(productLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 140));
 
@@ -820,21 +976,26 @@ namespace Cindy_Restaurant.Form_View
 
             }
 
-            string LineDraw = "========================================================";
+            string LineDraw = "========================================";
+            grafic.DrawString(LineDraw, new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 150));
+
+       string LineDrawss = "----------------------------------------";
             grafic.DrawString(LineDraw, new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 150));
 
 
-            grafic.DrawString("\t\tSub Total........." + lblSubTotal.Text + Environment.NewLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 160));
-            grafic.DrawString("\t\tTax..............." + (double.Parse(lblTaxAmt.Text) + double.Parse(lblVat.Text)), font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 180));
-            grafic.DrawString("\t\tPayable..........." + lblTotalAmt.Text + Environment.NewLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 200));
-            grafic.DrawString("========================================", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 210));
-            grafic.DrawString("Description" + "\t\tTaxable" + "\tTax", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 230));
-            grafic.DrawString("VAT" + "\t\t\t" + lblSubTotal.Text + "\t\t" + lblTaxAmt.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 250));
-            grafic.DrawString("Tourism Levy" + "\t\t" + lblSubTotal.Text + "\t\t" + lblVat.Text , font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 280));
-            grafic.DrawString("----------------------------------------", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 290));
+
+            grafic.DrawString("  Sub Total..." + lblSubTotal.Text + Environment.NewLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 160));
+            grafic.DrawString("  Tax........." + (double.Parse(lblTaxAmt.Text) + double.Parse(lblVat.Text)), font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 180));
+            grafic.DrawString("  Payable....." + lblTotalAmt.Text + Environment.NewLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 200));
+            grafic.DrawString(LineDraw, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 210));
+            grafic.DrawString("Description" + "\tTaxable" + "    Tax", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 230));
+            grafic.DrawString("CGST(2.5%)" + "\t" + lblSubTotal.Text + "    " + lblTaxAmt.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 250));
+            grafic.DrawString("SGST(2.5%)" + "\t" + lblSubTotal.Text + "    " + lblVat.Text, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 280));
+            grafic.DrawString(LineDrawss, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 290));
             grafic.DrawString("Transaction: " + "PAID", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 310));
-            grafic.DrawString("----------------------------------------", font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 330));
+            grafic.DrawString(LineDrawss, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 330));
             grafic.DrawString("Thank you for your visit.Please do visit us again ", new Font("Courier New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 350));
+            grafic.DrawString(LineDrawss, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 370));
 
         }
 
@@ -910,13 +1071,13 @@ namespace Cindy_Restaurant.Form_View
                 strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
                 proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
 
-               
 
-               string productLine = proName + "\t\t\t" + strTotalQty + "\t" + proPrice;
+
+                string productLine = proName + "\t\t\t" + strTotalQty + "\t" + proPrice;
 
                 grafic.DrawString(productLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 140));
                 offSet += (int)fontHeight + 5;
-              
+
 
             }
 

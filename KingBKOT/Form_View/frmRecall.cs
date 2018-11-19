@@ -39,85 +39,92 @@ namespace Cindy_Restaurant.Form_View
         frmViewOrderSettlement fvos = new frmViewOrderSettlement();
         private void frmRecall_Load(object sender, EventArgs e)
         {
-            _entities = new KBBQEntities();
-            dataGridView2.AutoGenerateColumns = false;
-
-            getTableNo();
-
-            if (cmbTableNo.Items.Count > 0)
+            try
             {
-                cmbTableNo.SelectedIndex = 0;
-                btnMergePay.Visible = true;
-            }
-            else
-            {
-                btnMergePay.Visible = false;
-            }
+                _entities = new KBBQEntities();
+                dataGridView2.AutoGenerateColumns = false;
 
-            dataGridView2.RowTemplate.Height = 35;
-            cboSearcshMode.SelectedIndex = 0;
+                getTableNo();
 
-
-
-            //---------------------------------------------
-
-
-            List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-            List<billAndSettlement> data = new List<billAndSettlement>();
-
-            if (cmbTableNo.Items.Count == 0)
-            {
-
-                data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
-                foreach (var item in data)
+                if (cmbTableNo.Items.Count > 0)
                 {
-
-                    billAndSettlementVM model = new billAndSettlementVM();
-
-                    model.kot = item.kot;
-                    model.orderDecrip = item.orderDecrip;
-                    model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
-                    model.ordTime = item.ordTime;
-                    model.totalDue = item.totalDue;
-
-                    modelList.Add(model);
+                    cmbTableNo.SelectedIndex = 0;
+                    btnMergePay.Visible = true;
                 }
-            }
-            else
-            {
-                 
-
-                string selectedTable = cmbTableNo.Text.ToString();
-
-                var datas = _entities.tblOrderInfoes.Where(x => x.tableNo == selectedTable).ToList();
-                //data = _entities.billAndSettlements.Where(x => x. == selectedTable).ToList();
-
-                foreach (var item in datas)
+                else
                 {
-                    var datss = _entities.billAndSettlements.Where(x => x.kot == item.KOT && x.mode == "UNPAID").FirstOrDefault();
+                    btnMergePay.Visible = false;
+                }
 
-                    if (datss != null)
+                dataGridView2.RowTemplate.Height = 35;
+                cboSearcshMode.SelectedIndex = 0;
+
+
+
+                //---------------------------------------------
+
+
+                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+                List<billAndSettlement> data = new List<billAndSettlement>();
+
+                if (cmbTableNo.Items.Count == 0)
+                {
+
+                    data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
+                    foreach (var item in data)
                     {
+
                         billAndSettlementVM model = new billAndSettlementVM();
 
-                        model.kot = datss.kot;
-                        model.orderDecrip = datss.orderDecrip;
-                        model.guestName = datss.fname + " " + datss.lname;
-                        model.ordDate = datss.ordDate;
-                        model.ordTime = datss.ordTime;
-                        model.totalDue = datss.totalDue;
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
 
                         modelList.Add(model);
                     }
                 }
+                else
+                {
+
+
+                    string selectedTable = cmbTableNo.Text.ToString();
+
+                    var datas = _entities.tblOrderInfoes.Where(x => x.tableNo == selectedTable).ToList();
+                    //data = _entities.billAndSettlements.Where(x => x. == selectedTable).ToList();
+
+                    foreach (var item in datas)
+                    {
+                        var datss = _entities.billAndSettlements.Where(x => x.kot == item.KOT && x.mode == "UNPAID").FirstOrDefault();
+
+                        if (datss != null)
+                        {
+                            billAndSettlementVM model = new billAndSettlementVM();
+
+                            model.kot = datss.kot;
+                            model.orderDecrip = datss.orderDecrip;
+                            model.guestName = datss.fname + " " + datss.lname;
+                            model.ordDate = datss.ordDate;
+                            model.ordTime = datss.ordTime;
+                            model.totalDue = datss.totalDue;
+
+                            modelList.Add(model);
+                        }
+                    }
+                }
+
+
+
+                dataGridView2.DataSource = modelList;
+
+                dataGridView2.ClearSelection();
             }
+            catch(Exception x)
+            {
 
-
-
-            dataGridView2.DataSource = modelList;
-
-            dataGridView2.ClearSelection();
+            }
         }
         string tabl = "0";
         private void getTableNo()
@@ -168,41 +175,82 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnMyOrder_Click(object sender, EventArgs e)
         {
-            DateTimePicker dates = new DateTimePicker();
-            if (btnMyOrder.Text.Equals("My Order"))
+            try
             {
-                btnMyOrder.Text = "All Orders";
-
-                //-----------------------------------------------------------------------
-
-                string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-                var data = _entities.billAndSettlements.Where(x => x.empID == lblGetId.Text && x.ordDate == dateTimePicker1.Value.Date).ToList();
-                foreach (var item in data)
+                _entities = new KBBQEntities();
+                DateTimePicker dates = new DateTimePicker();
+                if (btnMyOrder.Text.Equals("My Order"))
                 {
+                    btnMyOrder.Text = "All Orders";
 
-                    billAndSettlementVM model = new billAndSettlementVM();
+                    //-----------------------------------------------------------------------
 
-                    model.kot = item.kot;
-                    model.orderDecrip = item.orderDecrip;
-                    model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
-                    model.ordTime = item.ordTime;
-                    model.totalDue = item.totalDue;
+                    //string selectedTable = cmbTableNo.SelectedValue.ToString();
 
-                    modelList.Add(model);
+                    List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+
+                    var data = _entities.billAndSettlements.Where(x => x.empID == lblGetId.Text && x.ordDate == dateTimePicker1.Value.Date).ToList();
+                    foreach (var item in data)
+                    {
+
+                        billAndSettlementVM model = new billAndSettlementVM();
+
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
+
+                        modelList.Add(model);
+                    }
+
+                    dataGridView2.DataSource = modelList;
+
+                    dataGridView2.ClearSelection();
                 }
+                else if (btnMyOrder.Text.Equals("All Orders"))
+                {
+                    btnMyOrder.Text = "My Order";
+                    //   btnMyOrder.Image = Properties.Resources.Office_Customer_Male_Light_icon;
 
-                dataGridView2.DataSource = modelList;
+                    //-----------------------------------------------------------------------
 
-                dataGridView2.ClearSelection();
+                    string selectedTable = cmbTableNo.SelectedValue.ToString();
+
+                    List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+
+                    var data = _entities.billAndSettlements.Where(x => x.ordDate == dateTimePicker1.Value.Date).ToList();
+                    foreach (var item in data)
+                    {
+
+                        billAndSettlementVM model = new billAndSettlementVM();
+
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
+
+                        modelList.Add(model);
+                    }
+
+                    dataGridView2.DataSource = modelList;
+
+                    dataGridView2.ClearSelection();
+                }
             }
-            else if (btnMyOrder.Text.Equals("All Orders"))
+            catch(Exception x)
             {
-                btnMyOrder.Text = "My Order";
-                //   btnMyOrder.Image = Properties.Resources.Office_Customer_Male_Light_icon;
+
+            }
+        }
+
+        private void btnDatSearcsh_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
                 //-----------------------------------------------------------------------
 
@@ -227,97 +275,42 @@ namespace Cindy_Restaurant.Form_View
                 }
 
                 dataGridView2.DataSource = modelList;
-
                 dataGridView2.ClearSelection();
             }
-        }
-
-        private void btnDatSearcsh_Click(object sender, EventArgs e)
-        {
-
-            //-----------------------------------------------------------------------
-
-            string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-            List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-            var data = _entities.billAndSettlements.Where(x => x.ordDate == dateTimePicker1.Value.Date).ToList();
-            foreach (var item in data)
+            catch(Exception x)
             {
 
-                billAndSettlementVM model = new billAndSettlementVM();
-
-                model.kot = item.kot;
-                model.orderDecrip = item.orderDecrip;
-                model.guestName = item.fname + " " + item.lname;
-                model.ordDate = item.ordDate;
-                model.ordTime = item.ordTime;
-                model.totalDue = item.totalDue;
-
-                modelList.Add(model);
             }
-
-            dataGridView2.DataSource = modelList;
-            dataGridView2.ClearSelection();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
-            //-------------------------------------------------------------------------------------
-            string selectedTable = cmbTableNo.SelectedValue.ToString();
-            List<billAndSettlement> data = new List<billAndSettlement>();
-            List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-            if (cboSearcshMode.SelectedIndex.Equals(0))
-            {
-                data = _entities.billAndSettlements.Where(x => x.fname.Contains(txtSearcsh.Text)).ToList();
-
-            }
-            else if (cboSearcshMode.SelectedIndex.Equals(1))
-            {
-                data = _entities.billAndSettlements.Where(x => x.lname.Contains(txtSearcsh.Text)).ToList();
-
-            }
-
-            else if (cboSearcshMode.SelectedIndex.Equals(2))
-            {
-                if (txtSearcsh.Text != string.Empty)
-                    data = _entities.billAndSettlements.Where(x => x.kot.Contains(txtSearcsh.Text)).ToList();
-            }
-
-
-            foreach (var item in data)
+            try
             {
 
-                billAndSettlementVM model = new billAndSettlementVM();
-
-                model.kot = item.kot;
-                model.orderDecrip = item.orderDecrip;
-                model.guestName = item.fname + " " + item.lname;
-                model.ordDate = item.ordDate;
-                model.ordTime = item.ordTime;
-                model.totalDue = item.totalDue;
-
-                modelList.Add(model);
-            }
-
-            dataGridView2.DataSource = modelList;
-            dataGridView2.ClearSelection();
-        }
-
-        private void chkTakeAway_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkTakeAway.Checked)
-            {
-
-                //-----------------------------------------------------------------------
-
+                //-------------------------------------------------------------------------------------
                 string selectedTable = cmbTableNo.SelectedValue.ToString();
-
+                List<billAndSettlement> data = new List<billAndSettlement>();
                 List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Take Away").ToList();
+                if (cboSearcshMode.SelectedIndex.Equals(0))
+                {
+                    data = _entities.billAndSettlements.Where(x => x.fname.Contains(txtSearcsh.Text)).ToList();
+
+                }
+                else if (cboSearcshMode.SelectedIndex.Equals(1))
+                {
+                    data = _entities.billAndSettlements.Where(x => x.lname.Contains(txtSearcsh.Text)).ToList();
+
+                }
+
+                else if (cboSearcshMode.SelectedIndex.Equals(2))
+                {
+                    if (txtSearcsh.Text != string.Empty)
+                        data = _entities.billAndSettlements.Where(x => x.kot.Contains(txtSearcsh.Text)).ToList();
+                }
+
+
                 foreach (var item in data)
                 {
 
@@ -335,76 +328,131 @@ namespace Cindy_Restaurant.Form_View
 
                 dataGridView2.DataSource = modelList;
                 dataGridView2.ClearSelection();
+            }
+            catch (Exception x)
+            {
+
+            }
+        }
+
+        private void chkTakeAway_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkTakeAway.Checked)
+                {
+
+                    //-----------------------------------------------------------------------
+
+                    string selectedTable = cmbTableNo.SelectedValue.ToString();
+
+                    List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+
+                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Take Away").ToList();
+                    foreach (var item in data)
+                    {
+
+                        billAndSettlementVM model = new billAndSettlementVM();
+
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
+
+                        modelList.Add(model);
+                    }
+
+                    dataGridView2.DataSource = modelList;
+                    dataGridView2.ClearSelection();
+                }
+            }
+            catch(Exception x)
+            {
+
             }
         }
 
         private void chkDineIn_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkDineIn.Checked)
+            try
+            {
+                if (chkDineIn.Checked)
+                {
+                    //-----------------------------------------------------------------------
+
+                    string selectedTable = cmbTableNo.SelectedValue.ToString();
+
+                    List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+
+                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Dine In").ToList();
+                    foreach (var item in data)
+                    {
+
+                        billAndSettlementVM model = new billAndSettlementVM();
+
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
+
+                        modelList.Add(model);
+                    }
+
+                    dataGridView2.DataSource = modelList;
+                    dataGridView2.ClearSelection();
+                }
+            }
+            catch(Exception x)
             {
 
-
-                //-----------------------------------------------------------------------
-
-                string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-                var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Dine In").ToList();
-                foreach (var item in data)
-                {
-
-                    billAndSettlementVM model = new billAndSettlementVM();
-
-                    model.kot = item.kot;
-                    model.orderDecrip = item.orderDecrip;
-                    model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
-                    model.ordTime = item.ordTime;
-                    model.totalDue = item.totalDue;
-
-                    modelList.Add(model);
-                }
-
-                dataGridView2.DataSource = modelList;
-                dataGridView2.ClearSelection();
             }
         }
 
         private void chkNoCharge_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkNoCharge.Checked)
+            try
             {
-                //-----------------------------------------------------------------------
-
-                string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-                var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "No Charge").ToList();
-                foreach (var item in data)
+                if (chkNoCharge.Checked)
                 {
+                    //-----------------------------------------------------------------------
 
-                    billAndSettlementVM model = new billAndSettlementVM();
+                    string selectedTable = cmbTableNo.SelectedValue.ToString();
 
-                    model.kot = item.kot;
-                    model.orderDecrip = item.orderDecrip;
-                    model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
-                    model.ordTime = item.ordTime;
-                    model.totalDue = item.totalDue;
+                    List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                    modelList.Add(model);
+                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "No Charge").ToList();
+                    foreach (var item in data)
+                    {
+
+                        billAndSettlementVM model = new billAndSettlementVM();
+
+                        model.kot = item.kot;
+                        model.orderDecrip = item.orderDecrip;
+                        model.guestName = item.fname + " " + item.lname;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.totalDue = item.totalDue;
+
+                        modelList.Add(model);
+                    }
+
+                    dataGridView2.DataSource = modelList;
+                    dataGridView2.ClearSelection();
                 }
+            }
+            catch(Exception x)
+            {
 
-                dataGridView2.DataSource = modelList;
-                dataGridView2.ClearSelection();
             }
         }
         string selectedTable = "";
         private void btnRecall_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txtGetBill.Text);
+             
             _entities = new KBBQEntities();
 
             if (getRep.Text == "")
@@ -463,42 +511,7 @@ namespace Cindy_Restaurant.Form_View
 
             // serve as refresh
 
-            if (cmbTableNo.Items.Count > 0)
-                selectedTable = cmbTableNo.SelectedValue.ToString();
-
-            List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-            List<billAndSettlement> data = new List<billAndSettlement>();
-
-            if (cmbTableNo.Items.Count == 0)
-            {
-
-                data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
-            }
-            else
-            {
-                string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-                data = _entities.billAndSettlements.Where(x => x.kot == selectedTable).ToList();
-            }
-            foreach (var item in data)
-
-            {
-
-                billAndSettlementVM model = new billAndSettlementVM();
-
-                model.kot = item.kot;
-                model.orderDecrip = item.orderDecrip;
-                model.guestName = item.fname + " " + item.lname;
-                model.ordDate = item.ordDate;
-                model.ordTime = item.ordTime;
-                model.totalDue = item.totalDue;
-
-                modelList.Add(model);
-            }
-
-            dataGridView2.DataSource = modelList;
-
-            dataGridView2.ClearSelection();
+            bindGridViewForPageLoad();
         }
 
         private void brnClear_Click(object sender, EventArgs e)
@@ -531,40 +544,47 @@ namespace Cindy_Restaurant.Form_View
 
         private void cmbTableNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _entities = new KBBQEntities();
-
-            //var data = _entities.tblOrderInfoes.Where(x => x.tableNo == cmbTableNo.SelectedText.ToString()).ToList();
-            //foreach (var item in data)
-            //{
-            //   selectClass.selectBillAndSettlementTableNo(dataGridView1, cmbTableNo.SelectedValue.ToString());
-            //}
-
-            recNoToPass = new List<billAndSettlementVM>();
-            string tablCMBSelected = cmbTableNo.Text.ToString();
-
-            List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
-
-            var data = _entities.tblOrderInfoes.Where(x => x.tableNo == tablCMBSelected).ToList();
-
-            foreach (var item in data)
+            try
             {
-                var dataSettlement = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault();
+                _entities = new KBBQEntities();
 
-                billAndSettlementVM model = new billAndSettlementVM();
+                //var data = _entities.tblOrderInfoes.Where(x => x.tableNo == cmbTableNo.SelectedText.ToString()).ToList();
+                //foreach (var item in data)
+                //{
+                //   selectClass.selectBillAndSettlementTableNo(dataGridView1, cmbTableNo.SelectedValue.ToString());
+                //}
 
-                model.kot = dataSettlement.kot;
-                model.orderDecrip = dataSettlement.orderDecrip;
-                model.guestName = dataSettlement.fname + " " + dataSettlement.lname;
-                model.ordDate = dataSettlement.ordDate;
-                model.ordTime = dataSettlement.ordTime;
-                model.totalDue = dataSettlement.totalDue;
+                recNoToPass = new List<billAndSettlementVM>();
+                string tablCMBSelected = cmbTableNo.Text.ToString();
 
-                modelList.Add(model);
+                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                recNoToPass.Add(model);
+                var data = _entities.tblOrderInfoes.Where(x => x.tableNo == tablCMBSelected).ToList();
+
+                foreach (var item in data)
+                {
+                    var dataSettlement = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault();
+
+                    billAndSettlementVM model = new billAndSettlementVM();
+
+                    model.kot = dataSettlement.kot;
+                    model.orderDecrip = dataSettlement.orderDecrip;
+                    model.guestName = dataSettlement.fname + " " + dataSettlement.lname;
+                    model.ordDate = dataSettlement.ordDate;
+                    model.ordTime = dataSettlement.ordTime;
+                    model.totalDue = dataSettlement.totalDue;
+
+                    modelList.Add(model);
+
+                    recNoToPass.Add(model);
+                }
+
+                dataGridView2.DataSource = modelList;
             }
+            catch(Exception x)
+            {
 
-            dataGridView2.DataSource = modelList;
+            }
         }
 
         private void cboSearcshMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -574,115 +594,213 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnMergePay_Click(object sender, EventArgs e)
         {
-            decimal amt = 0;
-            int dgTotalRows = dataGridView2.Rows.Count;
-            if (dataGridView2.Rows.Count >= 0)
+            try
             {
-                DataGridViewRow row = this.dataGridView2.Rows[dgTotalRows - 1];
-
-                //  getRep.Text = row.Cells[0].Value.ToString();
-
-                //get customer name
-                fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
-
-                fvos.thisTime = row.Cells[4].Value.ToString();
-
-                foreach (DataGridViewRow item in dataGridView2.Rows)
+                decimal amt = 0;
+                int dgTotalRows = dataGridView2.Rows.Count;
+                if (dataGridView2.Rows.Count >= 0)
                 {
-                    amt += Convert.ToDecimal(item.Cells[5].Value);
+                    DataGridViewRow row = this.dataGridView2.Rows[dgTotalRows - 1];
 
+                    //  getRep.Text = row.Cells[0].Value.ToString();
+
+                    //get customer name
+                    fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
+
+                    fvos.thisTime = row.Cells[4].Value.ToString();
+
+                    foreach (DataGridViewRow item in dataGridView2.Rows)
+                    {
+                        amt += Convert.ToDecimal(item.Cells[5].Value);
+
+                    }
+
+                    txtGetBill.Text = amt.ToString();
                 }
 
-                txtGetBill.Text = amt.ToString();
-            }
+                _entities = new KBBQEntities();
 
-            _entities = new KBBQEntities();
+                string tablCMBSelected = cmbTableNo.Text.ToString();
 
-            string tablCMBSelected = cmbTableNo.Text.ToString();
+                var getLastRecptNo = (selectClass.getKOTNum()).ToString();
 
-            var getLastRecptNo = (selectClass.getKOTNum()).ToString();
+                //just to tell kot generator that the id is used
+                insertClass.insertToKOTGenerator(Convert.ToInt32(getLastRecptNo), "done");
 
-            //just to tell kot generator that the id is used
-            insertClass.insertToKOTGenerator(Convert.ToInt32(getLastRecptNo), "done");
+                var recptNo = _entities.tblOrderInfoes.Where(x => x.tableNo == tablCMBSelected).ToList();
 
-            var recptNo = _entities.tblOrderInfoes.Where(x => x.tableNo == tablCMBSelected).ToList();
-
-            fvos.lblKOT.Text = "";
-            foreach (var item in recptNo)
-            {
-                selectClass.selectOrderDetailsUsingKOT(item.KOT, fvos.listView1, 1);
-
-                fvos.lblKOT.Text += item.KOT + ", ";
-            }
-
-            selectClass.selectOrderFieldsUsingKOT(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
-
-            fvos.recNoToPassList = recNoToPass; // passing all rec for current selected table
-            fvos.lblGetReceipt.Text = getLastRecptNo.ToString();
-            fvos.lblTableNo.Text = selectClass.TableNum;
-            fvos.lblOrderDescription.Text = selectClass.orderDescript;
-            fvos.lblgetDateTime.Text = selectClass.OrderDate + " ";
-            fvos.thisDate = selectClass.OrderDate;
-            fvos.daty = selectClass.OrderDate;
-
-            fvos.lblgetDateTime.Text += selectClass.OrderTime;
-            fvos.timy = selectClass.OrderTime;
-
-            //get number of person
-            selectClass.selectAdultAndChildren(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
-
-            fvos.lblAdultNo.Text = selectClass.AdultNum;
-            fvos.lblChild.Text = selectClass.ChildrenNum;
-
-            //pull employee-id where the receipt id is known
-            string salesPersonID = selectClass.getSalePersonID(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
-
-            //After getting the sale person id 
-            //search for the fullname using the the id gotten
-            //when the id is match get the Uname and assigned it to the lable
-            fvos.lblwaiterName.Text = selectClass.salpersonByID(salesPersonID);
-
-
-            fvos.fvosBillofOder = txtGetBill.Text;
-
-
-            var ifSettled = _entities.billAndSettlements.Where(x => x.kot == getRep.Text).FirstOrDefault();
-
-            if (ifSettled != null)
-            {
-                if (ifSettled.mode == "PAID")
+                fvos.lblKOT.Text = "";
+                foreach (var item in recptNo)
                 {
-                    fvos.btnSettlement.Visible = false;
+                    selectClass.selectOrderDetailsUsingKOT(item.KOT, fvos.listView1, 1);
+
+                    fvos.lblKOT.Text += item.KOT + ", ";
+                }
+
+                selectClass.selectOrderFieldsUsingKOT(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
+
+                fvos.recNoToPassList = recNoToPass; // passing all rec for current selected table
+                fvos.lblGetReceipt.Text = getLastRecptNo.ToString();
+                fvos.lblTableNo.Text = selectClass.TableNum;
+                fvos.lblOrderDescription.Text = selectClass.orderDescript;
+                fvos.lblgetDateTime.Text = selectClass.OrderDate + " ";
+                fvos.thisDate = selectClass.OrderDate;
+                fvos.daty = selectClass.OrderDate;
+
+                fvos.lblgetDateTime.Text += selectClass.OrderTime;
+                fvos.timy = selectClass.OrderTime;
+
+                //get number of person
+                selectClass.selectAdultAndChildren(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
+
+                fvos.lblAdultNo.Text = selectClass.AdultNum;
+                fvos.lblChild.Text = selectClass.ChildrenNum;
+
+                //pull employee-id where the receipt id is known
+                string salesPersonID = selectClass.getSalePersonID(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
+
+                //After getting the sale person id 
+                //search for the fullname using the the id gotten
+                //when the id is match get the Uname and assigned it to the lable
+                fvos.lblwaiterName.Text = selectClass.salpersonByID(salesPersonID);
+
+
+                fvos.fvosBillofOder = txtGetBill.Text;
+
+
+                var ifSettled = _entities.billAndSettlements.Where(x => x.kot == getRep.Text).FirstOrDefault();
+
+                if (ifSettled != null)
+                {
+                    if (ifSettled.mode == "PAID")
+                    {
+                        fvos.btnSettlement.Visible = false;
+                    }
+                }
+
+                //fvos.btnSettlement.Visible = false;
+                fvos.ShowDialog();
+                //settlement.txtCustOwes.Text = txtGetBill.Text;
+                //settlement.ShowDialog();
+                getRep.Text = "";
+
+                bindGridViewForPageLoad();
+            }
+            catch (Exception x)
+            {
+
+            }
+
+        }
+        clsUpdate updateClass;
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                DialogResult myResult;
+                myResult = MessageBox.Show("Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (myResult == DialogResult.OK)
+                {
+                    _entities = new KBBQEntities();
+
+                    var cellId = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
+                    updateClass = new clsUpdate();
+                    updateClass.updateBillAndSettlement(cellId.ToString(), "CANCELLED", "", 0);
+
+                    _entities = new KBBQEntities();
+
+                    var data = _entities.DailySales.Where(x => x.KOT == cellId.ToString()).ToList();
+
+                    foreach (var item in data)
+                    { 
+                        _entities.DailySales.Remove(item);
+                        _entities.SaveChanges();
+
+                    }
+
+                    bindGridViewForPageLoad();
+
+
                 }
             }
+             
 
-            //fvos.btnSettlement.Visible = false;
-            fvos.ShowDialog();
-            //settlement.txtCustOwes.Text = txtGetBill.Text;
-            //settlement.ShowDialog();
-            getRep.Text = "";
+        }
 
+        private void bindGridViewForPageLoad()
+        {
+            try
+            {
+                _entities = new KBBQEntities();
+                if (cmbTableNo.Items.Count > 0)
+                    selectedTable = cmbTableNo.SelectedValue.ToString();
+
+                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+                List<billAndSettlement> data = new List<billAndSettlement>();
+
+                if (cmbTableNo.Items.Count == 0)
+                {
+
+                    data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
+                }
+                else
+                {
+                    string selectedTable = cmbTableNo.SelectedValue.ToString();
+
+                    data = _entities.billAndSettlements.Where(x => x.kot == selectedTable && x.mode == "UNPAID").ToList();
+                }
+                foreach (var item in data)
+
+                {
+
+                    billAndSettlementVM model = new billAndSettlementVM();
+
+                    model.kot = item.kot;
+                    model.orderDecrip = item.orderDecrip;
+                    model.guestName = item.fname + " " + item.lname;
+                    model.ordDate = item.ordDate;
+                    model.ordTime = item.ordTime;
+                    model.totalDue = item.totalDue;
+
+                    modelList.Add(model);
+                }
+
+                dataGridView2.DataSource = modelList;
+
+                dataGridView2.ClearSelection();
+            }
+            catch (Exception x)
+            {
+
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            decimal amt = 0;
-
-            if (e.RowIndex >= 0)
+            try
             {
-                DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+                decimal amt = 0;
 
-                getRep.Text = row.Cells[0].Value.ToString();
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
 
-                //get customer name
-                fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
+                    getRep.Text = row.Cells[0].Value.ToString();
 
-                fvos.thisTime = row.Cells[4].Value.ToString();
+                    //get customer name
+                    fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
 
-                amt = Convert.ToDecimal(row.Cells[5].Value);
+                    fvos.thisTime = row.Cells[4].Value.ToString();
+
+                    amt = Convert.ToDecimal(row.Cells[5].Value);
 
 
-                txtGetBill.Text = amt.ToString();
+                    txtGetBill.Text = amt.ToString();
+                }
+            }
+            catch(Exception x)
+            {
+
             }
         }
 
