@@ -75,7 +75,7 @@ namespace KingBKOT.Forms
 
                 List<PurchaseOrderVM> modelList = new List<PurchaseOrderVM>();
 
-                var categoryData = _entities.tblPurchaseOrders.ToList();
+                var categoryData = _entities.tblPurchaseOrders.Where(x => x.date == dateTimePicker1.Value.Date).ToList();
 
                 foreach (var item in categoryData)
                 {
@@ -159,17 +159,17 @@ namespace KingBKOT.Forms
 
                         var pId = _entities.purchaseProducts.Where(x => x.pName == txtitemName.Text.Trim()).FirstOrDefault().id;
 
-                        var checkForExisitingData = _entities.tblPurchaseOrders.Where(x => x.productId == pId).FirstOrDefault();
+                        //var checkForExisitingData = _entities.tblPurchaseOrders.Where(x => x.productId == pId).FirstOrDefault();
 
-                        if (checkForExisitingData != null)
-                        {
-                            MessageBox.Show("Entry Already Exists. Update the Exisiting Entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            clear();
-                            txtitemName.Focus();
-                            return;
-                        }
-                        else
-                        {
+                        //if (checkForExisitingData != null)
+                        //{
+                        //    MessageBox.Show("Entry Already Exists. Update the Exisiting Entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    clear();
+                        //    txtitemName.Focus();
+                        //    return;
+                        //}
+                        //else
+                        //{
                             //save Code
                             tblPurchaseOrder proDate = new tblPurchaseOrder();
                             proDate.productId = pId;
@@ -185,7 +185,7 @@ namespace KingBKOT.Forms
                             clear();
                             MessageBox.Show("Record Added Successfully");
 
-                        }
+                        //}
 
                     }
                     else

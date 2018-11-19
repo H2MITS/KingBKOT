@@ -28,49 +28,56 @@ namespace Cindy_Restaurant.Form_View
 
         private void frmViewOrderInfo_Load(object sender, EventArgs e)
         {
-            // viewClass.viewOrderInfo(dataGridView1);
-
-            //dateFrom.Format = DateTimePickerFormat.Custom;
-            //dateFrom.CustomFormat = "dd-MM-yyyy";
-
-
-            //dateTo.Format = DateTimePickerFormat.Custom;
-            //dateTo.CustomFormat = "dd-MM-yyyy";
-            dataGridView1.AutoGenerateColumns = false;
-
-            _entities = new KBBQEntities();
-
-            List<OrderInfoVM> modelList = new List<OrderInfoVM>();
-
-            var data = _entities.tblOrderInfoes.OrderBy(x => x.KOT).ToList();
-
-            if (data != null)
+            try
             {
-                foreach (var item in data)
+                // viewClass.viewOrderInfo(dataGridView1);
+
+                //dateFrom.Format = DateTimePickerFormat.Custom;
+                //dateFrom.CustomFormat = "dd-MM-yyyy";
+
+
+                //dateTo.Format = DateTimePickerFormat.Custom;
+                //dateTo.CustomFormat = "dd-MM-yyyy";
+                dataGridView1.AutoGenerateColumns = false;
+
+                _entities = new KBBQEntities();
+
+                List<OrderInfoVM> modelList = new List<OrderInfoVM>();
+
+                var data = _entities.tblOrderInfoes.OrderBy(x => x.KOT).ToList();
+
+                if (data != null)
                 {
-                    OrderInfoVM model = new OrderInfoVM();
-
-                    model.KOT = item.KOT;
-                    model.orderType = item.orderType;
-                    model.tableNo = item.tableNo;
-                    model.ordDate = item.ordDate;
-                    model.ordTime = item.ordTime;
-                    model.guests = item.fname + " " + item.lname;
-                    model.adultNo = item.adultNo;
-                    model.childrenNo= item.childrenNo;
-
-                    var empName = _entities.tblEmployees.Where(x => x.empID == item.empID).FirstOrDefault();
-
-                    if (empName != null)
+                    foreach (var item in data)
                     {
-                        model.empName = empName.fname;
+                        OrderInfoVM model = new OrderInfoVM();
+
+                        model.KOT = item.KOT;
+                        model.orderType = item.orderType;
+                        model.tableNo = item.tableNo;
+                        model.ordDate = item.ordDate;
+                        model.ordTime = item.ordTime;
+                        model.guests = item.fname + " " + item.lname;
+                        model.adultNo = item.adultNo;
+                        model.childrenNo = item.childrenNo;
+
+                        var empName = _entities.tblEmployees.Where(x => x.empID == item.empID).FirstOrDefault();
+
+                        if (empName != null)
+                        {
+                            model.empName = empName.fname;
+                        }
+
+                        modelList.Add(model);
+
                     }
 
-                    modelList.Add(model);
-
+                    dataGridView1.DataSource = modelList;
                 }
+            }
+            catch(Exception x)
+            {
 
-                dataGridView1.DataSource = modelList;
             }
         }
 

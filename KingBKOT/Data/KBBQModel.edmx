@@ -24,18 +24,11 @@
           <Property Name="couponCode" Type="nchar" MaxLength="20" />
           <Property Name="discount" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'cindyDB.dbo.DailySales' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DailySales">
           <Key>
-            <PropertyRef Name="ServiceType" />
-            <PropertyRef Name="ItemName" />
-            <PropertyRef Name="ItemPrice" />
-            <PropertyRef Name="empID" />
-            <PropertyRef Name="OrderTime" />
-            <PropertyRef Name="statues" />
-            <PropertyRef Name="KOT" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TableNum" Type="int" />
           <Property Name="ServiceType" Type="text" Nullable="false" />
           <Property Name="Qty" Type="int" />
@@ -70,6 +63,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="acctNum" Type="nvarchar" MaxLength="50" />
           <Property Name="electronicType" Type="nvarchar" MaxLength="40" />
           <Property Name="empID" Type="nvarchar" MaxLength="50" />
+          <Property Name="receiptno" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ElectronicCurrency">
           <Key>
@@ -96,7 +90,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Key>
             <PropertyRef Name="genKOT" />
           </Key>
-          <Property Name="genKOT" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="genKOT" Type="int" Nullable="false" />
           <Property Name="done" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="LogHistory">
@@ -297,6 +291,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
         </Association>
         <EntityContainer Name="KBBQModelStoreContainer">
           <EntitySet Name="billAndSettlement" EntityType="Self.billAndSettlement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailySales" EntityType="Self.DailySales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ElectronicCurrency" EntityType="Self.ElectronicCurrency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GenEmpID" EntityType="Self.GenEmpID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="genNochargeIDs" EntityType="Self.genNochargeIDs" Schema="dbo" store:Type="Tables" />
@@ -313,20 +308,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySet Name="tblPurchaseOrder" EntityType="Self.tblPurchaseOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTax" EntityType="Self.tblTax" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DailySales" EntityType="Self.DailySales" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [DailySales].[TableNum] AS [TableNum], 
-    [DailySales].[ServiceType] AS [ServiceType], 
-    [DailySales].[Qty] AS [Qty], 
-    [DailySales].[ItemName] AS [ItemName], 
-    [DailySales].[ItemPrice] AS [ItemPrice], 
-    [DailySales].[empID] AS [empID], 
-    [DailySales].[OrderDate] AS [OrderDate], 
-    [DailySales].[OrderTime] AS [OrderTime], 
-    [DailySales].[statues] AS [statues], 
-    [DailySales].[KOT] AS [KOT]
-    FROM [dbo].[DailySales] AS [DailySales]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="detailsSettlement" EntityType="Self.detailsSettlement" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [detailsSettlement].[KOT] AS [KOT], 
@@ -341,7 +322,8 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
     [detailsSettlement].[acctName] AS [acctName], 
     [detailsSettlement].[acctNum] AS [acctNum], 
     [detailsSettlement].[electronicType] AS [electronicType], 
-    [detailsSettlement].[empID] AS [empID]
+    [detailsSettlement].[empID] AS [empID], 
+    [detailsSettlement].[receiptno] AS [receiptno]
     FROM [dbo].[detailsSettlement] AS [detailsSettlement]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_tbl_PurchaseDetails_purchaseProducts" Association="Self.FK_tbl_PurchaseDetails_purchaseProducts">
@@ -361,214 +343,114 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KBBQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KBBQEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="billAndSettlements" EntityType="KBBQModel.billAndSettlement" />
+          <EntitySet Name="DailySales" EntityType="KBBQModel.DailySale" />
+          <EntitySet Name="ElectronicCurrencies" EntityType="KBBQModel.ElectronicCurrency" />
+          <EntitySet Name="GenEmpIDs" EntityType="KBBQModel.GenEmpID" />
+          <EntitySet Name="genNochargeIDs" EntityType="KBBQModel.genNochargeID" />
+          <EntitySet Name="kotGenerators" EntityType="KBBQModel.kotGenerator" />
+          <EntitySet Name="LogHistories" EntityType="KBBQModel.LogHistory" />
+          <EntitySet Name="purchaseProducts" EntityType="KBBQModel.purchaseProduct" />
+          <EntitySet Name="tbl_PurchaseDetails" EntityType="KBBQModel.tbl_PurchaseDetails" />
+          <EntitySet Name="tbl_PurchaseMaster" EntityType="KBBQModel.tbl_PurchaseMaster" />
+          <EntitySet Name="tblCurrencies" EntityType="KBBQModel.tblCurrency" />
+          <EntitySet Name="tblEmployees" EntityType="KBBQModel.tblEmployee" />
+          <EntitySet Name="tblOrderInfoes" EntityType="KBBQModel.tblOrderInfo" />
+          <EntitySet Name="tblProducts" EntityType="KBBQModel.tblProduct" />
+          <EntitySet Name="tblProTypes" EntityType="KBBQModel.tblProType" />
+          <EntitySet Name="tblPurchaseOrders" EntityType="KBBQModel.tblPurchaseOrder" />
+          <EntitySet Name="tblTaxes" EntityType="KBBQModel.tblTax" />
+          <EntitySet Name="Users" EntityType="KBBQModel.User" />
+          <EntitySet Name="detailsSettlements" EntityType="KBBQModel.detailsSettlement" />
+          <AssociationSet Name="FK_tbl_PurchaseDetails_purchaseProducts" Association="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts">
+            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPurchaseOrder_purchaseProducts" Association="KBBQModel.FK_tblPurchaseOrder_purchaseProducts">
+            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
+            <End Role="tblPurchaseOrder" EntitySet="tblPurchaseOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster" Association="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
+            <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
+            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="billAndSettlement">
+          <Key>
+            <PropertyRef Name="kot" />
+          </Key>
+          <Property Name="kot" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="orderDecrip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="totalDue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="tax1_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="tax2_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="subTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="couponCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="DailySale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableNum" Type="Int32" />
+          <Property Name="ServiceType" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ItemPrice" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OrderTime" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="statues" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KOT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="ElectronicCurrency">
           <Key>
             <PropertyRef Name="name" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GenEmpID">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nums" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nums" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="genNochargeID">
           <Key>
             <PropertyRef Name="genID" />
           </Key>
           <Property Name="genID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="done" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="done" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="kotGenerator">
           <Key>
             <PropertyRef Name="genKOT" />
           </Key>
-          <Property Name="genKOT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="done" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="genKOT" Type="Int32" Nullable="false" />
+          <Property Name="done" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="LogHistory">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="empID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="logDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="logTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="logTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="endShiftDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="endShiftTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="statues" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endShiftTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="statues" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="tblCurrency">
-          <Key>
-            <PropertyRef Name="curSymbol" />
-          </Key>
-          <Property Name="curID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CurName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="curSymbol" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Statues" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="convertAmt" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tblEmployee">
-          <Key>
-            <PropertyRef Name="empID" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="empID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="oname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="gender" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="resAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="emailAdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ref_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ref_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ref_phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="tblOrderInfo">
-          <Key>
-            <PropertyRef Name="KOT" />
-          </Key>
-          <Property Name="orderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="tableNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ordTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="fname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="lname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="adultNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="childrenNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="empID" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="waiterId" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tblProduct">
-          <Key>
-            <PropertyRef Name="prodID" />
-          </Key>
-          <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="proName" Type="String" MaxLength="125" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="prodTypeName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="proType" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="proDescrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tax_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="tax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="proPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_1Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_2Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_3Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="proNetPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="qty" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Statues" Type="Boolean" />
-          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tblProType">
-          <Key>
-            <PropertyRef Name="proTypeID" />
-          </Key>
-          <Property Name="proTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="prodTypeName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="proSubCate" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblTax">
-          <Key>
-            <PropertyRef Name="taxID" />
-          </Key>
-          <Property Name="taxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tax_1" Type="Decimal" Precision="5" Scale="3" Nullable="false" />
-          <Property Name="tax_2" Type="Decimal" Precision="5" Scale="3" />
-          <Property Name="tax_3" Type="Decimal" Precision="5" Scale="3" />
-        </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="empID" />
-          </Key>
-          <Property Name="empID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Uname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="privileges" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
-        <EntityType Name="DailySale">
-          <Key>
-            <PropertyRef Name="ServiceType" />
-            <PropertyRef Name="ItemName" />
-            <PropertyRef Name="ItemPrice" />
-            <PropertyRef Name="empID" />
-            <PropertyRef Name="OrderTime" />
-            <PropertyRef Name="statues" />
-            <PropertyRef Name="KOT" />
-          </Key>
-          <Property Name="TableNum" Type="Int32" />
-          <Property Name="ServiceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Qty" Type="Int32" />
-          <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ItemPrice" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="empID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="OrderDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="OrderTime" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="statues" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
-        <EntityType Name="detailsSettlement">
-          <Key>
-            <PropertyRef Name="KOT" />
-            <PropertyRef Name="paidDate" />
-            <PropertyRef Name="paidTime" />
-            <PropertyRef Name="bill" />
-            <PropertyRef Name="AmountPaid" />
-          </Key>
-          <Property Name="KOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="paidDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="paidTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="currencyInUsed" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="bill" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="custCurrencyChosen" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="changeDue" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="paymentType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="acctName" Type="String" MaxLength="125" FixedLength="false" Unicode="true" />
-          <Property Name="acctNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="electronicType" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="KBBQEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ElectronicCurrencies" EntityType="Self.ElectronicCurrency" />
-          <EntitySet Name="GenEmpIDs" EntityType="Self.GenEmpID" />
-          <EntitySet Name="genNochargeIDs" EntityType="Self.genNochargeID" />
-          <EntitySet Name="kotGenerators" EntityType="Self.kotGenerator" />
-          <EntitySet Name="LogHistories" EntityType="Self.LogHistory" />
-          <EntitySet Name="tblCurrencies" EntityType="Self.tblCurrency" />
-          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
-          <EntitySet Name="tblOrderInfoes" EntityType="Self.tblOrderInfo" />
-          <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
-          <EntitySet Name="tblProTypes" EntityType="Self.tblProType" />
-          <EntitySet Name="tblTaxes" EntityType="Self.tblTax" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="DailySales" EntityType="Self.DailySale" />
-          <EntitySet Name="detailsSettlements" EntityType="Self.detailsSettlement" />
-          <EntitySet Name="purchaseProducts" EntityType="KBBQModel.purchaseProduct" />
-          <EntitySet Name="tblPurchaseOrders" EntityType="KBBQModel.tblPurchaseOrder" />
-          <AssociationSet Name="FK_tblPurchaseOrder_purchaseProducts" Association="KBBQModel.FK_tblPurchaseOrder_purchaseProducts">
-            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
-            <End Role="tblPurchaseOrder" EntitySet="tblPurchaseOrders" />
-          </AssociationSet>
-          <EntitySet Name="tbl_PurchaseDetails" EntityType="KBBQModel.tbl_PurchaseDetails" />
-          <EntitySet Name="tbl_PurchaseMaster" EntityType="KBBQModel.tbl_PurchaseMaster" />
-          <AssociationSet Name="FK_tbl_PurchaseDetails_purchaseProducts" Association="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts">
-            <End Role="purchaseProduct" EntitySet="purchaseProducts" />
-            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbl_PurchaseDetails_tbl_PurchaseMaster" Association="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster">
-            <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
-            <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
-          </AssociationSet>
-          <EntitySet Name="billAndSettlements" EntityType="KBBQModel.billAndSettlement" />
-        </EntityContainer>
         <EntityType Name="purchaseProduct">
           <Key>
             <PropertyRef Name="id" />
@@ -583,35 +465,9 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="totalAmt" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="cdate" Type="DateTime" Precision="3" />
           <Property Name="udate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tblPurchaseOrders" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="purchaseProduct" ToRole="tblPurchaseOrder" />
           <NavigationProperty Name="tbl_PurchaseDetails" Relationship="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts" FromRole="purchaseProduct" ToRole="tbl_PurchaseDetails" />
+          <NavigationProperty Name="tblPurchaseOrders" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="purchaseProduct" ToRole="tblPurchaseOrder" />
         </EntityType>
-        <EntityType Name="tblPurchaseOrder">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productId" Type="Int64" />
-          <Property Name="date" Type="DateTime" Precision="3" />
-          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="cdate" Type="DateTime" Precision="3" />
-          <Property Name="udate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="purchaseProduct" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="tblPurchaseOrder" ToRole="purchaseProduct" />
-        </EntityType>
-        <Association Name="FK_tblPurchaseOrder_purchaseProducts">
-          <End Type="KBBQModel.purchaseProduct" Role="purchaseProduct" Multiplicity="0..1" />
-          <End Type="KBBQModel.tblPurchaseOrder" Role="tblPurchaseOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="purchaseProduct">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="tblPurchaseOrder">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tbl_PurchaseDetails">
           <Key>
             <PropertyRef Name="pdetailsId" />
@@ -643,6 +499,135 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="updateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="tbl_PurchaseDetails" Relationship="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" FromRole="tbl_PurchaseMaster" ToRole="tbl_PurchaseDetails" />
         </EntityType>
+        <EntityType Name="tblCurrency">
+          <Key>
+            <PropertyRef Name="curSymbol" />
+          </Key>
+          <Property Name="curID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="curSymbol" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Statues" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="convertAmt" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="oname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="resAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="emailAdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref_fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ref_lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ref_phone" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblOrderInfo">
+          <Key>
+            <PropertyRef Name="KOT" />
+          </Key>
+          <Property Name="orderType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tableNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KOT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="adultNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="childrenNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="waiterId" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="prodID" />
+          </Key>
+          <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proName" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="true" />
+          <Property Name="prodTypeName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proType" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proDescrip" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tax_1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_1Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_2Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proNetPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="qty" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Statues" Type="Boolean" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProType">
+          <Key>
+            <PropertyRef Name="proTypeID" />
+          </Key>
+          <Property Name="proTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prodTypeName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proSubCate" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblPurchaseOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int64" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="purchaseProduct" Relationship="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" FromRole="tblPurchaseOrder" ToRole="purchaseProduct" />
+        </EntityType>
+        <EntityType Name="tblTax">
+          <Key>
+            <PropertyRef Name="taxID" />
+          </Key>
+          <Property Name="taxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tax_1" Type="Decimal" Nullable="false" Precision="5" Scale="3" />
+          <Property Name="tax_2" Type="Decimal" Precision="5" Scale="3" />
+          <Property Name="tax_3" Type="Decimal" Precision="5" Scale="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Uname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="privileges" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="detailsSettlement">
+          <Key>
+            <PropertyRef Name="KOT" />
+            <PropertyRef Name="paidDate" />
+            <PropertyRef Name="paidTime" />
+            <PropertyRef Name="bill" />
+            <PropertyRef Name="AmountPaid" />
+          </Key>
+          <Property Name="KOT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paidDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="paidTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="currencyInUsed" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="bill" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="custCurrencyChosen" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="AmountPaid" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="changeDue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="paymentType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="acctName" Type="String" MaxLength="125" FixedLength="false" Unicode="true" />
+          <Property Name="acctNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="electronicType" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="receiptno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <Association Name="FK_tbl_PurchaseDetails_purchaseProducts">
           <End Type="KBBQModel.purchaseProduct" Role="purchaseProduct" Multiplicity="0..1" />
           <End Type="KBBQModel.tbl_PurchaseDetails" Role="tbl_PurchaseDetails" Multiplicity="*" />
@@ -652,6 +637,18 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             </Principal>
             <Dependent Role="tbl_PurchaseDetails">
               <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPurchaseOrder_purchaseProducts">
+          <End Type="KBBQModel.purchaseProduct" Role="purchaseProduct" Multiplicity="0..1" />
+          <End Type="KBBQModel.tblPurchaseOrder" Role="tblPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseProduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblPurchaseOrder">
+              <PropertyRef Name="productId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -667,207 +664,91 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="billAndSettlement">
-          <Key>
-            <PropertyRef Name="kot" />
-          </Key>
-          <Property Name="kot" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="orderDecrip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="lname" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="totalDue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="tax1_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="tax2_Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="subTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="empID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="couponCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
-        </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KBBQModelStoreContainer" CdmEntityContainer="KBBQEntities">
-          <EntitySetMapping Name="ElectronicCurrencies">
-            <EntityTypeMapping TypeName="KBBQModel.ElectronicCurrency">
-              <MappingFragment StoreEntitySet="ElectronicCurrency">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="GenEmpIDs">
-            <EntityTypeMapping TypeName="KBBQModel.GenEmpID">
-              <MappingFragment StoreEntitySet="GenEmpID">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nums" ColumnName="nums" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="genNochargeIDs">
-            <EntityTypeMapping TypeName="KBBQModel.genNochargeID">
-              <MappingFragment StoreEntitySet="genNochargeIDs">
-                <ScalarProperty Name="genID" ColumnName="genID" />
-                <ScalarProperty Name="done" ColumnName="done" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="kotGenerators">
-            <EntityTypeMapping TypeName="KBBQModel.kotGenerator">
-              <MappingFragment StoreEntitySet="kotGenerator">
-                <ScalarProperty Name="genKOT" ColumnName="genKOT" />
-                <ScalarProperty Name="done" ColumnName="done" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LogHistories">
-            <EntityTypeMapping TypeName="KBBQModel.LogHistory">
-              <MappingFragment StoreEntitySet="LogHistory">
-                <ScalarProperty Name="id" ColumnName="id" />
+          <EntitySetMapping Name="billAndSettlements">
+            <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
+              <MappingFragment StoreEntitySet="billAndSettlement">
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="couponCode" ColumnName="couponCode" />
                 <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="logDate" ColumnName="logDate" />
-                <ScalarProperty Name="logTime" ColumnName="logTime" />
-                <ScalarProperty Name="endShiftDate" ColumnName="endShiftDate" />
-                <ScalarProperty Name="endShiftTime" ColumnName="endShiftTime" />
-                <ScalarProperty Name="statues" ColumnName="statues" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblCurrencies">
-            <EntityTypeMapping TypeName="KBBQModel.tblCurrency">
-              <MappingFragment StoreEntitySet="tblCurrency">
-                <ScalarProperty Name="curID" ColumnName="curID" />
-                <ScalarProperty Name="CurName" ColumnName="CurName" />
-                <ScalarProperty Name="curSymbol" ColumnName="curSymbol" />
-                <ScalarProperty Name="Statues" ColumnName="Statues" />
-                <ScalarProperty Name="convertAmt" ColumnName="convertAmt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblEmployees">
-            <EntityTypeMapping TypeName="KBBQModel.tblEmployee">
-              <MappingFragment StoreEntitySet="tblEmployee">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="oname" ColumnName="oname" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="dob" ColumnName="dob" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="resAddress" ColumnName="resAddress" />
-                <ScalarProperty Name="emailAdd" ColumnName="emailAdd" />
-                <ScalarProperty Name="ref_fname" ColumnName="ref_fname" />
-                <ScalarProperty Name="ref_lname" ColumnName="ref_lname" />
-                <ScalarProperty Name="ref_phone" ColumnName="ref_phone" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblOrderInfoes">
-            <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
-              <MappingFragment StoreEntitySet="tblOrderInfo">
-                <ScalarProperty Name="waiterId" ColumnName="waiterId" />
-                <ScalarProperty Name="orderType" ColumnName="orderType" />
-                <ScalarProperty Name="tableNo" ColumnName="tableNo" />
-                <ScalarProperty Name="KOT" ColumnName="KOT" />
-                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="mode" ColumnName="mode" />
+                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+                <ScalarProperty Name="tax2_Amt" ColumnName="tax2_Amt" />
+                <ScalarProperty Name="tax1_Amt" ColumnName="tax1_Amt" />
+                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
                 <ScalarProperty Name="ordTime" ColumnName="ordTime" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
                 <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="adultNo" ColumnName="adultNo" />
-                <ScalarProperty Name="childrenNo" ColumnName="childrenNo" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblProducts">
-            <EntityTypeMapping TypeName="KBBQModel.tblProduct">
-              <MappingFragment StoreEntitySet="tblProducts">
-                <ScalarProperty Name="prodID" ColumnName="prodID" />
-                <ScalarProperty Name="proName" ColumnName="proName" />
-                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
-                <ScalarProperty Name="proType" ColumnName="proType" />
-                <ScalarProperty Name="proDescrip" ColumnName="proDescrip" />
-                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
-                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
-                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
-                <ScalarProperty Name="proPrice" ColumnName="proPrice" />
-                <ScalarProperty Name="tax_1Amt" ColumnName="tax_1Amt" />
-                <ScalarProperty Name="tax_2Amt" ColumnName="tax_2Amt" />
-                <ScalarProperty Name="tax_3Amt" ColumnName="tax_3Amt" />
-                <ScalarProperty Name="proNetPrice" ColumnName="proNetPrice" />
-                <ScalarProperty Name="qty" ColumnName="qty" />
-                <ScalarProperty Name="Statues" ColumnName="Statues" />
-                <ScalarProperty Name="Reason" ColumnName="Reason" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblProTypes">
-            <EntityTypeMapping TypeName="KBBQModel.tblProType">
-              <MappingFragment StoreEntitySet="tblProType">
-                <ScalarProperty Name="proTypeID" ColumnName="proTypeID" />
-                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
-                <ScalarProperty Name="proSubCate" ColumnName="proSubCate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblTaxes">
-            <EntityTypeMapping TypeName="KBBQModel.tblTax">
-              <MappingFragment StoreEntitySet="tblTax">
-                <ScalarProperty Name="taxID" ColumnName="taxID" />
-                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
-                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
-                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="KBBQModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="Uname" ColumnName="Uname" />
-                <ScalarProperty Name="Pass" ColumnName="Pass" />
-                <ScalarProperty Name="privileges" ColumnName="privileges" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="orderDecrip" ColumnName="orderDecrip" />
+                <ScalarProperty Name="kot" ColumnName="kot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DailySales">
             <EntityTypeMapping TypeName="KBBQModel.DailySale">
               <MappingFragment StoreEntitySet="DailySales">
-                <ScalarProperty Name="TableNum" ColumnName="TableNum" />
-                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
-                <ScalarProperty Name="statues" ColumnName="statues" />
                 <ScalarProperty Name="KOT" ColumnName="KOT" />
+                <ScalarProperty Name="statues" ColumnName="statues" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="TableNum" ColumnName="TableNum" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="detailsSettlements">
-            <EntityTypeMapping TypeName="KBBQModel.detailsSettlement">
-              <MappingFragment StoreEntitySet="detailsSettlement">
-                <ScalarProperty Name="KOT" ColumnName="KOT" />
-                <ScalarProperty Name="paidDate" ColumnName="paidDate" />
-                <ScalarProperty Name="paidTime" ColumnName="paidTime" />
-                <ScalarProperty Name="currencyInUsed" ColumnName="currencyInUsed" />
-                <ScalarProperty Name="bill" ColumnName="bill" />
-                <ScalarProperty Name="custCurrencyChosen" ColumnName="custCurrencyChosen" />
-                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
-                <ScalarProperty Name="changeDue" ColumnName="changeDue" />
-                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
-                <ScalarProperty Name="acctName" ColumnName="acctName" />
-                <ScalarProperty Name="acctNum" ColumnName="acctNum" />
-                <ScalarProperty Name="electronicType" ColumnName="electronicType" />
+          <EntitySetMapping Name="ElectronicCurrencies">
+            <EntityTypeMapping TypeName="KBBQModel.ElectronicCurrency">
+              <MappingFragment StoreEntitySet="ElectronicCurrency">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenEmpIDs">
+            <EntityTypeMapping TypeName="KBBQModel.GenEmpID">
+              <MappingFragment StoreEntitySet="GenEmpID">
+                <ScalarProperty Name="nums" ColumnName="nums" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genNochargeIDs">
+            <EntityTypeMapping TypeName="KBBQModel.genNochargeID">
+              <MappingFragment StoreEntitySet="genNochargeIDs">
+                <ScalarProperty Name="done" ColumnName="done" />
+                <ScalarProperty Name="genID" ColumnName="genID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kotGenerators">
+            <EntityTypeMapping TypeName="KBBQModel.kotGenerator">
+              <MappingFragment StoreEntitySet="kotGenerator">
+                <ScalarProperty Name="done" ColumnName="done" />
+                <ScalarProperty Name="genKOT" ColumnName="genKOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogHistories">
+            <EntityTypeMapping TypeName="KBBQModel.LogHistory">
+              <MappingFragment StoreEntitySet="LogHistory">
+                <ScalarProperty Name="statues" ColumnName="statues" />
+                <ScalarProperty Name="endShiftTime" ColumnName="endShiftTime" />
+                <ScalarProperty Name="endShiftDate" ColumnName="endShiftDate" />
+                <ScalarProperty Name="logTime" ColumnName="logTime" />
+                <ScalarProperty Name="logDate" ColumnName="logDate" />
                 <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -883,20 +764,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
                 <ScalarProperty Name="weight" ColumnName="weight" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="pName" ColumnName="pName" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblPurchaseOrders">
-            <EntityTypeMapping TypeName="KBBQModel.tblPurchaseOrder">
-              <MappingFragment StoreEntitySet="tblPurchaseOrder">
-                <ScalarProperty Name="udate" ColumnName="udate" />
-                <ScalarProperty Name="cdate" ColumnName="cdate" />
-                <ScalarProperty Name="qty" ColumnName="qty" />
-                <ScalarProperty Name="unit" ColumnName="unit" />
-                <ScalarProperty Name="weight" ColumnName="weight" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="productId" ColumnName="productId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -931,23 +798,136 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="billAndSettlements">
-            <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
-              <MappingFragment StoreEntitySet="billAndSettlement">
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="couponCode" ColumnName="couponCode" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="mode" ColumnName="mode" />
-                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
-                <ScalarProperty Name="tax2_Amt" ColumnName="tax2_Amt" />
-                <ScalarProperty Name="tax1_Amt" ColumnName="tax1_Amt" />
-                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
-                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
-                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+          <EntitySetMapping Name="tblCurrencies">
+            <EntityTypeMapping TypeName="KBBQModel.tblCurrency">
+              <MappingFragment StoreEntitySet="tblCurrency">
+                <ScalarProperty Name="convertAmt" ColumnName="convertAmt" />
+                <ScalarProperty Name="Statues" ColumnName="Statues" />
+                <ScalarProperty Name="curSymbol" ColumnName="curSymbol" />
+                <ScalarProperty Name="CurName" ColumnName="CurName" />
+                <ScalarProperty Name="curID" ColumnName="curID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmployees">
+            <EntityTypeMapping TypeName="KBBQModel.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="ref_phone" ColumnName="ref_phone" />
+                <ScalarProperty Name="ref_lname" ColumnName="ref_lname" />
+                <ScalarProperty Name="ref_fname" ColumnName="ref_fname" />
+                <ScalarProperty Name="emailAdd" ColumnName="emailAdd" />
+                <ScalarProperty Name="resAddress" ColumnName="resAddress" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="oname" ColumnName="oname" />
                 <ScalarProperty Name="lname" ColumnName="lname" />
                 <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="orderDecrip" ColumnName="orderDecrip" />
-                <ScalarProperty Name="kot" ColumnName="kot" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderInfoes">
+            <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
+              <MappingFragment StoreEntitySet="tblOrderInfo">
+                <ScalarProperty Name="waiterId" ColumnName="waiterId" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="childrenNo" ColumnName="childrenNo" />
+                <ScalarProperty Name="adultNo" ColumnName="adultNo" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
+                <ScalarProperty Name="tableNo" ColumnName="tableNo" />
+                <ScalarProperty Name="orderType" ColumnName="orderType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="KBBQModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProducts">
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Statues" ColumnName="Statues" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="proNetPrice" ColumnName="proNetPrice" />
+                <ScalarProperty Name="tax_3Amt" ColumnName="tax_3Amt" />
+                <ScalarProperty Name="tax_2Amt" ColumnName="tax_2Amt" />
+                <ScalarProperty Name="tax_1Amt" ColumnName="tax_1Amt" />
+                <ScalarProperty Name="proPrice" ColumnName="proPrice" />
+                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
+                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
+                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
+                <ScalarProperty Name="proDescrip" ColumnName="proDescrip" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proName" ColumnName="proName" />
+                <ScalarProperty Name="prodID" ColumnName="prodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProTypes">
+            <EntityTypeMapping TypeName="KBBQModel.tblProType">
+              <MappingFragment StoreEntitySet="tblProType">
+                <ScalarProperty Name="proSubCate" ColumnName="proSubCate" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proTypeID" ColumnName="proTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPurchaseOrders">
+            <EntityTypeMapping TypeName="KBBQModel.tblPurchaseOrder">
+              <MappingFragment StoreEntitySet="tblPurchaseOrder">
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTaxes">
+            <EntityTypeMapping TypeName="KBBQModel.tblTax">
+              <MappingFragment StoreEntitySet="tblTax">
+                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
+                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
+                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
+                <ScalarProperty Name="taxID" ColumnName="taxID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="KBBQModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="privileges" ColumnName="privileges" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detailsSettlements">
+            <EntityTypeMapping TypeName="KBBQModel.detailsSettlement">
+              <MappingFragment StoreEntitySet="detailsSettlement">
+                <ScalarProperty Name="receiptno" ColumnName="receiptno" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="electronicType" ColumnName="electronicType" />
+                <ScalarProperty Name="acctNum" ColumnName="acctNum" />
+                <ScalarProperty Name="acctName" ColumnName="acctName" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="changeDue" ColumnName="changeDue" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="custCurrencyChosen" ColumnName="custCurrencyChosen" />
+                <ScalarProperty Name="bill" ColumnName="bill" />
+                <ScalarProperty Name="currencyInUsed" ColumnName="currencyInUsed" />
+                <ScalarProperty Name="paidTime" ColumnName="paidTime" />
+                <ScalarProperty Name="paidDate" ColumnName="paidDate" />
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -65,7 +65,7 @@ namespace KingBKOT.Reports
 
                         model.monthYear = dt.Date.ToString("dd-MM-yyyy");
                         model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.AmountPaid));
-
+                        model.KOT = item.receiptno;
                         rowNo++;
                         ttlAmt += Convert.ToDecimal(item.AmountPaid);
 
@@ -121,7 +121,7 @@ namespace KingBKOT.Reports
                             model = new DetailSettlementVM();
                             model.rowNo = rowNo;
                             model.monthYear = dd;
-
+                            model.KOT = "--";
                             //modelListSales.Add(model);
                             //dgSalesReport.Rows.Add("0", rowNo, dd);
                             dates = dd;
@@ -195,7 +195,7 @@ namespace KingBKOT.Reports
                             model = new DetailSettlementVM();
                             model.rowNo = rowNo;
                             model.monthYear = dd;
-
+                            model.KOT = "--";
                             //modelListSales.Add(model);
                             //dgSalesReport.Rows.Add("0", rowNo, dd);
                             dates = dd;

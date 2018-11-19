@@ -365,11 +365,11 @@ namespace Cindy_Restaurant.Classes
                 {
                     Directory.CreateDirectory(@"C:\dbKingBarbequeRestaurantFolder");
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\CindyDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KBBQ_DB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\CindyDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQ_DB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 

@@ -307,7 +307,7 @@ namespace Cindy_Restaurant.Forms
 
         private void frmOrder_Load(object sender, EventArgs e)
         {
-           // var dgv = new DataGridView();
+            // var dgv = new DataGridView();
             dataGridView1.RowTemplate.Height = 40;
             dataGridView3.RowTemplate.Height = 40;
 
@@ -356,7 +356,7 @@ namespace Cindy_Restaurant.Forms
 
         private void Change1_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change1, dataGridView1);
         }
 
         private void Change2_Click(object sender, EventArgs e)
@@ -366,7 +366,7 @@ namespace Cindy_Restaurant.Forms
 
         private void Change3_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change3, dataGridView1);
         }
 
         private void Change4_Click(object sender, EventArgs e)
@@ -376,17 +376,17 @@ namespace Cindy_Restaurant.Forms
 
         private void Change5_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change5, dataGridView1);
         }
 
         private void Change6_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change6, dataGridView1);
         }
 
         private void Change7_Click(object sender, EventArgs e)
         {
-           // viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
+            // viewClass.SelectMenuByTextDisplay(Change7, dataGridView1);
         }
 
         private void Change8_Click(object sender, EventArgs e)
@@ -396,7 +396,7 @@ namespace Cindy_Restaurant.Forms
 
         private void Change9_Click(object sender, EventArgs e)
         {
-          //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
+            //  viewClass.SelectMenuByTextDisplay(Change9, dataGridView1);
         }
 
         private void Change0_Click(object sender, EventArgs e)
@@ -490,43 +490,42 @@ namespace Cindy_Restaurant.Forms
             Graphics grafic = e.Graphics;
             Font font = new Font("Courer New", 12);
             float fontHeight = font.GetHeight();
-            int StartX = 10;
-            int StartY = 10;
+            int StartX =5;
+            int StartY = 5;
             int offSet = 40;
 
-            grafic.DrawString("\tKingBarBeque Restaurant", new Font("Courer New", 14), new SolidBrush(Color.Black), StartX, StartY);
+            grafic.DrawString("   King Bar Beque Restaurant", new Font("Courer New", 14), new SolidBrush(Color.Black), StartX, StartY);
             grafic.DrawString(" ", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + 5);
 
-            grafic.DrawString("\t\t===============================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
+            grafic.DrawString("========================================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + 20);
 
-            grafic.DrawString("Receipt", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
-            grafic.DrawString("\t\t" + kot.PadRight(30), new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
+            grafic.DrawString("KOT #:", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
+            grafic.DrawString("\t"+ kot.PadRight(30), new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
 
-            grafic.DrawString("\t\t\tDay: " + lblgetDateTime.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
+            grafic.DrawString("\t\tDay: " + lblgetDateTime.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + 40);
 
 
             grafic.DrawString("Table #: ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
-            grafic.DrawString("\t\t" + lblTableNo.Text.PadRight(30), new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
+            grafic.DrawString("\t" + lblTableNo.Text.PadRight(30), new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
             //    grafic.DrawString("\t\t\t\t"+ ordInfo.Times.ToString().PadRight(30), new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 20));
 
             grafic.DrawString("Server #: ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
-            grafic.DrawString("\t\t" + lblwaiterName.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
+            grafic.DrawString("\t" + lblwaiterName.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 40));
 
-            grafic.DrawString("Guest ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
-            grafic.DrawString("\t\t" + lblgetGuestName.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
+            grafic.DrawString("Guest :", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
+            grafic.DrawString("\t" + lblgetGuestName.Text, new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 60));
 
 
-            string Liners = "====================================================";
+            string Liners = "========================================";
             grafic.DrawString(Liners, new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 80));
 
-
-            grafic.DrawString("Item Name ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
-            grafic.DrawString("\t\t\t  Qty", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
+            grafic.DrawString("Qty", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
+            grafic.DrawString("\t Item Name ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
             //grafic.DrawString("\t\t\t\tUnit", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
             // grafic.DrawString("\t\t\t\t\tAmount ", new Font("Courer New", 10), new SolidBrush(Color.Black), StartX, StartY + (offSet + 100));
 
 
-            grafic.DrawString("===================================================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 120));
+            grafic.DrawString("========================================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 120));
 
 
             for (i = 0; i <= j - 1; i++)
@@ -537,11 +536,12 @@ namespace Cindy_Restaurant.Forms
                 strTotalQty = Convert.ToInt32(listView1.Items[i].SubItems[1].Text).ToString();
                 //  proPrice = Convert.ToInt32(listView1.Items[i].SubItems[3].Text).ToString();
 
-                string productLine = proName + "\t\t\t" + strTotalQty + "\t"; //+ proPrice;
+                string productLine = strTotalQty + "\t" +  proName + "\t"; //+ proPrice;
                 grafic.DrawString(productLine, font, new SolidBrush(Color.Black), StartX, StartY + (offSet + 140));
                 offSet += (int)fontHeight + 5;
 
             }
+            grafic.DrawString("========================================", new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + (offSet + 150));
 
             //string LineDraw = "======================================================";
             //grafic.DrawString(LineDraw, new Font("Courer New", 8), new SolidBrush(Color.Black), StartX, StartY + offSet);
@@ -636,7 +636,31 @@ namespace Cindy_Restaurant.Forms
                 if (listView1.Items.Count > 0)
                 {
                     //remove the item selected
-                    listView1.FocusedItem.Remove();
+                    ListViewItem item = listView1.FocusedItem;
+                    //fill the text boxes
+
+
+                    decimal amt, tempAmt;
+                    int qty;
+                    if (Convert.ToInt32(item.SubItems[1].Text) > 1)
+                    {
+                        qty = Convert.ToInt32(item.SubItems[1].Text);
+                        item.SubItems[1].Text = (Convert.ToInt32(item.SubItems[1].Text) - 1).ToString();
+
+
+                        amt = Convert.ToDecimal(item.SubItems[3].Text);
+
+                        tempAmt = amt / qty;
+                        amt = amt - tempAmt;
+                        item.SubItems[3].Text = amt.ToString();
+                    }
+                    else
+                    {
+                        listView1.FocusedItem.Remove();
+                    }
+
+                    //  Convert.ToInt32(listView1.SelectedItems);
+                    //listView1.FocusedItem.Remove();
 
                     //Reinitialize prices breakdown
                     for (int col = 0; col <= listView1.Items.Count - 1; col++)
@@ -661,17 +685,16 @@ namespace Cindy_Restaurant.Forms
                     lblTotalAmt.Text = "0.00";
 
                 }
+                 
 
-
-
-
-
+                listView1.FocusedItem.Focused = false;
             }
 
             //do nothing
             catch (Exception ex)
             {
-
+               // MessageBox.Show("Please click to select Item", "Help - KINGBBQ...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               // return;
             }
 
         }
@@ -685,7 +708,8 @@ namespace Cindy_Restaurant.Forms
 
 
 
-
+        string name = "";
+        int count = 0;
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
@@ -718,17 +742,48 @@ namespace Cindy_Restaurant.Forms
                 }
                 else
                 {
-                    //foreach (var item in listView1.Items)
-                    //{
-                    //    MessageBox.Show(item)
-                    //}
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        if (item.SubItems[2].Text== row.Cells[0].Value.ToString())
+                        {
+                            count = 1;
+                        }
+                    }
 
-                    ListViewItem listVItem = new ListViewItem();
-                    listVItem.SubItems.Add("1");
-                    listVItem.SubItems.Add(row.Cells[0].Value.ToString());
-                    listVItem.SubItems.Add(row.Cells[1].Value.ToString());
 
-                    listView1.Items.Add(listVItem);
+
+                    if (count == 0)
+                    {
+                        ListViewItem listVItem = new ListViewItem();
+                        listVItem.SubItems.Add("1");
+                        listVItem.SubItems.Add(row.Cells[0].Value.ToString());
+                        listVItem.SubItems.Add(row.Cells[1].Value.ToString());
+
+                        listView1.Items.Add(listVItem);
+
+                        name = row.Cells[0].Value.ToString();
+                    }
+                    else
+                    {
+                        //ListViewItem listVItem = new ListViewItem();
+                        //listVItem.SubItems.Add("1");
+                        //listVItem.SubItems.Add(row.Cells[0].Value.ToString());
+                        //listVItem.SubItems.Add(row.Cells[1].Value.ToString());
+
+                        //listView1.Items.Add(listVItem);
+
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            if (item.SubItems[2].Text == row.Cells[0].Value.ToString())
+                            {
+                                item.SubItems[1].Text = (Convert.ToInt32(item.SubItems[1].Text.ToString()) + 1).ToString();
+                                item.SubItems[3].Text = (Convert.ToInt32(item.SubItems[3].Text) + Convert.ToInt32(row.Cells[1].Value)).ToString();
+                            }
+                        }
+
+                        count = 0;
+                    }
+
 
 
                     for (int col = 0; col <= listView1.Items.Count - 1; col++)
@@ -1082,7 +1137,7 @@ namespace Cindy_Restaurant.Forms
 
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
@@ -1180,7 +1235,7 @@ namespace Cindy_Restaurant.Forms
             }
 
 
-           
+
 
             frmSettlement setl = new frmSettlement();
             setl.getCashierName = this.lblwaiterName.Text;

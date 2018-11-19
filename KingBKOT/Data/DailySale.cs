@@ -14,6 +14,7 @@ namespace KingBKOT.Data
     
     public partial class DailySale
     {
+        public long id { get; set; }
         public Nullable<int> TableNum { get; set; }
         public string ServiceType { get; set; }
         public Nullable<int> Qty { get; set; }

@@ -69,7 +69,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnView = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -79,8 +78,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnKeyboard = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -92,7 +90,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -552,23 +549,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Bill Amount";
             // 
-            // btnView
-            // 
-            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnView.FlatAppearance.BorderSize = 0;
-            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnView.ForeColor = System.Drawing.Color.Black;
-            this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnView.Location = new System.Drawing.Point(10, 216);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(120, 47);
-            this.btnView.TabIndex = 4;
-            this.btnView.Text = "View";
-            this.toolTip1.SetToolTip(this.btnView, "Helps to view the transaction");
-            this.btnView.UseVisualStyleBackColor = false;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -594,16 +574,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 282);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(378, 181);
-            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.TabIndex = 33;
             // 
             // Column1
             // 
@@ -634,40 +617,31 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // groupBox4
+            // btnView
             // 
-            this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Controls.Add(this.btnView);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(51, 253);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(394, 273);
-            this.groupBox4.TabIndex = 32;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Total Kot\'s";
-            // 
-            // btnKeyboard
-            // 
-            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnKeyboard.FlatAppearance.BorderSize = 0;
-            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(487, 10);
-            this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(120, 47);
-            this.btnKeyboard.TabIndex = 72;
-            this.btnKeyboard.Text = "Keyboard";
-            this.btnKeyboard.UseVisualStyleBackColor = false;
-            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnView.FlatAppearance.BorderSize = 0;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnView.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnView.ForeColor = System.Drawing.Color.Black;
+            this.btnView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnView.Location = new System.Drawing.Point(47, 476);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(120, 47);
+            this.btnView.TabIndex = 32;
+            this.btnView.Text = "View";
+            this.toolTip1.SetToolTip(this.btnView, "Helps to view the transaction");
+            this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // frmSettlement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(986, 741);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(986, 749);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cboSelectCurrency);
             this.Controls.Add(this.groupBox3);
@@ -697,7 +671,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -727,7 +700,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblcustCurrency;
@@ -750,11 +722,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Button btnView;
     }
 }

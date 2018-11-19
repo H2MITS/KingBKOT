@@ -17,8 +17,8 @@ namespace KingBKOT.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public purchaseProduct()
         {
-            this.tblPurchaseOrders = new HashSet<tblPurchaseOrder>();
             this.tbl_PurchaseDetails = new HashSet<tbl_PurchaseDetails>();
+            this.tblPurchaseOrders = new HashSet<tblPurchaseOrder>();
         }
     
         public long id { get; set; }
@@ -33,8 +33,8 @@ namespace KingBKOT.Data
         public Nullable<System.DateTime> udate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblPurchaseOrder> tblPurchaseOrders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_PurchaseDetails> tbl_PurchaseDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblPurchaseOrder> tblPurchaseOrders { get; set; }
     }
 }

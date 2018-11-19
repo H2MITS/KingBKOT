@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
+using KingBKOT.Data;
+using KingBKOT.ViewModel;
+
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmVTaxSales : Form
     {
+        KBBQEntities _entities;
         public frmVTaxSales()
         {
             InitializeComponent();
@@ -19,8 +23,42 @@ namespace Cindy_Restaurant.Form_View
 
         private void frmVTaxSales_Load(object sender, EventArgs e)
         {
+            dataGridView2.AutoGenerateColumns = false;
             clsView viewClass = new clsView();
-            viewClass.viewTaxSales(dataGridView1);
+            //viewClass.viewTaxSales(dataGridView1);
+
+            dataGridBind();
+        }
+
+        void dataGridBind()
+        {
+            try
+            {
+                _entities = new KBBQEntities();
+
+                var data = _entities.billAndSettlements.Where(x => x.mode == "PAID").ToList();
+
+                List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+                int row = 1;
+                foreach (var item in data)
+                {
+                    billAndSettlementVM model = new billAndSettlementVM();
+                    model.rowNo = row;
+                    model.kot = _entities.detailsSettlements.Where(x => x.KOT == item.kot).FirstOrDefault().receiptno;
+
+                    model.orderDecrip = item.orderDecrip;
+                    model.ordDate = item.ordDate;
+                    model.tax1_Amt = item.tax1_Amt;
+                    model.tax2_Amt = item.tax2_Amt;
+                    row++;
+                    modelList.Add(model);                    
+                }
+                dataGridView2.DataSource = modelList;
+            }
+            catch (Exception x)
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

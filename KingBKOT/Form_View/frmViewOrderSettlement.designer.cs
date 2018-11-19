@@ -1155,11 +1155,13 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnOrder.BackColor = System.Drawing.Color.Silver;
+            this.btnOrder.Cursor = System.Windows.Forms.Cursors.No;
             this.btnOrder.Enabled = false;
             this.btnOrder.FlatAppearance.BorderSize = 0;
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrder.Location = new System.Drawing.Point(808, 642);
             this.btnOrder.Name = "btnOrder";

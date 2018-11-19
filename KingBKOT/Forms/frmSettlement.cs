@@ -175,7 +175,7 @@ namespace Cindy_Restaurant.Forms
                 string cashier = selectClass.getWaiterByID(getCashierName);
 
 
-                insertClass.insertTodetailsSettlement(txtReceiptNum.Text, dateTimePicker1, dateTimePicker1, "Inr", double.Parse(txtCustOwes.Text), "Inr", double.Parse(txtRateTimesAmtPaid.Text), changeDue, "Cash", "-", "-", "-", cashier);
+                insertClass.insertTodetailsSettlement(txtReceiptNum.Text, dateTimePicker1, dateTimePicker1, "Inr", double.Parse(txtCustOwes.Text), "Inr", double.Parse(txtRateTimesAmtPaid.Text), changeDue, "Cash", "-", "-", "-", cashier, txtReceiptNo.Text.Trim());
 
                 if (txtDisc.Text == string.Empty)
                 {
@@ -209,7 +209,7 @@ namespace Cindy_Restaurant.Forms
 
                     amtTemp += amtFromKOT;
 
-                    insertClass.insertTodetailsSettlement(item.kot, dateTimePicker1, dateTimePicker1, "Inr", double.Parse(amtFromKOT.ToString()), "Inr", double.Parse(amtFromKOT.ToString()), 0, "Cash", "-", "-", "-", cashier);
+                    insertClass.insertTodetailsSettlement(item.kot, dateTimePicker1, dateTimePicker1, "Inr", double.Parse(amtFromKOT.ToString()), "Inr", double.Parse(amtFromKOT.ToString()), 0, "Cash", "-", "-", "-", cashier, txtReceiptNo.Text.Trim());
 
                     updateClass.updateBillAndSettlement(item.kot, "PAID", txtCode.Text, Convert.ToDecimal(txtDisc.Text));
                     lastKot = item.kot;

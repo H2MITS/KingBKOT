@@ -65,7 +65,7 @@ namespace KingBKOT.Form_View
 
                         model.monthYear = dt.Date.ToString("dd-MM-yyyy");
                         model.totalAmt = Convert.ToDecimal(amtFormat.comma(item.totalAmt));
-
+                        model.KOT = item.refNo;
                         rowNo++;
                         modelList.Add(model);
 
@@ -93,7 +93,7 @@ namespace KingBKOT.Form_View
 
                         model.monthYear = dt.Date.ToString("dd-MM-yyyy");
                         model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.AmountPaid));
-
+                        model.KOT = item.receiptno;
                         rowNo++;
                         modelListSales.Add(model);
 
@@ -130,13 +130,13 @@ namespace KingBKOT.Form_View
 
                         if (dd != dates)
                         {
-                            dgPurchaseReport.Rows.Add("0", rowNo, dd);
+                            dgPurchaseReport.Rows.Add("0", rowNo,"--", dd);
                             dates = dd;
                             amt = 0;
                             rowId++;
                         }
                         amt += item.totalAmt;
-                        dgPurchaseReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        dgPurchaseReport.Rows[rowId].Cells[4].Value = amtFormat.comma(amt);
                         rowNo++;
 
                         ttlAmt += item.totalAmt;
@@ -169,13 +169,13 @@ namespace KingBKOT.Form_View
 
                         if (dd != dates)
                         {
-                            dgSalesReport.Rows.Add("0", rowNo, dd);
+                            dgSalesReport.Rows.Add("0", rowNo, "--", dd);
                             dates = dd;
                             amt = 0;
                             rowId++;
                         }
                         amt += item.AmountPaid;
-                        dgSalesReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        dgSalesReport.Rows[rowId].Cells[4].Value = amtFormat.comma(amt);
                         rowNo++;
 
                         ttlAmt += item.AmountPaid;
@@ -207,13 +207,13 @@ namespace KingBKOT.Form_View
 
                         if (dd != dates)
                         {
-                            dgPurchaseReport.Rows.Add("0", rowNo, dd);
+                            dgPurchaseReport.Rows.Add("0", rowNo, "--", dd);
                             dates = dd;
                             amt = 0;
                             rowId++;
                         }
                         amt += item.totalAmt;
-                        dgPurchaseReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        dgPurchaseReport.Rows[rowId].Cells[4].Value = amtFormat.comma(amt);
                         rowNo++;
 
                         ttlAmt += item.totalAmt;
@@ -243,14 +243,14 @@ namespace KingBKOT.Form_View
 
                         if (dd != dates)
                         {
-                            dgSalesReport.Rows.Add("0", rowNo, dd);
-                            
+                            dgSalesReport.Rows.Add("0", rowNo, "--", dd);
+
                             dates = dd;
                             amt = 0;
                             rowId++;
                         }
                         amt += item.AmountPaid;
-                        dgSalesReport.Rows[rowId].Cells[3].Value = amtFormat.comma(amt);
+                        dgSalesReport.Rows[rowId].Cells[4].Value = amtFormat.comma(amt);
                         rowNo++;
 
                         ttlAmt += item.AmountPaid;
@@ -277,6 +277,19 @@ namespace KingBKOT.Form_View
         {
 
             frmRptPurchase rpt = new frmRptPurchase(cmbType.Text);
+            rpt.ShowDialog();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            frmRptPurchase rpt = new frmRptPurchase(cmbType.Text);
+            rpt.ShowDialog();
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+
+            frmRptSales rpt = new frmRptSales(cmbType.Text);
             rpt.ShowDialog();
         }
     }

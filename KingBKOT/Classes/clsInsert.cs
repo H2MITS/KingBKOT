@@ -40,14 +40,27 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@ref_phone", ref_phone.Trim());
 
 
+                if (photo.Image != null)
+                {
 
-                MemoryStream pp = new MemoryStream();
-                photo.Image.Save(pp, photo.Image.RawFormat);
-                Byte[] pdata = pp.GetBuffer();
-                SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
-                ppic.Value = pdata;
+                    MemoryStream pp = new MemoryStream();
+                    photo.Image.Save(pp, photo.Image.RawFormat);
+                    Byte[] pdata = pp.GetBuffer();
+                    SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
+                    ppic.Value = pdata;
+                    cmd.Parameters.Add(ppic);
+                }
+                else
+                {
+                    MemoryStream pp = new MemoryStream();
+                    Byte[] pdata = pp.GetBuffer();
+                    SqlParameter ppic = new SqlParameter("@photo", System.Data.SqlDbType.Image);
+                    ppic.Value = pdata;
 
-                cmd.Parameters.Add(ppic);
+                    cmd.Parameters.Add(ppic);
+
+                }
+
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Employee successfully added", "SAVED - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -271,7 +284,7 @@ namespace Cindy_Restaurant.Classes
 
         //insert back the id we took
         //into the KOT Generator table
-        public void insertToKOTGenerator(int Kots,string letter)
+        public void insertToKOTGenerator(int Kots, string letter)
         {
 
             try
@@ -393,7 +406,7 @@ namespace Cindy_Restaurant.Classes
         }
 
 
-        public void insertTodetailsSettlement(string KOT, DateTimePicker pDate, DateTimePicker pTime, string currencyInUsed, double bill, string custCurrencyChosen, double AmountPaid, double changeDue, string paymentType, string acctName, string acctNum, string electronicType, string empID)
+        public void insertTodetailsSettlement(string KOT, DateTimePicker pDate, DateTimePicker pTime, string currencyInUsed, double bill, string custCurrencyChosen, double AmountPaid, double changeDue, string paymentType, string acctName, string acctNum, string electronicType, string empID, string rcptNo)
         {
 
             try
@@ -402,7 +415,7 @@ namespace Cindy_Restaurant.Classes
 
                 con = new SqlConnection(dbPath);
                 con.Open();
-                string sql = "insert into detailsSettlement(KOT,paidDate,paidTime,currencyInUsed,bill,custCurrencyChosen,AmountPaid,changeDue,paymentType,acctName,acctNum,electronicType,empID) VALUES(@KOT,@paidDate,@paidTime,@currencyInUsed,@bill,@custCurrencyChosen,@AmountPaid,@changeDue,@paymentType,@acctName,@acctNum,@electronicType,@empID)";
+                string sql = "insert into detailsSettlement(KOT,paidDate,paidTime,currencyInUsed,bill,custCurrencyChosen,AmountPaid,changeDue,paymentType,acctName,acctNum,electronicType,empID,receiptno) VALUES(@KOT,@paidDate,@paidTime,@currencyInUsed,@bill,@custCurrencyChosen,@AmountPaid,@changeDue,@paymentType,@acctName,@acctNum,@electronicType,@empID,@receiptno)";
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@KOT", KOT.Trim());
                 cmd.Parameters.AddWithValue("@paidDate", pDate.Value.ToShortDateString());
@@ -417,8 +430,9 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@acctNum", acctNum.Trim());
                 cmd.Parameters.AddWithValue("@electronicType", electronicType.Trim());
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
+                cmd.Parameters.AddWithValue("@receiptno", rcptNo.Trim());
                 cmd.ExecuteNonQuery();
-           
+
             }
 
             catch (Exception ex)

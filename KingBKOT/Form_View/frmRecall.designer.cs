@@ -58,12 +58,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbTableNo = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnMergePay = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnMergePay = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -390,17 +392,18 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Delete});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.Location = new System.Drawing.Point(52, 232);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 232);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -415,11 +418,28 @@
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(744, 292);
+            this.dataGridView2.Size = new System.Drawing.Size(824, 292);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.TabStop = false;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // btnMergePay
+            // 
+            this.btnMergePay.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnMergePay.FlatAppearance.BorderSize = 0;
+            this.btnMergePay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMergePay.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.btnMergePay.ForeColor = System.Drawing.Color.Black;
+            this.btnMergePay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMergePay.Location = new System.Drawing.Point(44, 639);
+            this.btnMergePay.Name = "btnMergePay";
+            this.btnMergePay.Size = new System.Drawing.Size(741, 42);
+            this.btnMergePay.TabIndex = 12;
+            this.btnMergePay.Text = "Merge Pay";
+            this.btnMergePay.UseVisualStyleBackColor = false;
+            this.btnMergePay.Click += new System.EventHandler(this.btnMergePay_Click);
             // 
             // Column1
             // 
@@ -463,8 +483,13 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // btnMergePay
+            // Delete
             // 
+            this.Delete.HeaderText = "Action";
+            this.Delete.Image = global::KingBKOT.Properties.Resources.delete11;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.btnMergePay.BackColor = System.Drawing.Color.Chartreuse;
             this.btnMergePay.FlatAppearance.BorderSize = 0;
             this.btnMergePay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -499,6 +524,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(848, 693);
             this.ClientSize = new System.Drawing.Size(812, 682);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
@@ -567,6 +593,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbTableNo;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnMergePay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -575,5 +602,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnMergePay;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
