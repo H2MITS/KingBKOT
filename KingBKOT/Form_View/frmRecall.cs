@@ -52,11 +52,11 @@ namespace Cindy_Restaurant.Form_View
                 if (cmbTableNo.Items.Count > 0)
                 {
                     cmbTableNo.SelectedIndex = 0;
-                    btnMergePay.Visible = true;
+                    btnMergePayFinal.Visible = true;
                 }
                 else
                 {
-                    btnMergePay.Visible = false;
+                    btnMergePayFinal.Visible = false;
                 }
 
                 dataGridView2.RowTemplate.Height = 35;
@@ -784,6 +784,11 @@ namespace Cindy_Restaurant.Form_View
             string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
 
             this.keyboardProc = Process.Start(keyboardPath);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

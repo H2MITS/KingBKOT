@@ -58,7 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbTableNo = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnMergePay = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +67,7 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnMergePay = new System.Windows.Forms.Button();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.btnMergePayFinal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -110,6 +110,7 @@
             this.groupBox1.Size = new System.Drawing.Size(735, 61);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnSearch
             // 
@@ -395,14 +396,14 @@
             this.Column6,
             this.Delete});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.Location = new System.Drawing.Point(12, 232);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
@@ -424,22 +425,6 @@
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
-            // 
-            // btnMergePay
-            // 
-            this.btnMergePay.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnMergePay.FlatAppearance.BorderSize = 0;
-            this.btnMergePay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMergePay.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.btnMergePay.ForeColor = System.Drawing.Color.Black;
-            this.btnMergePay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMergePay.Location = new System.Drawing.Point(44, 639);
-            this.btnMergePay.Name = "btnMergePay";
-            this.btnMergePay.Size = new System.Drawing.Size(741, 42);
-            this.btnMergePay.TabIndex = 12;
-            this.btnMergePay.Text = "Merge Pay";
-            this.btnMergePay.UseVisualStyleBackColor = false;
-            this.btnMergePay.Click += new System.EventHandler(this.btnMergePay_Click);
             // 
             // Column1
             // 
@@ -490,19 +475,13 @@
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-            this.btnMergePay.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnMergePay.FlatAppearance.BorderSize = 0;
-            this.btnMergePay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMergePay.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.btnMergePay.ForeColor = System.Drawing.Color.Black;
-            this.btnMergePay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMergePay.Location = new System.Drawing.Point(478, 619);
+            // 
+            // btnMergePay
+            // 
+            this.btnMergePay.Location = new System.Drawing.Point(0, 0);
             this.btnMergePay.Name = "btnMergePay";
-            this.btnMergePay.Size = new System.Drawing.Size(307, 42);
-            this.btnMergePay.TabIndex = 12;
-            this.btnMergePay.Text = "Merge Pay";
-            this.btnMergePay.UseVisualStyleBackColor = false;
-            this.btnMergePay.Click += new System.EventHandler(this.btnMergePay_Click);
+            this.btnMergePay.Size = new System.Drawing.Size(75, 23);
+            this.btnMergePay.TabIndex = 0;
             // 
             // btnKeyboard
             // 
@@ -511,28 +490,42 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(54, 619);
+            this.btnKeyboard.Location = new System.Drawing.Point(46, 615);
             this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(317, 42);
+            this.btnKeyboard.Size = new System.Drawing.Size(323, 42);
             this.btnKeyboard.TabIndex = 72;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
+            // btnMergePayFinal
+            // 
+            this.btnMergePayFinal.BackColor = System.Drawing.Color.Green;
+            this.btnMergePayFinal.FlatAppearance.BorderSize = 0;
+            this.btnMergePayFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMergePayFinal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMergePayFinal.ForeColor = System.Drawing.Color.White;
+            this.btnMergePayFinal.Location = new System.Drawing.Point(476, 615);
+            this.btnMergePayFinal.Name = "btnMergePayFinal";
+            this.btnMergePayFinal.Size = new System.Drawing.Size(311, 42);
+            this.btnMergePayFinal.TabIndex = 72;
+            this.btnMergePayFinal.Text = "Merge Pay";
+            this.btnMergePayFinal.UseVisualStyleBackColor = false;
+            this.btnMergePayFinal.Click += new System.EventHandler(this.btnMergePay_Click);
             // 
             // receiptList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(848, 693);
             this.ClientSize = new System.Drawing.Size(812, 682);
+            this.Controls.Add(this.btnMergePayFinal);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbTableNo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.brnClear);
-            this.Controls.Add(this.btnMergePay);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnRecall);
             this.Controls.Add(this.btnMyOrder);
@@ -600,8 +593,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button btnMergePay;
+      //  private System.Windows.Forms.Button btnMergePay;
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button btnMergePayFinal;
     }
 }
