@@ -292,5 +292,22 @@ namespace KingBKOT.Form_View
             frmRptSales rpt = new frmRptSales(cmbType.Text);
             rpt.ShowDialog();
         }
+
+        private void cmbType_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbType.Text.Trim()))
+            {
+                errorProvider1.SetError(cmbType, "Select Term for Report is required.");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbType, string.Empty);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

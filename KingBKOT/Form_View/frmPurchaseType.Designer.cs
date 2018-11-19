@@ -79,7 +79,7 @@
             this.button2.Location = new System.Drawing.Point(57, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 90);
-            this.button2.TabIndex = 36;
+            this.button2.TabIndex = 0;
             this.button2.Text = "Add Product";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -95,7 +95,7 @@
             this.button1.Location = new System.Drawing.Point(274, 100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 90);
-            this.button1.TabIndex = 37;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Purchase Order";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -111,7 +111,7 @@
             this.button3.Location = new System.Drawing.Point(491, 100);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 90);
-            this.button3.TabIndex = 36;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Purchase Master";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);

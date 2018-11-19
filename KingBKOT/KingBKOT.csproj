@@ -1103,6 +1103,9 @@
     <Content Include="Images\User-Group-icon.png" />
     <Content Include="Images\Usergroup.png" />
     <Content Include="Images\Webalys-Kameleon.pics-Food-Dome.ico" />
+    <None Include="Resources\table %281%29.png" />
+    <None Include="Resources\table1.png" />
+    <None Include="Resources\order-food.png" />
     <None Include="Resources\loupe.png" />
     <Content Include="order_food__2__4wY_icon.ico" />
     <Content Include="sausage_VP7_icon.ico" />

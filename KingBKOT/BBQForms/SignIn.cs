@@ -240,11 +240,17 @@ namespace KingBarbeque.Forms
 
         private void btnKeyboard_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+                string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
 
-            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
-            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
-
-            this.keyboardProc = Process.Start(keyboardPath);
+                this.keyboardProc = Process.Start(keyboardPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+            }
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
@@ -254,6 +260,11 @@ namespace KingBarbeque.Forms
             SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         //private void txtUsername_Click(object sender, EventArgs e)

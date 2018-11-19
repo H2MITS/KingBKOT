@@ -77,6 +77,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgPurchaseItem)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -440,7 +441,7 @@
             // 
             this.txtTotalAmt.Enabled = false;
             this.txtTotalAmt.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.txtTotalAmt.Location = new System.Drawing.Point(732, 420);
+            this.txtTotalAmt.Location = new System.Drawing.Point(798, 420);
             this.txtTotalAmt.MaxLength = 15;
             this.txtTotalAmt.Name = "txtTotalAmt";
             this.txtTotalAmt.Size = new System.Drawing.Size(144, 26);
@@ -450,7 +451,7 @@
             // 
             this.txtTotalWeight.Enabled = false;
             this.txtTotalWeight.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.txtTotalWeight.Location = new System.Drawing.Point(732, 376);
+            this.txtTotalWeight.Location = new System.Drawing.Point(798, 376);
             this.txtTotalWeight.MaxLength = 15;
             this.txtTotalWeight.Name = "txtTotalWeight";
             this.txtTotalWeight.Size = new System.Drawing.Size(144, 26);
@@ -461,7 +462,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12.25F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(593, 378);
+            this.label4.Location = new System.Drawing.Point(659, 378);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 21);
             this.label4.TabIndex = 189;
@@ -472,7 +473,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(593, 420);
+            this.label5.Location = new System.Drawing.Point(659, 420);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 21);
             this.label5.TabIndex = 189;
@@ -483,7 +484,7 @@
             this.lblUnit.AutoSize = true;
             this.lblUnit.Font = new System.Drawing.Font("Century Gothic", 12.25F);
             this.lblUnit.ForeColor = System.Drawing.Color.White;
-            this.lblUnit.Location = new System.Drawing.Point(880, 381);
+            this.lblUnit.Location = new System.Drawing.Point(946, 381);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.Size = new System.Drawing.Size(31, 21);
             this.lblUnit.TabIndex = 189;
@@ -494,7 +495,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12.25F);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(880, 422);
+            this.label17.Location = new System.Drawing.Point(946, 422);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 21);
             this.label17.TabIndex = 189;
@@ -505,7 +506,7 @@
             this.lblBtnError.AutoSize = true;
             this.lblBtnError.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.lblBtnError.ForeColor = System.Drawing.Color.Red;
-            this.lblBtnError.Location = new System.Drawing.Point(516, 485);
+            this.lblBtnError.Location = new System.Drawing.Point(509, 478);
             this.lblBtnError.Name = "lblBtnError";
             this.lblBtnError.Size = new System.Drawing.Size(199, 16);
             this.lblBtnError.TabIndex = 192;
@@ -519,7 +520,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(632, 510);
+            this.btnClear.Location = new System.Drawing.Point(630, 510);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(112, 57);
             this.btnClear.TabIndex = 7;
@@ -529,10 +530,11 @@
             // btnCreate
             // 
             this.btnCreate.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(514, 510);
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(512, 510);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(112, 57);
             this.btnCreate.TabIndex = 6;
@@ -550,7 +552,7 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
-            this.btnKeyboard.Location = new System.Drawing.Point(751, 510);
+            this.btnKeyboard.Location = new System.Drawing.Point(747, 510);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(112, 57);
             this.btnKeyboard.TabIndex = 6;
@@ -562,10 +564,11 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(869, 510);
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(865, 510);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 57);
             this.btnCancel.TabIndex = 7;
@@ -573,12 +576,22 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(512, 499);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(463, 3);
+            this.panel1.TabIndex = 193;
+            // 
             // frmPurchaseMasterMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1031, 604);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBtnError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnKeyboard);
@@ -673,5 +686,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Panel panel1;
     }
 }

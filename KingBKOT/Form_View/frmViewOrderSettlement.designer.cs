@@ -134,6 +134,8 @@
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button58
@@ -493,9 +496,9 @@
             this.groupBox7.Controls.Add(this.label11);
             this.groupBox7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(1040, 543);
+            this.groupBox7.Location = new System.Drawing.Point(1040, 542);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(310, 156);
+            this.groupBox7.Size = new System.Drawing.Size(310, 160);
             this.groupBox7.TabIndex = 16;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Description";
@@ -1193,7 +1196,7 @@
             this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.Location = new System.Drawing.Point(808, 642);
+            this.btnOrder.Location = new System.Drawing.Point(814, 642);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(104, 53);
             this.btnOrder.TabIndex = 7;
@@ -1208,7 +1211,7 @@
             this.btnCashout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCashout.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCashout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashout.Location = new System.Drawing.Point(917, 642);
+            this.btnCashout.Location = new System.Drawing.Point(923, 642);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(104, 53);
             this.btnCashout.TabIndex = 8;
@@ -1223,7 +1226,7 @@
             this.btnSettlement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlement.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnSettlement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettlement.Location = new System.Drawing.Point(706, 642);
+            this.btnSettlement.Location = new System.Drawing.Point(712, 642);
             this.btnSettlement.Name = "btnSettlement";
             this.btnSettlement.Size = new System.Drawing.Size(96, 53);
             this.btnSettlement.TabIndex = 6;
@@ -1238,7 +1241,7 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
-            this.btnKeyboard.Location = new System.Drawing.Point(12, 642);
+            this.btnKeyboard.Location = new System.Drawing.Point(12, 641);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(96, 53);
             this.btnKeyboard.TabIndex = 9;
@@ -1254,7 +1257,7 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(126, 643);
+            this.btnClear.Location = new System.Drawing.Point(114, 641);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 53);
             this.btnClear.TabIndex = 10;
@@ -1270,7 +1273,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(237, 643);
+            this.btnCancel.Location = new System.Drawing.Point(217, 641);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 53);
             this.btnCancel.TabIndex = 11;
@@ -1278,12 +1281,32 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_2);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(8, 700);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1032, 3);
+            this.panel3.TabIndex = 37;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(-1, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(509, 3);
+            this.panel4.TabIndex = 30;
+            // 
             // frmViewOrderSettlement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnKeyboard);
@@ -1322,6 +1345,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1429,5 +1453,7 @@
         private System.Windows.Forms.Label lblCGSTTaxPer;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

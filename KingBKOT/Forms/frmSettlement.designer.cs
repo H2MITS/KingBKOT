@@ -280,7 +280,7 @@
             this.btnCashout.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCashout.ForeColor = System.Drawing.Color.White;
             this.btnCashout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCashout.Location = new System.Drawing.Point(274, 280);
+            this.btnCashout.Location = new System.Drawing.Point(274, 274);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(120, 45);
             this.btnCashout.TabIndex = 14;
@@ -631,9 +631,9 @@
             this.groupBox2.Controls.Add(this.btnKeyboard);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(51, 532);
+            this.groupBox2.Location = new System.Drawing.Point(47, 528);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(887, 63);
+            this.groupBox2.Size = new System.Drawing.Size(891, 63);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             // 

@@ -125,7 +125,7 @@
             this.btnSearch.Location = new System.Drawing.Point(616, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(113, 27);
-            this.btnSearch.TabIndex = 2;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -136,7 +136,7 @@
             this.txtSearcsh.Location = new System.Drawing.Point(311, 23);
             this.txtSearcsh.Name = "txtSearcsh";
             this.txtSearcsh.Size = new System.Drawing.Size(299, 25);
-            this.txtSearcsh.TabIndex = 1;
+            this.txtSearcsh.TabIndex = 2;
             // 
             // cboSearcshMode
             // 
@@ -150,7 +150,7 @@
             this.cboSearcshMode.Location = new System.Drawing.Point(149, 22);
             this.cboSearcshMode.Name = "cboSearcshMode";
             this.cboSearcshMode.Size = new System.Drawing.Size(156, 27);
-            this.cboSearcshMode.TabIndex = 0;
+            this.cboSearcshMode.TabIndex = 1;
             this.cboSearcshMode.SelectedIndexChanged += new System.EventHandler(this.cboSearcshMode_SelectedIndexChanged);
             // 
             // groupBox2
@@ -170,7 +170,7 @@
             this.chkDineIn.Location = new System.Drawing.Point(41, 11);
             this.chkDineIn.Name = "chkDineIn";
             this.chkDineIn.Size = new System.Drawing.Size(79, 24);
-            this.chkDineIn.TabIndex = 0;
+            this.chkDineIn.TabIndex = 4;
             this.chkDineIn.Text = "Dine In";
             this.chkDineIn.UseVisualStyleBackColor = true;
             this.chkDineIn.CheckedChanged += new System.EventHandler(this.chkDineIn_CheckedChanged);
@@ -192,7 +192,7 @@
             this.chkTakeAway.Location = new System.Drawing.Point(34, 12);
             this.chkTakeAway.Name = "chkTakeAway";
             this.chkTakeAway.Size = new System.Drawing.Size(108, 24);
-            this.chkTakeAway.TabIndex = 4;
+            this.chkTakeAway.TabIndex = 5;
             this.chkTakeAway.Text = "Take Away";
             this.chkTakeAway.UseVisualStyleBackColor = true;
             this.chkTakeAway.CheckedChanged += new System.EventHandler(this.chkTakeAway_CheckedChanged);
@@ -214,7 +214,7 @@
             this.chkNoCharge.Location = new System.Drawing.Point(35, 11);
             this.chkNoCharge.Name = "chkNoCharge";
             this.chkNoCharge.Size = new System.Drawing.Size(109, 24);
-            this.chkNoCharge.TabIndex = 5;
+            this.chkNoCharge.TabIndex = 6;
             this.chkNoCharge.Text = "No Charge";
             this.chkNoCharge.UseVisualStyleBackColor = true;
             this.chkNoCharge.CheckedChanged += new System.EventHandler(this.chkNoCharge_CheckedChanged);
@@ -238,6 +238,24 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(95, 25);
             this.dateTimePicker1.TabIndex = 6;
+            // 
+            // btnDatSearcsh
+            // 
+            this.btnDatSearcsh.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDatSearcsh.FlatAppearance.BorderSize = 0;
+            this.btnDatSearcsh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatSearcsh.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnDatSearcsh.ForeColor = System.Drawing.Color.Black;
+            this.btnDatSearcsh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatSearcsh.Location = new System.Drawing.Point(172, 569);
+            this.btnDatSearcsh.Name = "btnDatSearcsh";
+            this.btnDatSearcsh.Size = new System.Drawing.Size(82, 40);
+            this.btnDatSearcsh.TabIndex = 7;
+            this.btnDatSearcsh.Text = "Search";
+            this.toolTip1.SetToolTip(this.btnDatSearcsh, "Select date from the date option on the left\r\nside of this button and click\r\nsear" +
+        "ch");
+            this.btnDatSearcsh.UseVisualStyleBackColor = false;
+            this.btnDatSearcsh.Click += new System.EventHandler(this.btnDatSearcsh_Click);
             // 
             // btnMyOrder
             // 
@@ -263,7 +281,7 @@
             this.btnRecall.Location = new System.Drawing.Point(478, 566);
             this.btnRecall.Name = "btnRecall";
             this.btnRecall.Size = new System.Drawing.Size(89, 41);
-            this.btnRecall.TabIndex = 10;
+            this.btnRecall.TabIndex = 9;
             this.btnRecall.Text = "Recall";
             this.toolTip1.SetToolTip(this.btnRecall, "Click on the item in the grid to select \r\nand click recall to select payment");
             this.btnRecall.UseVisualStyleBackColor = false;
@@ -280,7 +298,7 @@
             this.button5.Location = new System.Drawing.Point(686, 565);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(99, 42);
-            this.button5.TabIndex = 12;
+            this.button5.TabIndex = 11;
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -326,7 +344,7 @@
             this.brnClear.Location = new System.Drawing.Point(577, 565);
             this.brnClear.Name = "brnClear";
             this.brnClear.Size = new System.Drawing.Size(99, 42);
-            this.brnClear.TabIndex = 11;
+            this.brnClear.TabIndex = 10;
             this.brnClear.Text = "Clear";
             this.brnClear.UseVisualStyleBackColor = false;
             this.brnClear.Click += new System.EventHandler(this.brnClear_Click);
@@ -363,14 +381,14 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -381,27 +399,27 @@
             this.Column6,
             this.Delete});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Location = new System.Drawing.Point(12, 232);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(824, 292);
@@ -466,11 +484,11 @@
             this.btnKeyboard.FlatAppearance.BorderSize = 0;
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(12, 615);
+            this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
+            this.btnKeyboard.Location = new System.Drawing.Point(46, 615);
             this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(345, 42);
-            this.btnKeyboard.TabIndex = 72;
+            this.btnKeyboard.Size = new System.Drawing.Size(323, 42);
+            this.btnKeyboard.TabIndex = 12;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
@@ -485,7 +503,7 @@
             this.btnMergePayFinal.Location = new System.Drawing.Point(476, 615);
             this.btnMergePayFinal.Name = "btnMergePayFinal";
             this.btnMergePayFinal.Size = new System.Drawing.Size(311, 42);
-            this.btnMergePayFinal.TabIndex = 72;
+            this.btnMergePayFinal.TabIndex = 13;
             this.btnMergePayFinal.Text = "Merge Pay";
             this.btnMergePayFinal.UseVisualStyleBackColor = false;
             this.btnMergePayFinal.Click += new System.EventHandler(this.btnMergePay_Click);

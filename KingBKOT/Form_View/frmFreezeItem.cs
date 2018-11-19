@@ -23,7 +23,7 @@ namespace Cindy_Restaurant.Form_View
         }
         clsUpdate updateClass = new clsUpdate();
         clsSelect selectClass = new clsSelect();
-        
+
         ErrorProvider err = new ErrorProvider();
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -70,26 +70,26 @@ namespace Cindy_Restaurant.Form_View
                 err.SetError(textBox1, "Field Can\'t be empty");
                 return;
             }
-           
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             valTextBox((Control)sender);
-            
-            
+
+
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
             valTextBox((Control)sender);
-            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-           
+
         }
 
         void selectProductsStatues()
@@ -104,21 +104,21 @@ namespace Cindy_Restaurant.Form_View
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                   
+
                     textBox1.Text = reader["Reason"].ToString();
-                   
-                    
+
+
                 }
             }
 
             catch (Exception ex)
             {
-              //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //  MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally
             {
-               selectClass.con.Close();
+                selectClass.con.Close();
             }
 
 
@@ -128,7 +128,7 @@ namespace Cindy_Restaurant.Form_View
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             selectProductsStatues();
-           
+
         }
 
         private void frmFreezeItem_Load(object sender, EventArgs e)
@@ -152,10 +152,38 @@ namespace Cindy_Restaurant.Form_View
 
         private void btnKeyboard_Click(object sender, EventArgs e)
         {
-            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
-            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+            try
+            {
+                string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+                string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
 
-            this.keyboardProc = Process.Start(keyboardPath);
+                this.keyboardProc = Process.Start(keyboardPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: '{0}'", ex);
+            }
+        }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
+
+    //private void checkBox1_Validating(object sender, CancelEventArgs e)
+    //{
+
+    //}
+
+    //private void textBox1_Validating_1(object sender, CancelEventArgs e)
+    //{
+
+    //}
 }
+

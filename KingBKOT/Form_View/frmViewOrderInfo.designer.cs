@@ -186,10 +186,10 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(826, 19);
+            this.btnKeyboard.Location = new System.Drawing.Point(11, 19);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(108, 39);
-            this.btnKeyboard.TabIndex = 7;
+            this.btnKeyboard.TabIndex = 5;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
@@ -202,7 +202,7 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(451, 19);
+            this.btnClear.Location = new System.Drawing.Point(419, 19);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(108, 39);
             this.btnClear.TabIndex = 6;
@@ -217,10 +217,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 19);
+            this.button1.Location = new System.Drawing.Point(826, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 39);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 7;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -319,9 +319,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(56, 129);
+            this.panel3.Location = new System.Drawing.Point(47, 129);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(840, 3);
+            this.panel3.Size = new System.Drawing.Size(935, 3);
             this.panel3.TabIndex = 36;
             // 
             // panel4
