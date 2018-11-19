@@ -33,13 +33,10 @@ namespace KingBKOT.Forms
             this.Close();
         }
 
-        private void btnKeyboard_Click(object sender, EventArgs e)
-        {
-            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
-            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
-
-            this.keyboardProc = Process.Start(keyboardPath);
-        }
+        //private void btnKeyboard_Click(object sender, EventArgs e)
+        //{
+           
+        //}
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -388,6 +385,20 @@ namespace KingBKOT.Forms
             frmPurchaseMasterMain purch = new frmPurchaseMasterMain(0);
             purch.ShowDialog();
             dataGridBind();
+        }
+
+        private void btnKeyboard_Click_1(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+
+        }
+
+        private void btnClear_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

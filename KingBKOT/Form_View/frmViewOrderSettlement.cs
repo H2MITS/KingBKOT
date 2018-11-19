@@ -13,11 +13,14 @@ using Cindy_Restaurant.Forms;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
 using KingBKOT.ViewModel;
+using System.IO;
+using System.Diagnostics;
 
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmViewOrderSettlement : Form
     {
+        object keyboardProc;
         public frmViewOrderSettlement()
         {
             InitializeComponent();
@@ -754,6 +757,28 @@ namespace Cindy_Restaurant.Form_View
         private void lblGetReceipt_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            listView1.Items.Clear();
+
+        }
+
+        private void btnCancel_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         void printDoc_PrintPage(object sender, PrintPageEventArgs e)

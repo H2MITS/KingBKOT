@@ -53,6 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbWaiter = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,7 @@
             this.txtTableNo.Location = new System.Drawing.Point(183, 141);
             this.txtTableNo.Name = "txtTableNo";
             this.txtTableNo.ReadOnly = true;
-            this.txtTableNo.Size = new System.Drawing.Size(325, 25);
+            this.txtTableNo.Size = new System.Drawing.Size(462, 25);
             this.txtTableNo.TabIndex = 2;
             // 
             // label3
@@ -149,7 +150,7 @@
             this.txtFirst.Location = new System.Drawing.Point(183, 252);
             this.txtFirst.MaxLength = 25;
             this.txtFirst.Name = "txtFirst";
-            this.txtFirst.Size = new System.Drawing.Size(325, 25);
+            this.txtFirst.Size = new System.Drawing.Size(462, 25);
             this.txtFirst.TabIndex = 4;
             // 
             // txtLast
@@ -158,7 +159,7 @@
             this.txtLast.Location = new System.Drawing.Point(183, 294);
             this.txtLast.MaxLength = 25;
             this.txtLast.Name = "txtLast";
-            this.txtLast.Size = new System.Drawing.Size(325, 25);
+            this.txtLast.Size = new System.Drawing.Size(462, 25);
             this.txtLast.TabIndex = 5;
             // 
             // txtAdultNo
@@ -167,7 +168,7 @@
             this.txtAdultNo.Location = new System.Drawing.Point(183, 335);
             this.txtAdultNo.MaxLength = 7;
             this.txtAdultNo.Name = "txtAdultNo";
-            this.txtAdultNo.Size = new System.Drawing.Size(325, 25);
+            this.txtAdultNo.Size = new System.Drawing.Size(462, 25);
             this.txtAdultNo.TabIndex = 6;
             this.txtAdultNo.TextChanged += new System.EventHandler(this.txtAdultNo_TextChanged);
             this.txtAdultNo.Leave += new System.EventHandler(this.txtAdultNo_Leave);
@@ -178,7 +179,7 @@
             this.txtChild.Location = new System.Drawing.Point(183, 375);
             this.txtChild.MaxLength = 7;
             this.txtChild.Name = "txtChild";
-            this.txtChild.Size = new System.Drawing.Size(325, 25);
+            this.txtChild.Size = new System.Drawing.Size(462, 25);
             this.txtChild.TabIndex = 7;
             this.txtChild.TextChanged += new System.EventHandler(this.txtChild_TextChanged);
             this.txtChild.Leave += new System.EventHandler(this.txtChild_Leave);
@@ -190,7 +191,7 @@
             this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinish.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinish.Location = new System.Drawing.Point(184, 471);
+            this.btnFinish.Location = new System.Drawing.Point(183, 464);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(104, 45);
             this.btnFinish.TabIndex = 9;
@@ -205,7 +206,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(404, 471);
+            this.btnCancel.Location = new System.Drawing.Point(541, 464);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 45);
             this.btnCancel.TabIndex = 11;
@@ -220,7 +221,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(183, 416);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(325, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(462, 25);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // label7
@@ -251,7 +252,7 @@
             this.txtReceiptType.Location = new System.Drawing.Point(183, 100);
             this.txtReceiptType.Name = "txtReceiptType";
             this.txtReceiptType.ReadOnly = true;
-            this.txtReceiptType.Size = new System.Drawing.Size(325, 25);
+            this.txtReceiptType.Size = new System.Drawing.Size(462, 25);
             this.txtReceiptType.TabIndex = 1;
             // 
             // btnClear
@@ -261,7 +262,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(294, 471);
+            this.btnClear.Location = new System.Drawing.Point(422, 464);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 45);
             this.btnClear.TabIndex = 10;
@@ -306,7 +307,7 @@
             this.cmbWaiter.FormattingEnabled = true;
             this.cmbWaiter.Location = new System.Drawing.Point(183, 183);
             this.cmbWaiter.Name = "cmbWaiter";
-            this.cmbWaiter.Size = new System.Drawing.Size(325, 25);
+            this.cmbWaiter.Size = new System.Drawing.Size(462, 25);
             this.cmbWaiter.TabIndex = 32;
             // 
             // label10
@@ -321,12 +322,28 @@
             this.label10.Text = "Note: Select Logged User for Fast Cash/ Take Away";
             this.label10.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(302, 464);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(104, 45);
+            this.btnKeyboard.TabIndex = 72;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // orderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(556, 526);
+            this.ClientSize = new System.Drawing.Size(696, 526);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.cmbWaiter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -389,5 +406,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.ComboBox cmbWaiter;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

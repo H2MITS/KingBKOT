@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBtnError = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblTotalAmt = new System.Windows.Forms.Label();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
@@ -43,15 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgPurchaseDetails = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnPurchaseEntry = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalRows = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +52,16 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnPurchaseEntry = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalRows = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPurchaseDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,21 +98,22 @@
             this.lblBtnError.Text = "*Note: Type bill No or partyname to search";
             this.lblBtnError.Visible = false;
             // 
-            // btnClear
+            // btnCancel
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.BackColor = System.Drawing.Color.Crimson;
-            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(976, 114);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 59);
-            this.btnClear.TabIndex = 168;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(975, 588);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(99, 59);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnClear_Click_2);
             // 
             // dataGridViewImageColumn1
             // 
@@ -140,7 +142,7 @@
             this.dateTo.Location = new System.Drawing.Point(579, 136);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(130, 26);
-            this.dateTo.TabIndex = 159;
+            this.dateTo.TabIndex = 5;
             // 
             // dateFrom
             // 
@@ -150,7 +152,7 @@
             this.dateFrom.Location = new System.Drawing.Point(424, 136);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(121, 26);
-            this.dateFrom.TabIndex = 158;
+            this.dateFrom.TabIndex = 4;
             // 
             // label3
             // 
@@ -225,120 +227,10 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgPurchaseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgPurchaseDetails.Size = new System.Drawing.Size(1052, 422);
+            this.dgPurchaseDetails.Size = new System.Drawing.Size(1052, 385);
             this.dgPurchaseDetails.TabIndex = 165;
             this.dgPurchaseDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPurchaseDetails_CellContentClick);
             this.dgPurchaseDetails.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPurchaseDetails_CellDoubleClick);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel4.Location = new System.Drawing.Point(411, 120);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2, 50);
-            this.panel4.TabIndex = 164;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(730, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 59);
-            this.button1.TabIndex = 160;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.txtSearch.Location = new System.Drawing.Point(21, 135);
-            this.txtSearch.MaxLength = 50;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(379, 26);
-            this.txtSearch.TabIndex = 157;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // btnPurchaseEntry
-            // 
-            this.btnPurchaseEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPurchaseEntry.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnPurchaseEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchaseEntry.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPurchaseEntry.ForeColor = System.Drawing.Color.White;
-            this.btnPurchaseEntry.Location = new System.Drawing.Point(25, 23);
-            this.btnPurchaseEntry.Name = "btnPurchaseEntry";
-            this.btnPurchaseEntry.Size = new System.Drawing.Size(168, 58);
-            this.btnPurchaseEntry.TabIndex = 161;
-            this.btnPurchaseEntry.Text = "New Purchase Entry";
-            this.btnPurchaseEntry.UseVisualStyleBackColor = false;
-            this.btnPurchaseEntry.Click += new System.EventHandler(this.btnPurchaseEntry_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel3.Location = new System.Drawing.Point(722, 120);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2, 50);
-            this.panel3.TabIndex = 163;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.25F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 19);
-            this.label1.TabIndex = 162;
-            this.label1.Text = "Search By Bill No: ";
-            // 
-            // lblTotalRows
-            // 
-            this.lblTotalRows.AutoSize = true;
-            this.lblTotalRows.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRows.ForeColor = System.Drawing.Color.White;
-            this.lblTotalRows.Location = new System.Drawing.Point(123, 627);
-            this.lblTotalRows.Name = "lblTotalRows";
-            this.lblTotalRows.Size = new System.Drawing.Size(18, 19);
-            this.lblTotalRows.TabIndex = 175;
-            this.lblTotalRows.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 627);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 19);
-            this.label2.TabIndex = 176;
-            this.label2.Text = "Total Rows : ";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.DarkMagenta;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(853, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 59);
-            this.button2.TabIndex = 160;
-            this.button2.Text = "Today\'s Purch.";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Column1
             // 
@@ -417,18 +309,146 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 57;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel4.Location = new System.Drawing.Point(411, 120);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(2, 50);
+            this.panel4.TabIndex = 164;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(730, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 59);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.txtSearch.Location = new System.Drawing.Point(21, 135);
+            this.txtSearch.MaxLength = 50;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(379, 26);
+            this.txtSearch.TabIndex = 3;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // btnPurchaseEntry
+            // 
+            this.btnPurchaseEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPurchaseEntry.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnPurchaseEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPurchaseEntry.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchaseEntry.ForeColor = System.Drawing.Color.White;
+            this.btnPurchaseEntry.Location = new System.Drawing.Point(25, 23);
+            this.btnPurchaseEntry.Name = "btnPurchaseEntry";
+            this.btnPurchaseEntry.Size = new System.Drawing.Size(168, 58);
+            this.btnPurchaseEntry.TabIndex = 1;
+            this.btnPurchaseEntry.Text = "New Purchase Entry";
+            this.btnPurchaseEntry.UseVisualStyleBackColor = false;
+            this.btnPurchaseEntry.Click += new System.EventHandler(this.btnPurchaseEntry_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel3.Location = new System.Drawing.Point(722, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(2, 50);
+            this.panel3.TabIndex = 163;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(17, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 19);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "Search By Bill No: ";
+            // 
+            // lblTotalRows
+            // 
+            this.lblTotalRows.AutoSize = true;
+            this.lblTotalRows.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRows.ForeColor = System.Drawing.Color.White;
+            this.lblTotalRows.Location = new System.Drawing.Point(126, 595);
+            this.lblTotalRows.Name = "lblTotalRows";
+            this.lblTotalRows.Size = new System.Drawing.Size(18, 19);
+            this.lblTotalRows.TabIndex = 175;
+            this.lblTotalRows.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 595);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 19);
+            this.label2.TabIndex = 176;
+            this.label2.Text = "Total Rows : ";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.DarkMagenta;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(853, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 59);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Today\'s Purch.";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(219, 23);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(168, 58);
+            this.btnKeyboard.TabIndex = 2;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click_1);
+            // 
             // PurchaseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1088, 655);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.lblTotalRows);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblBtnError);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblTotalAmt);
             this.Controls.Add(this.dateTo);
             this.Controls.Add(this.dateFrom);
@@ -458,7 +478,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblBtnError;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Label lblTotalAmt;
         private System.Windows.Forms.DateTimePicker dateTo;
@@ -484,5 +504,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

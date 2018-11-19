@@ -54,6 +54,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -287,10 +288,11 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnKeyboard);
             this.groupBox2.Controls.Add(this.btnOK);
             this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.btnCancel);
@@ -323,7 +325,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(327, 25);
+            this.btnClear.Location = new System.Drawing.Point(235, 25);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(126, 49);
             this.btnClear.TabIndex = 10;
@@ -360,6 +362,21 @@
             this.label8.Size = new System.Drawing.Size(408, 34);
             this.label8.TabIndex = 30;
             this.label8.Text = "Modify Product Order Details";
+            // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(467, 25);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(102, 48);
+            this.btnKeyboard.TabIndex = 70;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
             // 
             // frmModification
             // 
@@ -423,5 +440,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

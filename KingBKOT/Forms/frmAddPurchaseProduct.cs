@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KingBKOT.Data;
+using System.Diagnostics;
+using System.IO;
 
 namespace KingBKOT.Forms
 {
@@ -16,9 +18,10 @@ namespace KingBKOT.Forms
         KBBQEntities _entities;
         int passedId = 0;
         string passedPName = "";
-
+        object keyboardProc;
         public frmAddPurchaseProduct(int passedProId, string passedProName)
         {
+            
             InitializeComponent();
             passedId = passedProId;
             passedPName = passedProName;
@@ -164,12 +167,20 @@ namespace KingBKOT.Forms
 
         private void btnKeyboard_Click(object sender, EventArgs e)
         {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
 
+            this.keyboardProc = Process.Start(keyboardPath);
         }
 
         private void txtProductName_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

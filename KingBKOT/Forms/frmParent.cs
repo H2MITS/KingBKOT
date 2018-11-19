@@ -312,5 +312,10 @@ namespace Cindy_Restaurant
             frmPurchaseSaleReport frm = new frmPurchaseSaleReport();
             frm.ShowDialog();
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

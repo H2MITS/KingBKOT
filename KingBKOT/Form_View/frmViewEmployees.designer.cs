@@ -52,6 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -156,10 +157,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.textBox1.Location = new System.Drawing.Point(263, 603);
+            this.textBox1.Location = new System.Drawing.Point(223, 603);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(166, 25);
+            this.textBox1.Size = new System.Drawing.Size(95, 25);
             this.textBox1.TabIndex = 5;
             // 
             // label1
@@ -169,9 +170,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(51, 606);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 20);
+            this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Total Count Of Employee";
+            this.label1.Text = "Total No. of Employee";
             // 
             // btnClose
             // 
@@ -181,7 +182,7 @@
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(762, 604);
+            this.btnClose.Location = new System.Drawing.Point(763, 603);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 41);
             this.btnClose.TabIndex = 9;
@@ -195,9 +196,9 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(444, 603);
+            this.btnUpdate.Location = new System.Drawing.Point(351, 603);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(97, 41);
             this.btnUpdate.TabIndex = 6;
@@ -280,9 +281,9 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(550, 603);
+            this.btnDelete.Location = new System.Drawing.Point(454, 603);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 41);
             this.btnDelete.TabIndex = 7;
@@ -298,7 +299,7 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(656, 604);
+            this.btnClear.Location = new System.Drawing.Point(557, 603);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 41);
             this.btnClear.TabIndex = 8;
@@ -336,12 +337,28 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "View Employee Details";
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(660, 603);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(97, 41);
+            this.btnKeyboard.TabIndex = 72;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // frmViewEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(909, 683);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnDelete);
@@ -399,5 +416,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

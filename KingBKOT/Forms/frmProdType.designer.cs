@@ -38,6 +38,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnKeyboard = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             "Food"});
             this.cboProductTypeName.Location = new System.Drawing.Point(127, 98);
             this.cboProductTypeName.Name = "cboProductTypeName";
-            this.cboProductTypeName.Size = new System.Drawing.Size(182, 27);
+            this.cboProductTypeName.Size = new System.Drawing.Size(362, 27);
             this.cboProductTypeName.TabIndex = 1;
             this.cboProductTypeName.SelectedIndexChanged += new System.EventHandler(this.cboProductTypeName_SelectedIndexChanged);
             this.cboProductTypeName.Leave += new System.EventHandler(this.cboProductTypeName_Leave);
@@ -85,7 +87,7 @@
             this.txtCategory.Location = new System.Drawing.Point(127, 140);
             this.txtCategory.MaxLength = 30;
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(182, 25);
+            this.txtCategory.Size = new System.Drawing.Size(362, 25);
             this.txtCategory.TabIndex = 2;
             this.txtCategory.TextChanged += new System.EventHandler(this.txtCategory_TextChanged);
             this.txtCategory.Leave += new System.EventHandler(this.txtCategory_Leave);
@@ -114,7 +116,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(206, 205);
+            this.btnCancel.Location = new System.Drawing.Point(144, 206);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(103, 52);
             this.btnCancel.TabIndex = 4;
@@ -152,12 +154,44 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Add Menu Group";
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(386, 205);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(103, 52);
+            this.btnKeyboard.TabIndex = 6;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Yellow;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(263, 205);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(103, 52);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmProdType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(321, 278);
+            this.ClientSize = new System.Drawing.Size(495, 278);
+            this.Controls.Add(this.btnKeyboard);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
@@ -190,5 +224,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Button btnClear;
     }
 }

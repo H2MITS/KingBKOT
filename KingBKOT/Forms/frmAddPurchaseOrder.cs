@@ -444,5 +444,10 @@ namespace KingBKOT.Forms
                 MessageBox.Show(x.ToString());
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

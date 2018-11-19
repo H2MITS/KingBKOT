@@ -61,9 +61,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(608, 416);
+            this.button1.Location = new System.Drawing.Point(595, 408);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 37);
+            this.button1.Size = new System.Drawing.Size(103, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;

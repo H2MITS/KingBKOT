@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 using KingBKOT.Data;
 using KingBKOT.ViewModel;
+using System.IO;
+using System.Diagnostics;
 
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmViewOrderInfo : Form
     {
         KBBQEntities _entities;
+        object keyboardProc;
 
         public frmViewOrderInfo()
         {
@@ -174,6 +177,21 @@ namespace Cindy_Restaurant.Form_View
 
                 dataGridView1.DataSource = modelList;
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dateFrom.Value = DateTimePicker.MinimumDateTime;
+            dateTo.Value = DateTimePicker.MinimumDateTime;
+            dataGridView1.DataSource = null;
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
     }
 }

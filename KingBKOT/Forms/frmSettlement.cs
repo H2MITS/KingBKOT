@@ -12,11 +12,14 @@ using Cindy_Restaurant.Classes;
 using System.Data.SqlClient;
 using KingBKOT.Data;
 using KingBKOT.ViewModel;
+using System.Diagnostics;
+using System.IO;
 
 namespace Cindy_Restaurant.Forms
 {
     public partial class frmSettlement : Form
     {
+        object keyboardProc;
         public frmSettlement()
         {
             InitializeComponent();
@@ -503,6 +506,14 @@ namespace Cindy_Restaurant.Forms
                 MessageBox.Show("Error: " + x.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
 
         string voidID = "";

@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
+
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmFreezeItem : Form
     {
+        object keyboardProc;
         public frmFreezeItem()
         {
             InitializeComponent();
@@ -144,6 +148,14 @@ namespace Cindy_Restaurant.Form_View
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
             checkBox1.Checked = false;
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
     }
 }

@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using KingBKOT.Data;
 using KingBKOT.ViewModel;
 using KingBKOT.Classes;
+using System.Diagnostics;
+using System.IO;
 
 namespace KingBKOT.Forms
 {
     public partial class frmPurchaseMasterMain : Form
     {
+        object keyboardProc;
         KBBQEntities _entities;
         int count = 0;
         AmtFomatting amtFormat = new AmtFomatting();
@@ -514,6 +517,20 @@ namespace KingBKOT.Forms
                 }
             }
         }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void clearDetails()
         {
             txtitemName.Text = "";

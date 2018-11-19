@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +72,16 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(52, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 20);
+            this.label1.Size = new System.Drawing.Size(321, 20);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Assign a reason for freezing the product:";
+            this.label1.Text = "***Assign a reason for freezing the product:";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(495, 321);
+            this.checkBox1.Location = new System.Drawing.Point(491, 318);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(131, 24);
             this.checkBox1.TabIndex = 2;
@@ -95,7 +96,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(56, 357);
+            this.btnOK.Location = new System.Drawing.Point(55, 357);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(117, 42);
             this.btnOK.TabIndex = 3;
@@ -134,7 +135,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(153, 67);
+            this.panel2.Location = new System.Drawing.Point(164, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 3);
             this.panel2.TabIndex = 35;
@@ -153,7 +154,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20.75F);
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(147, 29);
+            this.label3.Location = new System.Drawing.Point(158, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(354, 34);
             this.label3.TabIndex = 34;
@@ -166,7 +167,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(288, 357);
+            this.btnClear.Location = new System.Drawing.Point(358, 357);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 42);
             this.btnClear.TabIndex = 4;
@@ -174,12 +175,28 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.White;
+            this.btnKeyboard.Location = new System.Drawing.Point(208, 357);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(117, 42);
+            this.btnKeyboard.TabIndex = 72;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // frmUnFreezeItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(676, 439);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -216,5 +233,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

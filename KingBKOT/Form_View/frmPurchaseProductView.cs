@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KingBKOT.Data;
 using KingBKOT.ViewModel;
+using System.Diagnostics;
+using System.IO;
 
 namespace KingBKOT.Form_View
 {
+    
     public partial class frmPurchaseProductView : Form
     {
+        object keyboardProc;
         KBBQEntities _entities;
 
         public frmPurchaseProductView()
@@ -196,6 +200,19 @@ namespace KingBKOT.Form_View
             {
                 MessageBox.Show("Something went wrong. Contact your system administrator");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
     }
 }

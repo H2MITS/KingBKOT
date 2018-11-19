@@ -12,11 +12,14 @@ using System.Drawing.Printing;
 using System.Data.SqlClient;
 
 using KingBKOT.Data;
+using System.Diagnostics;
+using System.IO;
 
 namespace Cindy_Restaurant.Forms
 {
     public partial class frmOrder : Form
     {
+        object keyboardProc;
         KBBQEntities _entities;
 
         public frmOrder()
@@ -1095,6 +1098,23 @@ namespace Cindy_Restaurant.Forms
             string proNam = row.Cells[0].Value.ToString();
 
             viewClass.SelectMenuByTextDisplay(proNam, dataGridView1);
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            txtTotal.Text = string.Empty;
+            listView1.Items.Clear();
         }
 
         private void btnCashout_Click(object sender, EventArgs e)

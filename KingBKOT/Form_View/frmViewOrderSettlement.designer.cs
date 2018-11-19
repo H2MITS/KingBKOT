@@ -108,6 +108,7 @@
             this.lblOrderDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblKOT = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -128,7 +129,9 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnCashout = new System.Windows.Forms.Button();
             this.btnSettlement = new System.Windows.Forms.Button();
-            this.lblKOT = new System.Windows.Forms.Label();
+            this.btnKeyboard = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -908,6 +911,17 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // lblKOT
+            // 
+            this.lblKOT.AutoSize = true;
+            this.lblKOT.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblKOT.ForeColor = System.Drawing.Color.White;
+            this.lblKOT.Location = new System.Drawing.Point(170, 51);
+            this.lblKOT.Name = "lblKOT";
+            this.lblKOT.Size = new System.Drawing.Size(52, 20);
+            this.lblKOT.TabIndex = 0;
+            this.lblKOT.Text = "lblKOT";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox1);
@@ -980,7 +994,7 @@
             this.textBox3.Location = new System.Drawing.Point(4, 73);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(248, 27);
-            this.textBox3.TabIndex = 35;
+            this.textBox3.TabIndex = 5;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dataGridView3
@@ -1036,7 +1050,7 @@
             this.groupBox4.Controls.Add(this.groupBox8);
             this.groupBox4.Location = new System.Drawing.Point(266, 82);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1093, 63);
+            this.groupBox4.Size = new System.Drawing.Size(1093, 59);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             // 
@@ -1141,7 +1155,7 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnOrder.BackColor = System.Drawing.Color.OrangeRed;
             this.btnOrder.Enabled = false;
             this.btnOrder.FlatAppearance.BorderSize = 0;
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1150,7 +1164,7 @@
             this.btnOrder.Location = new System.Drawing.Point(808, 642);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(104, 53);
-            this.btnOrder.TabIndex = 19;
+            this.btnOrder.TabIndex = 7;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
@@ -1165,7 +1179,7 @@
             this.btnCashout.Location = new System.Drawing.Point(917, 642);
             this.btnCashout.Name = "btnCashout";
             this.btnCashout.Size = new System.Drawing.Size(104, 53);
-            this.btnCashout.TabIndex = 17;
+            this.btnCashout.TabIndex = 8;
             this.btnCashout.Text = "Print Bill";
             this.btnCashout.UseVisualStyleBackColor = false;
             this.btnCashout.Click += new System.EventHandler(this.btnCashout_Click);
@@ -1180,21 +1194,57 @@
             this.btnSettlement.Location = new System.Drawing.Point(706, 642);
             this.btnSettlement.Name = "btnSettlement";
             this.btnSettlement.Size = new System.Drawing.Size(96, 53);
-            this.btnSettlement.TabIndex = 18;
+            this.btnSettlement.TabIndex = 6;
             this.btnSettlement.Text = "Settlement";
             this.btnSettlement.UseVisualStyleBackColor = false;
             this.btnSettlement.Click += new System.EventHandler(this.btnSettlement_Click);
             // 
-            // lblKOT
+            // btnKeyboard
             // 
-            this.lblKOT.AutoSize = true;
-            this.lblKOT.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.lblKOT.ForeColor = System.Drawing.Color.White;
-            this.lblKOT.Location = new System.Drawing.Point(170, 51);
-            this.lblKOT.Name = "lblKOT";
-            this.lblKOT.Size = new System.Drawing.Size(52, 20);
-            this.lblKOT.TabIndex = 0;
-            this.lblKOT.Text = "lblKOT";
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
+            this.btnKeyboard.Location = new System.Drawing.Point(12, 642);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(96, 53);
+            this.btnKeyboard.TabIndex = 9;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(126, 643);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(96, 53);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(237, 643);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(96, 53);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_2);
             // 
             // frmViewOrderSettlement
             // 
@@ -1202,6 +1252,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnCashout);
             this.Controls.Add(this.btnSettlement);
@@ -1339,5 +1392,8 @@
         private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lblKOT;
+        private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

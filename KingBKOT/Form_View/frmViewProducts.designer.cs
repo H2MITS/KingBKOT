@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(44, 467);
+            this.label2.Location = new System.Drawing.Point(39, 467);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 0;
@@ -96,7 +97,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(307, 79);
+            this.textBox1.Size = new System.Drawing.Size(314, 79);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
@@ -127,11 +128,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(756, 467);
+            this.button1.Location = new System.Drawing.Point(757, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 48);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Close";
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -154,7 +155,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(179, 467);
+            this.btnUpdate.Location = new System.Drawing.Point(180, 467);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(124, 48);
             this.btnUpdate.TabIndex = 3;
@@ -168,7 +169,7 @@
             this.btnFreeze.FlatAppearance.BorderSize = 0;
             this.btnFreeze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFreeze.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnFreeze.Location = new System.Drawing.Point(324, 467);
+            this.btnFreeze.Location = new System.Drawing.Point(325, 467);
             this.btnFreeze.Name = "btnFreeze";
             this.btnFreeze.Size = new System.Drawing.Size(124, 48);
             this.btnFreeze.TabIndex = 4;
@@ -182,7 +183,7 @@
             this.btnUnfreeze.FlatAppearance.BorderSize = 0;
             this.btnUnfreeze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnfreeze.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnUnfreeze.Location = new System.Drawing.Point(469, 467);
+            this.btnUnfreeze.Location = new System.Drawing.Point(470, 467);
             this.btnUnfreeze.Name = "btnUnfreeze";
             this.btnUnfreeze.Size = new System.Drawing.Size(124, 48);
             this.btnUnfreeze.TabIndex = 5;
@@ -227,7 +228,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(612, 467);
+            this.btnClear.Location = new System.Drawing.Point(613, 467);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(124, 48);
             this.btnClear.TabIndex = 6;
@@ -235,12 +236,28 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
+            this.btnKeyboard.Location = new System.Drawing.Point(757, 68);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(124, 48);
+            this.btnKeyboard.TabIndex = 8;
+            this.btnKeyboard.Text = "Keyboard";
+            this.btnKeyboard.UseVisualStyleBackColor = false;
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // frmViewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(928, 538);
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUnfreeze);
@@ -286,5 +303,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }

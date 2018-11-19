@@ -61,9 +61,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(571, 295);
+            this.button1.Location = new System.Drawing.Point(568, 296);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 44);
+            this.button1.Size = new System.Drawing.Size(103, 52);
             this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -74,7 +74,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(215, 75);
+            this.panel2.Location = new System.Drawing.Point(215, 69);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 3);
             this.panel2.TabIndex = 35;
@@ -93,7 +93,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20.75F);
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(209, 34);
+            this.label3.Location = new System.Drawing.Point(209, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(282, 34);
             this.label3.TabIndex = 34;

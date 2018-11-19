@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using TestProject.Forms;
 using System.Data.SqlClient;
 using Cindy_Restaurant;
+using System.IO;
+using System.Diagnostics;
 
 namespace KingBarbeque.Forms
 {
@@ -20,7 +22,7 @@ namespace KingBarbeque.Forms
         {
             InitializeComponent();
         }
-        
+        object keyboardProc;
         clsSelect selectClass = new clsSelect();
         clsInsert varinsert = new clsInsert();
         DateTimePicker day = new DateTimePicker();
@@ -36,12 +38,12 @@ namespace KingBarbeque.Forms
 
         }
 
-       public void btnLogin_Click(object sender, EventArgs e)
-        {
-            SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
-        }
+       //public void btnLogin_Click(object sender, EventArgs e)
+       // {
+       //     SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
+       //     notifyIcon1.Visible = true;
+       //     notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
+       // }
 
         //LOGIN
         void SignInn(string Usernames, string Password)
@@ -198,6 +200,36 @@ namespace KingBarbeque.Forms
         private void btn7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //}
+
+        //private void btnKeyboard_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnKeyboard_Click_1(object sender, EventArgs e)
+        {
+
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            SignInn(cboUsername.SelectedItem.ToString(), txtPassword.Text);
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(5000, "Happy Birthday", "King Bar Beque App wishes you a happy birthday", ToolTipIcon.Info);
         }
 
         //private void txtUsername_Click(object sender, EventArgs e)

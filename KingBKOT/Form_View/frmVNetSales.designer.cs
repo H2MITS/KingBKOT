@@ -51,7 +51,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(636, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 247);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -61,9 +61,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(559, 375);
+            this.button1.Location = new System.Drawing.Point(578, 373);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 51);
+            this.button1.Size = new System.Drawing.Size(103, 52);
             this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;

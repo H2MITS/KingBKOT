@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KingBKOT.Data;
+using System.Diagnostics;
+using System.IO;
 
 namespace Cindy_Restaurant.Forms
 {
     public partial class orderInfo : Form
     {
+        object keyboardProc;
         public orderInfo()
         {
             InitializeComponent();
@@ -227,6 +230,14 @@ namespace Cindy_Restaurant.Forms
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

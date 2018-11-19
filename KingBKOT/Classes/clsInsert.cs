@@ -12,7 +12,7 @@ namespace Cindy_Restaurant.Classes
     class clsInsert
     {
         //database path usually this is the path called the connection string
-        public string dbPath = @"Data Source=DESKTOP-AU8GBJS\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
+        public string dbPath = @"Data Source=HARRY\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
         public SqlConnection con;
         public SqlCommand cmd;
         public static ErrorProvider err = new ErrorProvider();

@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
+using System.Diagnostics;
+using System.IO;
+
 namespace Cindy_Restaurant.Forms
 {
     public partial class frmModification : Form
     {
+
+        object keyboardProc;
         public string getEmpName;
         public frmModification()
         {
@@ -219,6 +224,19 @@ namespace Cindy_Restaurant.Forms
             txtTourLevy.Text = string.Empty;
             txtVat.Text = string.Empty;
             txtTotal.Text = string.Empty;
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

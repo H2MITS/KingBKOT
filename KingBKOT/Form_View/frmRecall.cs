@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 using KingBKOT.Data;
 using KingBKOT.ViewModel;
+using System.IO;
+using System.Diagnostics;
 
 namespace Cindy_Restaurant.Form_View
 {
     public partial class receiptList : Form
     {
+        object keyboardProc;
         KBBQEntities _entities;
 
         public Label lblGetId = new Label();
@@ -124,7 +127,7 @@ namespace Cindy_Restaurant.Form_View
         {
             _entities = new KBBQEntities();
 
-            var data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").OrderBy(x => x.kot).ToList();
+                var data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").OrderBy(x => x.kot).ToList();
             List<OrderInfoVM> modelList = new List<OrderInfoVM>();
 
             if (data != null)
@@ -662,6 +665,14 @@ namespace Cindy_Restaurant.Form_View
             //settlement.ShowDialog();
             getRep.Text = "";
 
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

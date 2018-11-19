@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cindy_Restaurant.Classes;
 using Cindy_Restaurant.Folder_Updates;
+using System.Diagnostics;
+using System.IO;
+
 namespace Cindy_Restaurant.Form_View
 {
     public partial class frmViewEmployees : Form
     {
+        object keyboardProc;
         public frmViewEmployees()
         {
             InitializeComponent();
@@ -108,6 +112,14 @@ namespace Cindy_Restaurant.Form_View
             textBox1.Text = string.Empty;
             pictureBox1.Image = null;
 
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
         }
     }
 }

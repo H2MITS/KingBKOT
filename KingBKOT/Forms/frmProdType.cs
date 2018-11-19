@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Cindy_Restaurant.Classes;
+using System.Diagnostics;
+using System.IO;
+
 namespace Cindy_Restaurant.Forms
 {
     public partial class frmProdType : Form
     {
+        object keyboardProc;
         public frmProdType()
         {
             InitializeComponent();
@@ -161,5 +165,19 @@ namespace Cindy_Restaurant.Forms
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cboProductTypeName.Items.Clear();
+            txtCategory.Text = string.Empty;
+
+        }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+
+            this.keyboardProc = Process.Start(keyboardPath);
+        }
     }
 }
