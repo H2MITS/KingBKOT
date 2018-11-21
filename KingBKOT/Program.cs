@@ -9,8 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using TestProject.Forms;
+using System.Windows.Forms; 
 
 namespace KingBKOT
 {
@@ -24,7 +23,7 @@ namespace KingBKOT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSplash());
+            Application.Run(new frmParent());
         }
     }
 }

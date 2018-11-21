@@ -101,7 +101,7 @@
             this.lblHiddenId.AutoSize = true;
             this.lblHiddenId.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.lblHiddenId.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblHiddenId.Location = new System.Drawing.Point(472, 570);
+            this.lblHiddenId.Location = new System.Drawing.Point(517, 570);
             this.lblHiddenId.Name = "lblHiddenId";
             this.lblHiddenId.Size = new System.Drawing.Size(88, 20);
             this.lblHiddenId.TabIndex = 130;
@@ -113,7 +113,7 @@
             this.lblhiddenCategoryName.AutoSize = true;
             this.lblhiddenCategoryName.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.lblhiddenCategoryName.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblhiddenCategoryName.Location = new System.Drawing.Point(310, 570);
+            this.lblhiddenCategoryName.Location = new System.Drawing.Point(355, 570);
             this.lblhiddenCategoryName.Name = "lblhiddenCategoryName";
             this.lblhiddenCategoryName.Size = new System.Drawing.Size(148, 20);
             this.lblhiddenCategoryName.TabIndex = 131;
@@ -169,6 +169,8 @@
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(741, 26);
             this.txtQty.TabIndex = 1;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // txtitemName
             // 
@@ -186,11 +188,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(18, 568);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(270, 17);
+            this.label15.Size = new System.Drawing.Size(317, 19);
             this.label15.TabIndex = 138;
             this.label15.Text = "* Note : Double-Click on any one row to EDIT.";
             // 
@@ -278,6 +280,8 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(260, 26);
             this.txtWeight.TabIndex = 2;
+            this.txtWeight.TextChanged += new System.EventHandler(this.txtWeight_TextChanged);
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
             // 
             // comboUnit
             // 
@@ -285,8 +289,10 @@
             this.comboUnit.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.comboUnit.FormattingEnabled = true;
             this.comboUnit.Items.AddRange(new object[] {
+            "Ltr",
             "Gram",
-            "Kg"});
+            "Kg",
+            "Pcs"});
             this.comboUnit.Location = new System.Drawing.Point(441, 120);
             this.comboUnit.Name = "comboUnit";
             this.comboUnit.Size = new System.Drawing.Size(127, 27);

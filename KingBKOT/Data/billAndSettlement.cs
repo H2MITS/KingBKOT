@@ -28,5 +28,6 @@ namespace KingBKOT.Data
         public string empID { get; set; }
         public string couponCode { get; set; }
         public Nullable<decimal> discount { get; set; }
+        public string mobile { get; set; }
     }
 }

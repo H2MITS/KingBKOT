@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.salesPrintVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.salesPrintVMBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // salesPrintVMBindingSource
+            // 
+            this.salesPrintVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.SalesPrintVM);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(620, 528);
             this.reportViewer1.TabIndex = 0;
             // 
-            // salesPrintVMBindingSource
-            // 
-            this.salesPrintVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.SalesPrintVM);
-            // 
             // frmRptSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -59,7 +59,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmRptSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRptSales";
+            this.Text = "Sales Report";
             this.Load += new System.EventHandler(this.frmRptSales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salesPrintVMBindingSource)).EndInit();
             this.ResumeLayout(false);

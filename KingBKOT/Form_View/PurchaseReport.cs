@@ -94,6 +94,8 @@ namespace KingBKOT.Forms
                     model.rowNo = rowNo;
                     model.pId = item.pId;
                     model.refNo = item.refNo;
+                    model.partyName = item.partyName;
+                    model.remarks = item.remarks;
                     model.date = Convert.ToDateTime(item.date).ToString("dd-MM-yyyy");
                     model.totalWeight = item.totalWeight;
                     model.totalAmt = Convert.ToDecimal(amtFormat.comma(item.totalAmt));
@@ -219,10 +221,16 @@ namespace KingBKOT.Forms
                 dgPurchaseDetails.AutoGenerateColumns = false;
                 totalAmts = 0;
 
+                if (txtSearch.Text == string.Empty)
+                {
+                    dataGridBind();
+                    return;
+                }
+
                 _entities = new KBBQEntities();
                 List<PurchaseMasterVM> modelList = new List<PurchaseMasterVM>();
 
-                var data = _entities.tbl_PurchaseMaster.Where(x => x.refNo.Contains(txtSearch.Text)).OrderByDescending(x => x.pId);
+                var data = _entities.tbl_PurchaseMaster.Where(x => x.refNo.Contains(txtSearch.Text.Trim()) || x.partyName.Contains(txtSearch.Text.Trim())).OrderByDescending(x => x.pId);
 
                 foreach (var item in data)
                 {
@@ -230,6 +238,8 @@ namespace KingBKOT.Forms
                     model.rowNo = rowNo;
                     model.pId = item.pId;
                     model.refNo = item.refNo;
+                    model.partyName = item.partyName;
+                    model.remarks = item.remarks;
                     model.date = Convert.ToDateTime(item.date).ToString("dd-MM-yyyy");
                     model.totalWeight = item.totalWeight;
                     model.totalAmt = Convert.ToDecimal(amtFormat.comma(item.totalAmt));
@@ -271,7 +281,7 @@ namespace KingBKOT.Forms
                 _entities = new KBBQEntities();
                 List<PurchaseMasterVM> modelList = new List<PurchaseMasterVM>();
 
-                var data = _entities.tbl_PurchaseMaster.Where(x => x.date == DateTime.Now).OrderByDescending(x => x.pId);
+                var data = _entities.tbl_PurchaseMaster.Where(x => x.date == DateTime.Now.Date).OrderByDescending(x => x.pId);
 
                 foreach (var item in data)
                 {
@@ -279,6 +289,8 @@ namespace KingBKOT.Forms
                     model.rowNo = rowNo;
                     model.pId = item.pId;
                     model.refNo = item.refNo;
+                    model.partyName = item.partyName;
+                    model.remarks = item.remarks;
                     model.date = Convert.ToDateTime(item.date).ToString("dd-MM-yyyy");
                     model.totalWeight = item.totalWeight;
                     model.totalAmt = Convert.ToDecimal(amtFormat.comma(item.totalAmt));

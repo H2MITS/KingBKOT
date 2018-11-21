@@ -83,17 +83,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_people_interface_symbol_of_black_person_close_up_with_plus_sign_in_small_circle {
-            get {
-                object obj = ResourceManager.GetObject("add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circ" +
-                        "le", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap analysis {
             get {
                 object obj = ResourceManager.GetObject("analysis", resourceCulture);
@@ -154,6 +143,16 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copper_loader {
+            get {
+                object obj = ResourceManager.GetObject("copper-loader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coupon {
             get {
                 object obj = ResourceManager.GetObject("coupon", resourceCulture);
@@ -194,16 +193,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dining_room_cutlery_set_of_three_pieces_in_silhouettes__1_ {
-            get {
-                object obj = ResourceManager.GetObject("dining-room-cutlery-set-of-three-pieces-in-silhouettes (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dinner {
             get {
                 object obj = ResourceManager.GetObject("dinner", resourceCulture);
@@ -224,16 +213,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap domain__1_ {
-            get {
-                object obj = ResourceManager.GetObject("domain (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap employee {
             get {
                 object obj = ResourceManager.GetObject("employee", resourceCulture);
@@ -247,6 +226,16 @@ namespace KingBKOT.Properties {
         internal static System.Drawing.Bitmap employee__1_ {
             get {
                 object obj = ResourceManager.GetObject("employee (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap employee__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("employee (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -334,26 +323,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon {
-            get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon1 {
-            get {
-                object obj = ResourceManager.GetObject("icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon2 {
             get {
                 object obj = ResourceManager.GetObject("icon2", resourceCulture);
@@ -434,16 +403,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loupe {
-            get {
-                object obj = ResourceManager.GetObject("loupe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap management {
             get {
                 object obj = ResourceManager.GetObject("management", resourceCulture);
@@ -457,16 +416,6 @@ namespace KingBKOT.Properties {
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu__1_ {
-            get {
-                object obj = ResourceManager.GetObject("menu (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -514,16 +463,6 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimize_tab {
-            get {
-                object obj = ResourceManager.GetObject("minimize-tab", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap money {
             get {
                 object obj = ResourceManager.GetObject("money", resourceCulture);
@@ -564,9 +503,9 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap order {
+        internal static System.Drawing.Bitmap order__1_ {
             get {
-                object obj = ResourceManager.GetObject("order", resourceCulture);
+                object obj = ResourceManager.GetObject("order (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -574,9 +513,9 @@ namespace KingBKOT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap order__1_ {
+        internal static System.Drawing.Bitmap order__1_1 {
             get {
-                object obj = ResourceManager.GetObject("order (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("order (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -727,16 +666,6 @@ namespace KingBKOT.Properties {
         internal static System.Drawing.Bitmap Team01 {
             get {
                 object obj = ResourceManager.GetObject("Team01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap to_do_list__1_ {
-            get {
-                object obj = ResourceManager.GetObject("to-do-list (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

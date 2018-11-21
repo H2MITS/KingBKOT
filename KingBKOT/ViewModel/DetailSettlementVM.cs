@@ -24,5 +24,7 @@ namespace KingBKOT.ViewModel
         public string acctNum { get; set; }
         public string electronicType { get; set; }
         public string empID { get; set; }
+
+        public decimal? advancePaid{ get; set; }
     }
 }

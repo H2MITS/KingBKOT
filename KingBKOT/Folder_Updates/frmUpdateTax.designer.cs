@@ -114,6 +114,7 @@
             this.txtTax1.Size = new System.Drawing.Size(264, 25);
             this.txtTax1.TabIndex = 2;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
+            this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
             this.txtTax1.Leave += new System.EventHandler(this.txtTax1_Leave);
             // 
             // txtTax2
@@ -124,6 +125,7 @@
             this.txtTax2.Size = new System.Drawing.Size(264, 25);
             this.txtTax2.TabIndex = 2;
             this.txtTax2.TextChanged += new System.EventHandler(this.txtTax2_TextChanged);
+            this.txtTax2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax2_KeyPress);
             this.txtTax2.Leave += new System.EventHandler(this.txtTax2_Leave);
             // 
             // txtTax3
@@ -135,6 +137,7 @@
             this.txtTax3.Size = new System.Drawing.Size(264, 25);
             this.txtTax3.TabIndex = 2;
             this.txtTax3.TextChanged += new System.EventHandler(this.txtTax3_TextChanged);
+            this.txtTax3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax3_KeyPress);
             this.txtTax3.Leave += new System.EventHandler(this.txtTax3_Leave);
             // 
             // panel2

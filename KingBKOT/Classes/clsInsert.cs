@@ -341,7 +341,7 @@ namespace Cindy_Restaurant.Classes
 
 
 
-        public void insertTobillAndSettlement(string kot, string orderDecrip, string fname, string lname, DateTimePicker ordDate, DateTimePicker ordTime, double totalDue, double tax1_Amt, double tax2_Amt, double subTotal, string mode, string empID)
+        public void insertTobillAndSettlement(string kot, string orderDecrip, string fname, string lname, DateTimePicker ordDate, DateTimePicker ordTime, double totalDue, double tax1_Amt, double tax2_Amt, double subTotal, string mode, string empID,string mob)
         {
             try
             {
@@ -352,7 +352,7 @@ namespace Cindy_Restaurant.Classes
                 if (lname == null || lname == "")
                     lname = "";
 
-                string sql = "INSERT INTO billAndSettlement(kot,orderDecrip,fname,lname,ordDate,ordTime,totalDue,tax1_Amt,tax2_Amt,subTotal,mode,empID) VALUES(@kot,@orderDecrip,@fname,@lname,@ordDate,@ordTime,@totalDue,@tax1_Amt,@tax2_Amt,@subTotal,@mode,@empID)";
+                string sql = "INSERT INTO billAndSettlement(kot,orderDecrip,fname,lname,mobile,ordDate,ordTime,totalDue,tax1_Amt,tax2_Amt,subTotal,mode,empID) VALUES(@kot,@orderDecrip,@fname,@lname,@mobile,@ordDate,@ordTime,@totalDue,@tax1_Amt,@tax2_Amt,@subTotal,@mode,@empID)";
                 con = new SqlConnection(dbPath);
                 con.Open();
                 cmd = new SqlCommand(sql, con);
@@ -361,6 +361,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@orderDecrip", orderDecrip.Trim());
                 cmd.Parameters.AddWithValue("@fname", fname.Trim());
                 cmd.Parameters.AddWithValue("@lname", lname.Trim());
+                cmd.Parameters.AddWithValue("@mobile", mob.Trim());
                 cmd.Parameters.AddWithValue("@ordDate", ordDate.Value.ToShortDateString());
                 cmd.Parameters.AddWithValue("@ordTime", ordTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@totalDue", totalDue);
@@ -451,7 +452,7 @@ namespace Cindy_Restaurant.Classes
 
         }
 
-        public void insertTotblOrderInfo(string orderType, string tableNo, string KOT, DateTimePicker ordDate, DateTimePicker ordTime, string fname, string lname, string adultNo, string childrenNo, string empID)
+        public void insertTotblOrderInfo(string orderType, string tableNo, string KOT, DateTimePicker ordDate, DateTimePicker ordTime, string fname, string lname, string adultNo, string childrenNo, string empID,string mob)
         {
 
             try
@@ -463,7 +464,7 @@ namespace Cindy_Restaurant.Classes
                     lname = "";
 
 
-                string sql = "INSERT INTO tblOrderInfo(orderType,tableNo,KOT,ordDate,ordTime,fname,lname,adultNo,childrenNo,empID)VALUES(@orderType,@tableNo,@KOT,@ordDate,@ordTime,@fname,@lname,@adultNo,@childrenNo,@empID)";
+                string sql = "INSERT INTO tblOrderInfo(orderType,tableNo,KOT,ordDate,ordTime,fname,lname,mobile,adultNo,childrenNo,empID)VALUES(@orderType,@tableNo,@KOT,@ordDate,@ordTime,@fname,@lname,@mobile,@adultNo,@childrenNo,@empID)";
 
 
                 con = new SqlConnection(dbPath);
@@ -476,6 +477,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@ordTime", ordTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@fname", fname.Trim());
                 cmd.Parameters.AddWithValue("@lname", lname.Trim());
+                cmd.Parameters.AddWithValue("@mobile", mob.Trim());
                 cmd.Parameters.AddWithValue("@adultNo", adultNo.Trim());
                 cmd.Parameters.AddWithValue("@childrenNo", childrenNo.Trim());
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
@@ -523,7 +525,7 @@ namespace Cindy_Restaurant.Classes
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Throwing Exception - King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             finally

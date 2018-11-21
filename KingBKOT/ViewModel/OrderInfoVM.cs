@@ -13,6 +13,7 @@ namespace KingBKOT.ViewModel
         public string KOT { get; set; }
         public System.DateTime ordDate { get; set; }
         public string ordTime { get; set; }
+        public string mobile { get; set; }
         public string fname { get; set; }
         public string lname { get; set; }
         public string adultNo { get; set; }

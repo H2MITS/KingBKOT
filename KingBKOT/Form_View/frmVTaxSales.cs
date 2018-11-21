@@ -55,7 +55,7 @@ namespace Cindy_Restaurant.Form_View
                     model.kot = _entities.detailsSettlements.Where(x => x.KOT == item.kot).FirstOrDefault().receiptno;
 
                     model.orderDecrip = item.orderDecrip;
-                    model.ordDate = item.ordDate;
+                    model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                     model.tax1_Amt = item.tax1_Amt;
                     model.tax2_Amt = item.tax2_Amt;
                     row++;

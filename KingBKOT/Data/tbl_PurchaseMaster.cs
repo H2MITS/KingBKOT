@@ -29,6 +29,7 @@ namespace KingBKOT.Data
         public string remarks { get; set; }
         public Nullable<System.DateTime> createdDate { get; set; }
         public Nullable<System.DateTime> updateDate { get; set; }
+        public string partyName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_PurchaseDetails> tbl_PurchaseDetails { get; set; }

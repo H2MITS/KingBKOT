@@ -22,13 +22,19 @@
         "Entry"
         {
         "MsmKey" = "8:_2D831FD9E19CAB65A6821487846A8154"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6F6DA07E9A277A77BB3233896ECA544D"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,13 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_92600CA023E3E844B2B91B316395A02B"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_94B7970D7AA05138500EB572DC810125"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,7 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_BE888D192F965671CBAB02BAEE095DF9"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,13 +94,13 @@
         "Entry"
         {
         "MsmKey" = "8:_CE704E600B101048EC467428B85521FD"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D2CD3BA9FCFE14C294958C3B3BF9C819"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,13 +112,7 @@
         "Entry"
         {
         "MsmKey" = "8:_DC679BE0D275BB74E7FDD92C8B49E31C"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -124,7 +124,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
+        "OwnerKey" = "8:_4C7C157142674EAAB6F8060D5A30198B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -187,6 +187,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -203,6 +219,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -588,7 +612,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RestroKOT"
         "ProductCode" = "8:{B99F284A-26E5-4818-9418-0579C09F647C}"
-        "PackageCode" = "8:{89C126DB-9EDC-41DD-B547-E18ACCDDBF21}"
+        "PackageCode" = "8:{5DB00CF2-AA8D-41F7-B791-CD03534D8DFC}"
         "UpgradeCode" = "8:{D4F569E7-902C-43E5-A77F-A03ADFD6184D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -708,7 +732,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3B301D633D5B41C49D8C828312ACC131"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1D32AB553752457BAEBBA7325A957937"
             {
             "Name" = "8:RestroKOT"
             "Arguments" = "8:"
@@ -716,13 +740,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
-            "Folder" = "8:_D5E0100AA3EB400FA37DE816030A12A9"
+            "Target" = "8:_4C7C157142674EAAB6F8060D5A30198B"
+            "Folder" = "8:_A4CFCD5D59814186964522F9BE429F60"
             "WorkingFolder" = "8:_E93005BA50A544C88148FD082C8E85F7"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D436C19A4DC44D75961AE071C16E9C3D"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_49B93957228349ED828B8BC84A32ECFC"
             {
             "Name" = "8:RestroKOT"
             "Arguments" = "8:"
@@ -730,8 +754,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DF22C854112C4E3594CB9B21DB8D5BA8"
-            "Folder" = "8:_A4CFCD5D59814186964522F9BE429F60"
+            "Target" = "8:_4C7C157142674EAAB6F8060D5A30198B"
+            "Folder" = "8:_D5E0100AA3EB400FA37DE816030A12A9"
             "WorkingFolder" = "8:_E93005BA50A544C88148FD082C8E85F7"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -1135,7 +1159,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DF22C854112C4E3594CB9B21DB8D5BA8"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4C7C157142674EAAB6F8060D5A30198B"
             {
             "SourcePath" = "8:..\\KingBKOT\\obj\\Debug\\KingBKOT.exe"
             "TargetName" = "8:"

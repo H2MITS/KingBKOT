@@ -13,7 +13,7 @@ using Cindy_Restaurant.Form_View;
 using Cindy_Restaurant.Folder_Updates;
 using KingBKOT.Form_View;
 using KingBKOT.Data;
-
+using KingBKOT.Forms;
 
 namespace Cindy_Restaurant
 {
@@ -39,6 +39,7 @@ namespace Cindy_Restaurant
             selectClass.getEmployeeByID(statGetUser.Text.ToString());
             emPloID = selectClass.getEmployeeID;
             timer1.Start();
+
         }
 
         private void toolStripStatusLabel5_Click(object sender, EventArgs e)
@@ -46,23 +47,24 @@ namespace Cindy_Restaurant
             frmDeveloper vDeveloper = new frmDeveloper();
             vDeveloper.ShowDialog();
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-           dayTime = DateTime.Now;
+            dayTime = DateTime.Now;
             statGetDate.Text = dayTime.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult reason = MessageBox.Show("Are sure you wanna close shift", "Close Shift- King Bar Beque Restaurant", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (reason.Equals(DialogResult.OK)) {
+            if (reason.Equals(DialogResult.OK))
+            {
                 getCashierReportText();
                 DateTimePicker endDay = new DateTimePicker();
                 updateClass.updateLogHistory(getLogNum, statGetUser.Text, endDay, endDay);
                 this.Close();
+            }
         }
-    }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -89,14 +91,14 @@ namespace Cindy_Restaurant
             frmTheTables tableorder = new frmTheTables();
             tableorder.empID = this.statGetUser.Text;
             tableorder.receiptType = btnDineIn.Text;
-           
+
             tableorder.ShowDialog();
         }
 
         private void btnTakeAway_Click(object sender, EventArgs e)
         {
             orderInfo infoOrder = new orderInfo();
-            
+
             infoOrder.txtWaiterName.Text = this.statGetUser.Text;
             infoOrder.txtTableNo.Text = "0";
             //infoOrder.txtAdultNo.Text = "1";
@@ -110,14 +112,14 @@ namespace Cindy_Restaurant
         {
             frmTheTables tableorder = new frmTheTables();
             tableorder.receiptType = btnNocharge.Text;
-            
+
             tableorder.empID = this.statGetUser.Text;
             tableorder.ShowDialog();
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-           frmChangePass  passChange = new frmChangePass();
+            frmChangePass passChange = new frmChangePass();
             passChange.getEmpName = this.statGetUser.Text;
             passChange.ShowDialog();
         }
@@ -206,7 +208,7 @@ namespace Cindy_Restaurant
         }
 
         //cashier information
-         
+
         private void getCashierReportText()
         {
             try
@@ -241,11 +243,11 @@ namespace Cindy_Restaurant
                 repCashier.ShowDialog();
 
             }
-            catch(Exception x)
+            catch (Exception x)
             {
                 MessageBox.Show("Something went wrong.");
             }
-        
+
         }
 
         private void btnVsalesRports_Click(object sender, EventArgs e)
@@ -290,7 +292,7 @@ namespace Cindy_Restaurant
         private void button1_Click_1(object sender, EventArgs e)
         {
             frmPurchaseType frm = new frmPurchaseType();
-            frm.ShowDialog(); 
+            frm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -307,7 +309,7 @@ namespace Cindy_Restaurant
             infoOrder.txtReceiptType.Text = button2.Text;
             infoOrder.orderType = button2.Text;
 
-           var empIDD= selectClass.getEmployeeByID(statGetUser.Text.ToString());
+            var empIDD = selectClass.getEmployeeByID(statGetUser.Text.ToString());
 
             infoOrder.cmbWaiter.SelectedText = this.statGetUser.Text;
             infoOrder.ShowDialog();
@@ -322,6 +324,40 @@ namespace Cindy_Restaurant
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Comming Soon on next update version  1.0.0.2", "Update - King Bar beque Restaurant Logins", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            frmAdvBooking frm = new frmAdvBooking();
+            frm.ShowDialog();
+        }
+
+        private void btnADVBookingSettl_Click(object sender, EventArgs e)
+        {
+
+            
+            frmAdvBookingReceiptNo infoOrder = new frmAdvBookingReceiptNo();
+
+            infoOrder.hiddFashCash = 2;
+            infoOrder.waiterName = this.statGetUser.Text;
+            infoOrder.ShowDialog();
         }
     }
 }

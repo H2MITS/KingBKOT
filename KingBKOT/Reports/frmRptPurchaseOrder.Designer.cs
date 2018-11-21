@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.purchaseOrderVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderVMBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // purchaseOrderVMBindingSource
+            // 
+            this.purchaseOrderVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.PurchaseOrderVM);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(620, 528);
             this.reportViewer1.TabIndex = 0;
             // 
-            // purchaseOrderVMBindingSource
-            // 
-            this.purchaseOrderVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.PurchaseOrderVM);
-            // 
             // frmRptPurchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -60,7 +60,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRptPurchaseOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmRptPurchaseOrder";
+            this.Text = "Purchase Order Report";
             this.Load += new System.EventHandler(this.frmRptPurchaseOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderVMBindingSource)).EndInit();
             this.ResumeLayout(false);

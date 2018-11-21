@@ -177,6 +177,7 @@
             this.txtProdName.Size = new System.Drawing.Size(250, 25);
             this.txtProdName.TabIndex = 18;
             this.txtProdName.TextChanged += new System.EventHandler(this.txtProdName_TextChanged);
+            this.txtProdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProdName_KeyPress);
             this.txtProdName.Leave += new System.EventHandler(this.txtProdName_Leave);
             // 
             // label12

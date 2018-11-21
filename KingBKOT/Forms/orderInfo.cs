@@ -87,15 +87,16 @@ namespace Cindy_Restaurant.Forms
                 }
 
 
-                orderTable.fname = txtFirst.Text;
-                orderTable.lname = txtLast.Text;
+                orderTable.fname = txtFirst.Text.Trim();
+                orderTable.lname = txtLast.Text.Trim();
                 Dates = dateTimePicker1.Value.ToShortDateString();
                 Times = dateTimePicker1.Value.ToShortTimeString();
                 orderTable.lblgetDateTime.Text = Dates + " " + Times;
                 orderTable.lblAdultNo.Text = txtAdultNo.Text;
                 orderTable.lblChild.Text = txtChild.Text;
-                orderTable.lblgetGuestName.Text = txtFirst.Text + " " + txtLast.Text;
+                orderTable.lblgetGuestName.Text = txtFirst.Text.Trim() + " " + txtLast.Text.Trim();
                 orderTable.lblTableNo.Text = txtTableNo.Text;
+                orderTable.lblMobile.Text = txtMobile.Text.ToString();
 
                 if (txtTableNo.Text.Equals("0"))
                 {
@@ -118,7 +119,7 @@ namespace Cindy_Restaurant.Forms
                 }
 
                 orderTable.ShowDialog();
-
+                this.Close();
             }
         }
 

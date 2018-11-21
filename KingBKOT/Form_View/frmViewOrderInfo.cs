@@ -30,6 +30,9 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+
+               
+
                 // viewClass.viewOrderInfo(dataGridView1);
 
                 //dateFrom.Format = DateTimePickerFormat.Custom;
@@ -44,7 +47,7 @@ namespace Cindy_Restaurant.Form_View
 
                 List<OrderInfoVM> modelList = new List<OrderInfoVM>();
 
-                var data = _entities.tblOrderInfoes.OrderBy(x => x.KOT).ToList();
+                var data = _entities.tblOrderInfoes.OrderBy(x => x.id).ToList();
 
                 if (data != null)
                 {
@@ -75,6 +78,12 @@ namespace Cindy_Restaurant.Form_View
                     }
 
                     dataGridView1.DataSource = modelList;
+
+                    foreach (DataGridViewColumn item in dataGridView1.Columns)
+                    {
+                        dataGridView1.Sort(dataGridView1.Columns[item.Name], System.ComponentModel.ListSortDirection.Ascending);
+
+                    }
                 }
             }
             catch(Exception x)

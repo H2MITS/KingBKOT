@@ -54,6 +54,8 @@
             this.cmbWaiter = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtMobile = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +129,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(44, 335);
+            this.label5.Location = new System.Drawing.Point(44, 382);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 20);
             this.label5.TabIndex = 3;
@@ -138,7 +140,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(42, 378);
+            this.label6.Location = new System.Drawing.Point(42, 425);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 3;
@@ -151,7 +153,7 @@
             this.txtFirst.MaxLength = 25;
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(462, 25);
-            this.txtFirst.TabIndex = 4;
+            this.txtFirst.TabIndex = 0;
             // 
             // txtLast
             // 
@@ -160,27 +162,27 @@
             this.txtLast.MaxLength = 25;
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(462, 25);
-            this.txtLast.TabIndex = 5;
+            this.txtLast.TabIndex = 1;
             // 
             // txtAdultNo
             // 
             this.txtAdultNo.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtAdultNo.Location = new System.Drawing.Point(183, 335);
+            this.txtAdultNo.Location = new System.Drawing.Point(183, 382);
             this.txtAdultNo.MaxLength = 7;
             this.txtAdultNo.Name = "txtAdultNo";
             this.txtAdultNo.Size = new System.Drawing.Size(462, 25);
-            this.txtAdultNo.TabIndex = 6;
+            this.txtAdultNo.TabIndex = 3;
             this.txtAdultNo.TextChanged += new System.EventHandler(this.txtAdultNo_TextChanged);
             this.txtAdultNo.Leave += new System.EventHandler(this.txtAdultNo_Leave);
             // 
             // txtChild
             // 
             this.txtChild.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.txtChild.Location = new System.Drawing.Point(183, 375);
+            this.txtChild.Location = new System.Drawing.Point(183, 422);
             this.txtChild.MaxLength = 7;
             this.txtChild.Name = "txtChild";
             this.txtChild.Size = new System.Drawing.Size(462, 25);
-            this.txtChild.TabIndex = 7;
+            this.txtChild.TabIndex = 4;
             this.txtChild.TextChanged += new System.EventHandler(this.txtChild_TextChanged);
             this.txtChild.Leave += new System.EventHandler(this.txtChild_Leave);
             // 
@@ -191,10 +193,10 @@
             this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinish.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinish.Location = new System.Drawing.Point(183, 464);
+            this.btnFinish.Location = new System.Drawing.Point(183, 514);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(104, 45);
-            this.btnFinish.TabIndex = 9;
+            this.btnFinish.TabIndex = 6;
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = false;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
@@ -206,10 +208,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(541, 464);
+            this.btnCancel.Location = new System.Drawing.Point(541, 514);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 45);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -219,17 +221,17 @@
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 416);
+            this.dateTimePicker1.Location = new System.Drawing.Point(183, 463);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(462, 25);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(44, 416);
+            this.label7.Location = new System.Drawing.Point(44, 463);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 3;
@@ -262,10 +264,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(422, 464);
+            this.btnClear.Location = new System.Drawing.Point(422, 514);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 45);
-            this.btnClear.TabIndex = 10;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -329,7 +331,7 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(302, 464);
+            this.btnKeyboard.Location = new System.Drawing.Point(302, 514);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(104, 45);
             this.btnKeyboard.TabIndex = 72;
@@ -337,12 +339,33 @@
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(44, 336);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Contact No.";
+            this.label11.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.txtMobile.Location = new System.Drawing.Point(183, 336);
+            this.txtMobile.MaxLength = 10;
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(462, 25);
+            this.txtMobile.TabIndex = 2;
+            // 
             // orderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(696, 526);
+            this.ClientSize = new System.Drawing.Size(696, 571);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.cmbWaiter);
             this.Controls.Add(this.panel2);
@@ -355,10 +378,12 @@
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.txtChild);
             this.Controls.Add(this.txtAdultNo);
+            this.Controls.Add(this.txtMobile);
             this.Controls.Add(this.txtLast);
             this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -407,5 +432,7 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.ComboBox cmbWaiter;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox txtMobile;
     }
 }

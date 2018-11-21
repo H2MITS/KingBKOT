@@ -60,7 +60,7 @@ namespace Cindy_Restaurant.Forms
                 //meaning user already exist
                 if (count == 1)
                 {
-                    MessageBox.Show("Electronic Currency Already Exist", "Save Data - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Electronic Currency Already Exist", "Save Data - King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 else

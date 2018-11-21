@@ -33,6 +33,10 @@ namespace Cindy_Restaurant.Forms
         clsdelete deleteClass;
         double AmtPay, RateConvert = 1, changeDue;
         double parseAmt;
+
+        public decimal? advPaid, custOwess;
+
+
         clsView viewClass = new clsView();
         frmViewOrderSettlement fvos = new frmViewOrderSettlement();
         //   frmReceiptPreview rcs;
@@ -53,6 +57,8 @@ namespace Cindy_Restaurant.Forms
 
         private void frmSettlement_Load(object sender, EventArgs e)
         {
+
+
             dataGridView1.AutoGenerateColumns = false;
             errorProvider1.SetError(txtAmtPAid, "Enter Amount to be paid");
             cboPaymentType.SelectedIndex = 0;
@@ -161,9 +167,9 @@ namespace Cindy_Restaurant.Forms
 
         private void btnCashout_Click(object sender, EventArgs e)
         {
-            
+
             _entities = new KBBQEntities();
-            if (recNoList == null || recNoList.Count==0)
+            if (recNoList == null || recNoList.Count == 0)
             {
                 updateClass = new clsUpdate();
                 insertClass = new clsInsert();
@@ -201,7 +207,7 @@ namespace Cindy_Restaurant.Forms
                     txtDisc.Text = "0";
                 }
 
-                decimal amtTemp = 0,lastPaid=0;
+                decimal amtTemp = 0, lastPaid = 0;
                 string lastKot = "";
                 foreach (var item in recNoList)
                 {
@@ -223,7 +229,7 @@ namespace Cindy_Restaurant.Forms
 
                     lastPaid = lastPaid + amtTemp;
 
-                    updateClass.updateDetailsBillAndSettlement(lastKot, double.Parse(lastPaid.ToString()),changeDue);
+                    updateClass.updateDetailsBillAndSettlement(lastKot, double.Parse(lastPaid.ToString()), changeDue);
                 }
                 if (Convert.ToDecimal(txtRateTimesAmtPaid.Text) < amtTemp)
                 {
@@ -232,7 +238,7 @@ namespace Cindy_Restaurant.Forms
                     lastPaid = lastPaid - amtTemp;
 
                     amtTemp = Convert.ToDecimal(txtRateTimesAmtPaid.Text) - amtTemp;
-                    updateClass.updateDetailsBillAndSettlement(lastKot, double.Parse(lastPaid.ToString()),changeDue);
+                    updateClass.updateDetailsBillAndSettlement(lastKot, double.Parse(lastPaid.ToString()), changeDue);
                 }
 
             }
@@ -364,7 +370,7 @@ namespace Cindy_Restaurant.Forms
                 var data = _entities.billAndSettlements.Where(x => x.kot == txtReceiptNo.Text.Trim()).FirstOrDefault();
 
                 model.kot = data.kot;
-                model.ordDate = data.ordDate;
+                model.ordDate = data.ordDate.ToString("dd-MMM-yyyy");
                 model.ordTime = data.ordTime;
                 model.totalDue = data.totalDue;
 
@@ -381,7 +387,7 @@ namespace Cindy_Restaurant.Forms
                     var data = _entities.billAndSettlements.Where(x => x.kot == item.kot).FirstOrDefault();
 
                     model.kot = data.kot;
-                    model.ordDate = data.ordDate;
+                    model.ordDate = Convert.ToDateTime(item.ordDate).ToString("dd-MMM-yyyy");
                     model.ordTime = data.ordTime;
                     model.totalDue = data.totalDue;
 
@@ -432,7 +438,7 @@ namespace Cindy_Restaurant.Forms
         {
             try
             {
-                if (txtCode != null)
+                if (txtCode.Text != string.Empty)
                 {
                     _entities = new KBBQEntities();
                     var coupCode = _entities.billAndSettlements.ToList();
@@ -493,7 +499,7 @@ namespace Cindy_Restaurant.Forms
         {
             try
             {
-                if (txtDisc.Text != null)
+                if (txtDisc.Text != null || txtDisc.Text != "")
                 {
 
                     var rateAfterDisc = (Convert.ToInt32(txtAmtPAid.Text) * Convert.ToInt32(txtDisc.Text)) / 100;
@@ -509,7 +515,7 @@ namespace Cindy_Restaurant.Forms
             }
             catch (Exception x)
             {
-               // MessageBox.Show("Error: " + x.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("Error: " + x.ToString(), "Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }

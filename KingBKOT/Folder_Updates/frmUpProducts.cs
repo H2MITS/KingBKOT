@@ -257,5 +257,14 @@ namespace Cindy_Restaurant.Folder_Updates
         {
 
         }
+
+        private void txtProdName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }

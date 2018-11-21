@@ -218,11 +218,9 @@ namespace KingBKOT.Forms
 
                 clear();
                 clearDetails();
-
-
-
+                 
                 itemAutocomplete();
-
+                partyAutocomplete();
                 //Edit load
 
                 if (passedPid != 0)
@@ -247,7 +245,8 @@ namespace KingBKOT.Forms
 
             txtRefNo.Text = data.refNo;
             dateToday.Text = data.date.ToString();
-
+            txtRemark.Text = data.remarks.ToString();
+            txtPartyName.Text = data.partyName.Trim().ToString();
 
             txtTotalAmt.Text = amtFormat.comma(data.totalAmt).ToString();
             txtTotalWeight.Text = data.totalWeight.ToString();
@@ -290,6 +289,18 @@ namespace KingBKOT.Forms
             foreach (var item in ledgerNameAutoComplete)
             {
                 txtitemName.AutoCompleteCustomSource.Add(item.pName.ToString());
+            }
+        }
+
+        private void partyAutocomplete()
+        {
+            _entities = new KBBQEntities();
+
+            var ledgerNameAutoComplete = _entities.tbl_PurchaseMaster.OrderBy(x => x.partyName);
+            txtPartyName.AutoCompleteCustomSource.Clear();
+            foreach (var item in ledgerNameAutoComplete)
+            {
+                txtPartyName.AutoCompleteCustomSource.Add(item.partyName.ToString());
             }
         }
 
@@ -419,13 +430,14 @@ namespace KingBKOT.Forms
                      
                         DateTime date = DateTime.ParseExact(dateToday.Text, "dd-MM-yyyy", null);
 
-                        purchaseData.date = Convert.ToDateTime(date);
+                        purchaseData.date =date;
                         purchaseData.totalWeight = Convert.ToDecimal(txtTotalWeight.Text);
                         purchaseData.unit = lblUnit.Text; 
                         purchaseData.totalAmt = Convert.ToDecimal(txtTotalAmt.Text);
                         purchaseData.remarks = txtRemark.Text.ToString();
                         purchaseData.createdDate = DateTime.Now;
                         purchaseData.updateDate = DateTime.Now;
+                        purchaseData.partyName = txtPartyName.Text.Trim().ToString();
 
                         _entities.tbl_PurchaseMaster.Add(purchaseData);
                         _entities.SaveChanges();
@@ -455,7 +467,8 @@ namespace KingBKOT.Forms
                         purchaseDataUpdate.totalAmt = Convert.ToDecimal(txtTotalAmt.Text);
                         purchaseDataUpdate.remarks = txtRemark.Text.ToString();
                         purchaseDataUpdate.updateDate = DateTime.Now;
-
+                        purchaseDataUpdate.partyName = txtPartyName.Text.Trim().ToString();
+                        
                         _entities.SaveChanges();
 
                         var purchaseDetailsUpdate = _entities.tbl_PurchaseDetails.Where(x => x.purchaseID == passedPid).ToList();
@@ -510,8 +523,17 @@ namespace KingBKOT.Forms
 
                     var itemQty = _entities.purchaseProducts.Where(x => x.id == purchaseDetails.productID).FirstOrDefault();
 
-                    itemQty.qty = itemQty.qty + purchaseDetails.qty;
-                    itemQty.udate = DateTime.Now;
+                    if (itemQty != null)
+                    {
+                        itemQty.qty = itemQty.qty + purchaseDetails.qty;
+                        itemQty.udate = DateTime.Now;
+                    }
+                    else
+                    {
+                        itemQty.qty =purchaseDetails.qty;
+                        itemQty.udate = DateTime.Now;
+                    }
+                   
 
                     _entities.SaveChanges();
                 }
@@ -536,6 +558,64 @@ namespace KingBKOT.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtitemName_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                _entities = new KBBQEntities();
+                if (txtitemName.Text != string.Empty)
+                {
+                    var checkLedgername = _entities.purchaseProducts.Where(x => x.pName == txtitemName.Text.Trim().ToString()).FirstOrDefault();
+
+                    if (checkLedgername == null)
+                    {
+                        DialogResult myResult;
+                        myResult = MessageBox.Show("No such product exists. Want to create new product?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (myResult == DialogResult.OK)
+                        {
+                            //frmAddPurchaseProduct ledger = new frmAddPurchaseProduct(0,txtitemName.Text.Trim());
+                            //ledger.ShowDialog();
+
+                            purchaseProduct pp = new purchaseProduct();
+                            pp.pName = txtitemName.Text.Trim().ToString();
+
+                            _entities.purchaseProducts.Add(pp);
+                            _entities.SaveChanges();
+
+                            itemAutocomplete();
+                            txtitemName.Focus();
+                        }
+                        else
+                        {
+                            txtitemName.Focus();
+                        }
+                    }
+
+                }
+            }
+            catch (Exception x)
+            {
+
+            }
+        }
+
+        private void txtitemName_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtPartyName_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception x)
+            {
+
+            }
         }
 
         private void clearDetails()

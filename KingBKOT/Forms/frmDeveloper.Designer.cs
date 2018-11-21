@@ -33,17 +33,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,69 +104,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // panel3
+            // label10
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(224, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(240, 3);
-            this.panel3.TabIndex = 38;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(304, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(279, 63);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Office no:19, Yogesh Building Near \r\nPolice Station Road Plot No:586, \r\nWard:12/C" +
+    ",Gandhidham-370201";
             // 
-            // label4
+            // label12
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.75F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(304, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 21);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "contact@h2msolution.com";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.75F);
-            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(210, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 21);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Email:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.75F);
-            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label5.Location = new System.Drawing.Point(210, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 21);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Phone:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.75F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(304, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 21);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "+91-90333 72022 / +91-84011 55042";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(219, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 30);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Support Information:";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(34, 226);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(154, 23);
+            this.label12.TabIndex = 39;
+            this.label12.Text = "H2M IT Solutions";
             // 
             // label7
             // 
@@ -201,28 +160,69 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "Address:";
             // 
-            // label10
+            // label4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.75F);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(304, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(279, 63);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Office no:19, Yogesh Building Near \r\nPolice Station Road Plot No:586, \r\nWard:12/C" +
-    ",Gandhidham-370201";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(304, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(221, 21);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "contact@h2msolution.com";
             // 
-            // label12
+            // label2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(34, 226);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(154, 23);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "H2M IT Solutions";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(304, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(277, 21);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "+91-90333 72022 / +91-84011 55042";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label6.Location = new System.Drawing.Point(210, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 21);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Email:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.75F);
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label5.Location = new System.Drawing.Point(210, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 21);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Phone:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(224, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(240, 3);
+            this.panel3.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(219, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(254, 30);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Support Information:";
             // 
             // frmDeveloper
             // 

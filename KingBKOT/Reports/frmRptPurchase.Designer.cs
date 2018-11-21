@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.detailSettlementVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.detailSettlementVMBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // detailSettlementVMBindingSource
+            // 
+            this.detailSettlementVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.DetailSettlementVM);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(620, 528);
             this.reportViewer1.TabIndex = 0;
             // 
-            // detailSettlementVMBindingSource
-            // 
-            this.detailSettlementVMBindingSource.DataSource = typeof(KingBKOT.ViewModel.DetailSettlementVM);
-            // 
             // frmRptPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -59,7 +59,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmRptPurchase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRptPurchase";
+            this.Text = "Purchase Report";
             this.Load += new System.EventHandler(this.frmRptPurchase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.detailSettlementVMBindingSource)).EndInit();
             this.ResumeLayout(false);

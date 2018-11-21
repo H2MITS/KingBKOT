@@ -122,7 +122,7 @@
             this.MaximizeBox = false;
             this.Name = "frmPopupChange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Change Preview - Cindy Restaurant";
+            this.Text = "Change Preview - King BBQ Restaurant";
             this.Load += new System.EventHandler(this.frmPopupChange_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

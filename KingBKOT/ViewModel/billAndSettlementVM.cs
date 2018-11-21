@@ -12,9 +12,10 @@ namespace KingBKOT.ViewModel
         public string kot { get; set; }
         public string guestName{ get; set; }
         public string orderDecrip { get; set; }
+        public string mobile { get; set; }
         public string fname { get; set; }
         public string lname { get; set; }
-        public System.DateTime ordDate { get; set; }
+        public string ordDate { get; set; }
         public string ordTime { get; set; }
         public decimal totalDue { get; set; }
         public decimal tax1_Amt { get; set; }

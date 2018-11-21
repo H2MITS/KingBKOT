@@ -13,6 +13,7 @@
           <Property Name="orderDecrip" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fname" Type="nvarchar" MaxLength="35" />
           <Property Name="lname" Type="nvarchar" MaxLength="35" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
           <Property Name="ordDate" Type="date" Nullable="false" />
           <Property Name="ordTime" Type="text" Nullable="false" />
           <Property Name="totalDue" Type="money" Nullable="false" />
@@ -140,6 +141,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           </Key>
           <Property Name="pId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="refNo" Type="varchar" MaxLength="50" />
+          <Property Name="partyName" Type="nvarchar" MaxLength="50" />
           <Property Name="date" Type="datetime" />
           <Property Name="totalWeight" Type="decimal" Precision="18" Scale="2" />
           <Property Name="unit" Type="char" MaxLength="10" />
@@ -147,6 +149,24 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="remarks" Type="varchar" MaxLength="150" />
           <Property Name="createdDate" Type="datetime" />
           <Property Name="updateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblAdvBooking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="custName" Type="varchar" MaxLength="50" />
+          <Property Name="mob" Type="varchar" MaxLength="50" />
+          <Property Name="eventDate" Type="date" />
+          <Property Name="todayDate" Type="date" />
+          <Property Name="adults" Type="int" />
+          <Property Name="child" Type="int" />
+          <Property Name="advancePayment" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="totalPayment" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="cdate" Type="datetime" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="recptNo" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblCurrency">
           <Key>
@@ -177,10 +197,23 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="ref_phone" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="photo" Type="image" />
         </EntityType>
+        <EntityType Name="tblExpenses">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="expName" Type="nvarchar" MaxLength="50" />
+          <Property Name="expDate" Type="datetime" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="expBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="cdate" Type="datetime" />
+          <Property Name="udate" Type="datetime" />
+        </EntityType>
         <EntityType Name="tblOrderInfo">
           <Key>
-            <PropertyRef Name="KOT" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="orderType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="tableNo" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="KOT" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -188,6 +221,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="ordTime" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="fname" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="lname" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
           <Property Name="adultNo" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="childrenNo" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="empID" Type="nvarchar" MaxLength="70" Nullable="false" />
@@ -213,14 +247,15 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="qty" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="Statues" Type="bit" />
           <Property Name="Reason" Type="text" />
+          <Property Name="prodTypeId" Type="bigint" />
         </EntityType>
         <EntityType Name="tblProType">
           <Key>
             <PropertyRef Name="proTypeID" />
           </Key>
-          <Property Name="proTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="prodTypeName" Type="nvarchar" MaxLength="35" Nullable="false" />
-          <Property Name="proSubCate" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="proTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prodTypeName" Type="nvarchar" MaxLength="35" />
+          <Property Name="proSubCate" Type="nvarchar" MaxLength="35" />
         </EntityType>
         <EntityType Name="tblPurchaseOrder">
           <Key>
@@ -278,6 +313,18 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblProducts_tblProType">
+          <End Role="tblProType" Type="Self.tblProType" Multiplicity="0..1" />
+          <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProType">
+              <PropertyRef Name="proTypeID" />
+            </Principal>
+            <Dependent Role="tblProducts">
+              <PropertyRef Name="prodTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblPurchaseOrder_purchaseProducts">
           <End Role="purchaseProducts" Type="Self.purchaseProducts" Multiplicity="0..1" />
           <End Role="tblPurchaseOrder" Type="Self.tblPurchaseOrder" Multiplicity="*" />
@@ -301,8 +348,10 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySet Name="purchaseProducts" EntityType="Self.purchaseProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_PurchaseDetails" EntityType="Self.tbl_PurchaseDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_PurchaseMaster" EntityType="Self.tbl_PurchaseMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAdvBooking" EntityType="Self.tblAdvBooking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCurrency" EntityType="Self.tblCurrency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblExpenses" EntityType="Self.tblExpenses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblOrderInfo" EntityType="Self.tblOrderInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProducts" EntityType="Self.tblProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProType" EntityType="Self.tblProType" Schema="dbo" store:Type="Tables" />
@@ -335,6 +384,10 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
             <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_tblProducts_tblProType" Association="Self.FK_tblProducts_tblProType">
+            <End Role="tblProType" EntitySet="tblProType" />
+            <End Role="tblProducts" EntitySet="tblProducts" />
+          </AssociationSet>
           <AssociationSet Name="FK_tblPurchaseOrder_purchaseProducts" Association="Self.FK_tblPurchaseOrder_purchaseProducts">
             <End Role="purchaseProducts" EntitySet="purchaseProducts" />
             <End Role="tblPurchaseOrder" EntitySet="tblPurchaseOrder" />
@@ -357,9 +410,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySet Name="tbl_PurchaseMaster" EntityType="KBBQModel.tbl_PurchaseMaster" />
           <EntitySet Name="tblCurrencies" EntityType="KBBQModel.tblCurrency" />
           <EntitySet Name="tblEmployees" EntityType="KBBQModel.tblEmployee" />
-          <EntitySet Name="tblOrderInfoes" EntityType="KBBQModel.tblOrderInfo" />
-          <EntitySet Name="tblProducts" EntityType="KBBQModel.tblProduct" />
-          <EntitySet Name="tblProTypes" EntityType="KBBQModel.tblProType" />
           <EntitySet Name="tblPurchaseOrders" EntityType="KBBQModel.tblPurchaseOrder" />
           <EntitySet Name="tblTaxes" EntityType="KBBQModel.tblTax" />
           <EntitySet Name="Users" EntityType="KBBQModel.User" />
@@ -376,6 +426,15 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             <End Role="tbl_PurchaseMaster" EntitySet="tbl_PurchaseMaster" />
             <End Role="tbl_PurchaseDetails" EntitySet="tbl_PurchaseDetails" />
           </AssociationSet>
+          <EntitySet Name="tblOrderInfoes" EntityType="KBBQModel.tblOrderInfo" />
+          <EntitySet Name="tblProducts" EntityType="KBBQModel.tblProduct" />
+          <EntitySet Name="tblProTypes" EntityType="KBBQModel.tblProType" />
+          <AssociationSet Name="FK_tblProducts_tblProType" Association="KBBQModel.FK_tblProducts_tblProType">
+            <End Role="tblProType" EntitySet="tblProTypes" />
+            <End Role="tblProduct" EntitySet="tblProducts" />
+          </AssociationSet>
+          <EntitySet Name="tblAdvBookings" EntityType="KBBQModel.tblAdvBooking" />
+          <EntitySet Name="tblExpenses" EntityType="KBBQModel.tblExpens" />
         </EntityContainer>
         <EntityType Name="billAndSettlement">
           <Key>
@@ -395,6 +454,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="empID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="couponCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DailySale">
           <Key>
@@ -499,6 +559,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="createdDate" Type="DateTime" Precision="3" />
           <Property Name="updateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="tbl_PurchaseDetails" Relationship="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" FromRole="tbl_PurchaseMaster" ToRole="tbl_PurchaseDetails" />
+          <Property Name="partyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblCurrency">
           <Key>
@@ -528,51 +589,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <Property Name="ref_lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ref_phone" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="tblOrderInfo">
-          <Key>
-            <PropertyRef Name="KOT" />
-          </Key>
-          <Property Name="orderType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="tableNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="KOT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="fname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="lname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="adultNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="childrenNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="empID" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="waiterId" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tblProduct">
-          <Key>
-            <PropertyRef Name="prodID" />
-          </Key>
-          <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="proName" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="true" />
-          <Property Name="prodTypeName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="proType" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="proDescrip" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="tax_1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="proPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_1Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_2Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="tax_3Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="proNetPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="qty" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="Statues" Type="Boolean" />
-          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tblProType">
-          <Key>
-            <PropertyRef Name="proTypeID" />
-          </Key>
-          <Property Name="proTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="prodTypeName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="proSubCate" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblPurchaseOrder">
           <Key>
@@ -666,6 +682,98 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblOrderInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tableNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KOT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ordDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordTime" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="adultNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="childrenNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="empID" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="waiterId" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="prodID" />
+          </Key>
+          <Property Name="prodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proName" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="true" />
+          <Property Name="prodTypeName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proType" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proDescrip" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tax_1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_1Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_2Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="tax_3Amt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="proNetPrice" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="qty" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Statues" Type="Boolean" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prodTypeId" Type="Int64" />
+          <NavigationProperty Name="tblProType" Relationship="KBBQModel.FK_tblProducts_tblProType" FromRole="tblProduct" ToRole="tblProType" />
+        </EntityType>
+        <EntityType Name="tblProType">
+          <Key>
+            <PropertyRef Name="proTypeID" />
+          </Key>
+          <Property Name="proTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prodTypeName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="proSubCate" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblProducts" Relationship="KBBQModel.FK_tblProducts_tblProType" FromRole="tblProType" ToRole="tblProduct" />
+        </EntityType>
+        <Association Name="FK_tblProducts_tblProType">
+          <End Type="KBBQModel.tblProType" Role="tblProType" Multiplicity="0..1" />
+          <End Type="KBBQModel.tblProduct" Role="tblProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProType">
+              <PropertyRef Name="proTypeID" />
+            </Principal>
+            <Dependent Role="tblProduct">
+              <PropertyRef Name="prodTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblAdvBooking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="custName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eventDate" Type="DateTime" Precision="0" />
+          <Property Name="todayDate" Type="DateTime" Precision="0" />
+          <Property Name="adults" Type="Int32" />
+          <Property Name="child" Type="Int32" />
+          <Property Name="advancePayment" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="totalPayment" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="recptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblExpens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="expName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="expDate" Type="DateTime" Precision="3" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="expBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cdate" Type="DateTime" Precision="3" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -675,6 +783,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySetMapping Name="billAndSettlements">
             <EntityTypeMapping TypeName="KBBQModel.billAndSettlement">
               <MappingFragment StoreEntitySet="billAndSettlement">
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
                 <ScalarProperty Name="couponCode" ColumnName="couponCode" />
                 <ScalarProperty Name="empID" ColumnName="empID" />
@@ -788,6 +897,7 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
           <EntitySetMapping Name="tbl_PurchaseMaster">
             <EntityTypeMapping TypeName="KBBQModel.tbl_PurchaseMaster">
               <MappingFragment StoreEntitySet="tbl_PurchaseMaster">
+                <ScalarProperty Name="partyName" ColumnName="partyName" />
                 <ScalarProperty Name="updateDate" ColumnName="updateDate" />
                 <ScalarProperty Name="createdDate" ColumnName="createdDate" />
                 <ScalarProperty Name="remarks" ColumnName="remarks" />
@@ -828,54 +938,6 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
                 <ScalarProperty Name="fname" ColumnName="fname" />
                 <ScalarProperty Name="empID" ColumnName="empID" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblOrderInfoes">
-            <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
-              <MappingFragment StoreEntitySet="tblOrderInfo">
-                <ScalarProperty Name="waiterId" ColumnName="waiterId" />
-                <ScalarProperty Name="empID" ColumnName="empID" />
-                <ScalarProperty Name="childrenNo" ColumnName="childrenNo" />
-                <ScalarProperty Name="adultNo" ColumnName="adultNo" />
-                <ScalarProperty Name="lname" ColumnName="lname" />
-                <ScalarProperty Name="fname" ColumnName="fname" />
-                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
-                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
-                <ScalarProperty Name="KOT" ColumnName="KOT" />
-                <ScalarProperty Name="tableNo" ColumnName="tableNo" />
-                <ScalarProperty Name="orderType" ColumnName="orderType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblProducts">
-            <EntityTypeMapping TypeName="KBBQModel.tblProduct">
-              <MappingFragment StoreEntitySet="tblProducts">
-                <ScalarProperty Name="Reason" ColumnName="Reason" />
-                <ScalarProperty Name="Statues" ColumnName="Statues" />
-                <ScalarProperty Name="qty" ColumnName="qty" />
-                <ScalarProperty Name="proNetPrice" ColumnName="proNetPrice" />
-                <ScalarProperty Name="tax_3Amt" ColumnName="tax_3Amt" />
-                <ScalarProperty Name="tax_2Amt" ColumnName="tax_2Amt" />
-                <ScalarProperty Name="tax_1Amt" ColumnName="tax_1Amt" />
-                <ScalarProperty Name="proPrice" ColumnName="proPrice" />
-                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
-                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
-                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
-                <ScalarProperty Name="proDescrip" ColumnName="proDescrip" />
-                <ScalarProperty Name="proType" ColumnName="proType" />
-                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
-                <ScalarProperty Name="proName" ColumnName="proName" />
-                <ScalarProperty Name="prodID" ColumnName="prodID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblProTypes">
-            <EntityTypeMapping TypeName="KBBQModel.tblProType">
-              <MappingFragment StoreEntitySet="tblProType">
-                <ScalarProperty Name="proSubCate" ColumnName="proSubCate" />
-                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
-                <ScalarProperty Name="proTypeID" ColumnName="proTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -931,6 +993,89 @@ warning 6002: The table/view 'cindyDB.dbo.detailsSettlement' does not have a pri
                 <ScalarProperty Name="paidTime" ColumnName="paidTime" />
                 <ScalarProperty Name="paidDate" ColumnName="paidDate" />
                 <ScalarProperty Name="KOT" ColumnName="KOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderInfoes">
+            <EntityTypeMapping TypeName="KBBQModel.tblOrderInfo">
+              <MappingFragment StoreEntitySet="tblOrderInfo">
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="waiterId" ColumnName="waiterId" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="childrenNo" ColumnName="childrenNo" />
+                <ScalarProperty Name="adultNo" ColumnName="adultNo" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="ordTime" ColumnName="ordTime" />
+                <ScalarProperty Name="ordDate" ColumnName="ordDate" />
+                <ScalarProperty Name="KOT" ColumnName="KOT" />
+                <ScalarProperty Name="tableNo" ColumnName="tableNo" />
+                <ScalarProperty Name="orderType" ColumnName="orderType" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="KBBQModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProducts">
+                <ScalarProperty Name="prodTypeId" ColumnName="prodTypeId" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Statues" ColumnName="Statues" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="proNetPrice" ColumnName="proNetPrice" />
+                <ScalarProperty Name="tax_3Amt" ColumnName="tax_3Amt" />
+                <ScalarProperty Name="tax_2Amt" ColumnName="tax_2Amt" />
+                <ScalarProperty Name="tax_1Amt" ColumnName="tax_1Amt" />
+                <ScalarProperty Name="proPrice" ColumnName="proPrice" />
+                <ScalarProperty Name="tax_3" ColumnName="tax_3" />
+                <ScalarProperty Name="tax_2" ColumnName="tax_2" />
+                <ScalarProperty Name="tax_1" ColumnName="tax_1" />
+                <ScalarProperty Name="proDescrip" ColumnName="proDescrip" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proName" ColumnName="proName" />
+                <ScalarProperty Name="prodID" ColumnName="prodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProTypes">
+            <EntityTypeMapping TypeName="KBBQModel.tblProType">
+              <MappingFragment StoreEntitySet="tblProType">
+                <ScalarProperty Name="proSubCate" ColumnName="proSubCate" />
+                <ScalarProperty Name="prodTypeName" ColumnName="prodTypeName" />
+                <ScalarProperty Name="proTypeID" ColumnName="proTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAdvBookings">
+            <EntityTypeMapping TypeName="KBBQModel.tblAdvBooking">
+              <MappingFragment StoreEntitySet="tblAdvBooking">
+                <ScalarProperty Name="recptNo" ColumnName="recptNo" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="totalPayment" ColumnName="totalPayment" />
+                <ScalarProperty Name="advancePayment" ColumnName="advancePayment" />
+                <ScalarProperty Name="child" ColumnName="child" />
+                <ScalarProperty Name="adults" ColumnName="adults" />
+                <ScalarProperty Name="todayDate" ColumnName="todayDate" />
+                <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="custName" ColumnName="custName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblExpenses">
+            <EntityTypeMapping TypeName="KBBQModel.tblExpens">
+              <MappingFragment StoreEntitySet="tblExpenses">
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="cdate" ColumnName="cdate" />
+                <ScalarProperty Name="expBy" ColumnName="expBy" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="expDate" ColumnName="expDate" />
+                <ScalarProperty Name="expName" ColumnName="expName" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -20,19 +20,77 @@ namespace KingBKOT.Reports
         KBBQEntities _entities;
         AmtFomatting amtFormat = new AmtFomatting();
         decimal? ttlAmt = 0;
-
-        public frmRptPurchase(string typesss)
+        DateTimePicker dtFrom, dtTo;
+        public frmRptPurchase(string typesss, DateTimePicker passFromDt, DateTimePicker passToDt)
         {
             InitializeComponent();
             type = typesss;
+
+            dtFrom = passFromDt;
+            dtTo = passToDt;
         }
         
         private void frmRptPurchase_Load(object sender, EventArgs e)
         {
-            showReport();
+            if (dtFrom.Text == "" || dtFrom.Text == null)
+            {
+                showReport();
+            }
+            else
+            {
+                showByDate();
+            }
+
             this.reportViewer1.RefreshReport();
+
+
         }
 
+        void showByDate()
+        {
+             
+            DateTime fromdate = DateTime.ParseExact(dtFrom.Text, "dd-MM-yyyy", null);
+            DateTime todate = DateTime.ParseExact(dtTo.Text, "dd-MM-yyyy", null);
+
+            List<DetailSettlementVM> modelList = new List<DetailSettlementVM>();
+            List<tbl_PurchaseMaster> data = new List<tbl_PurchaseMaster>();
+
+            #region PurchaseData
+            _entities = new KBBQEntities();
+            data = _entities.tbl_PurchaseMaster.Where(x => x.date >= fromdate && x.date <= todate).ToList();
+
+
+            int rowNo = 1;
+
+            foreach (var item in data)
+            {
+                DetailSettlementVM model = new DetailSettlementVM();
+
+                model.rowNo = rowNo;
+                DateTime dt = Convert.ToDateTime(item.date).Date;
+
+                model.monthYear = dt.Date.ToString("dd-MM-yyyy");
+                model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.totalAmt));
+                model.KOT = item.refNo;
+                rowNo++;
+                modelList.Add(model);
+
+                ttlAmt += Convert.ToDecimal(item.totalAmt);
+                 
+            }
+            DetailSettlementVM models = new DetailSettlementVM();
+            models.totalAmount = Convert.ToDecimal(ttlAmt);
+            modelList.Add(models);
+
+            ReportDataSource datasource = new ReportDataSource("DataSet1", modelList);
+
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(datasource);
+
+            #endregion
+
+
+        }
         void showReport()
         {
             try

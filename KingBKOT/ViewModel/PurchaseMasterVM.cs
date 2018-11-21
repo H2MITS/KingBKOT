@@ -11,6 +11,7 @@ namespace KingBKOT.ViewModel
         public int rowNo { get; set; }
         public long pId { get; set; }
         public string refNo { get; set; }
+        public string partyName { get; set; }
         public string date { get; set; }
         public Nullable<decimal> totalWeight { get; set; }
         public string unit { get; set; }

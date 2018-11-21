@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="321693dc24b94e809dab58a5859e42a7" Name="Diagram1" ZoomLevel="101">
+      <Diagram DiagramId="321693dc24b94e809dab58a5859e42a7" Name="Diagram1" ZoomLevel="108">
         <EntityTypeShape EntityType="KBBQModel.billAndSettlement" Width="1.5" PointX="5.75" PointY="2.5" />
         <EntityTypeShape EntityType="KBBQModel.DailySale" Width="1.5" PointX="5.75" PointY="7.5" />
         <EntityTypeShape EntityType="KBBQModel.ElectronicCurrency" Width="1.5" PointX="2.75" PointY="2.5" />
@@ -17,16 +17,19 @@
         <EntityTypeShape EntityType="KBBQModel.tbl_PurchaseMaster" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="KBBQModel.tblCurrency" Width="1.5" PointX="9.75" PointY="6.5" />
         <EntityTypeShape EntityType="KBBQModel.tblEmployee" Width="1.5" PointX="5.75" PointY="11.5" />
-        <EntityTypeShape EntityType="KBBQModel.tblOrderInfo" Width="1.5" PointX="9.75" PointY="9.5" />
-        <EntityTypeShape EntityType="KBBQModel.tblProduct" Width="1.5" PointX="0.75" PointY="12.5" />
-        <EntityTypeShape EntityType="KBBQModel.tblProType" Width="1.5" PointX="2.75" PointY="12.5" />
         <EntityTypeShape EntityType="KBBQModel.tblPurchaseOrder" Width="1.5" PointX="3" PointY="8.75" />
         <EntityTypeShape EntityType="KBBQModel.tblTax" Width="1.5" PointX="11.75" PointY="2.5" />
-        <EntityTypeShape EntityType="KBBQModel.User" Width="1.5" PointX="11.75" PointY="5.5" />
-        <EntityTypeShape EntityType="KBBQModel.detailsSettlement" Width="1.5" PointX="11.75" PointY="8.5" />
+        <EntityTypeShape EntityType="KBBQModel.User" Width="1.5" PointX="15.375" PointY="10.25" />
+        <EntityTypeShape EntityType="KBBQModel.detailsSettlement" Width="1.5" PointX="16.875" PointY="5.625" />
         <AssociationConnector Association="KBBQModel.FK_tbl_PurchaseDetails_purchaseProducts" />
         <AssociationConnector Association="KBBQModel.FK_tblPurchaseOrder_purchaseProducts" />
         <AssociationConnector Association="KBBQModel.FK_tbl_PurchaseDetails_tbl_PurchaseMaster" />
+        <EntityTypeShape EntityType="KBBQModel.tblOrderInfo" Width="1.5" PointX="15.25" PointY="12.75" />
+        <EntityTypeShape EntityType="KBBQModel.tblProduct" Width="1.5" PointX="10.625" PointY="11" />
+        <EntityTypeShape EntityType="KBBQModel.tblProType" Width="1.5" PointX="8.375" PointY="12.375" />
+        <AssociationConnector Association="KBBQModel.FK_tblProducts_tblProType" />
+        <EntityTypeShape EntityType="KBBQModel.tblAdvBooking" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="KBBQModel.tblExpens" Width="1.5" PointX="12.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

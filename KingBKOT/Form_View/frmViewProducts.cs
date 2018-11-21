@@ -121,7 +121,7 @@ namespace Cindy_Restaurant.Form_View
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString(), "SAVED - Cindy Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show(ex.ToString(), "SAVED - King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //return;
             }
         }

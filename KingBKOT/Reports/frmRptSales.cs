@@ -20,19 +20,97 @@ namespace KingBKOT.Reports
         KBBQEntities _entities;
         AmtFomatting amtFormat = new AmtFomatting();
         decimal? ttlAmt = 0;
-        public frmRptSales(string typesss)
+        DateTimePicker dtFrom, dtTo;
+        int idTypePass;
+        public frmRptSales(string typesss,DateTimePicker passFromDt, DateTimePicker passToDt)
         {
             InitializeComponent();
             type = typesss;
+
+            dtFrom = passFromDt;
+            dtTo = passToDt;
+            
         }
 
         private void frmRptSales_Load(object sender, EventArgs e)
         {
-            showReport();
+            if(dtFrom.Text=="" || dtFrom.Text == null)
+            {
+                showReport();
+            }
+            else
+            {
+                showByDate();
+            }
+            
             this.reportViewer1.RefreshReport();
 
             
         }
+
+        void showByDate()
+        {
+            _entities = new KBBQEntities();
+
+            DateTime fromdate = DateTime.ParseExact(dtFrom.Text, "dd-MM-yyyy", null);
+            DateTime todate = DateTime.ParseExact(dtTo.Text, "dd-MM-yyyy", null);
+
+            List<PurchaseMasterVM> modelList = new List<PurchaseMasterVM>();
+            List<tbl_PurchaseMaster> data = new List<tbl_PurchaseMaster>();
+
+            List<DetailSettlementVM> modelListSales = new List<DetailSettlementVM>();
+            List<detailsSettlement> dataSales = new List<detailsSettlement>();
+
+         
+            #region Salesregion
+            ttlAmt = 0;
+           int rowNo = 1;
+            dataSales = new List<detailsSettlement>();
+            dataSales = _entities.detailsSettlements.Where(x => x.paidDate >= fromdate && x.paidDate <= todate).ToList();
+
+            foreach (var item in dataSales)
+            {
+                DetailSettlementVM model = new DetailSettlementVM();
+
+                model.rowNo = rowNo;
+                DateTime dt = Convert.ToDateTime(item.paidDate).Date;
+
+                model.monthYear = dt.Date.ToString("dd-MM-yyyy");
+                model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.bill));
+                model.KOT = item.receiptno;
+                rowNo++;
+                modelListSales.Add(model);
+
+                ttlAmt += Convert.ToDecimal(item.bill);
+
+                _entities = new KBBQEntities();
+                var checkForAdvancePay = _entities.tblAdvBookings.Where(x => x.recptNo == item.receiptno).FirstOrDefault();
+
+                if (checkForAdvancePay != null)
+                {
+                    ttlAmt += checkForAdvancePay.advancePayment;
+
+                    model.advancePaid = checkForAdvancePay.advancePayment;
+                }
+                else
+                {
+                    model.advancePaid = 0;
+                }
+
+                // lblSalesTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
+            }
+
+            DetailSettlementVM models = new DetailSettlementVM();
+            models.totalAmount = Convert.ToDecimal(ttlAmt);
+            modelListSales.Add(models);
+
+            ReportDataSource datasource = new ReportDataSource("DataSet1", modelListSales);
+
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            #endregion
+        }
+
 
         void showReport()
         {
@@ -64,12 +142,27 @@ namespace KingBKOT.Reports
                         DateTime dt = Convert.ToDateTime(item.paidDate).Date;
 
                         model.monthYear = dt.Date.ToString("dd-MM-yyyy");
-                        model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.AmountPaid));
+                        model.AmountPaid = Convert.ToDecimal(amtFormat.comma(item.bill));
                         model.KOT = item.receiptno;
                         rowNo++;
-                        ttlAmt += Convert.ToDecimal(item.AmountPaid);
+                        ttlAmt += Convert.ToDecimal(item.bill);
 
-                        
+                        _entities = new KBBQEntities();
+                        var checkForAdvancePay = _entities.tblAdvBookings.Where(x => x.recptNo == item.receiptno).FirstOrDefault();
+
+                        if (checkForAdvancePay != null)
+                        {
+                            ttlAmt += checkForAdvancePay.advancePayment;
+
+                            model.advancePaid = checkForAdvancePay.advancePayment;
+                        }
+                        else
+                        {
+                            model.advancePaid = 0;
+                        }
+
+
+
                         modelListSales.Add(model);
                          
                        // lblSalesTotalAmt.Text = amtFormat.comma(ttlAmt).ToString();
@@ -107,7 +200,7 @@ namespace KingBKOT.Reports
                     dates = "";
                     amt = 0;
                     rowId = -1;
-
+                    decimal? advPaid=0;
                     DetailSettlementVM model = new DetailSettlementVM();
 
                     foreach (var item in dataSales)
@@ -128,7 +221,7 @@ namespace KingBKOT.Reports
                             amt = 0;
                             rowId++;
                         }
-                        amt += item.AmountPaid;
+                        amt += item.bill;
 
 
                         model.AmountPaid =Convert.ToDecimal(amtFormat.comma(amt));
@@ -141,7 +234,18 @@ namespace KingBKOT.Reports
                         rowNo++;
                         count++;
 
-                        ttlAmt += item.AmountPaid;
+                        ttlAmt += item.bill;
+
+                        _entities = new KBBQEntities();
+                        var checkForAdvancePay = _entities.tblAdvBookings.Where(x => x.recptNo == item.receiptno).FirstOrDefault();
+
+                        if (checkForAdvancePay != null)
+                        {
+                            ttlAmt += checkForAdvancePay.advancePayment;
+                            advPaid += Convert.ToDecimal(checkForAdvancePay.advancePayment);
+                            model.advancePaid = advPaid;
+                        }
+                      
 
 
                         if (dataSaleCount == count)
@@ -182,6 +286,7 @@ namespace KingBKOT.Reports
                     dates = "";
                     amt = 0;
                     rowId = -1;
+                    decimal? advPaid=0;
                     DetailSettlementVM model = new DetailSettlementVM();
 
                     foreach (var item in dataSales)
@@ -202,7 +307,7 @@ namespace KingBKOT.Reports
                             amt = 0;
                             rowId++;
                         }
-                        amt += item.AmountPaid;
+                        amt += item.bill;
 
 
                         model.AmountPaid = Convert.ToDecimal(amtFormat.comma(amt));
@@ -215,8 +320,17 @@ namespace KingBKOT.Reports
                         rowNo++;
                         count++;
 
-                        ttlAmt += item.AmountPaid;
+                        ttlAmt += item.bill;
 
+                        _entities = new KBBQEntities();
+                        var checkForAdvancePay = _entities.tblAdvBookings.Where(x => x.recptNo == item.receiptno).FirstOrDefault();
+
+                        if (checkForAdvancePay != null)
+                        {
+                            ttlAmt += checkForAdvancePay.advancePayment;
+                            advPaid += Convert.ToDecimal(checkForAdvancePay.advancePayment);
+                            model.advancePaid = advPaid;
+                        }
 
                         if (dataSaleCount == count)
                         {

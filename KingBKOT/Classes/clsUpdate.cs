@@ -376,15 +376,15 @@ namespace Cindy_Restaurant.Classes
                 SqlCommand cmd = new SqlCommand(dbPath, con);
 
                 //CREATE DIRECTORY IF NOT EXIST
-                if (!Directory.Exists(@"C:\dbKingBarbequeRestaurantFolder"))
+                if (!Directory.Exists(@"D:\dbKingBBQFolder"))
                 {
-                    Directory.CreateDirectory(@"C:\dbKingBarbequeRestaurantFolder");
+                    Directory.CreateDirectory(@"D:\dbKingBBQFolder");
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbKingBBQRestaurantFolder\\KBBQ_DB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE cindyDB TO DISK = 'D:\\dbKingBBQFolder\\KbbQDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbKingBBQRestaurantFolder\KBBQ_DB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"D:\dbKingBBQFolder\KbbQDB", "Backup Database - King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -392,19 +392,18 @@ namespace Cindy_Restaurant.Classes
                 else
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "BACKUP DATABASE CindyDB TO DISK = 'C:\\dbCindyRestaurantFolder\\CindyDB.BAK'";
+                    cmd.CommandText = "BACKUP DATABASE cindyDB TO DISK = 'D:\\dbKingBBQFolder\\KbbQDB.BAK'";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"C:\dbCindyRestaurantFolder\KBBQDBDB", "Backup Database - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"database backup successfully to - " + Environment.NewLine + @"D:\dbKingBBQFolder\KbbQDB", "Backup Database -  King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + Environment.NewLine + "Please contact the developer", " Database Backup Error - King Bar Beque Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message + Environment.NewLine + "Please contact the developer", " Database Backup Error - King BBQ Restaurant", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
-
 
 
 

@@ -37,12 +37,14 @@ namespace KingBKOT.Data
         public virtual DbSet<tbl_PurchaseMaster> tbl_PurchaseMaster { get; set; }
         public virtual DbSet<tblCurrency> tblCurrencies { get; set; }
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
-        public virtual DbSet<tblOrderInfo> tblOrderInfoes { get; set; }
-        public virtual DbSet<tblProduct> tblProducts { get; set; }
-        public virtual DbSet<tblProType> tblProTypes { get; set; }
         public virtual DbSet<tblPurchaseOrder> tblPurchaseOrders { get; set; }
         public virtual DbSet<tblTax> tblTaxes { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<detailsSettlement> detailsSettlements { get; set; }
+        public virtual DbSet<tblOrderInfo> tblOrderInfoes { get; set; }
+        public virtual DbSet<tblProduct> tblProducts { get; set; }
+        public virtual DbSet<tblProType> tblProTypes { get; set; }
+        public virtual DbSet<tblAdvBooking> tblAdvBookings { get; set; }
+        public virtual DbSet<tblExpens> tblExpenses { get; set; }
     }
 }

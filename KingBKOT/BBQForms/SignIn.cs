@@ -7,8 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using TestProject.Forms;
+using System.Windows.Forms; 
 using System.Data.SqlClient;
 using Cindy_Restaurant;
 using System.IO;
@@ -128,6 +127,7 @@ namespace KingBarbeque.Forms
                     txtPassword.Clear();
                     txtPassword.Text = "•••••••";
                     txtPassword.Select();
+                    selectClass.selectUsers(cboUsername);
                     this.Show();
                 }
 
@@ -216,6 +216,8 @@ namespace KingBarbeque.Forms
             selectClass.selectUsers(cboUsername);
             txtPassword.Select();
             txtPassword.Clear();
+
+           // this.BackColor = Color.FromArgb(29, 161, 242);
 
         }
 

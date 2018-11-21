@@ -46,6 +46,7 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                errorProvider1.SetError(cmbTableNo, "Select Table No");
                 _entities = new KBBQEntities();
                 dataGridView2.AutoGenerateColumns = false;
 
@@ -64,7 +65,7 @@ namespace Cindy_Restaurant.Form_View
                 dataGridView2.RowTemplate.Height = 35;
                 cboSearcshMode.SelectedIndex = 0;
 
-
+               
 
                 //---------------------------------------------
 
@@ -84,7 +85,8 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.mobile= item.mobile;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
 
@@ -111,9 +113,10 @@ namespace Cindy_Restaurant.Form_View
                             model.kot = datss.kot;
                             model.orderDecrip = datss.orderDecrip;
                             model.guestName = datss.fname + " " + datss.lname;
-                            model.ordDate = datss.ordDate;
+                            model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                             model.ordTime = datss.ordTime;
                             model.totalDue = datss.totalDue;
+                            model.mobile= item.mobile;
 
                             modelList.Add(model);
                         }
@@ -132,7 +135,7 @@ namespace Cindy_Restaurant.Form_View
             }
         }
         string tabl = "0";
-        int count=0;
+        int count = 0;
         private void getTableNo()
         {
             _entities = new KBBQEntities();
@@ -160,9 +163,9 @@ namespace Cindy_Restaurant.Form_View
                             }
                         }
 
-                        if (count==1)
+                        if (count == 1)
                         {
-
+                            count = 0;
                         }
                         else
                         {
@@ -196,19 +199,23 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                
+
                 _entities = new KBBQEntities();
                 DateTimePicker dates = new DateTimePicker();
                 if (btnMyOrder.Text.Equals("My Order"))
                 {
                     btnMyOrder.Text = "All Orders";
-
+                    btnMergePayFinal.Visible = false;
                     //-----------------------------------------------------------------------
 
                     //string selectedTable = cmbTableNo.SelectedValue.ToString();
 
                     List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
+                    //string dts = Convert.ToDateTime(dateTimePicker1.Text).ToString("yyyy-MM-dd");
 
-                    var data = _entities.billAndSettlements.Where(x => x.empID == lblGetId.Text && x.ordDate == dateTimePicker1.Value.Date).ToList();
+                    //DateTime dt=Convert.ToDateTime(dts);
+                    var data = _entities.billAndSettlements.ToList();
                     foreach (var item in data)
                     {
 
@@ -217,10 +224,10 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
-
+                        model.mobile= item.mobile;
                         modelList.Add(model);
                     }
 
@@ -230,6 +237,7 @@ namespace Cindy_Restaurant.Form_View
                 }
                 else if (btnMyOrder.Text.Equals("All Orders"))
                 {
+                    btnMergePayFinal.Visible = true;
                     btnMyOrder.Text = "My Order";
                     //   btnMyOrder.Image = Properties.Resources.Office_Customer_Male_Light_icon;
 
@@ -248,10 +256,10 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
-
+                        model.mobile = item.mobile;
                         modelList.Add(model);
                     }
 
@@ -270,7 +278,7 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
-
+                btnMergePayFinal.Visible = false;
                 //-----------------------------------------------------------------------
 
                 string selectedTable = cmbTableNo.SelectedValue.ToString();
@@ -286,10 +294,10 @@ namespace Cindy_Restaurant.Form_View
                     model.kot = item.kot;
                     model.orderDecrip = item.orderDecrip;
                     model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
+                    model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                     model.ordTime = item.ordTime;
                     model.totalDue = item.totalDue;
-
+                    model.mobile = item.mobile;
                     modelList.Add(model);
                 }
 
@@ -306,29 +314,33 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
-
+                btnMergePayFinal.Visible = false;
                 //-------------------------------------------------------------------------------------
                 string selectedTable = cmbTableNo.SelectedValue.ToString();
                 List<billAndSettlement> data = new List<billAndSettlement>();
                 List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                if (cboSearcshMode.SelectedIndex.Equals(0))
+                if (cboSearcshMode.SelectedIndex.Equals(0)) //Fname
                 {
                     data = _entities.billAndSettlements.Where(x => x.fname.Contains(txtSearcsh.Text)).ToList();
 
                 }
-                else if (cboSearcshMode.SelectedIndex.Equals(1))
+                else if (cboSearcshMode.SelectedIndex.Equals(1)) //Lname
                 {
                     data = _entities.billAndSettlements.Where(x => x.lname.Contains(txtSearcsh.Text)).ToList();
 
                 }
 
-                else if (cboSearcshMode.SelectedIndex.Equals(2))
+                else if (cboSearcshMode.SelectedIndex.Equals(3)) //Receipt
                 {
                     if (txtSearcsh.Text != string.Empty)
-                        data = _entities.billAndSettlements.Where(x => x.kot.Contains(txtSearcsh.Text)).ToList();
+                        data = _entities.billAndSettlements.Where(x => x.kot == (txtSearcsh.Text)).ToList();
                 }
-
+                else if (cboSearcshMode.SelectedIndex.Equals(2)) //mobile
+                {
+                    if (txtSearcsh.Text != string.Empty)
+                        data = _entities.billAndSettlements.Where(x => x.mobile.Contains(txtSearcsh.Text)).ToList();
+                }
 
                 foreach (var item in data)
                 {
@@ -338,10 +350,10 @@ namespace Cindy_Restaurant.Form_View
                     model.kot = item.kot;
                     model.orderDecrip = item.orderDecrip;
                     model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
+                    model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                     model.ordTime = item.ordTime;
                     model.totalDue = item.totalDue;
-
+                    model.mobile = item.mobile;
                     modelList.Add(model);
                 }
 
@@ -358,6 +370,7 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                btnMergePayFinal.Visible = false;
                 if (chkTakeAway.Checked)
                 {
 
@@ -367,7 +380,7 @@ namespace Cindy_Restaurant.Form_View
 
                     List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Take Away").ToList();
+                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Take Away" && x.mode == "UNPAID").ToList();
                     foreach (var item in data)
                     {
 
@@ -376,10 +389,10 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
-
+                        model.mobile = item.mobile;
                         modelList.Add(model);
                     }
 
@@ -397,6 +410,8 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                btnMergePayFinal.Visible = false;
+
                 if (chkDineIn.Checked)
                 {
                     //-----------------------------------------------------------------------
@@ -405,7 +420,7 @@ namespace Cindy_Restaurant.Form_View
 
                     List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
 
-                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Dine In").ToList();
+                    var data = _entities.billAndSettlements.Where(x => x.orderDecrip == "Dine In" && x.mode == "UNPAID").ToList();
                     foreach (var item in data)
                     {
 
@@ -414,10 +429,10 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
-
+                        model.mobile = item.mobile;
                         modelList.Add(model);
                     }
 
@@ -435,7 +450,7 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
-                if (chkNoCharge.Checked)
+                //  if (chkNoCharge.Checked)
                 {
                     //-----------------------------------------------------------------------
 
@@ -452,10 +467,10 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = item.kot;
                         model.orderDecrip = item.orderDecrip;
                         model.guestName = item.fname + " " + item.lname;
-                        model.ordDate = item.ordDate;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                         model.ordTime = item.ordTime;
                         model.totalDue = item.totalDue;
-
+                         model.mobile= item.mobile;
                         modelList.Add(model);
                     }
 
@@ -490,6 +505,8 @@ namespace Cindy_Restaurant.Form_View
             fvos.lblgetDateTime.Text = selectClass.OrderDate + " ";
             fvos.thisDate = selectClass.OrderDate;
             fvos.daty = selectClass.OrderDate;
+            
+
 
             fvos.recNoToPassList = null;
 
@@ -528,9 +545,10 @@ namespace Cindy_Restaurant.Form_View
             //settlement.ShowDialog();
             getRep.Text = "";
 
+            this.Close();
             // serve as refresh
 
-            bindGridViewForPageLoad();
+            // bindGridViewForPageLoad();
         }
 
         private void brnClear_Click(object sender, EventArgs e)
@@ -539,7 +557,7 @@ namespace Cindy_Restaurant.Form_View
             txtSearcsh.Text = string.Empty;
             dateTimePicker1.Value = DateTimePicker.MinimumDateTime;
             chkDineIn.Checked = false;
-            chkNoCharge.Checked = false;
+            //chkNoCharge.Checked = false;
             chkTakeAway.Checked = false;
             cboSearcshMode.SelectedItem = string.Empty;
 
@@ -565,6 +583,8 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                btnMergePay.Visible = true;
+
                 _entities = new KBBQEntities();
 
                 //var data = _entities.tblOrderInfoes.Where(x => x.tableNo == cmbTableNo.SelectedText.ToString()).ToList();
@@ -572,6 +592,7 @@ namespace Cindy_Restaurant.Form_View
                 //{
                 //   selectClass.selectBillAndSettlementTableNo(dataGridView1, cmbTableNo.SelectedValue.ToString());
                 //}
+                dataGridView2.Refresh();
 
                 recNoToPass = new List<billAndSettlementVM>();
                 string tablCMBSelected = cmbTableNo.Text.ToString();
@@ -582,20 +603,23 @@ namespace Cindy_Restaurant.Form_View
 
                 foreach (var item in data)
                 {
-                    var dataSettlement = _entities.billAndSettlements.Where(x => x.kot == item.KOT).FirstOrDefault();
+                    var dataSettlement = _entities.billAndSettlements.Where(x => x.kot == item.KOT && x.mode == "UNPAID").FirstOrDefault();
+                    if (dataSettlement != null)
+                    {
+                        billAndSettlementVM model = new billAndSettlementVM();
 
-                    billAndSettlementVM model = new billAndSettlementVM();
+                        model.kot = dataSettlement.kot;
+                        model.orderDecrip = dataSettlement.orderDecrip;
+                        model.guestName = dataSettlement.fname + " " + dataSettlement.lname;
+                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
+                        model.ordTime = dataSettlement.ordTime;
+                        model.totalDue = dataSettlement.totalDue;
+                        model.mobile = dataSettlement.mobile;
+                        modelList.Add(model);
 
-                    model.kot = dataSettlement.kot;
-                    model.orderDecrip = dataSettlement.orderDecrip;
-                    model.guestName = dataSettlement.fname + " " + dataSettlement.lname;
-                    model.ordDate = dataSettlement.ordDate;
-                    model.ordTime = dataSettlement.ordTime;
-                    model.totalDue = dataSettlement.totalDue;
+                        recNoToPass.Add(model);
+                    }
 
-                    modelList.Add(model);
-
-                    recNoToPass.Add(model);
                 }
 
                 dataGridView2.DataSource = modelList;
@@ -627,14 +651,14 @@ namespace Cindy_Restaurant.Form_View
                     //get customer name
                     fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
 
-                    fvos.thisTime = row.Cells[4].Value.ToString();
+                    fvos.thisTime = row.Cells[5].Value.ToString();
 
                     foreach (DataGridViewRow item in dataGridView2.Rows)
                     {
-                        amt += Convert.ToDecimal(item.Cells[5].Value);
+                        amt += Convert.ToDecimal(item.Cells[6].Value);
 
                     }
-
+                    fvos.lblMobile.Text = row.Cells[3].Value.ToString();
                     txtGetBill.Text = amt.ToString();
                 }
 
@@ -650,11 +674,11 @@ namespace Cindy_Restaurant.Form_View
                 var recptNo = _entities.tblOrderInfoes.Where(x => x.tableNo == tablCMBSelected).ToList();
 
                 fvos.lblKOT.Text = "";
-                foreach (var item in recptNo)
+                foreach (var item in recNoToPass)
                 {
-                    selectClass.selectOrderDetailsUsingKOT(item.KOT, fvos.listView1, 1);
+                    selectClass.selectOrderDetailsUsingKOT(item.kot, fvos.listView1, 1);
 
-                    fvos.lblKOT.Text += item.KOT + ", ";
+                    fvos.lblKOT.Text += item.kot + ", ";
                 }
 
                 selectClass.selectOrderFieldsUsingKOT(recptNo.OrderByDescending(x => x.KOT).FirstOrDefault().KOT);
@@ -704,7 +728,8 @@ namespace Cindy_Restaurant.Form_View
                 //settlement.ShowDialog();
                 getRep.Text = "";
 
-                bindGridViewForPageLoad();
+                this.Close();
+                //   bindGridViewForPageLoad();
             }
             catch (Exception x)
             {
@@ -751,24 +776,17 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
-                _entities = new KBBQEntities();
-                if (cmbTableNo.Items.Count > 0)
-                    selectedTable = cmbTableNo.SelectedValue.ToString();
+                getTableNo();
+
+                // dataGridView2.Rows.Clear();
+                dataGridView2.Refresh();
+
 
                 List<billAndSettlementVM> modelList = new List<billAndSettlementVM>();
                 List<billAndSettlement> data = new List<billAndSettlement>();
 
-                if (cmbTableNo.Items.Count == 0)
-                {
+                data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
 
-                    data = _entities.billAndSettlements.Where(x => x.mode == "UNPAID").ToList();
-                }
-                else
-                {
-                    string selectedTable = cmbTableNo.SelectedValue.ToString();
-
-                    data = _entities.billAndSettlements.Where(x => x.kot == selectedTable && x.mode == "UNPAID").ToList();
-                }
                 foreach (var item in data)
 
                 {
@@ -778,12 +796,14 @@ namespace Cindy_Restaurant.Form_View
                     model.kot = item.kot;
                     model.orderDecrip = item.orderDecrip;
                     model.guestName = item.fname + " " + item.lname;
-                    model.ordDate = item.ordDate;
+                    model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
                     model.ordTime = item.ordTime;
                     model.totalDue = item.totalDue;
-
+                    model.mobile = item.mobile;
                     modelList.Add(model);
                 }
+
+
 
                 dataGridView2.DataSource = modelList;
 
@@ -819,6 +839,28 @@ namespace Cindy_Restaurant.Form_View
         {
             try
             {
+                int dgTotalRows = dataGridView2.Rows.Count;
+                if (dataGridView2.Rows.Count >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView2.Rows[dgTotalRows - 1];
+
+                    //  getRep.Text = row.Cells[0].Value.ToString();
+
+                    //get customer name
+                    fOrder.lblgetGuestName.Text = row.Cells[2].Value.ToString();
+
+                    fOrder.thisTime = row.Cells[5].Value.ToString();
+
+                    string s = row.Cells[2].Value.ToString();
+                    // Split string on spaces.
+                    // ... This will separate all the words.
+                    string[] words = s.Split(' ');
+
+
+                    fOrder.fname = words[0].ToString();
+                    fOrder.lname = words[1].ToString();
+                }
+
                 _entities = new KBBQEntities();
 
                 if (getRep.Text == "")
@@ -874,9 +916,11 @@ namespace Cindy_Restaurant.Form_View
                 //settlement.ShowDialog();
                 getRep.Text = "";
 
+                this.Close();
+
                 // serve as refresh
 
-                bindGridViewForPageLoad();
+                //  bindGridViewForPageLoad();
             }
             catch (Exception x)
             {
@@ -898,10 +942,12 @@ namespace Cindy_Restaurant.Form_View
 
                     //get customer name
                     fvos.lblgetGuestName.Text = row.Cells[2].Value.ToString();
+                    fvos.lblMobile.Text = row.Cells[3].Value.ToString();
 
-                    fvos.thisTime = row.Cells[4].Value.ToString();
+                    fvos.thisTime = row.Cells[5].Value.ToString();
 
-                    amt = Convert.ToDecimal(row.Cells[5].Value);
+
+                    amt = Convert.ToDecimal(row.Cells[6].Value);
 
 
                     txtGetBill.Text = amt.ToString();

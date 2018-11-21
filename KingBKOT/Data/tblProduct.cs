@@ -30,5 +30,8 @@ namespace KingBKOT.Data
         public string qty { get; set; }
         public Nullable<bool> Statues { get; set; }
         public string Reason { get; set; }
+        public Nullable<long> prodTypeId { get; set; }
+    
+        public virtual tblProType tblProType { get; set; }
     }
 }

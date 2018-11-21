@@ -14,8 +14,17 @@ namespace KingBKOT.Data
     
     public partial class tblProType
     {
-        public int proTypeID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblProType()
+        {
+            this.tblProducts = new HashSet<tblProduct>();
+        }
+    
+        public long proTypeID { get; set; }
         public string prodTypeName { get; set; }
         public string proSubCate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblProduct> tblProducts { get; set; }
     }
 }

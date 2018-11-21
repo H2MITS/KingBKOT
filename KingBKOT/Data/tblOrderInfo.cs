@@ -14,6 +14,7 @@ namespace KingBKOT.Data
     
     public partial class tblOrderInfo
     {
+        public long id { get; set; }
         public string orderType { get; set; }
         public string tableNo { get; set; }
         public string KOT { get; set; }
@@ -25,5 +26,6 @@ namespace KingBKOT.Data
         public string childrenNo { get; set; }
         public string empID { get; set; }
         public string waiterId { get; set; }
+        public string mobile { get; set; }
     }
 }

@@ -78,12 +78,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BBQForm_View\Demo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForm_View\Demo.Designer.cs">
-      <DependentUpon>Demo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\AmtFomatting.cs" />
     <Compile Include="Classes\clsdelete.cs" />
     <Compile Include="Classes\clsInsert.cs" />
@@ -134,10 +128,16 @@
     <Compile Include="Data\purchaseProduct.cs">
       <DependentUpon>KBBQModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\tblAdvBooking.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\tblCurrency.cs">
       <DependentUpon>KBBQModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblEmployee.cs">
+      <DependentUpon>KBBQModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblExpens.cs">
       <DependentUpon>KBBQModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblOrderInfo.cs">
@@ -206,132 +206,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="BBQForms\AddCategory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\AddCategory.Designer.cs">
-      <DependentUpon>AddCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\AddCoupon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\AddCoupon.Designer.cs">
-      <DependentUpon>AddCoupon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\AddEmployee.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\AddEmployee.Designer.cs">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\AddMenuProducts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\AddMenuProducts.Designer.cs">
-      <DependentUpon>AddMenuProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\EmployeeMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\EmployeeMaster.Designer.cs">
-      <DependentUpon>EmployeeMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\EmployeeSalary.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\EmployeeSalary.Designer.cs">
-      <DependentUpon>EmployeeSalary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ExpensesReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ExpensesReport.Designer.cs">
-      <DependentUpon>ExpensesReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\Form_Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\Form_Dashboard.Designer.cs">
-      <DependentUpon>Form_Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\frmSalesMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\frmSalesMaster.Designer.cs">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\GeneralSettings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\GeneralSettings.Designer.cs">
-      <DependentUpon>GeneralSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\Hold.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\Hold.Designer.cs">
-      <DependentUpon>Hold.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\KOT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\KOT.Designer.cs">
-      <DependentUpon>KOT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ListofEmployee.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ListofEmployee.Designer.cs">
-      <DependentUpon>ListofEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ListOfMenuProducts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ListOfMenuProducts.Designer.cs">
-      <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ListofPurchaseProducts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ListofPurchaseProducts.Designer.cs">
-      <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\MenuProducts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\MenuProducts.Designer.cs">
-      <DependentUpon>MenuProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ProductCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ProductCategory.Designer.cs">
-      <DependentUpon>ProductCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ProductMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ProductMaster.Designer.cs">
-      <DependentUpon>ProductMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\PurchaseOrderMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\PurchaseOrderMaster.Designer.cs">
-      <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\AddPurchaseProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\AddPurchaseProduct.Designer.cs">
-      <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\PurchaseProducts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\PurchaseProducts.Designer.cs">
-      <DependentUpon>PurchaseProducts.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmAddPurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +217,24 @@
     </Compile>
     <Compile Include="Forms\frmAddPurchaseProduct.Designer.cs">
       <DependentUpon>frmAddPurchaseProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdvBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdvBooking.Designer.cs">
+      <DependentUpon>frmAdvBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdvBookingReceiptNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdvBookingReceiptNo.Designer.cs">
+      <DependentUpon>frmAdvBookingReceiptNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExpenses.Designer.cs">
+      <DependentUpon>frmExpenses.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPurchaseMasterMain.cs">
       <SubType>Form</SubType>
@@ -362,59 +254,11 @@
     <Compile Include="Form_View\PurchaseReport.Designer.cs">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="BBQForms\Registration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\SalaryReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\SalaryReport.Designer.cs">
-      <DependentUpon>SalaryReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\SalesReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\SalesReport.Designer.cs">
-      <DependentUpon>SalesReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\SalesReturn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\SalesReturn.Designer.cs">
-      <DependentUpon>SalesReturn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\SalesReturnUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\SalesReturnUserControl.Designer.cs">
-      <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\SettingMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\SettingMaster.Designer.cs">
-      <DependentUpon>SettingMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\ShortcutKeys.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BBQForms\ShortcutKeys.Designer.cs">
-      <DependentUpon>ShortcutKeys.cs</DependentUpon>
-    </Compile>
     <Compile Include="BBQForms\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BBQForms\SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BBQForms\Unhold.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BBQForms\Unhold.Designer.cs">
-      <DependentUpon>Unhold.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAddElectronicCurrency.cs">
       <SubType>Form</SubType>
@@ -658,83 +502,40 @@
     <Compile Include="Reports\frmRptSales.Designer.cs">
       <DependentUpon>frmRptSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmRptAdvanceBookingMEMO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRptAdvanceBookingMEMO.Designer.cs">
+      <DependentUpon>frmRptAdvanceBookingMEMO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\advBookingVM.cs" />
     <Compile Include="ViewModel\billAndSettlementVM.cs" />
     <Compile Include="ViewModel\DetailSettlementVM.cs" />
     <Compile Include="ViewModel\EmployeVM.cs" />
+    <Compile Include="ViewModel\ExpensesVM.cs" />
     <Compile Include="ViewModel\OrderInfoVM.cs" />
+    <Compile Include="ViewModel\ProductsVM.cs" />
+    <Compile Include="ViewModel\ProductTypeVM.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\PurchaseDetailsVM.cs" />
     <Compile Include="ViewModel\PurchaseMasterVM.cs" />
     <Compile Include="ViewModel\PurchaseOrderVM.cs" />
     <Compile Include="ViewModel\PurchaseProductVM.cs" />
     <Compile Include="ViewModel\SalesPrintVM.cs" />
-    <EmbeddedResource Include="BBQForms\AddCategory.resx">
-      <DependentUpon>AddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\AddCoupon.resx">
-      <DependentUpon>AddCoupon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\AddEmployee.resx">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\AddMenuProducts.resx">
-      <DependentUpon>AddMenuProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\EmployeeMaster.resx">
-      <DependentUpon>EmployeeMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\EmployeeSalary.resx">
-      <DependentUpon>EmployeeSalary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ExpensesReport.resx">
-      <DependentUpon>ExpensesReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\Form_Dashboard.resx">
-      <DependentUpon>Form_Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\frmSalesMaster.resx">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\GeneralSettings.resx">
-      <DependentUpon>GeneralSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\Hold.resx">
-      <DependentUpon>Hold.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\KOT.resx">
-      <DependentUpon>KOT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ListofEmployee.resx">
-      <DependentUpon>ListofEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ListOfMenuProducts.resx">
-      <DependentUpon>ListOfMenuProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ListofPurchaseProducts.resx">
-      <DependentUpon>ListofPurchaseProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\MenuProducts.resx">
-      <DependentUpon>MenuProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ProductCategory.resx">
-      <DependentUpon>ProductCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ProductMaster.resx">
-      <DependentUpon>ProductMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\PurchaseOrderMaster.resx">
-      <DependentUpon>PurchaseOrderMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\AddPurchaseProduct.resx">
-      <DependentUpon>AddPurchaseProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\PurchaseProducts.resx">
-      <DependentUpon>PurchaseProducts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddPurchaseOrder.resx">
       <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddPurchaseProduct.resx">
       <DependentUpon>frmAddPurchaseProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdvBooking.resx">
+      <DependentUpon>frmAdvBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdvBookingReceiptNo.resx">
+      <DependentUpon>frmAdvBookingReceiptNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExpenses.resx">
+      <DependentUpon>frmExpenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPurchaseMasterMain.resx">
       <DependentUpon>frmPurchaseMasterMain.cs</DependentUpon>
@@ -748,35 +549,8 @@
     <EmbeddedResource Include="Form_View\PurchaseReport.resx">
       <DependentUpon>PurchaseReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\SalaryReport.resx">
-      <DependentUpon>SalaryReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\SalesReport.resx">
-      <DependentUpon>SalesReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\SalesReturn.resx">
-      <DependentUpon>SalesReturn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\SalesReturnUserControl.resx">
-      <DependentUpon>SalesReturnUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\SettingMaster.resx">
-      <DependentUpon>SettingMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\ShortcutKeys.resx">
-      <DependentUpon>ShortcutKeys.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BBQForms\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForms\Unhold.resx">
-      <DependentUpon>Unhold.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BBQForm_View\Demo.resx">
-      <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folder_Updates\frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
@@ -923,6 +697,10 @@
     <EmbeddedResource Include="Reports\frmRptSales.resx">
       <DependentUpon>frmRptSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmRptAdvanceBookingMEMO.resx">
+      <DependentUpon>frmRptAdvanceBookingMEMO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptAdvBooking.rdlc" />
     <EmbeddedResource Include="Reports\rptPurchaseOrder.rdlc" />
     <EmbeddedResource Include="Reports\rptPurchaseTotal.rdlc" />
     <EmbeddedResource Include="Reports\rptSales.rdlc" />
@@ -934,6 +712,7 @@
       <DependentUpon>KBBQModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\KingBKOT.ViewModel.advBookingVM.datasource" />
     <None Include="Properties\DataSources\KingBKOT.ViewModel.billAndSettlementVM.datasource" />
     <None Include="Properties\DataSources\KingBKOT.ViewModel.DetailSettlementVM.datasource" />
     <None Include="Properties\DataSources\KingBKOT.ViewModel.EmployeVM.datasource" />
@@ -975,9 +754,7 @@
   <ItemGroup>
     <None Include="Resources\sale.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BBQFolder_Updates\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icon1.png" />
   </ItemGroup>
@@ -1108,6 +885,7 @@
     <None Include="Resources\order-food.png" />
     <None Include="Resources\loupe.png" />
     <Content Include="order_food__2__4wY_icon.ico" />
+    <None Include="Resources\copper-loader.gif" />
     <Content Include="sausage_VP7_icon.ico" />
     <None Include="Resources\error %281%29.png" />
     <None Include="Resources\data-storage-device.png" />

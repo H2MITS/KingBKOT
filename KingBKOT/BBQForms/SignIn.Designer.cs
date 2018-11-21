@@ -80,12 +80,13 @@
             // cboUsername
             // 
             this.cboUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUsername.FormattingEnabled = true;
             this.cboUsername.Items.AddRange(new object[] {
             "-----------------Select--------------"});
             this.cboUsername.Location = new System.Drawing.Point(90, 128);
             this.cboUsername.Name = "cboUsername";
-            this.cboUsername.Size = new System.Drawing.Size(200, 21);
+            this.cboUsername.Size = new System.Drawing.Size(200, 25);
             this.cboUsername.TabIndex = 1;
             // 
             // panel2
@@ -156,17 +157,16 @@
             this.txtPassword.Location = new System.Drawing.Point(87, 175);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(200, 23);
+            this.txtPassword.Size = new System.Drawing.Size(203, 23);
             this.txtPassword.TabIndex = 2;
             // 
             // btnKeyboard
             // 
-            this.btnKeyboard.BackColor = System.Drawing.Color.Orange;
-            this.btnKeyboard.FlatAppearance.BorderSize = 0;
+            this.btnKeyboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
-            this.btnKeyboard.Location = new System.Drawing.Point(196, 218);
+            this.btnKeyboard.Location = new System.Drawing.Point(199, 218);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(91, 32);
             this.btnKeyboard.TabIndex = 4;
@@ -176,7 +176,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.BackColor = System.Drawing.Color.Indigo;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,10 +194,11 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(337, 293);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignIn";

@@ -82,6 +82,8 @@
             this.btnKeyboard = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.lblAdv = new System.Windows.Forms.Label();
+            this.lblAdvPaid = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -685,6 +687,30 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblAdv
+            // 
+            this.lblAdv.AutoSize = true;
+            this.lblAdv.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblAdv.ForeColor = System.Drawing.Color.White;
+            this.lblAdv.Location = new System.Drawing.Point(637, 56);
+            this.lblAdv.Name = "lblAdv";
+            this.lblAdv.Size = new System.Drawing.Size(123, 20);
+            this.lblAdv.TabIndex = 0;
+            this.lblAdv.Text = "Advance Paid :";
+            this.lblAdv.Visible = false;
+            // 
+            // lblAdvPaid
+            // 
+            this.lblAdvPaid.AutoSize = true;
+            this.lblAdvPaid.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.lblAdvPaid.ForeColor = System.Drawing.Color.White;
+            this.lblAdvPaid.Location = new System.Drawing.Point(762, 56);
+            this.lblAdvPaid.Name = "lblAdvPaid";
+            this.lblAdvPaid.Size = new System.Drawing.Size(17, 20);
+            this.lblAdvPaid.TabIndex = 0;
+            this.lblAdvPaid.Text = "0";
+            this.lblAdvPaid.Visible = false;
+            // 
             // frmSettlement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,6 +723,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cboSelectCurrency);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.lblAdvPaid);
+            this.Controls.Add(this.lblAdv);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -781,5 +809,7 @@
         private System.Windows.Forms.Button btnKeyboard;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Label lblAdvPaid;
+        public System.Windows.Forms.Label lblAdv;
     }
 }

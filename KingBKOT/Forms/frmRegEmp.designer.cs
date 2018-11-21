@@ -255,7 +255,7 @@
             this.txtOname.MaxLength = 30;
             this.txtOname.Name = "txtOname";
             this.txtOname.Size = new System.Drawing.Size(203, 25);
-            this.txtOname.TabIndex = 1;
+            this.txtOname.TabIndex = 2;
             this.txtOname.TextChanged += new System.EventHandler(this.txtOname_TextChanged);
             // 
             // txtResAddress
