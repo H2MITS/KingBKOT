@@ -223,6 +223,7 @@
             this.txtItemname.Name = "txtItemname";
             this.txtItemname.Size = new System.Drawing.Size(441, 26);
             this.txtItemname.TabIndex = 1;
+            this.txtItemname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemname_KeyPress);
             this.txtItemname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItemname_KeyUp);
             this.txtItemname.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemname_Validating);
             // 

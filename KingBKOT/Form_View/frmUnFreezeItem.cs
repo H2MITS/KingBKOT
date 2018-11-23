@@ -79,6 +79,7 @@ namespace Cindy_Restaurant.Form_View
             {
 
                 updateClass.UpdateProductsStatues(textBox1.Text, false, int.Parse(textBox2.Text));
+                this.Close();
             }
             else 
             {
@@ -132,6 +133,14 @@ namespace Cindy_Restaurant.Form_View
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: '{0}'", ex);
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
             }
         }
     }

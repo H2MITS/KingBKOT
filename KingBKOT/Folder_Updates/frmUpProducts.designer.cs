@@ -124,9 +124,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "VAT";
+            this.label4.Text = "CGST";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
@@ -136,9 +136,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(41, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Tourism Levy";
+            this.label5.Text = "SGST";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
@@ -148,9 +148,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(12, 115);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Tax_3";
+            this.label6.Text = "Cess";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtTax3percsentage
@@ -238,9 +238,9 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label10.Location = new System.Drawing.Point(6, 103);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
+            this.label10.Size = new System.Drawing.Size(41, 20);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Tour. Amount";
+            this.label10.Text = "SGST";
             // 
             // label11
             // 
@@ -258,9 +258,9 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label9.Location = new System.Drawing.Point(8, 144);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 20);
+            this.label9.Size = new System.Drawing.Size(43, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Tax_3 Amount";
+            this.label9.Text = "Cess";
             // 
             // btnCancel
             // 
@@ -316,9 +316,9 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.label8.Location = new System.Drawing.Point(6, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 20);
+            this.label8.Size = new System.Drawing.Size(46, 20);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Vat Amount";
+            this.label8.Text = "CGST";
             // 
             // txtProdDecs
             // 

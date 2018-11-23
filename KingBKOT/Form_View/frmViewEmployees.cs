@@ -129,5 +129,29 @@ namespace Cindy_Restaurant.Form_View
                 Console.WriteLine("An error occurred: '{0}'", ex);
             }
         }
+
+        private void txtSearcshFname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFullname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -67,6 +67,7 @@ namespace Cindy_Restaurant.Form_View
                 {
                     upProducts.txtID.Text = id;
                     upProducts.ShowDialog();
+                    
                     //refresh datagrid
                     viewClass.viewMenuProduct(dataGridView1);
                     id = "";
@@ -188,6 +189,14 @@ namespace Cindy_Restaurant.Form_View
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: '{0}'", ex);
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
             }
         }
     }

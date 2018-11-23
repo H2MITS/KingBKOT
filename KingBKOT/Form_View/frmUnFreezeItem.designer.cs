@@ -99,7 +99,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(40, 359);
+            this.btnOK.Location = new System.Drawing.Point(40, 353);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(117, 42);
             this.btnOK.TabIndex = 3;
@@ -115,7 +115,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(490, 359);
+            this.btnCancel.Location = new System.Drawing.Point(490, 353);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 42);
             this.btnCancel.TabIndex = 6;
@@ -133,6 +133,7 @@
             this.textBox1.Size = new System.Drawing.Size(568, 112);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // panel2
             // 
@@ -171,7 +172,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.75F);
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(343, 359);
+            this.btnClear.Location = new System.Drawing.Point(343, 353);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 42);
             this.btnClear.TabIndex = 5;
@@ -186,7 +187,7 @@
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.Black;
-            this.btnKeyboard.Location = new System.Drawing.Point(193, 359);
+            this.btnKeyboard.Location = new System.Drawing.Point(193, 353);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(117, 42);
             this.btnKeyboard.TabIndex = 4;

@@ -115,5 +115,61 @@ namespace Cindy_Restaurant.Folder_Updates
         {
 
         }
+
+        private void txtFname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRFname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRLname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

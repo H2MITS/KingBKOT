@@ -34,6 +34,7 @@ namespace Cindy_Restaurant.Form_View
                 statues = true;
                 updateClass.UpdateProductsStatues(textBox1.Text.Trim(), statues, int.Parse(textBox2.Text));
                 textBox1.Clear();
+                this.Close();
             }
             else
             {
@@ -173,6 +174,14 @@ namespace Cindy_Restaurant.Form_View
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
         }
     }
 

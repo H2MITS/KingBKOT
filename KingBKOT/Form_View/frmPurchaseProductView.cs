@@ -233,5 +233,13 @@ namespace KingBKOT.Form_View
                 errorProvider1.SetError(txtItemname, string.Empty);
             }
         }
+
+        private void txtItemname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

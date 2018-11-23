@@ -105,6 +105,7 @@
             this.txtFullname.ReadOnly = true;
             this.txtFullname.Size = new System.Drawing.Size(425, 25);
             this.txtFullname.TabIndex = 2;
+            this.txtFullname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullname_KeyPress);
             // 
             // label4
             // 
@@ -165,6 +166,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(95, 25);
             this.textBox1.TabIndex = 5;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
@@ -266,6 +268,7 @@
             this.txtSearcshFname.Name = "txtSearcshFname";
             this.txtSearcshFname.Size = new System.Drawing.Size(259, 25);
             this.txtSearcshFname.TabIndex = 0;
+            this.txtSearcshFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearcshFname_KeyPress);
             // 
             // label5
             // 
