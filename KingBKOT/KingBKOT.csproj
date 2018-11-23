@@ -886,6 +886,8 @@
     <None Include="Resources\loupe.png" />
     <Content Include="order_food__2__4wY_icon.ico" />
     <None Include="Resources\copper-loader.gif" />
+    <None Include="Resources\forward.png" />
+    <None Include="Resources\event.png" />
     <Content Include="sausage_VP7_icon.ico" />
     <None Include="Resources\error %281%29.png" />
     <None Include="Resources\data-storage-device.png" />

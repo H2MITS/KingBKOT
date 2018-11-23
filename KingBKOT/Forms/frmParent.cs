@@ -91,7 +91,7 @@ namespace Cindy_Restaurant
         {
             frmTheTables tableorder = new frmTheTables();
             tableorder.empID = this.statGetUser.Text;
-            tableorder.receiptType = btnDineIn.Text;
+            tableorder.receiptType = "Dine In";
 
             tableorder.ShowDialog();
         }
@@ -104,8 +104,8 @@ namespace Cindy_Restaurant
             infoOrder.txtTableNo.Text = "0";
             //infoOrder.txtAdultNo.Text = "1";
             //infoOrder.txtChild.Text = "0";
-            infoOrder.txtReceiptType.Text = btnTakeAway.Text;
-            infoOrder.orderType = btnTakeAway.Text;
+            infoOrder.txtReceiptType.Text ="Take Away";
+            infoOrder.orderType = "Take Away";
             infoOrder.ShowDialog();
         }
 
@@ -307,7 +307,7 @@ namespace Cindy_Restaurant
             infoOrder.hiddFashCash = 1;
             //infoOrder.txtAdultNo.Text = "1";
             //infoOrder.txtChild.Text = "0";
-            infoOrder.txtReceiptType.Text = button2.Text;
+            infoOrder.txtReceiptType.Text ="Fast Cash";
             infoOrder.orderType = button2.Text;
 
             var empIDD = selectClass.getEmployeeByID(statGetUser.Text.ToString());
