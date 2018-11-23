@@ -62,6 +62,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnKeyboard = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicEmp)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -164,6 +167,8 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -194,6 +199,7 @@
             this.cboGender.Size = new System.Drawing.Size(159, 27);
             this.cboGender.TabIndex = 3;
             this.cboGender.SelectedIndexChanged += new System.EventHandler(this.cboGender_SelectedIndexChanged);
+            this.cboGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboGender_KeyPress);
             this.cboGender.Leave += new System.EventHandler(this.cboGender_Leave);
             // 
             // txtRPhone
@@ -205,6 +211,7 @@
             this.txtRPhone.Size = new System.Drawing.Size(203, 25);
             this.txtRPhone.TabIndex = 10;
             this.txtRPhone.TextChanged += new System.EventHandler(this.txtRPhone_TextChanged);
+            this.txtRPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRPhone_KeyPress);
             this.txtRPhone.Leave += new System.EventHandler(this.txtRPhone_Leave);
             // 
             // txtRLname
@@ -215,6 +222,7 @@
             this.txtRLname.Size = new System.Drawing.Size(159, 25);
             this.txtRLname.TabIndex = 9;
             this.txtRLname.TextChanged += new System.EventHandler(this.txtRLname_TextChanged);
+            this.txtRLname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRLname_KeyPress);
             this.txtRLname.Leave += new System.EventHandler(this.txtRLname_Leave);
             // 
             // txtRFname
@@ -225,6 +233,7 @@
             this.txtRFname.Size = new System.Drawing.Size(203, 25);
             this.txtRFname.TabIndex = 8;
             this.txtRFname.TextChanged += new System.EventHandler(this.txtRFname_TextChanged);
+            this.txtRFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRFname_KeyPress);
             this.txtRFname.Leave += new System.EventHandler(this.txtRFname_Leave);
             // 
             // dptBDay
@@ -257,6 +266,7 @@
             this.txtOname.Size = new System.Drawing.Size(203, 25);
             this.txtOname.TabIndex = 2;
             this.txtOname.TextChanged += new System.EventHandler(this.txtOname_TextChanged);
+            this.txtOname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOname_KeyPress);
             // 
             // txtResAddress
             // 
@@ -278,6 +288,7 @@
             this.txtPhone.Size = new System.Drawing.Size(203, 25);
             this.txtPhone.TabIndex = 4;
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtLname
@@ -289,6 +300,7 @@
             this.txtLname.Size = new System.Drawing.Size(159, 25);
             this.txtLname.TabIndex = 1;
             this.txtLname.TextChanged += new System.EventHandler(this.txtLname_TextChanged);
+            this.txtLname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLname_KeyPress);
             this.txtLname.Leave += new System.EventHandler(this.txtLname_Leave);
             // 
             // txtFname
@@ -300,6 +312,7 @@
             this.txtFname.Size = new System.Drawing.Size(203, 25);
             this.txtFname.TabIndex = 0;
             this.txtFname.TextChanged += new System.EventHandler(this.txtFname_TextChanged);
+            this.txtFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFname_KeyPress);
             this.txtFname.Leave += new System.EventHandler(this.txtFname_Leave);
             // 
             // label1
@@ -369,9 +382,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(11, 142);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Contact";
+            this.label7.Text = "Contact*";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label15
@@ -381,9 +394,9 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(365, 145);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 20);
+            this.label15.Size = new System.Drawing.Size(110, 20);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Date-Of-Birth";
+            this.label15.Text = "Date-Of-Birth*";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label4
@@ -393,9 +406,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(371, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Gender";
+            this.label4.Text = "Gender*";
             // 
             // label3
             // 
@@ -404,9 +417,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(365, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Last Name";
+            this.label3.Text = "Last Name*";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
@@ -416,9 +429,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(11, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "First Name";
+            this.label2.Text = "First Name*";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnClear
@@ -481,12 +494,46 @@
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click_1);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(482, 425);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Fields Are Mandatory";
+            this.label6.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(466, 424);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 23);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "*";
+            this.label10.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(50, 619);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(663, 3);
+            this.panel3.TabIndex = 31;
+            // 
             // frmRegEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(932, 657);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnClear);
@@ -546,5 +593,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

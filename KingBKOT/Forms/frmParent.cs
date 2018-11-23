@@ -39,6 +39,7 @@ namespace Cindy_Restaurant
             selectClass.getEmployeeByID(statGetUser.Text.ToString());
             emPloID = selectClass.getEmployeeID;
             timer1.Start();
+            this.KeyPreview = true;
 
         }
 
@@ -352,12 +353,96 @@ namespace Cindy_Restaurant
         private void btnADVBookingSettl_Click(object sender, EventArgs e)
         {
 
-            
+
             frmAdvBookingReceiptNo infoOrder = new frmAdvBookingReceiptNo();
 
             infoOrder.hiddFashCash = 2;
             infoOrder.waiterName = this.statGetUser.Text;
             infoOrder.ShowDialog();
         }
+
+        private void frmParent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.D)//Hotkey for Dine Inn(Ctrl+D)
+            {
+                btnDineIn.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.T) // Hotkey for Take Away(Ctrl+T)
+            {
+                btnTakeAway.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.F) //Hotkey for Fast Cash(Ctrl+F)
+            {
+                button2.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.A) //Hotkey for Advance Booking Settlement (Ctrl+A)
+            {
+                btnADVBookingSettl.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.B) // Hotkey for Advance Booking (Ctrl+B)
+            {
+                btnDineIn.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.S)// Hotkey for Settlement(Ctrl+S)
+            {
+                btnRecall.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.U)// Hotkey for View Users (Ctrl+U)
+            {
+                btnVUsers.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.O)// Hotkey for View Order Information(Ctrl+O)
+            {
+                btnVorder.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.E)// Hotkey for Register Employee(Ctrl+E)
+            {
+                btnRegEmployee.PerformClick();
+
+            }
+            if (e.Control == true && e.KeyCode == Keys.C)// Hotkey for Change Password(Ctrl+C)
+            {
+                btnChangePass.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.P)//Hotkey for Purchase (Ctrl+P)
+            {
+                button1.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.R)// Hotkey for Purchase/Sale Report(Ctrl+R)
+            {
+                button3.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.M)//Hotkey for Add Menu(Ctrl+M)
+            {
+                btnAddMenus.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.T)// Hotkey for Tax Sales(Ctrl+T)
+            {
+                button11.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.L)// Hotkey for View Login(Ctrl+D)
+            {
+                btnVLogins.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.G)// Hotkey for Add Menu Group(Ctrl+G)
+            {
+                btnAddMenuGroup.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.N)// Hotkey For View Menu (Ctrl+N)
+            {
+                btnVProducts.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.Y)// Hotkey for View Employee (Ctrl+Y)
+            {
+                btnVEmployee.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.F)//Hotkey for Freeze Itemns(Ctrl+D)
+            {
+                button8.PerformClick();
+            }
+
+        }
+
     }
 }
+

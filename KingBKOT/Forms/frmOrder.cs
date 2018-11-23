@@ -487,7 +487,7 @@ namespace Cindy_Restaurant.Forms
             }
             catch(Exception x)
             {
-                //MessageBox.Show(x.ToString());
+                MessageBox.Show(x.ToString());
             }
            
 
@@ -1932,6 +1932,27 @@ namespace Cindy_Restaurant.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtqty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void lblCGSTTaxPer_Click(object sender, EventArgs e)

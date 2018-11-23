@@ -182,6 +182,7 @@
             this.txtitemName.Name = "txtitemName";
             this.txtitemName.Size = new System.Drawing.Size(409, 26);
             this.txtitemName.TabIndex = 0;
+            this.txtitemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemName_KeyPress);
             this.txtitemName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtitemName_KeyUp);
             this.txtitemName.Leave += new System.EventHandler(this.txtitemName_Leave);
             // 

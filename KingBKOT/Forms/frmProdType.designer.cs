@@ -44,12 +44,12 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotalRecord = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -107,6 +107,7 @@
             this.txtCategory.Size = new System.Drawing.Size(440, 25);
             this.txtCategory.TabIndex = 2;
             this.txtCategory.TextChanged += new System.EventHandler(this.txtCategory_TextChanged);
+            this.txtCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCategory_KeyPress);
             this.txtCategory.Leave += new System.EventHandler(this.txtCategory_Leave);
             // 
             // btnSave
@@ -246,15 +247,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(39, 241);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 3);
-            this.panel4.TabIndex = 32;
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "proTypeID";
@@ -293,6 +285,15 @@
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(39, 241);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(550, 3);
+            this.panel4.TabIndex = 32;
             // 
             // label4
             // 

@@ -372,18 +372,31 @@ namespace KingBKOT.Forms
         {
             TextBoxValidation val = new TextBoxValidation();
             val.onlyNumber(sender, e);
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxValidation val = new TextBoxValidation();
             val.onlyNumber(sender, e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxValidation val = new TextBoxValidation();
             val.onlyNumber(sender, e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -615,6 +628,46 @@ namespace KingBKOT.Forms
             catch (Exception x)
             {
 
+            }
+        }
+
+        private void txtPartyName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtitemName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAmtInWords_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTotalWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTotalAmt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
 

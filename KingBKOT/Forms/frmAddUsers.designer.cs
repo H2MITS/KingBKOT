@@ -145,6 +145,7 @@
             this.txtUname.ReadOnly = true;
             this.txtUname.Size = new System.Drawing.Size(219, 25);
             this.txtUname.TabIndex = 2;
+            this.txtUname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUname_KeyPress);
             // 
             // txtPassword
             // 
@@ -205,6 +206,7 @@
             this.txtEmpPhone.ReadOnly = true;
             this.txtEmpPhone.Size = new System.Drawing.Size(174, 25);
             this.txtEmpPhone.TabIndex = 7;
+            this.txtEmpPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpPhone_KeyPress);
             // 
             // txtEmpName
             // 
@@ -214,6 +216,7 @@
             this.txtEmpName.Size = new System.Drawing.Size(174, 25);
             this.txtEmpName.TabIndex = 6;
             this.txtEmpName.TextChanged += new System.EventHandler(this.txtEmpName_TextChanged);
+            this.txtEmpName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpName_KeyPress);
             // 
             // pictureBox1
             // 

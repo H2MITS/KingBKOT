@@ -239,6 +239,7 @@
             this.txtDisc.Name = "txtDisc";
             this.txtDisc.Size = new System.Drawing.Size(96, 25);
             this.txtDisc.TabIndex = 12;
+            this.txtDisc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisc_KeyPress);
             this.txtDisc.Leave += new System.EventHandler(this.txtDisc_Leave);
             // 
             // label7
@@ -312,6 +313,7 @@
             this.txtRateTimesAmtPaid.Size = new System.Drawing.Size(208, 25);
             this.txtRateTimesAmtPaid.TabIndex = 13;
             this.txtRateTimesAmtPaid.TextChanged += new System.EventHandler(this.txtRateTimesAmtPaid_TextChanged);
+            this.txtRateTimesAmtPaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRateTimesAmtPaid_KeyPress);
             // 
             // lblcustCurrency
             // 
@@ -376,6 +378,7 @@
             this.txtAmtPAid.Size = new System.Drawing.Size(124, 25);
             this.txtAmtPAid.TabIndex = 0;
             this.txtAmtPAid.TextChanged += new System.EventHandler(this.txtAmtPAid_TextChanged);
+            this.txtAmtPAid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmtPAid_KeyPress);
             this.txtAmtPAid.Leave += new System.EventHandler(this.txtAmtPAid_Leave);
             // 
             // txtCustOwes

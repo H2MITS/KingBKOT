@@ -199,6 +199,7 @@
             this.txtTax1percsentage.ReadOnly = true;
             this.txtTax1percsentage.Size = new System.Drawing.Size(222, 25);
             this.txtTax1percsentage.TabIndex = 10;
+            this.txtTax1percsentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1percsentage_KeyPress);
             // 
             // txtTax2percsentage
             // 
@@ -207,6 +208,7 @@
             this.txtTax2percsentage.ReadOnly = true;
             this.txtTax2percsentage.Size = new System.Drawing.Size(221, 25);
             this.txtTax2percsentage.TabIndex = 11;
+            this.txtTax2percsentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax2percsentage_KeyPress);
             // 
             // txtTax3percsentage
             // 
@@ -215,6 +217,7 @@
             this.txtTax3percsentage.ReadOnly = true;
             this.txtTax3percsentage.Size = new System.Drawing.Size(221, 25);
             this.txtTax3percsentage.TabIndex = 12;
+            this.txtTax3percsentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax3percsentage_KeyPress);
             // 
             // groupBox1
             // 
@@ -245,6 +248,7 @@
             this.txtNetAmt.ReadOnly = true;
             this.txtNetAmt.Size = new System.Drawing.Size(180, 25);
             this.txtNetAmt.TabIndex = 9;
+            this.txtNetAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNetAmt_KeyPress);
             // 
             // txtTax3Amt
             // 
@@ -253,6 +257,7 @@
             this.txtTax3Amt.ReadOnly = true;
             this.txtTax3Amt.Size = new System.Drawing.Size(180, 25);
             this.txtTax3Amt.TabIndex = 8;
+            this.txtTax3Amt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax3Amt_KeyPress);
             // 
             // txtTax1Amt
             // 
@@ -261,6 +266,7 @@
             this.txtTax1Amt.ReadOnly = true;
             this.txtTax1Amt.Size = new System.Drawing.Size(180, 25);
             this.txtTax1Amt.TabIndex = 6;
+            this.txtTax1Amt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1Amt_KeyPress);
             // 
             // txtTax2Amt
             // 
@@ -269,6 +275,7 @@
             this.txtTax2Amt.ReadOnly = true;
             this.txtTax2Amt.Size = new System.Drawing.Size(180, 25);
             this.txtTax2Amt.TabIndex = 7;
+            this.txtTax2Amt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax2Amt_KeyPress);
             // 
             // txtProdPrice
             // 
@@ -277,6 +284,7 @@
             this.txtProdPrice.Size = new System.Drawing.Size(180, 25);
             this.txtProdPrice.TabIndex = 5;
             this.txtProdPrice.TextChanged += new System.EventHandler(this.txtProdPrice_TextChanged);
+            this.txtProdPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProdPrice_KeyPress);
             this.txtProdPrice.Leave += new System.EventHandler(this.txtProdPrice_Leave);
             // 
             // label10
@@ -329,6 +337,7 @@
             this.txtProdName.Size = new System.Drawing.Size(219, 25);
             this.txtProdName.TabIndex = 3;
             this.txtProdName.TextChanged += new System.EventHandler(this.txtProdName_TextChanged);
+            this.txtProdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProdName_KeyPress);
             this.txtProdName.Leave += new System.EventHandler(this.txtProdName_Leave);
             // 
             // groupBox2

@@ -329,5 +329,13 @@ namespace Cindy_Restaurant.Forms
                 MessageBox.Show("Something went wrong. Contact your system administrator");
             }
         }
+
+        private void txtCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

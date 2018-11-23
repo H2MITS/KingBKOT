@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdvBookingReceiptNo));
             this.txtRecptNo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRecptNo
@@ -46,6 +49,8 @@
             this.txtRecptNo.Name = "txtRecptNo";
             this.txtRecptNo.Size = new System.Drawing.Size(462, 25);
             this.txtRecptNo.TabIndex = 4;
+            this.txtRecptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecptNo_KeyPress);
+            this.txtRecptNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtRecptNo_Validating);
             // 
             // label3
             // 
@@ -129,6 +134,10 @@
             this.label15.TabIndex = 139;
             this.label15.Text = "* Note : Enter The receipt thats is listed on customers receipt.";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAdvBookingReceiptNo
             // 
             this.AcceptButton = this.btnFinish;
@@ -149,6 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advance Booking ReceiptNo.";
             this.Load += new System.EventHandler(this.frmAdvBookingReceiptNo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +173,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

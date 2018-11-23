@@ -110,6 +110,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(287, 25);
             this.txtTotal.TabIndex = 8;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // txtTax3
             // 
@@ -119,6 +120,7 @@
             this.txtTax3.ReadOnly = true;
             this.txtTax3.Size = new System.Drawing.Size(287, 25);
             this.txtTax3.TabIndex = 7;
+            this.txtTax3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax3_KeyPress);
             // 
             // txtTourLevy
             // 
@@ -128,6 +130,7 @@
             this.txtTourLevy.ReadOnly = true;
             this.txtTourLevy.Size = new System.Drawing.Size(287, 25);
             this.txtTourLevy.TabIndex = 6;
+            this.txtTourLevy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTourLevy_KeyPress);
             // 
             // txtVat
             // 
@@ -137,6 +140,7 @@
             this.txtVat.ReadOnly = true;
             this.txtVat.Size = new System.Drawing.Size(287, 25);
             this.txtVat.TabIndex = 5;
+            this.txtVat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVat_KeyPress);
             // 
             // txtSubTotal
             // 
@@ -146,6 +150,7 @@
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(287, 25);
             this.txtSubTotal.TabIndex = 4;
+            this.txtSubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubTotal_KeyPress);
             // 
             // label7
             // 
@@ -235,6 +240,7 @@
             this.txtApplyRate.Size = new System.Drawing.Size(247, 25);
             this.txtApplyRate.TabIndex = 0;
             this.txtApplyRate.TextChanged += new System.EventHandler(this.txtApplyRate_TextChanged);
+            this.txtApplyRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApplyRate_KeyPress);
             this.txtApplyRate.Leave += new System.EventHandler(this.txtApplyRate_Leave);
             // 
             // txtApplyName
@@ -245,6 +251,7 @@
             this.txtApplyName.Size = new System.Drawing.Size(247, 25);
             this.txtApplyName.TabIndex = 2;
             this.txtApplyName.TextChanged += new System.EventHandler(this.txtApplyName_TextChanged);
+            this.txtApplyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApplyName_KeyPress);
             this.txtApplyName.Leave += new System.EventHandler(this.txtApplyName_Leave);
             // 
             // btnApplyRate

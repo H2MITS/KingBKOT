@@ -93,6 +93,7 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(227, 24);
             this.txtWeight.TabIndex = 60;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
             // 
             // dateToday
             // 
@@ -140,6 +141,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(487, 24);
             this.txtQuantity.TabIndex = 62;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // lblQuantity
             // 
@@ -183,6 +185,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(487, 24);
             this.txtProductName.TabIndex = 59;
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             this.txtProductName.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // lblProductName

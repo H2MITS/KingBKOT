@@ -45,32 +45,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnTakeAway = new System.Windows.Forms.Button();
-            this.btnDineIn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.btnVorder = new System.Windows.Forms.Button();
-            this.btnVUsers = new System.Windows.Forms.Button();
-            this.btnVtaxes = new System.Windows.Forms.Button();
-            this.btnVProdTypes = new System.Windows.Forms.Button();
-            this.btnVProducts = new System.Windows.Forms.Button();
-            this.btnVsalesRports = new System.Windows.Forms.Button();
-            this.btnVLogins = new System.Windows.Forms.Button();
-            this.btnVEmployee = new System.Windows.Forms.Button();
-            this.btnAddMenus = new System.Windows.Forms.Button();
-            this.btnAddMenuGroup = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRecall = new System.Windows.Forms.Button();
-            this.btnChangePass = new System.Windows.Forms.Button();
-            this.btnRegEmployee = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAddPOSCurrency = new System.Windows.Forms.Button();
             this.btnVPOS = new System.Windows.Forms.Button();
             this.btnVCurrency = new System.Windows.Forms.Button();
@@ -80,18 +60,38 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnBakup = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNocharge = new System.Windows.Forms.Button();
-            this.btnAddUsers = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.btnVtaxes = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnBakup = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnVorder = new System.Windows.Forms.Button();
+            this.btnVUsers = new System.Windows.Forms.Button();
+            this.btnChangePass = new System.Windows.Forms.Button();
+            this.btnVProducts = new System.Windows.Forms.Button();
+            this.btnVsalesRports = new System.Windows.Forms.Button();
+            this.btnVLogins = new System.Windows.Forms.Button();
+            this.btnVEmployee = new System.Windows.Forms.Button();
+            this.btnAddMenus = new System.Windows.Forms.Button();
+            this.btnAddMenuGroup = new System.Windows.Forms.Button();
+            this.btnRecall = new System.Windows.Forms.Button();
+            this.btnRegEmployee = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnVProdTypes = new System.Windows.Forms.Button();
             this.btnADVBookingSettl = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnTakeAway = new System.Windows.Forms.Button();
+            this.btnDineIn = new System.Windows.Forms.Button();
+            this.btnAddUsers = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -198,7 +198,7 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnTakeAway);
             this.groupBox1.Controls.Add(this.btnDineIn);
-            this.groupBox1.Location = new System.Drawing.Point(111, 56);
+            this.groupBox1.Location = new System.Drawing.Point(111, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(877, 134);
             this.groupBox1.TabIndex = 1;
@@ -256,86 +256,17 @@
             this.label4.Text = "Receipt Type";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button4.Image = global::KingBKOT.Properties.Resources.money_1_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(712, 137);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 76);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Advance Booking";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button2.Image = global::KingBKOT.Properties.Resources.money_1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(332, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 76);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Fash Cash";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnTakeAway
-            // 
-            this.btnTakeAway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnTakeAway.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTakeAway.FlatAppearance.BorderSize = 0;
-            this.btnTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTakeAway.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnTakeAway.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeAway.Image")));
-            this.btnTakeAway.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTakeAway.Location = new System.Drawing.Point(173, 51);
-            this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(132, 77);
-            this.btnTakeAway.TabIndex = 1;
-            this.btnTakeAway.Text = "Take Away";
-            this.btnTakeAway.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTakeAway.UseVisualStyleBackColor = false;
-            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
-            // 
-            // btnDineIn
-            // 
-            this.btnDineIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnDineIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDineIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDineIn.FlatAppearance.BorderSize = 0;
-            this.btnDineIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDineIn.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnDineIn.Image = global::KingBKOT.Properties.Resources.table;
-            this.btnDineIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDineIn.Location = new System.Drawing.Point(30, 52);
-            this.btnDineIn.Name = "btnDineIn";
-            this.btnDineIn.Size = new System.Drawing.Size(124, 77);
-            this.btnDineIn.TabIndex = 0;
-            this.btnDineIn.Text = "     Dine In";
-            this.btnDineIn.UseVisualStyleBackColor = false;
-            this.btnDineIn.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.btnVorder);
+            this.groupBox2.Controls.Add(this.button11);
             this.groupBox2.Controls.Add(this.btnVUsers);
-            this.groupBox2.Controls.Add(this.btnVtaxes);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnChangePass);
             this.groupBox2.Controls.Add(this.btnVProducts);
             this.groupBox2.Controls.Add(this.btnVsalesRports);
             this.groupBox2.Controls.Add(this.btnVLogins);
@@ -344,10 +275,7 @@
             this.groupBox2.Controls.Add(this.btnAddMenuGroup);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnRecall);
-            this.groupBox2.Controls.Add(this.btnChangePass);
             this.groupBox2.Controls.Add(this.btnRegEmployee);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(111, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(877, 313);
@@ -361,7 +289,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(29, 37);
+            this.panel2.Location = new System.Drawing.Point(29, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 3);
             this.panel2.TabIndex = 32;
@@ -394,200 +322,6 @@
             this.panel4.Size = new System.Drawing.Size(512, 3);
             this.panel4.TabIndex = 30;
             // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(573, 136);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(126, 77);
-            this.button10.TabIndex = 13;
-            this.button10.Text = "View Settlement";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // btnVorder
-            // 
-            this.btnVorder.BackColor = System.Drawing.Color.White;
-            this.btnVorder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVorder.FlatAppearance.BorderSize = 0;
-            this.btnVorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVorder.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVorder.Image = global::KingBKOT.Properties.Resources.order__1_1;
-            this.btnVorder.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVorder.Location = new System.Drawing.Point(168, 223);
-            this.btnVorder.Name = "btnVorder";
-            this.btnVorder.Size = new System.Drawing.Size(117, 77);
-            this.btnVorder.TabIndex = 16;
-            this.btnVorder.Text = "View Order Info.";
-            this.btnVorder.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVorder.UseVisualStyleBackColor = false;
-            this.btnVorder.Click += new System.EventHandler(this.btnVorder_Click);
-            // 
-            // btnVUsers
-            // 
-            this.btnVUsers.BackColor = System.Drawing.Color.White;
-            this.btnVUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVUsers.FlatAppearance.BorderSize = 0;
-            this.btnVUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVUsers.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVUsers.Image = global::KingBKOT.Properties.Resources.employee__1_1;
-            this.btnVUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVUsers.Location = new System.Drawing.Point(169, 136);
-            this.btnVUsers.Name = "btnVUsers";
-            this.btnVUsers.Size = new System.Drawing.Size(116, 77);
-            this.btnVUsers.TabIndex = 11;
-            this.btnVUsers.Text = "\r\nView Users";
-            this.btnVUsers.UseVisualStyleBackColor = false;
-            this.btnVUsers.Click += new System.EventHandler(this.btnVUsers_Click);
-            // 
-            // btnVtaxes
-            // 
-            this.btnVtaxes.BackColor = System.Drawing.Color.White;
-            this.btnVtaxes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVtaxes.FlatAppearance.BorderSize = 0;
-            this.btnVtaxes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVtaxes.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVtaxes.Image = ((System.Drawing.Image)(resources.GetObject("btnVtaxes.Image")));
-            this.btnVtaxes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVtaxes.Location = new System.Drawing.Point(573, 223);
-            this.btnVtaxes.Name = "btnVtaxes";
-            this.btnVtaxes.Size = new System.Drawing.Size(125, 77);
-            this.btnVtaxes.TabIndex = 19;
-            this.btnVtaxes.Text = "View Taxes";
-            this.btnVtaxes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVtaxes.UseVisualStyleBackColor = false;
-            this.btnVtaxes.Click += new System.EventHandler(this.btnVtaxes_Click);
-            // 
-            // btnVProdTypes
-            // 
-            this.btnVProdTypes.BackColor = System.Drawing.Color.White;
-            this.btnVProdTypes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVProdTypes.FlatAppearance.BorderSize = 0;
-            this.btnVProdTypes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVProdTypes.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVProdTypes.Image = global::KingBKOT.Properties.Resources.list;
-            this.btnVProdTypes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVProdTypes.Location = new System.Drawing.Point(12, 508);
-            this.btnVProdTypes.Name = "btnVProdTypes";
-            this.btnVProdTypes.Size = new System.Drawing.Size(49, 40);
-            this.btnVProdTypes.TabIndex = 14;
-            this.btnVProdTypes.Text = "View Menu Group";
-            this.btnVProdTypes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVProdTypes.UseVisualStyleBackColor = false;
-            this.btnVProdTypes.Visible = false;
-            this.btnVProdTypes.Click += new System.EventHandler(this.btnVProdTypes_Click);
-            // 
-            // btnVProducts
-            // 
-            this.btnVProducts.BackColor = System.Drawing.Color.White;
-            this.btnVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVProducts.FlatAppearance.BorderSize = 0;
-            this.btnVProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVProducts.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVProducts.Image = global::KingBKOT.Properties.Resources.menu__3_;
-            this.btnVProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVProducts.Location = new System.Drawing.Point(296, 223);
-            this.btnVProducts.Name = "btnVProducts";
-            this.btnVProducts.Size = new System.Drawing.Size(126, 77);
-            this.btnVProducts.TabIndex = 17;
-            this.btnVProducts.Text = "\r\nView Menus";
-            this.btnVProducts.UseVisualStyleBackColor = false;
-            this.btnVProducts.Click += new System.EventHandler(this.btnVProducts_Click);
-            // 
-            // btnVsalesRports
-            // 
-            this.btnVsalesRports.BackColor = System.Drawing.Color.White;
-            this.btnVsalesRports.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVsalesRports.FlatAppearance.BorderSize = 0;
-            this.btnVsalesRports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVsalesRports.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVsalesRports.Image = global::KingBKOT.Properties.Resources.charts;
-            this.btnVsalesRports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVsalesRports.Location = new System.Drawing.Point(712, 223);
-            this.btnVsalesRports.Name = "btnVsalesRports";
-            this.btnVsalesRports.Size = new System.Drawing.Size(126, 77);
-            this.btnVsalesRports.TabIndex = 18;
-            this.btnVsalesRports.Text = "\r\nSales Report";
-            this.btnVsalesRports.UseVisualStyleBackColor = false;
-            this.btnVsalesRports.Click += new System.EventHandler(this.btnVsalesRports_Click);
-            // 
-            // btnVLogins
-            // 
-            this.btnVLogins.BackColor = System.Drawing.Color.White;
-            this.btnVLogins.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVLogins.FlatAppearance.BorderSize = 0;
-            this.btnVLogins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVLogins.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVLogins.Image = global::KingBKOT.Properties.Resources.laptop;
-            this.btnVLogins.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVLogins.Location = new System.Drawing.Point(30, 223);
-            this.btnVLogins.Name = "btnVLogins";
-            this.btnVLogins.Size = new System.Drawing.Size(126, 77);
-            this.btnVLogins.TabIndex = 15;
-            this.btnVLogins.Text = "\r\nView Logins";
-            this.btnVLogins.UseVisualStyleBackColor = false;
-            this.btnVLogins.Click += new System.EventHandler(this.btnVLogins_Click);
-            // 
-            // btnVEmployee
-            // 
-            this.btnVEmployee.BackColor = System.Drawing.Color.White;
-            this.btnVEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVEmployee.FlatAppearance.BorderSize = 0;
-            this.btnVEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVEmployee.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnVEmployee.Image = global::KingBKOT.Properties.Resources.target;
-            this.btnVEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVEmployee.Location = new System.Drawing.Point(30, 136);
-            this.btnVEmployee.Name = "btnVEmployee";
-            this.btnVEmployee.Size = new System.Drawing.Size(126, 77);
-            this.btnVEmployee.TabIndex = 210;
-            this.btnVEmployee.Text = "View Employee";
-            this.btnVEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVEmployee.UseVisualStyleBackColor = false;
-            this.btnVEmployee.Click += new System.EventHandler(this.btnVEmployee_Click);
-            // 
-            // btnAddMenus
-            // 
-            this.btnAddMenus.BackColor = System.Drawing.Color.White;
-            this.btnAddMenus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddMenus.FlatAppearance.BorderSize = 0;
-            this.btnAddMenus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMenus.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnAddMenus.Image = global::KingBKOT.Properties.Resources.menu1;
-            this.btnAddMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddMenus.Location = new System.Drawing.Point(572, 47);
-            this.btnAddMenus.Name = "btnAddMenus";
-            this.btnAddMenus.Size = new System.Drawing.Size(126, 77);
-            this.btnAddMenus.TabIndex = 8;
-            this.btnAddMenus.Text = "\r\nAdd Menu";
-            this.btnAddMenus.UseVisualStyleBackColor = false;
-            this.btnAddMenus.Click += new System.EventHandler(this.btnAddMenus_Click);
-            // 
-            // btnAddMenuGroup
-            // 
-            this.btnAddMenuGroup.BackColor = System.Drawing.Color.White;
-            this.btnAddMenuGroup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddMenuGroup.FlatAppearance.BorderSize = 0;
-            this.btnAddMenuGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMenuGroup.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnAddMenuGroup.Image = global::KingBKOT.Properties.Resources.menu_1_;
-            this.btnAddMenuGroup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddMenuGroup.Location = new System.Drawing.Point(712, 46);
-            this.btnAddMenuGroup.Name = "btnAddMenuGroup";
-            this.btnAddMenuGroup.Size = new System.Drawing.Size(126, 77);
-            this.btnAddMenuGroup.TabIndex = 9;
-            this.btnAddMenuGroup.Text = "Add Menu Group";
-            this.btnAddMenuGroup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddMenuGroup.UseVisualStyleBackColor = false;
-            this.btnAddMenuGroup.Click += new System.EventHandler(this.btnAddMenuGroup_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -598,93 +332,6 @@
             this.label2.Size = new System.Drawing.Size(240, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Operational Section";
-            // 
-            // btnRecall
-            // 
-            this.btnRecall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnRecall.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecall.FlatAppearance.BorderSize = 0;
-            this.btnRecall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecall.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnRecall.Image = ((System.Drawing.Image)(resources.GetObject("btnRecall.Image")));
-            this.btnRecall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecall.Location = new System.Drawing.Point(296, 137);
-            this.btnRecall.Name = "btnRecall";
-            this.btnRecall.Size = new System.Drawing.Size(263, 77);
-            this.btnRecall.TabIndex = 12;
-            this.btnRecall.Text = "   Settlement";
-            this.btnRecall.UseVisualStyleBackColor = false;
-            this.btnRecall.Click += new System.EventHandler(this.btnRecall_Click);
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.BackColor = System.Drawing.Color.White;
-            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePass.FlatAppearance.BorderSize = 0;
-            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnChangePass.Image = global::KingBKOT.Properties.Resources.keywords;
-            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnChangePass.Location = new System.Drawing.Point(433, 223);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(126, 77);
-            this.btnChangePass.TabIndex = 20;
-            this.btnChangePass.Text = "Change Password";
-            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnChangePass.UseVisualStyleBackColor = false;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-            // 
-            // btnRegEmployee
-            // 
-            this.btnRegEmployee.BackColor = System.Drawing.Color.White;
-            this.btnRegEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegEmployee.FlatAppearance.BorderSize = 0;
-            this.btnRegEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegEmployee.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.btnRegEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnRegEmployee.Image")));
-            this.btnRegEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRegEmployee.Location = new System.Drawing.Point(30, 47);
-            this.btnRegEmployee.Name = "btnRegEmployee";
-            this.btnRegEmployee.Size = new System.Drawing.Size(255, 77);
-            this.btnRegEmployee.TabIndex = 4;
-            this.btnRegEmployee.Text = "\r\n     Employee Register";
-            this.btnRegEmployee.UseVisualStyleBackColor = false;
-            this.btnRegEmployee.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.button3.Image = global::KingBKOT.Properties.Resources.analysis;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(433, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 77);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Purchase/Sale Report";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(295, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 77);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "\r\nPurchase";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnAddPOSCurrency
             // 
@@ -753,8 +400,8 @@
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.btnCancel);
-            this.groupBox3.Controls.Add(this.button11);
             this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Controls.Add(this.btnVtaxes);
             this.groupBox3.Controls.Add(this.btnBakup);
             this.groupBox3.Location = new System.Drawing.Point(111, 508);
             this.groupBox3.Name = "groupBox3";
@@ -802,24 +449,6 @@
             this.panel12.Size = new System.Drawing.Size(512, 3);
             this.panel12.TabIndex = 30;
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(30, 48);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(126, 77);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "View Freeze Items";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -830,75 +459,6 @@
             this.label3.Size = new System.Drawing.Size(201, 31);
             this.label3.TabIndex = 1;
             this.label3.Text = "Other Functions";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnCancel.Image = global::KingBKOT.Properties.Resources.error__1_;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(712, 48);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(126, 77);
-            this.btnCancel.TabIndex = 25;
-            this.btnCancel.Text = "\r\nLogout";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button11.Image = global::KingBKOT.Properties.Resources.tax__1_;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(373, 49);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(126, 77);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "\r\nView Tax Sales";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.button9.Image = global::KingBKOT.Properties.Resources.sale__1_;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(199, 49);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(126, 77);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "\r\nView Net Sale";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // btnBakup
-            // 
-            this.btnBakup.BackColor = System.Drawing.Color.White;
-            this.btnBakup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBakup.FlatAppearance.BorderSize = 0;
-            this.btnBakup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBakup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnBakup.Image = global::KingBKOT.Properties.Resources.data_storage_device;
-            this.btnBakup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBakup.Location = new System.Drawing.Point(543, 49);
-            this.btnBakup.Name = "btnBakup";
-            this.btnBakup.Size = new System.Drawing.Size(126, 77);
-            this.btnBakup.TabIndex = 24;
-            this.btnBakup.Text = "Database Backup";
-            this.btnBakup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBakup.UseVisualStyleBackColor = false;
-            this.btnBakup.Click += new System.EventHandler(this.btnBakup_Click);
             // 
             // timer1
             // 
@@ -944,6 +504,465 @@
             this.btnNocharge.Visible = false;
             this.btnNocharge.Click += new System.EventHandler(this.btnNocharge_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnCancel.Image = global::KingBKOT.Properties.Resources.error__1_;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancel.Location = new System.Drawing.Point(716, 48);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(126, 77);
+            this.btnCancel.TabIndex = 25;
+            this.btnCancel.Text = "\r\nLogout";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button11.Image = global::KingBKOT.Properties.Resources.tax__1_;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button11.Location = new System.Drawing.Point(716, 138);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(126, 77);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "\r\n\r\nView &Tax Sales";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // btnVtaxes
+            // 
+            this.btnVtaxes.BackColor = System.Drawing.Color.White;
+            this.btnVtaxes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVtaxes.FlatAppearance.BorderSize = 0;
+            this.btnVtaxes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVtaxes.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVtaxes.Image = ((System.Drawing.Image)(resources.GetObject("btnVtaxes.Image")));
+            this.btnVtaxes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVtaxes.Location = new System.Drawing.Point(30, 48);
+            this.btnVtaxes.Name = "btnVtaxes";
+            this.btnVtaxes.Size = new System.Drawing.Size(126, 77);
+            this.btnVtaxes.TabIndex = 19;
+            this.btnVtaxes.Text = "View Taxes";
+            this.btnVtaxes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVtaxes.UseVisualStyleBackColor = false;
+            this.btnVtaxes.Click += new System.EventHandler(this.btnVtaxes_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button9.Image = global::KingBKOT.Properties.Resources.sale__1_;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button9.Location = new System.Drawing.Point(374, 49);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(126, 77);
+            this.button9.TabIndex = 22;
+            this.button9.Text = "\r\nView Net Sale";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // btnBakup
+            // 
+            this.btnBakup.BackColor = System.Drawing.Color.White;
+            this.btnBakup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBakup.FlatAppearance.BorderSize = 0;
+            this.btnBakup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBakup.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnBakup.Image = global::KingBKOT.Properties.Resources.data_storage_device;
+            this.btnBakup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBakup.Location = new System.Drawing.Point(542, 49);
+            this.btnBakup.Name = "btnBakup";
+            this.btnBakup.Size = new System.Drawing.Size(126, 77);
+            this.btnBakup.TabIndex = 24;
+            this.btnBakup.Text = "Database Backup";
+            this.btnBakup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBakup.UseVisualStyleBackColor = false;
+            this.btnBakup.Click += new System.EventHandler(this.btnBakup_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button8.Location = new System.Drawing.Point(201, 49);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(126, 77);
+            this.button8.TabIndex = 21;
+            this.button8.Text = "View Freeze Items";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(576, 137);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(126, 77);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "View Settlement";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gray;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::KingBKOT.Properties.Resources.forward;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(715, 229);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(126, 76);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "       Advance &Booking";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnVorder
+            // 
+            this.btnVorder.BackColor = System.Drawing.Color.White;
+            this.btnVorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVorder.FlatAppearance.BorderSize = 0;
+            this.btnVorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVorder.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVorder.Image = global::KingBKOT.Properties.Resources.order__1_1;
+            this.btnVorder.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVorder.Location = new System.Drawing.Point(298, 48);
+            this.btnVorder.Name = "btnVorder";
+            this.btnVorder.Size = new System.Drawing.Size(126, 77);
+            this.btnVorder.TabIndex = 16;
+            this.btnVorder.Text = "View &Order Info.";
+            this.btnVorder.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVorder.UseVisualStyleBackColor = false;
+            this.btnVorder.Click += new System.EventHandler(this.btnVorder_Click);
+            // 
+            // btnVUsers
+            // 
+            this.btnVUsers.BackColor = System.Drawing.Color.White;
+            this.btnVUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVUsers.FlatAppearance.BorderSize = 0;
+            this.btnVUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVUsers.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVUsers.Image = global::KingBKOT.Properties.Resources.employee__1_1;
+            this.btnVUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVUsers.Location = new System.Drawing.Point(169, 138);
+            this.btnVUsers.Name = "btnVUsers";
+            this.btnVUsers.Size = new System.Drawing.Size(116, 77);
+            this.btnVUsers.TabIndex = 11;
+            this.btnVUsers.Text = "\r\nView &Users";
+            this.btnVUsers.UseVisualStyleBackColor = false;
+            this.btnVUsers.Click += new System.EventHandler(this.btnVUsers_Click);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.BackColor = System.Drawing.Color.White;
+            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePass.FlatAppearance.BorderSize = 0;
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnChangePass.Image = global::KingBKOT.Properties.Resources.keywords;
+            this.btnChangePass.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnChangePass.Location = new System.Drawing.Point(169, 228);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(116, 77);
+            this.btnChangePass.TabIndex = 20;
+            this.btnChangePass.Text = "&Change Password";
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnChangePass.UseVisualStyleBackColor = false;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // btnVProducts
+            // 
+            this.btnVProducts.BackColor = System.Drawing.Color.White;
+            this.btnVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVProducts.FlatAppearance.BorderSize = 0;
+            this.btnVProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVProducts.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVProducts.Image = global::KingBKOT.Properties.Resources.menu__3_;
+            this.btnVProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVProducts.Location = new System.Drawing.Point(716, 48);
+            this.btnVProducts.Name = "btnVProducts";
+            this.btnVProducts.Size = new System.Drawing.Size(126, 77);
+            this.btnVProducts.TabIndex = 17;
+            this.btnVProducts.Text = "\r\nView Me&nus";
+            this.btnVProducts.UseVisualStyleBackColor = false;
+            this.btnVProducts.Click += new System.EventHandler(this.btnVProducts_Click);
+            // 
+            // btnVsalesRports
+            // 
+            this.btnVsalesRports.BackColor = System.Drawing.Color.White;
+            this.btnVsalesRports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVsalesRports.FlatAppearance.BorderSize = 0;
+            this.btnVsalesRports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVsalesRports.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVsalesRports.Image = global::KingBKOT.Properties.Resources.charts;
+            this.btnVsalesRports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVsalesRports.Location = new System.Drawing.Point(576, 228);
+            this.btnVsalesRports.Name = "btnVsalesRports";
+            this.btnVsalesRports.Size = new System.Drawing.Size(126, 77);
+            this.btnVsalesRports.TabIndex = 18;
+            this.btnVsalesRports.Text = "\r\nSales Report";
+            this.btnVsalesRports.UseVisualStyleBackColor = false;
+            this.btnVsalesRports.Click += new System.EventHandler(this.btnVsalesRports_Click);
+            // 
+            // btnVLogins
+            // 
+            this.btnVLogins.BackColor = System.Drawing.Color.White;
+            this.btnVLogins.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVLogins.FlatAppearance.BorderSize = 0;
+            this.btnVLogins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVLogins.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVLogins.Image = global::KingBKOT.Properties.Resources.laptop;
+            this.btnVLogins.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVLogins.Location = new System.Drawing.Point(30, 228);
+            this.btnVLogins.Name = "btnVLogins";
+            this.btnVLogins.Size = new System.Drawing.Size(126, 77);
+            this.btnVLogins.TabIndex = 15;
+            this.btnVLogins.Text = "\r\nView &Logins";
+            this.btnVLogins.UseVisualStyleBackColor = false;
+            this.btnVLogins.Click += new System.EventHandler(this.btnVLogins_Click);
+            // 
+            // btnVEmployee
+            // 
+            this.btnVEmployee.BackColor = System.Drawing.Color.White;
+            this.btnVEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVEmployee.FlatAppearance.BorderSize = 0;
+            this.btnVEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVEmployee.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVEmployee.Image = global::KingBKOT.Properties.Resources.target;
+            this.btnVEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVEmployee.Location = new System.Drawing.Point(30, 138);
+            this.btnVEmployee.Name = "btnVEmployee";
+            this.btnVEmployee.Size = new System.Drawing.Size(126, 77);
+            this.btnVEmployee.TabIndex = 210;
+            this.btnVEmployee.Text = "View Emplo&yee";
+            this.btnVEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVEmployee.UseVisualStyleBackColor = false;
+            this.btnVEmployee.Click += new System.EventHandler(this.btnVEmployee_Click);
+            // 
+            // btnAddMenus
+            // 
+            this.btnAddMenus.BackColor = System.Drawing.Color.White;
+            this.btnAddMenus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMenus.FlatAppearance.BorderSize = 0;
+            this.btnAddMenus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMenus.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnAddMenus.Image = global::KingBKOT.Properties.Resources.menu1;
+            this.btnAddMenus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddMenus.Location = new System.Drawing.Point(436, 48);
+            this.btnAddMenus.Name = "btnAddMenus";
+            this.btnAddMenus.Size = new System.Drawing.Size(126, 77);
+            this.btnAddMenus.TabIndex = 8;
+            this.btnAddMenus.Text = "\r\nAdd &Menu";
+            this.btnAddMenus.UseVisualStyleBackColor = false;
+            this.btnAddMenus.Click += new System.EventHandler(this.btnAddMenus_Click);
+            // 
+            // btnAddMenuGroup
+            // 
+            this.btnAddMenuGroup.BackColor = System.Drawing.Color.White;
+            this.btnAddMenuGroup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMenuGroup.FlatAppearance.BorderSize = 0;
+            this.btnAddMenuGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMenuGroup.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnAddMenuGroup.Image = global::KingBKOT.Properties.Resources.menu_1_;
+            this.btnAddMenuGroup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddMenuGroup.Location = new System.Drawing.Point(576, 48);
+            this.btnAddMenuGroup.Name = "btnAddMenuGroup";
+            this.btnAddMenuGroup.Size = new System.Drawing.Size(126, 77);
+            this.btnAddMenuGroup.TabIndex = 9;
+            this.btnAddMenuGroup.Text = "Add Menu &Group";
+            this.btnAddMenuGroup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddMenuGroup.UseVisualStyleBackColor = false;
+            this.btnAddMenuGroup.Click += new System.EventHandler(this.btnAddMenuGroup_Click);
+            // 
+            // btnRecall
+            // 
+            this.btnRecall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnRecall.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecall.FlatAppearance.BorderSize = 0;
+            this.btnRecall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecall.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnRecall.Image = ((System.Drawing.Image)(resources.GetObject("btnRecall.Image")));
+            this.btnRecall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecall.Location = new System.Drawing.Point(297, 138);
+            this.btnRecall.Name = "btnRecall";
+            this.btnRecall.Size = new System.Drawing.Size(265, 77);
+            this.btnRecall.TabIndex = 12;
+            this.btnRecall.Text = "   &Settlement";
+            this.btnRecall.UseVisualStyleBackColor = false;
+            this.btnRecall.Click += new System.EventHandler(this.btnRecall_Click);
+            // 
+            // btnRegEmployee
+            // 
+            this.btnRegEmployee.BackColor = System.Drawing.Color.White;
+            this.btnRegEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegEmployee.FlatAppearance.BorderSize = 0;
+            this.btnRegEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegEmployee.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnRegEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnRegEmployee.Image")));
+            this.btnRegEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRegEmployee.Location = new System.Drawing.Point(30, 48);
+            this.btnRegEmployee.Name = "btnRegEmployee";
+            this.btnRegEmployee.Size = new System.Drawing.Size(255, 77);
+            this.btnRegEmployee.TabIndex = 4;
+            this.btnRegEmployee.Text = "\r\n     &Employee Register";
+            this.btnRegEmployee.UseVisualStyleBackColor = false;
+            this.btnRegEmployee.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.button3.Image = global::KingBKOT.Properties.Resources.analysis;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(436, 228);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(126, 77);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Purchase/Sale &Report";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(298, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 77);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "\r\n&Purchase";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnVProdTypes
+            // 
+            this.btnVProdTypes.BackColor = System.Drawing.Color.White;
+            this.btnVProdTypes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVProdTypes.FlatAppearance.BorderSize = 0;
+            this.btnVProdTypes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVProdTypes.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.btnVProdTypes.Image = global::KingBKOT.Properties.Resources.list;
+            this.btnVProdTypes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVProdTypes.Location = new System.Drawing.Point(12, 508);
+            this.btnVProdTypes.Name = "btnVProdTypes";
+            this.btnVProdTypes.Size = new System.Drawing.Size(49, 40);
+            this.btnVProdTypes.TabIndex = 14;
+            this.btnVProdTypes.Text = "View Menu Group";
+            this.btnVProdTypes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVProdTypes.UseVisualStyleBackColor = false;
+            this.btnVProdTypes.Visible = false;
+            this.btnVProdTypes.Click += new System.EventHandler(this.btnVProdTypes_Click);
+            // 
+            // btnADVBookingSettl
+            // 
+            this.btnADVBookingSettl.BackColor = System.Drawing.Color.Yellow;
+            this.btnADVBookingSettl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnADVBookingSettl.FlatAppearance.BorderSize = 0;
+            this.btnADVBookingSettl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADVBookingSettl.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnADVBookingSettl.Image = global::KingBKOT.Properties.Resources._event;
+            this.btnADVBookingSettl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnADVBookingSettl.Location = new System.Drawing.Point(543, 56);
+            this.btnADVBookingSettl.Name = "btnADVBookingSettl";
+            this.btnADVBookingSettl.Size = new System.Drawing.Size(296, 77);
+            this.btnADVBookingSettl.TabIndex = 2;
+            this.btnADVBookingSettl.Text = "&Advance Booking Settlement";
+            this.btnADVBookingSettl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnADVBookingSettl.UseVisualStyleBackColor = false;
+            this.btnADVBookingSettl.Click += new System.EventHandler(this.btnADVBookingSettl_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.button2.Image = global::KingBKOT.Properties.Resources.money_1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(400, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 77);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "&Fash Cash";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnTakeAway
+            // 
+            this.btnTakeAway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnTakeAway.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTakeAway.FlatAppearance.BorderSize = 0;
+            this.btnTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakeAway.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnTakeAway.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeAway.Image")));
+            this.btnTakeAway.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTakeAway.Location = new System.Drawing.Point(257, 58);
+            this.btnTakeAway.Name = "btnTakeAway";
+            this.btnTakeAway.Size = new System.Drawing.Size(132, 77);
+            this.btnTakeAway.TabIndex = 1;
+            this.btnTakeAway.Text = "&Take Away";
+            this.btnTakeAway.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTakeAway.UseVisualStyleBackColor = false;
+            this.btnTakeAway.Click += new System.EventHandler(this.btnTakeAway_Click);
+            // 
+            // btnDineIn
+            // 
+            this.btnDineIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnDineIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDineIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDineIn.FlatAppearance.BorderSize = 0;
+            this.btnDineIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDineIn.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.btnDineIn.Image = global::KingBKOT.Properties.Resources.table;
+            this.btnDineIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDineIn.Location = new System.Drawing.Point(114, 57);
+            this.btnDineIn.Name = "btnDineIn";
+            this.btnDineIn.Size = new System.Drawing.Size(132, 77);
+            this.btnDineIn.TabIndex = 0;
+            this.btnDineIn.Text = "     &Dine In";
+            this.btnDineIn.UseVisualStyleBackColor = false;
+            this.btnDineIn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnAddUsers
             // 
             this.btnAddUsers.BackColor = System.Drawing.Color.White;
@@ -960,24 +979,6 @@
             this.btnAddUsers.UseVisualStyleBackColor = false;
             this.btnAddUsers.Visible = false;
             this.btnAddUsers.Click += new System.EventHandler(this.btnAddUsers_Click);
-            // 
-            // btnADVBookingSettl
-            // 
-            this.btnADVBookingSettl.BackColor = System.Drawing.Color.Yellow;
-            this.btnADVBookingSettl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnADVBookingSettl.FlatAppearance.BorderSize = 0;
-            this.btnADVBookingSettl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADVBookingSettl.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.btnADVBookingSettl.Image = global::KingBKOT.Properties.Resources.money_1_;
-            this.btnADVBookingSettl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnADVBookingSettl.Location = new System.Drawing.Point(706, 51);
-            this.btnADVBookingSettl.Name = "btnADVBookingSettl";
-            this.btnADVBookingSettl.Size = new System.Drawing.Size(132, 76);
-            this.btnADVBookingSettl.TabIndex = 2;
-            this.btnADVBookingSettl.Text = "Advance Booking Settlement";
-            this.btnADVBookingSettl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnADVBookingSettl.UseVisualStyleBackColor = false;
-            this.btnADVBookingSettl.Click += new System.EventHandler(this.btnADVBookingSettl_Click);
             // 
             // frmParent
             // 
@@ -1004,6 +1005,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmParent";
             this.Load += new System.EventHandler(this.frmParent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmParent_KeyDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

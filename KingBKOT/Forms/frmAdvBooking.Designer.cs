@@ -586,6 +586,7 @@
             this.txtAdvPayment.Size = new System.Drawing.Size(717, 26);
             this.txtAdvPayment.TabIndex = 5;
             this.txtAdvPayment.TextChanged += new System.EventHandler(this.txtAdvPayment_TextChanged);
+            this.txtAdvPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdvPayment_KeyPress);
             // 
             // label9
             // 

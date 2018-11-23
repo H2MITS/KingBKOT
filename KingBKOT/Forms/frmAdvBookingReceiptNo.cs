@@ -38,6 +38,7 @@ namespace KingBKOT.Forms
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
+            
             _entities = new KBBQEntities();
 
             long id = Convert.ToInt32(txtRecptNo.Text.Trim());
@@ -80,6 +81,27 @@ namespace KingBKOT.Forms
         private void frmAdvBookingReceiptNo_Load(object sender, EventArgs e)
         {
             txtRecptNo.Focus();
+        }
+
+        private void txtRecptNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRecptNo_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtRecptNo.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtRecptNo, "Please enter Advance receipt number");
+                e.Cancel = true;
+            }
+            else
+            {
+                //errorProvider1.SetError(txtRecptNo, "");
+            }
         }
     }
 }

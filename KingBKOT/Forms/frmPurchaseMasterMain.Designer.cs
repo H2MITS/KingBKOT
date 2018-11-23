@@ -143,6 +143,7 @@
             this.txtitemName.Name = "txtitemName";
             this.txtitemName.Size = new System.Drawing.Size(290, 26);
             this.txtitemName.TabIndex = 2;
+            this.txtitemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemName_KeyPress);
             this.txtitemName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtitemName_KeyUp);
             this.txtitemName.Leave += new System.EventHandler(this.txtitemName_Leave);
             // 
@@ -400,6 +401,7 @@
             this.txtAmtInWords.Name = "txtAmtInWords";
             this.txtAmtInWords.Size = new System.Drawing.Size(473, 70);
             this.txtAmtInWords.TabIndex = 180;
+            this.txtAmtInWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmtInWords_KeyPress);
             // 
             // label14
             // 
@@ -454,6 +456,7 @@
             this.txtTotalAmt.Name = "txtTotalAmt";
             this.txtTotalAmt.Size = new System.Drawing.Size(144, 26);
             this.txtTotalAmt.TabIndex = 8;
+            this.txtTotalAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalAmt_KeyPress);
             // 
             // txtTotalWeight
             // 
@@ -464,6 +467,7 @@
             this.txtTotalWeight.Name = "txtTotalWeight";
             this.txtTotalWeight.Size = new System.Drawing.Size(144, 26);
             this.txtTotalWeight.TabIndex = 7;
+            this.txtTotalWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalWeight_KeyPress);
             // 
             // label4
             // 
@@ -614,6 +618,7 @@
             this.txtPartyName.Name = "txtPartyName";
             this.txtPartyName.Size = new System.Drawing.Size(491, 26);
             this.txtPartyName.TabIndex = 1;
+            this.txtPartyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartyName_KeyPress);
             this.txtPartyName.Leave += new System.EventHandler(this.txtPartyName_Leave);
             // 
             // panel2

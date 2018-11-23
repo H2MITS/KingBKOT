@@ -154,6 +154,7 @@
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(462, 25);
             this.txtFirst.TabIndex = 0;
+            this.txtFirst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirst_KeyPress);
             // 
             // txtLast
             // 
@@ -163,6 +164,7 @@
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(462, 25);
             this.txtLast.TabIndex = 1;
+            this.txtLast.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLast_KeyPress);
             // 
             // txtAdultNo
             // 
@@ -173,6 +175,7 @@
             this.txtAdultNo.Size = new System.Drawing.Size(462, 25);
             this.txtAdultNo.TabIndex = 3;
             this.txtAdultNo.TextChanged += new System.EventHandler(this.txtAdultNo_TextChanged);
+            this.txtAdultNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdultNo_KeyPress);
             this.txtAdultNo.Leave += new System.EventHandler(this.txtAdultNo_Leave);
             // 
             // txtChild
@@ -184,6 +187,7 @@
             this.txtChild.Size = new System.Drawing.Size(462, 25);
             this.txtChild.TabIndex = 4;
             this.txtChild.TextChanged += new System.EventHandler(this.txtChild_TextChanged);
+            this.txtChild.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChild_KeyPress);
             this.txtChild.Leave += new System.EventHandler(this.txtChild_Leave);
             // 
             // btnFinish
@@ -359,6 +363,7 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(462, 25);
             this.txtMobile.TabIndex = 2;
+            this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
             // orderInfo
             // 
