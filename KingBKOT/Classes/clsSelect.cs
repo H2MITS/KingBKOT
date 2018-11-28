@@ -14,6 +14,7 @@ namespace Cindy_Restaurant.Classes
 {
     class clsSelect : clsInsert
     {
+        KBBQEntities _entities;
         SqlDataReader reader;
         public int getNum;
         public string fullName, getEmployeeID;
@@ -55,12 +56,16 @@ namespace Cindy_Restaurant.Classes
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
 
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    getNum = Int16.Parse(reader["nums"].ToString());
-                }
+                
+                    reader = cmd.ExecuteReader();
 
+
+
+                    while (reader.Read())
+                    {
+                        getNum = Int16.Parse(reader["nums"].ToString());
+                    }
+            
             }
 
             catch (Exception ex)
@@ -1015,14 +1020,14 @@ namespace Cindy_Restaurant.Classes
 
         }
 
-       
+
         //select tax
         public void selectTAx(DataGridView dgv)
         {
 
 
             try
-            { 
+            {
 
                 SqlConnection con = new SqlConnection(dbPath);
                 con.Open();
@@ -1599,18 +1604,30 @@ namespace Cindy_Restaurant.Classes
             try
             {
 
-                string sql = "select bill from detailsSettlement where paymentType ='Cash' and paidDate in('" + inDate.Date + "','" + outDate.Date + "')";
+                _entities = new KBBQEntities();
 
-                con = new SqlConnection(dbPath);
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
+                var data = _entities.detailsSettlements.Where(x => x.paymentType == "Cash" && x.paidDate == outDate.Date).ToList();
 
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (data != null)
                 {
-                    cashValue += double.Parse(reader["bill"].ToString());
-
+                    foreach (var item in data)
+                    {
+                        cashValue += double.Parse(item.bill.ToString());
+                    }
                 }
+
+                //string sql = "select bill from detailsSettlement where paymentType ='Cash' and paidDate in('" + inDate.Date + "','" + outDate.Date + "')";
+
+                //con = new SqlConnection(dbPath);
+                //con.Open();
+                //SqlCommand cmd = new SqlCommand(sql, con);
+
+                //reader = cmd.ExecuteReader();
+                //while (reader.Read())
+                //{
+                //    cashValue += double.Parse(reader["bill"].ToString());
+
+                //}
 
             }
 

@@ -12,7 +12,13 @@ namespace Cindy_Restaurant.Classes
     class clsInsert
     {
         //database path usually this is the path called the connection string
-        public string dbPath = @"Data Source=DESKTOP-AU8GBJS\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
+     //   public string dbPath = @"Data Source=VIRUSPC\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=True";
+
+        public string dbPath = @"Data Source=TP\SQLEXPRESS;Initial Catalog=cindyDB;Integrated Security=False;;User Id=sa;Password=Hs9898464496Hs;";
+
+        //
+
+
         public SqlConnection con;
         public SqlCommand cmd;
         public static ErrorProvider err = new ErrorProvider();
@@ -31,7 +37,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@lname", lname.Trim());
                 cmd.Parameters.AddWithValue("@oname", oname.Trim());
                 cmd.Parameters.AddWithValue("@gender", gender.SelectedItem);
-                cmd.Parameters.AddWithValue("@dob", dob.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@dob", dob.Value.Date);
                 cmd.Parameters.AddWithValue("@phone", phone.Trim());
                 cmd.Parameters.AddWithValue("@resAddress", resAddress.Trim());
                 cmd.Parameters.AddWithValue("@emailAdd", emailAdd.Trim());
@@ -59,7 +65,7 @@ namespace Cindy_Restaurant.Classes
 
                     cmd.Parameters.Add(ppic);
 
-                     
+
                 }
 
                 cmd.ExecuteNonQuery();
@@ -93,7 +99,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@Uname", Uname.Trim());
                 cmd.Parameters.AddWithValue("@Pass", Pass.Trim());
                 cmd.Parameters.AddWithValue("@privileges", privileges.SelectedItem);
-                cmd.Parameters.AddWithValue("@cdate",DateTime.Now);
+                cmd.Parameters.AddWithValue("@cdate", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Account Successfully Created", "SAVED - Fronty", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -262,7 +268,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@ItemPrice", Price);
 
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
-                cmd.Parameters.AddWithValue("@OrderDate", OrderDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@OrderDate", OrderDate.Value.Date);
                 cmd.Parameters.AddWithValue("@OrderTime", OrderTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@Statues", Statues.Trim());
                 cmd.Parameters.AddWithValue("@KOT", SaleID.Trim());
@@ -341,7 +347,7 @@ namespace Cindy_Restaurant.Classes
 
 
 
-        public void insertTobillAndSettlement(string kot, string orderDecrip, string fname, string lname, DateTimePicker ordDate, DateTimePicker ordTime, double totalDue, double tax1_Amt, double tax2_Amt, double subTotal, string mode, string empID,string mob)
+        public void insertTobillAndSettlement(string kot, string orderDecrip, string fname, string lname, DateTimePicker ordDate, DateTimePicker ordTime, double totalDue, double tax1_Amt, double tax2_Amt, double subTotal, string mode, string empID, string mob)
         {
             try
             {
@@ -362,7 +368,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@fname", fname.Trim());
                 cmd.Parameters.AddWithValue("@lname", lname.Trim());
                 cmd.Parameters.AddWithValue("@mobile", mob.Trim());
-                cmd.Parameters.AddWithValue("@ordDate", ordDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@ordDate", ordDate.Value.Date);
                 cmd.Parameters.AddWithValue("@ordTime", ordTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@totalDue", totalDue);
                 cmd.Parameters.AddWithValue("@tax1_Amt", tax1_Amt);
@@ -427,7 +433,7 @@ namespace Cindy_Restaurant.Classes
                 string sql = "insert into detailsSettlement(KOT,paidDate,paidTime,currencyInUsed,bill,custCurrencyChosen,AmountPaid,changeDue,paymentType,acctName,acctNum,electronicType,empID,receiptno) VALUES(@KOT,@paidDate,@paidTime,@currencyInUsed,@bill,@custCurrencyChosen,@AmountPaid,@changeDue,@paymentType,@acctName,@acctNum,@electronicType,@empID,@receiptno)";
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@KOT", KOT.Trim());
-                cmd.Parameters.AddWithValue("@paidDate", pDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@paidDate", pDate.Value.Date);
                 cmd.Parameters.AddWithValue("@paidTime", pTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@currencyInUsed", currencyInUsed.Trim());
                 cmd.Parameters.AddWithValue("@bill", bill);
@@ -452,7 +458,7 @@ namespace Cindy_Restaurant.Classes
 
         }
 
-        public void insertTotblOrderInfo(string orderType, string tableNo, string KOT, DateTimePicker ordDate, DateTimePicker ordTime, string fname, string lname, string adultNo, string childrenNo, string empID,string mob)
+        public void insertTotblOrderInfo(string orderType, string tableNo, string KOT, DateTimePicker ordDate, DateTimePicker ordTime, string fname, string lname, string adultNo, string childrenNo, string empID, string mob)
         {
 
             try
@@ -473,7 +479,7 @@ namespace Cindy_Restaurant.Classes
                 cmd.Parameters.AddWithValue("@orderType", orderType.Trim());
                 cmd.Parameters.AddWithValue("@tableNo", tableNo.Trim());
                 cmd.Parameters.AddWithValue("@KOT", KOT.Trim());
-                cmd.Parameters.AddWithValue("@ordDate", ordDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@ordDate", ordDate.Value.Date);
                 cmd.Parameters.AddWithValue("@ordTime", ordTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@fname", fname.Trim());
                 cmd.Parameters.AddWithValue("@lname", lname.Trim());
@@ -513,9 +519,9 @@ namespace Cindy_Restaurant.Classes
                 con.Open();
                 cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@empID", empID.Trim());
-                cmd.Parameters.AddWithValue("@logDate", logDate.Value.ToShortDateString());
-                cmd.Parameters.AddWithValue("@logTime", logTime.Value.ToShortTimeString());
-                cmd.Parameters.AddWithValue("@endShiftDate", endShiftDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@logDate", logDate.Value.Date);
+                cmd.Parameters.AddWithValue("@logTime", logTime.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@endShiftDate", endShiftDate.Value.Date);
                 cmd.Parameters.AddWithValue("@endShiftTime", endShiftTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@statues", statues.Trim());
 

@@ -218,7 +218,7 @@ namespace Cindy_Restaurant
                 string cashierID = selectClass.getEmployeeByID(this.statGetUser.Text);
 
                 selectClass.sumAllCash(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
-                selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
+               // selectClass.sumAllPOS(cashierID, Convert.ToDateTime(selectClass.logDates), dayTime.Date);
                 //cashier report goes here
                 frmVCashierReport repCashier = new frmVCashierReport();
                 repCashier.textBox1.AppendText("\t\tCASHIER REPORT" + Environment.NewLine);
@@ -440,9 +440,18 @@ namespace Cindy_Restaurant
             {
                 button8.PerformClick();
             }
+            if (e.Control == true && e.KeyCode == Keys.X)//Hotkey for Expenses(Ctrl+X)
+            {
+                btnExpenses.PerformClick();
+            }
 
         }
 
+        private void btnExpenses_Click(object sender, EventArgs e)
+        {
+            frmExpenses vUsers = new frmExpenses();
+            vUsers.ShowDialog();
+        }
     }
 }
 

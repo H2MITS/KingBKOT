@@ -22,6 +22,7 @@ namespace KingBKOT.Data
     
         public long pId { get; set; }
         public string refNo { get; set; }
+        public string partyName { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<decimal> totalWeight { get; set; }
         public string unit { get; set; }
@@ -29,7 +30,6 @@ namespace KingBKOT.Data
         public string remarks { get; set; }
         public Nullable<System.DateTime> createdDate { get; set; }
         public Nullable<System.DateTime> updateDate { get; set; }
-        public string partyName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_PurchaseDetails> tbl_PurchaseDetails { get; set; }

@@ -22,10 +22,10 @@ namespace KingBKOT.Data
         public string ordTime { get; set; }
         public string fname { get; set; }
         public string lname { get; set; }
+        public string mobile { get; set; }
         public string adultNo { get; set; }
         public string childrenNo { get; set; }
         public string empID { get; set; }
         public string waiterId { get; set; }
-        public string mobile { get; set; }
     }
 }

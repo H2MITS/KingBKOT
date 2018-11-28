@@ -97,6 +97,8 @@ namespace Cindy_Restaurant.Forms
                 insertClass.insertToProduct(txtProdName.Text, cboProductType, cboProSubCate, txtProdDecs.Text, double.Parse(txtTax1percsentage.Text), double.Parse(txtTax2percsentage.Text), double.Parse(txtTax3percsentage.Text), double.Parse(txtProdPrice.Text), double.Parse(txtTax1Amt.Text), double.Parse(txtTax2Amt.Text), double.Parse(txtTax3Amt.Text), double.Parse(txtNetAmt.Text));
                 _setInitialState();
             }
+
+            clear();
         }
 
 
@@ -213,7 +215,7 @@ namespace Cindy_Restaurant.Forms
 
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        void clear()
         {
             cboProductType.Text = string.Empty;
             cboProSubCate.Text = string.Empty;
@@ -222,16 +224,20 @@ namespace Cindy_Restaurant.Forms
             txtProdName.Text = string.Empty;
             txtProdPrice.Text = string.Empty;
             txtTax1Amt.Text = string.Empty;
-            txtTax1percsentage.Text = string.Empty;
+       
             txtTax2Amt.Text = string.Empty;
-            txtTax2percsentage.Text = string.Empty;
+           
             txtTax3Amt.Text = string.Empty;
-            txtTax3percsentage.Text = string.Empty;
+         
+
+            cboProductType.Focus();
+        }
 
 
-
-
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+             
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -256,10 +262,7 @@ namespace Cindy_Restaurant.Forms
 
         private void txtProdName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
+           
         }
 
         private void txtTax1percsentage_KeyPress(object sender, KeyPressEventArgs e)

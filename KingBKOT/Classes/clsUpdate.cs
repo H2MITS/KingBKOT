@@ -213,7 +213,7 @@ namespace Cindy_Restaurant.Classes
                 cmd = new SqlCommand(updateString, con);
                 cmd.Parameters.AddWithValue("@empID", Name.Trim());
                 cmd.Parameters.AddWithValue("@id", id);//log id
-                cmd.Parameters.AddWithValue("@endShiftDate", endDate.Value.ToShortDateString());
+                cmd.Parameters.AddWithValue("@endShiftDate", endDate.Value.Date);
                 cmd.Parameters.AddWithValue("@endShiftTime", endTime.Value.ToShortTimeString());
                 cmd.Parameters.AddWithValue("@statues", statues.Trim());
 

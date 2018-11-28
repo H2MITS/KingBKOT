@@ -129,6 +129,7 @@ namespace KingBarbeque.Forms
                     txtPassword.Select();
                     selectClass.selectUsers(cboUsername);
                     this.Show();
+                    this.Close();
                 }
 
                 else
@@ -216,6 +217,8 @@ namespace KingBarbeque.Forms
             selectClass.selectUsers(cboUsername);
             txtPassword.Select();
             txtPassword.Clear();
+
+            cboUsername.Focus();
 
            // this.BackColor = Color.FromArgb(29, 161, 242);
 

@@ -56,7 +56,7 @@
             this.btnKeyboard.BackColor = System.Drawing.Color.DarkOrange;
             this.btnKeyboard.FlatAppearance.BorderSize = 0;
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
             this.btnKeyboard.Location = new System.Drawing.Point(653, 216);
             this.btnKeyboard.Name = "btnKeyboard";
@@ -78,11 +78,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(675, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 20);
+            this.label7.Size = new System.Drawing.Size(43, 18);
             this.label7.TabIndex = 74;
             this.label7.Text = "Date:";
             // 
@@ -97,10 +97,10 @@
             // 
             // dateToday
             // 
-            this.dateToday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateToday.Location = new System.Drawing.Point(739, 50);
             this.dateToday.Name = "dateToday";
-            this.dateToday.Size = new System.Drawing.Size(120, 26);
+            this.dateToday.Size = new System.Drawing.Size(120, 24);
             this.dateToday.TabIndex = 66;
             // 
             // btnClear
@@ -108,7 +108,7 @@
             this.btnClear.BackColor = System.Drawing.Color.Red;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(115, 211);
             this.btnClear.Name = "btnClear";
@@ -124,7 +124,7 @@
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Location = new System.Drawing.Point(9, 211);
             this.btnSubmit.Name = "btnSubmit";
@@ -146,35 +146,37 @@
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
             this.lblQuantity.Location = new System.Drawing.Point(10, 151);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(75, 20);
+            this.lblQuantity.Size = new System.Drawing.Size(66, 18);
             this.lblQuantity.TabIndex = 71;
             this.lblQuantity.Text = "Quantity:";
             // 
             // comboUnit
             // 
             this.comboUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboUnit.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.comboUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.75F);
             this.comboUnit.FormattingEnabled = true;
             this.comboUnit.Items.AddRange(new object[] {
+            "Ltr",
             "Gram",
-            "Kg"});
+            "Kg",
+            "Pcs"});
             this.comboUnit.Location = new System.Drawing.Point(402, 100);
             this.comboUnit.Name = "comboUnit";
-            this.comboUnit.Size = new System.Drawing.Size(127, 27);
+            this.comboUnit.Size = new System.Drawing.Size(127, 25);
             this.comboUnit.TabIndex = 61;
             // 
             // lblWeight
             // 
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblWeight.ForeColor = System.Drawing.Color.White;
             this.lblWeight.Location = new System.Drawing.Point(10, 102);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(71, 20);
+            this.lblWeight.Size = new System.Drawing.Size(64, 18);
             this.lblWeight.TabIndex = 70;
             this.lblWeight.Text = "Weight*:";
             // 
@@ -191,11 +193,11 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblProductName.ForeColor = System.Drawing.Color.White;
             this.lblProductName.Location = new System.Drawing.Point(7, 52);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(119, 20);
+            this.lblProductName.Size = new System.Drawing.Size(108, 18);
             this.lblProductName.TabIndex = 69;
             this.lblProductName.Text = "Product Name:";
             // 
@@ -217,10 +219,10 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblError.Location = new System.Drawing.Point(3, 6);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(152, 20);
+            this.lblError.Size = new System.Drawing.Size(144, 18);
             this.lblError.TabIndex = 0;
             this.lblError.Text = "Confirm Password : ";
             // 
@@ -229,7 +231,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(765, 216);
             this.btnCancel.Name = "btnCancel";

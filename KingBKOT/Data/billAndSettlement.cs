@@ -18,6 +18,7 @@ namespace KingBKOT.Data
         public string orderDecrip { get; set; }
         public string fname { get; set; }
         public string lname { get; set; }
+        public string mobile { get; set; }
         public System.DateTime ordDate { get; set; }
         public string ordTime { get; set; }
         public decimal totalDue { get; set; }
@@ -28,6 +29,5 @@ namespace KingBKOT.Data
         public string empID { get; set; }
         public string couponCode { get; set; }
         public Nullable<decimal> discount { get; set; }
-        public string mobile { get; set; }
     }
 }

@@ -384,6 +384,10 @@ namespace Cindy_Restaurant.Forms
 
         private void frmOrder_Load(object sender, EventArgs e)
         {
+
+            textBox1.Focus();
+
+
             dataGridView3.AutoGenerateColumns = false;
 
             dataGridView1.AutoGenerateColumns = false;
@@ -805,7 +809,7 @@ namespace Cindy_Restaurant.Forms
 
                 if (proName.Length >= 13)
                 {
-                    productLine = proName.Substring(0, 13) + "\t" + strTotalQty + "     " + proPrice;
+                    productLine = proName.Substring(0, 13) + "\t" + strTotalQty + "    " + proPrice;
                 }
 
                 //character is less than or equal 7
@@ -1931,7 +1935,7 @@ namespace Cindy_Restaurant.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void txtqty_KeyPress(object sender, KeyPressEventArgs e)
@@ -1953,6 +1957,14 @@ namespace Cindy_Restaurant.Forms
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    MessageBox.Show("You pressed enter! Good job!");
+            //}
         }
 
         private void lblCGSTTaxPer_Click(object sender, EventArgs e)

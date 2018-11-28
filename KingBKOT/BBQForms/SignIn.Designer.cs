@@ -80,14 +80,14 @@
             // cboUsername
             // 
             this.cboUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUsername.FormattingEnabled = true;
             this.cboUsername.Items.AddRange(new object[] {
             "-----------------Select--------------"});
             this.cboUsername.Location = new System.Drawing.Point(90, 128);
             this.cboUsername.Name = "cboUsername";
-            this.cboUsername.Size = new System.Drawing.Size(200, 25);
-            this.cboUsername.TabIndex = 1;
+            this.cboUsername.Size = new System.Drawing.Size(200, 24);
+            this.cboUsername.TabIndex = 0;
             // 
             // panel2
             // 
@@ -111,11 +111,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.75F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.75F);
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Location = new System.Drawing.Point(109, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 34);
+            this.label3.Size = new System.Drawing.Size(86, 32);
             this.label3.TabIndex = 45;
             this.label3.Text = "Login";
             // 
@@ -132,44 +132,44 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lblPassword.Location = new System.Drawing.Point(86, 155);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 17);
+            this.lblPassword.Size = new System.Drawing.Size(73, 16);
             this.lblPassword.TabIndex = 43;
             this.lblPassword.Text = "Password*";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lblUsername.Location = new System.Drawing.Point(87, 103);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(77, 17);
+            this.lblUsername.Size = new System.Drawing.Size(76, 16);
             this.lblUsername.TabIndex = 42;
             this.lblUsername.Text = "Username*";
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(87, 175);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(203, 23);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Size = new System.Drawing.Size(203, 22);
+            this.txtPassword.TabIndex = 1;
             // 
             // btnKeyboard
             // 
             this.btnKeyboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnKeyboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeyboard.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeyboard.ForeColor = System.Drawing.Color.White;
             this.btnKeyboard.Location = new System.Drawing.Point(199, 218);
             this.btnKeyboard.Name = "btnKeyboard";
             this.btnKeyboard.Size = new System.Drawing.Size(91, 32);
-            this.btnKeyboard.TabIndex = 4;
+            this.btnKeyboard.TabIndex = 3;
             this.btnKeyboard.Text = "Keyboard";
             this.btnKeyboard.UseVisualStyleBackColor = false;
             this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click_1);
@@ -179,12 +179,12 @@
             this.btnLogin.BackColor = System.Drawing.Color.Indigo;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(87, 218);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(82, 32);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);

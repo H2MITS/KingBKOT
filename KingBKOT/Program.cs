@@ -23,7 +23,7 @@ namespace KingBKOT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmParent());
+            Application.Run(new frmSplash());
         }
     }
 }

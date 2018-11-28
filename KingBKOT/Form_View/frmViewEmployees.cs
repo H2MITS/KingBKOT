@@ -96,7 +96,7 @@ namespace Cindy_Restaurant.Form_View
             }
             clsdelete delly = new clsdelete();
             delly.deleteEmployee(getIDs.Text);
-            
+            viewClass.viewEmployee(dataGridView1);
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)

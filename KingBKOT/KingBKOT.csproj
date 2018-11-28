@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -829,14 +829,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\cindyDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>cindyDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\KBBQModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KBBQModel.edmx</DependentUpon>
       <LastGenOutput>KBBQModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Data\KBBQModel.edmx.sql" />
     <Content Include="Data\KBBQModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KBBQModel.edmx</DependentUpon>
@@ -888,6 +889,7 @@
     <None Include="Resources\copper-loader.gif" />
     <None Include="Resources\forward.png" />
     <None Include="Resources\event.png" />
+    <None Include="Resources\budget.png" />
     <Content Include="sausage_VP7_icon.ico" />
     <None Include="Resources\error %281%29.png" />
     <None Include="Resources\data-storage-device.png" />

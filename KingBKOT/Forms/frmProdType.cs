@@ -107,29 +107,35 @@ namespace Cindy_Restaurant.Forms
 
         private void dataGridbind()
         {
-            _entities = new KBBQEntities();
-
-            List<ProductTypeVM> modelList = new List<ProductTypeVM>();
-
-            var data = _entities.tblProTypes.OrderBy(x=>x.proSubCate).ToList();
-
-
-            int rowNo = 1;
-            foreach (var item in data)
+            try
             {
-                ProductTypeVM model = new ProductTypeVM();
-                model.prodTypeName = item.prodTypeName;
-                model.proSubCate = item.proSubCate;
-                model.proTypeID = item.proTypeID;
+                _entities = new KBBQEntities();
 
-                model.rowNo = rowNo;
+                List<ProductTypeVM> modelList = new List<ProductTypeVM>();
 
-                modelList.Add(model);
-                rowNo++;
+                var data = _entities.tblProTypes.OrderBy(x => x.proSubCate).ToList();
+
+
+                int rowNo = 1;
+                foreach (var item in data)
+                {
+                    ProductTypeVM model = new ProductTypeVM();
+                    model.prodTypeName = item.prodTypeName;
+                    model.proSubCate = item.proSubCate;
+                    model.proTypeID = item.proTypeID;
+
+                    model.rowNo = rowNo;
+
+                    modelList.Add(model);
+                    rowNo++;
+                }
+                lblTotalRecord.Text = modelList.Count.ToString();
+                dataGridView1.DataSource = modelList;
             }
-            lblTotalRecord.Text = modelList.Count.ToString();
-            dataGridView1.DataSource = modelList;
+            catch(Exception x)
+            {
 
+            }
         }
 
 
@@ -231,6 +237,8 @@ namespace Cindy_Restaurant.Forms
            
             txtCategory.Text = string.Empty;
             btnSave.Text = "Save";
+
+            cboProductTypeName.Focus();
         }
 
         private void btnKeyboard_Click(object sender, EventArgs e)
@@ -332,9 +340,50 @@ namespace Cindy_Restaurant.Forms
 
         private void txtCategory_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtCategory_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (txtCategory.Text != string.Empty)
+                {
+
+                    _entities = new KBBQEntities();
+
+                    List<ProductTypeVM> modelList = new List<ProductTypeVM>();
+
+                    var data = _entities.tblProTypes.Where(x=>x.proSubCate.Contains(txtCategory.Text.Trim().ToString())).OrderBy(x => x.proSubCate).ToList();
+
+
+                    int rowNo = 1;
+                    foreach (var item in data)
+                    {
+                        ProductTypeVM model = new ProductTypeVM();
+                        model.prodTypeName = item.prodTypeName;
+                        model.proSubCate = item.proSubCate;
+                        model.proTypeID = item.proTypeID;
+
+                        model.rowNo = rowNo;
+
+                        modelList.Add(model);
+                        rowNo++;
+                    }
+                    lblTotalRecord.Text = modelList.Count.ToString();
+                    dataGridView1.DataSource = modelList;
+                }
+                else
+                {
+                    dataGridbind();
+                }
+            }
+            catch(Exception x)
+            {
+
             }
         }
     }

@@ -34,6 +34,7 @@ namespace Cindy_Restaurant.Forms
         {
             try
             {
+                txtFirst.Focus();
                 _entities = new KBBQEntities();
 
                 var getempName = _entities.tblEmployees.OrderBy(x => x.fname).ToList();

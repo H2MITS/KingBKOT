@@ -113,7 +113,7 @@ namespace Cindy_Restaurant.Form_View
                             model.kot = datss.kot;
                             model.orderDecrip = datss.orderDecrip;
                             model.guestName = datss.fname + " " + datss.lname;
-                            model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
+                            model.ordDate = Convert.ToDateTime(item.ordDate).ToString("dd-MMM-yyyy");
                             model.ordTime = datss.ordTime;
                             model.totalDue = datss.totalDue;
                             model.mobile= item.mobile;
@@ -611,7 +611,8 @@ namespace Cindy_Restaurant.Form_View
                         model.kot = dataSettlement.kot;
                         model.orderDecrip = dataSettlement.orderDecrip;
                         model.guestName = dataSettlement.fname + " " + dataSettlement.lname;
-                        model.ordDate = item.ordDate.ToString("dd-MMM-yyyy");
+                        model.ordDate = Convert.ToDateTime(item.ordDate).ToString("dd-MMM-yyyy");
+
                         model.ordTime = dataSettlement.ordTime;
                         model.totalDue = dataSettlement.totalDue;
                         model.mobile = dataSettlement.mobile;
