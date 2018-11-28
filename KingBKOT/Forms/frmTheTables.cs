@@ -540,6 +540,131 @@ namespace Cindy_Restaurant.Forms
             //checkTableOccupied();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn36_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn36.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn35_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn35.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn32_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn32.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn31_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn31.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn33_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn33.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn34_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn34.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn37_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn37.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn38_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn38.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn39_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn39.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
+        private void btn40_Click(object sender, EventArgs e)
+        {
+            orderInfo frm1 = new orderInfo();
+            frm1.txtReceiptType.Text = receiptType;
+            frm1.txtWaiterName.Text = empID.Trim();
+            frm1.txtTableNo.Text = this.btn40.Text.ToString();
+            frm1.ShowDialog();
+            //  checkTableOccupied();
+        }
+
         private void btn20_Click(object sender, EventArgs e)
         {
             orderInfo frm1 = new orderInfo();
